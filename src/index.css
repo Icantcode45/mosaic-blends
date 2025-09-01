@@ -36,6 +36,15 @@ All colors MUST be HSL.
     --wellness-light: 210 25% 95%;
     --wellness-dark: 210 80% 25%;
 
+    /* Enhanced brand colors from new design */
+    --brand-blue: 210 80% 40%;
+    --brand-teal: 174 72% 56%;
+    --brand-orange: 13 100% 60%;
+    --brand-slate: 210 29% 24%;
+    --brand-light: 210 25% 98%;
+    --brand-warm: 28 25% 97%;
+    --brand-gray: 215 14% 47%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
@@ -101,12 +110,38 @@ All colors MUST be HSL.
   }
 }
 
+}
+
+/* Enhanced styles from new design */
+@layer components {
+  /* Gradient text helpers */
+  .bg-gradient-orange { background-image: linear-gradient(90deg, #FF7A59 0%, #FF6B35 100%); }
+  .bg-gradient-purple { background-image: linear-gradient(90deg, #7C3AED 0%, #4F46E5 100%); }
+  .bg-gradient-blue { background-image: linear-gradient(90deg, #0EA5E9 0%, #0066CC 100%); }
+  .bg-gradient-green { background-image: linear-gradient(90deg, #10B981 0%, #00B8A0 100%); }
+  .text-gradient { color: transparent; background-clip: text; -webkit-background-clip: text; }
+
+  /* Pretty underline for headings */
+  .underline-soft { box-shadow: inset 0 -0.5rem 0 hsl(var(--primary) / 0.08); }
+
+  /* Button styles */
+  .btn { @apply inline-flex items-center justify-center font-medium rounded-full transition duration-200; }
+  .btn-primary { @apply text-white bg-primary hover:bg-primary/90 px-6 py-3; }
+  .btn-outline { @apply text-foreground border border-border hover:bg-accent hover:text-accent-foreground px-6 py-3; }
+
+  /* Card styles */
+  .card { @apply bg-card border border-border rounded-3xl shadow-lg; }
+
+  /* Alpine.js cloak */
+  [x-cloak] { display: none !important; }
+}
+
 @layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
   }
 }

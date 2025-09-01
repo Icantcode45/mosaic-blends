@@ -1,44 +1,77 @@
 import { Card } from "@/components/ui/card";
 
 const StatsSection = () => {
-  const stats = [
-    {
-      number: "10,000+",
-      label: "Treatments Delivered",
-      description: "Successful IV therapy sessions completed across Arizona"
-    },
-    {
-      number: "24/7",
-      label: "Emergency Support", 
-      description: "Round-the-clock availability for wellness emergencies"
-    },
-    {
-      number: "4.9",
-      label: "Customer Rating",
-      description: "Hundreds of happy clients"
-    }
-  ];
-
   return (
-    <section className="py-16 bg-secondary/30">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8">
-          {stats.map((stat, index) => (
-            <Card key={index} className="p-8 text-center bg-background shadow-sm">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                {stat.number}
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">
-                {stat.label}
-              </h3>
-              <p className="text-muted-foreground">
-                {stat.description}
+    <>
+      {/* First Stats Section */}
+      <section className="py-28 bg-muted/30 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap -m-8">
+            <div className="w-full md:w-1/3 p-8">
+              <p className="text-3xl sm:text-4xl xl:text-5xl text-foreground">
+                <span>More than </span>
+                <span className="font-heading font-bold text-gradient bg-gradient-orange">16,200 </span>
+                <span>patient visits delivered</span>
               </p>
-            </Card>
-          ))}
+            </div>
+            <div className="w-full md:w-1/3 p-8">
+              <p className="text-3xl sm:text-4xl xl:text-5xl text-foreground">
+                <span>Increased </span>
+                <span className="font-heading font-bold text-gradient bg-gradient-purple">117% </span>
+                <span>conversions since Q1</span>
+              </p>
+            </div>
+            <div className="w-full md:w-1/3 p-8">
+              <p className="text-3xl sm:text-4xl xl:text-5xl text-foreground">
+                <span>Over </span>
+                <span className="font-heading font-bold text-gradient bg-gradient-blue">82% </span>
+                <span>lift in consultation bookings</span>
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Second Stats Section */}
+      <section className="relative pt-24 pb-28 overflow-hidden bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-md mx-auto mb-16">
+            <h2 className="mb-4 font-heading font-semibold text-center text-5xl sm:text-6xl text-foreground">
+              Grow fast, with us
+            </h2>
+            <p className="text-base text-center text-muted-foreground">
+              From first consult to long‑term optimization, we partner on your wellness journey.
+            </p>
+          </div>
+          <div className="max-w-3xl mx-auto">
+            <div className="flex flex-wrap justify-center -m-6 md:-m-16 divide-y md:divide-y-0 md:divide-x divide-border">
+              <div className="w-full md:w-1/2 p-6 md:p-16">
+                <h2 className="mb-3 font-heading font-bold text-6xl sm:text-7xl md:text-8xl text-center text-gradient bg-gradient-blue">
+                  98%
+                </h2>
+                <h3 className="mb-3 font-heading font-semibold text-center text-foreground text-lg">
+                  Average Satisfaction Rate
+                </h3>
+                <p className="text-center text-muted-foreground">
+                  Patients report improved energy, clarity, and faster recovery.
+                </p>
+              </div>
+              <div className="w-full md:w-1/2 p-6 md:p-16">
+                <h2 className="mb-3 font-heading font-bold text-6xl sm:text-7xl md:text-8xl text-center text-gradient bg-gradient-green">
+                  117%
+                </h2>
+                <h3 className="mb-3 font-heading font-semibold text-center text-foreground text-lg">
+                  Average ROI on Ads
+                </h3>
+                <p className="text-center text-muted-foreground">
+                  Growth driven by great care and clear outcomes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

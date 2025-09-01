@@ -1,0 +1,64 @@
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+
+const TelehealthSection = () => {
+  const programs = [
+    "Weight Management",
+    "Hormone Support", 
+    "Peptides",
+    "Sexual Wellness"
+  ];
+
+  return (
+    <section id="telehealth" className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 className="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-foreground">
+              Telehealth, the modern way
+            </h2>
+            <p className="mt-4 text-muted-foreground max-w-xl">
+              Board‑certified providers for weight management, hormones, peptides and more—convenient video visits, labs, and refills.
+            </p>
+            <ul className="mt-6 space-y-3 text-foreground">
+              <li className="flex items-center gap-3">
+                <span className="h-5 w-5 grid place-items-center rounded-full bg-primary/10 text-primary text-xs">✓</span>
+                Licensed AZ providers
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="h-5 w-5 grid place-items-center rounded-full bg-primary/10 text-primary text-xs">✓</span>
+                Evidence‑based protocols
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="h-5 w-5 grid place-items-center rounded-full bg-primary/10 text-primary text-xs">✓</span>
+                Transparent pricing
+              </li>
+            </ul>
+            <div className="mt-8 flex gap-3">
+              <Button size="lg" className="btn btn-primary">
+                Start telehealth
+              </Button>
+              <Button variant="outline" size="lg" className="btn btn-outline">
+                How it works
+              </Button>
+            </div>
+          </div>
+          <Card className="p-6">
+            <div className="rounded-2xl bg-muted/30 p-6">
+              <div className="grid sm:grid-cols-2 gap-4">
+                {programs.map((program, index) => (
+                  <div key={index} className="p-4 rounded-xl bg-background border border-border">
+                    <div className="text-sm text-muted-foreground">Program</div>
+                    <div className="font-semibold mt-1 text-foreground">{program}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TelehealthSection;

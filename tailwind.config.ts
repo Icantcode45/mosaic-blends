@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				heading: ['Inter', 'system-ui', 'sans-serif'],
+				sans: ['Inter', 'system-ui', 'sans-serif']
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -53,6 +57,15 @@ export default {
 					light: 'hsl(var(--wellness-light))',
 					dark: 'hsl(var(--wellness-dark))'
 				},
+				brand: {
+					blue: 'hsl(var(--brand-blue))',
+					teal: 'hsl(var(--brand-teal))',
+					orange: 'hsl(var(--brand-orange))',
+					slate: 'hsl(var(--brand-slate))',
+					light: 'hsl(var(--brand-light))',
+					warm: 'hsl(var(--brand-warm))',
+					gray: 'hsl(var(--brand-gray))'
+				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'
@@ -71,6 +84,17 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			boxShadow: {
+				'4xl-soft': '0 12px 32px rgba(0,0,0,.08)',
+				'8xl': '0 30px 60px rgba(0,0,0,.10)',
+				'10xl': '0 40px 80px rgba(0,0,0,.12)'
+			},
+			letterSpacing: {
+				'px-n': '-0.02em'
+			},
+			backgroundImage: {
+				'hero-radial': 'radial-gradient(80% 80% at 90% 10%, rgba(0,184,160,.15) 0%, rgba(255,107,53,.10) 35%, rgba(0,102,204,.12) 65%, transparent 100%)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

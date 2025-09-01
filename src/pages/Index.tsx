@@ -1,21 +1,28 @@
 import HeroSection from "@/components/HeroSection";
-import StatsSection from "@/components/StatsSection";
+import TrustBarSection from "@/components/TrustBarSection";
 import ServicesSection from "@/components/ServicesSection";
+import StatsSection from "@/components/StatsSection";
+import TelehealthSection from "@/components/TelehealthSection";
+import SupplementsSection from "@/components/SupplementsSection";
 import PartnersSection from "@/components/PartnersSection";
 import MembershipSection from "@/components/MembershipSection";
 import FAQSection from "@/components/FAQSection";
 import NewsletterSection from "@/components/NewsletterSection";
+import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
     <div>
       <HeroSection />
-      <StatsSection />
+      <TrustBarSection />
       <ServicesSection />
-      <PartnersSection />
+      <StatsSection />
+      <TelehealthSection />
+      <SupplementsSection />
       <MembershipSection />
       <FAQSection />
       <NewsletterSection />
+      <ContactSection />
     </div>
   );
 };
