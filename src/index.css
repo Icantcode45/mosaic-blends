@@ -112,12 +112,45 @@ All colors MUST be HSL.
 
 /* Enhanced styles from new design */
 @layer components {
-  /* Gradient text helpers */
-  .bg-gradient-orange { background-image: linear-gradient(90deg, #FF7A59 0%, #FF6B35 100%); }
-  .bg-gradient-purple { background-image: linear-gradient(90deg, #7C3AED 0%, #4F46E5 100%); }
-  .bg-gradient-blue { background-image: linear-gradient(90deg, #0EA5E9 0%, #0066CC 100%); }
-  .bg-gradient-green { background-image: linear-gradient(90deg, #10B981 0%, #00B8A0 100%); }
+  /* Enhanced gradient text helpers from HTML designs */
+  .bg-gradient-orange {
+    background: linear-gradient(90deg, #FF8A00, #FF3D00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-gradient-purple {
+    background: linear-gradient(90deg, #7C3AED, #4F46E5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-gradient-blue {
+    background: linear-gradient(90deg, #06B6D4, #3B82F6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-gradient-green {
+    background: linear-gradient(90deg, #22C55E, #16A34A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
   .text-gradient { color: transparent; background-clip: text; -webkit-background-clip: text; }
+
+  /* Background gradients for sections */
+  .radial-fade {
+    background: radial-gradient(1200px 600px at 80% -10%, rgba(79,70,229,.12), transparent 60%);
+  }
+
+  /* Enhanced shadows */
+  .shadow-elev { box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+  .shadow-elev-1 { box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 1px 1px rgba(0,0,0,0.04); }
+  .shadow-elev-2 { box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+  .shadow-elev-3 { box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+  .shadow-10xl { box-shadow: 0 40px 80px rgba(0,0,0,.14); }
+  .nav-shadow { box-shadow: 0 8px 24px rgba(17,24,39,.06); }
 
   /* Pretty underline for headings */
   .underline-soft { box-shadow: inset 0 -0.5rem 0 hsl(var(--primary) / 0.08); }
