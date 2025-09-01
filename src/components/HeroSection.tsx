@@ -1,55 +1,76 @@
 import { Button } from "@/components/ui/button";
-import ivHeroImage from "@/assets/iv-therapy-hero.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-hero-radial">
+    <section className="relative overflow-hidden radial-fade">
+      {/* Decorative background elements */}
       <div className="absolute -right-24 -top-24 rounded-full w-[28rem] h-[28rem] bg-primary/5 blur-3xl"></div>
       <div className="absolute -left-24 top-1/2 -translate-y-1/2 rounded-full w-[20rem] h-[20rem] bg-accent/5 blur-3xl"></div>
 
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-12 gap-8 items-center py-20 lg:py-28">
-          <div className="lg:col-span-6">
-            <span className="inline-flex items-center space-x-2 text-sm text-muted-foreground">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent"></span>
-              <span>Concierge IV Therapy & Telehealth</span>
-            </span>
-            <h1 className="mt-5 font-heading font-extrabold tracking-tight text-4xl sm:text-6xl leading-[1.05] text-foreground">
-              Feel better, faster.<br/>
-              <span className="underline-soft">Personalized care—wherever you are.</span>
+      <div className="container mx-auto px-4 lg:px-6">
+        <div className="grid lg:grid-cols-2 gap-10 items-center py-20 md:py-28">
+          
+          {/* Left Column - Content */}
+          <div>
+            <p className="text-sm font-semibold text-primary mb-3">Premium Mobile Wellness</p>
+            <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl tracking-tighter leading-tight mb-6 text-foreground">
+              Hydration, recovery & care—delivered to you.
             </h1>
-            <p className="mt-5 text-lg text-muted-foreground max-w-xl">
-              Hydration, recovery, peptides, hormones, and physician‑trusted supplements from Arizona's premier mobile wellness team.
+            <p className="text-muted-foreground text-lg md:text-xl mb-10">
+              Medical-grade IV therapy, telehealth, and curated supplements. Join the membership for VIP pricing & perks.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <Button size="lg" className="btn btn-primary">
-                Book IV Therapy
+            
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-3 mb-6">
+              <Button size="lg" className="px-6 py-3 rounded-full bg-black text-white hover:bg-primary transition">
+                Book Mobile IV
               </Button>
-              <Button variant="outline" size="lg" className="btn btn-outline">
-                Shop Supplements
+              <Button variant="outline" size="lg" className="px-6 py-3 rounded-full border border-gray-200 hover:border-gray-300">
+                Explore Membership
               </Button>
             </div>
-            <div className="mt-6 flex items-center gap-4 text-sm text-muted-foreground">
+            
+            {/* Trust indicators */}
+            <div className="flex items-center gap-4 text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-2">
-                <span className="text-lg">⭐️⭐️⭐️⭐️⭐️</span> 4.9 from patients
+                <span className="w-2 h-2 rounded-full bg-green-500"></span> 
+                Board-certified providers
               </span>
-              <span className="hidden sm:inline-block">•</span>
-              <span>Same‑day availability</span>
+              <span className="hidden sm:inline">•</span>
+              <span className="inline-flex items-center gap-2">HIPAA secure</span>
             </div>
           </div>
-          <div className="lg:col-span-6">
-            <div className="relative">
-              <div className="aspect-[4/3] w-full rounded-3xl bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 p-2">
-                <div className="h-full w-full rounded-2xl bg-background grid sm:grid-cols-2">
-                  <div className="p-6 sm:p-8 flex flex-col justify-center">
-                    <h3 className="text-xl font-semibold text-foreground">Mobile IV Visits</h3>
-                    <p className="mt-2 text-muted-foreground">Nurse‑led care at home, office, or hotel. Hydration, recovery, and wellness drips personalized to you.</p>
-                    <a href="#treatments" className="mt-4 inline-flex items-center text-primary font-medium hover:text-primary/80">Explore treatments →</a>
+
+          {/* Right Column - Visual */}
+          <div className="relative">
+            <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-primary/10 to-white border border-gray-100 shadow-elev-2 flex items-center justify-center">
+              <div className="text-8xl">💧</div>
+            </div>
+            
+            {/* Floating cards */}
+            <div className="absolute -bottom-6 -left-6 max-w-xs">
+              <div className="bg-white rounded-2xl p-4 shadow-elev-2 border border-gray-100">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                    <span className="text-green-600 text-lg">✓</span>
                   </div>
-                  <div className="p-6 sm:p-8 bg-muted/30 rounded-br-2xl rounded-tr-2xl flex flex-col justify-center">
-                    <h3 className="text-xl font-semibold text-foreground">Telehealth</h3>
-                    <p className="mt-2 text-muted-foreground">Weight, hormones, peptides & more with board‑certified providers—no waiting rooms.</p>
-                    <a href="#telehealth" className="mt-4 inline-flex items-center text-primary font-medium hover:text-primary/80">See telehealth services →</a>
+                  <div>
+                    <div className="font-semibold text-sm text-foreground">Same-day availability</div>
+                    <div className="text-xs text-muted-foreground">Book now, feel better today</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="absolute -top-6 -right-6 max-w-xs">
+              <div className="bg-white rounded-2xl p-4 shadow-elev-2 border border-gray-100">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-primary text-lg">⭐</span>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-sm text-foreground">4.9 from patients</div>
+                    <div className="text-xs text-muted-foreground">Trusted by thousands</div>
                   </div>
                 </div>
               </div>
