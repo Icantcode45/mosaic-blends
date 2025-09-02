@@ -50,7 +50,7 @@ const MembershipSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-background">
+    <section id="pricing" className="py-16 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
