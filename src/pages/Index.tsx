@@ -16,6 +16,7 @@ const Index = () => {
     <div>
       <HeroSection />
       <TrustBarSection />
+      <BBBAccreditation />
       <ServicesSection />
       <StatsSection />
       <TelehealthSection />
