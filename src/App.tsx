@@ -17,15 +17,15 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <div className="min-h-screen flex flex-col">
-          <Header />
+          <EnhancedHeader />
           <main className="flex-1">
             <Routes>
-              <Route path="/" element={<Index />} />
+              <Route path="/" element={<EnhancedIndex />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
-          <Footer />
+          <EnhancedFooter />
         </div>
       </BrowserRouter>
     </TooltipProvider>
