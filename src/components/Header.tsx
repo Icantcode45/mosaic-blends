@@ -44,6 +44,17 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpen(false);
+        setServicesOpen(false);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
   return (
     <header 
       className={`sticky top-0 z-50 transition-all border-b border-gray-100 ${
@@ -64,12 +75,14 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#hero" className="nav-link">Home</a>
             
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
+              onFocus={() => setServicesOpen(true)}
+              onBlur={() => setServicesOpen(false)}
             >
-              <button className="nav-link inline-flex items-center space-x-1">
+              <button className="nav-link inline-flex items-center space-x-1" aria-haspopup="menu" aria-expanded={servicesOpen} aria-controls="services-menu">
                 <span>Services</span>
                 <svg 
                   className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} 
@@ -82,7 +95,7 @@ const Header = () => {
               
               {/* Mega panel */}
               {servicesOpen && (
-                <div className="absolute left-0 mt-3 w-[560px] bg-white rounded-2xl shadow-10xl p-6 grid grid-cols-2 gap-6 z-50">
+                <div id="services-menu" className="absolute left-0 mt-3 w-[560px] bg-white rounded-2xl shadow-10xl p-6 grid grid-cols-2 gap-6 z-50">
                   {servicesMegaItems.map((item) => (
                     <a 
                       key={item.name}
@@ -136,7 +149,7 @@ const Header = () => {
 
         {/* Mobile panel */}
         {open && (
-          <div className="md:hidden pb-4">
+          <div id="mobile-menu" className="md:hidden pb-4">
             <div className="grid gap-2">
               <a 
                 onClick={() => setOpen(false)} 
