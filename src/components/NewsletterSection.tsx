@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 
 const NewsletterSection = () => {
   return (
-    <section className="py-20 bg-white">
+    <section id="newsletter" className="py-20 bg-white">
       <div className="max-w-xl mx-auto px-4 text-center">
         <div className="mx-auto w-16 h-16 rounded-full bg-primary relative mb-6">
           <div className="absolute inset-0 rounded-full opacity-30" style={{background: 'radial-gradient(40px 40px at 50% 50%, white, transparent)'}}></div>
