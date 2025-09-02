@@ -165,6 +165,28 @@ All colors MUST be HSL.
 
   /* Alpine.js cloak */
   [x-cloak] { display: none !important; }
+
+  /* Glass effect from HTML design */
+  .glass {
+    backdrop-filter: saturate(180%) blur(12px);
+    background: rgba(255,255,255,0.75);
+  }
+
+  /* Enhanced nav links */
+  .nav-link {
+    @apply text-sm md:text-base text-muted-foreground hover:text-foreground transition;
+  }
+
+  /* Enhanced button styles with focus states */
+  .btn-enhanced {
+    @apply inline-flex items-center justify-center rounded-full font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+  }
+  .btn-primary-enhanced {
+    @apply btn-enhanced bg-primary text-primary-foreground px-6 py-3 hover:bg-primary/90 focus-visible:ring-primary;
+  }
+  .btn-ghost-enhanced {
+    @apply btn-enhanced border border-foreground text-foreground px-6 py-3 hover:bg-foreground hover:text-background;
+  }
 }
 
 @layer base {
