@@ -28,6 +28,8 @@ const ServicesSection = () => {
     }
   ];
 
+  const anchorIds: Record<string, string> = { "NAD⁺ & Peptides": "nad", "Sexual Wellness": "sexual-wellness" };
+
   return (
     <section id="treatments" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 lg:px-6">
@@ -42,7 +44,7 @@ const ServicesSection = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {treatments.map((treatment, index) => (
-            <Card key={index} className="bg-white rounded-3xl p-6 border border-gray-100 shadow-elev-1 hover:shadow-elev-2 transition-shadow">
+            <Card id={anchorIds[treatment.title] || undefined} key={index} className="bg-white rounded-3xl p-6 border border-gray-100 shadow-elev-1 hover:shadow-elev-2 transition-shadow">
               <div className="text-4xl mb-3">{treatment.icon}</div>
               <h3 className="font-semibold text-lg mb-1 text-foreground">{treatment.title}</h3>
               <p className="text-muted-foreground text-sm">{treatment.description}</p>
