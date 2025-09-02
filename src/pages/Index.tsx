@@ -1,6 +1,5 @@
 import HeroSection from "@/components/HeroSection";
 import TrustBarSection from "@/components/TrustBarSection";
-import BBBAccreditation from "@/components/BBBAccreditation";
 import ServicesSection from "@/components/ServicesSection";
 import StatsSection from "@/components/StatsSection";
 import TelehealthSection from "@/components/TelehealthSection";
@@ -16,7 +15,6 @@ const Index = () => {
     <div>
       <HeroSection />
       <TrustBarSection />
-      <BBBAccreditation />
       <ServicesSection />
       <StatsSection />
       <TelehealthSection />
