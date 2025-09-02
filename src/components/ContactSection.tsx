@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 const ContactSection = () => {
   return (
     <section id="contact" className="py-20 bg-gray-50">
+      <div id="book" className="hidden" aria-hidden="true"></div>
       <div className="max-w-6xl mx-auto px-4 lg:px-6">
         <div className="grid md:grid-cols-2 gap-10 items-start">
           
