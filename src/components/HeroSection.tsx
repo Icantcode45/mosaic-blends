@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden radial-fade">
+    <section id="hero" className="relative overflow-hidden radial-fade">
       {/* Decorative background elements */}
       <div className="absolute -right-24 -top-24 rounded-full w-[28rem] h-[28rem] bg-primary/5 blur-3xl"></div>
       <div className="absolute -left-24 top-1/2 -translate-y-1/2 rounded-full w-[20rem] h-[20rem] bg-accent/5 blur-3xl"></div>
@@ -22,11 +22,11 @@ const HeroSection = () => {
             
             {/* CTAs */}
             <div className="flex flex-wrap gap-3 mb-6">
-              <Button size="lg" className="px-6 py-3 rounded-full bg-black text-white hover:bg-primary transition">
-                Book Mobile IV
+              <Button asChild size="lg" className="px-6 py-3 rounded-full bg-black text-white hover:bg-primary transition">
+                <a href="#book">Book Mobile IV</a>
               </Button>
-              <Button variant="outline" size="lg" className="px-6 py-3 rounded-full border border-gray-200 hover:border-gray-300">
-                Explore Membership
+              <Button asChild variant="outline" size="lg" className="px-6 py-3 rounded-full border border-gray-200 hover:border-gray-300">
+                <a href="#pricing">Explore Membership</a>
               </Button>
             </div>
             
