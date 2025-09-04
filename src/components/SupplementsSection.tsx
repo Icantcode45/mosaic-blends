@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import PayPalButton from "./PayPalButton";
 
 const SupplementsSection = () => {
   const supplements = [
@@ -33,9 +34,12 @@ const SupplementsSection = () => {
               <div className="text-sm font-medium text-primary">Featured</div>
               <h3 className="mt-2 font-semibold text-lg text-foreground">{supplement.category}</h3>
               <p className="mt-1 text-muted-foreground">{supplement.description}</p>
-              <a href="#shop" className="mt-3 inline-flex text-primary font-medium hover:text-primary/80">
-                Shop →
-              </a>
+              <div className="mt-3 space-y-2">
+                <a href="#shop" className="inline-flex text-primary font-medium hover:text-primary/80">
+                  Shop →
+                </a>
+                <PayPalButton className="w-full" />
+              </div>
             </Card>
           ))}
         </div>
