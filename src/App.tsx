@@ -7,6 +7,9 @@ import EnhancedIndex from "./pages/EnhancedIndex";
 import NotFound from "./pages/NotFound";
 import EnhancedHeader from "./components/EnhancedHeader";
 import EnhancedFooter from "./components/EnhancedFooter";
+import Telehealth from "./pages/Telehealth";
+import MobileTestingKits from "./pages/MobileTestingKits";
+import Supplements from "./pages/Supplements";
 
 const queryClient = new QueryClient();
 
