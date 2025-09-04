@@ -334,25 +334,14 @@ const EnhancedHeader = () => {
                     <div key={category.category} className="mb-3">
                       <div className="font-medium text-xs text-primary mb-1">{category.category}</div>
                       {category.items.map((item) => (
-                        item.href.startsWith('/') ? (
-                          <Link
-                            key={item.name}
-                            onClick={() => setOpen(false)}
-                            to={item.href}
-                            className="block px-2 py-1 text-sm rounded hover:bg-gray-100 transition-colors"
-                          >
-                            {item.name}
-                          </Link>
-                        ) : (
-                          <a
-                            key={item.name}
-                            onClick={() => setOpen(false)}
-                            href={item.href}
-                            className="block px-2 py-1 text-sm rounded hover:bg-gray-100 transition-colors"
-                          >
-                            {item.name}
-                          </a>
-                        )
+                        <a 
+                          key={item.name}
+                          onClick={() => setOpen(false)} 
+                          href={item.href} 
+                          className="block px-2 py-1 text-sm rounded hover:bg-gray-100 transition-colors"
+                        >
+                          {item.name}
+                        </a>
                       ))}
                     </div>
                   ))}
@@ -365,25 +354,14 @@ const EnhancedHeader = () => {
                     <div key={category.category} className="mb-3">
                       <div className="font-medium text-xs text-primary mb-1">{category.category}</div>
                       {category.items.map((item) => (
-                        item.href.startsWith('/') ? (
-                          <Link
-                            key={item.name}
-                            onClick={() => setOpen(false)}
-                            to={item.href}
-                            className="block px-2 py-1 text-sm rounded hover:bg-gray-100 transition-colors"
-                          >
-                            {item.name}
-                          </Link>
-                        ) : (
-                          <a
-                            key={item.name}
-                            onClick={() => setOpen(false)}
-                            href={item.href}
-                            className="block px-2 py-1 text-sm rounded hover:bg-gray-100 transition-colors"
-                          >
-                            {item.name}
-                          </a>
-                        )
+                        <a 
+                          key={item.name}
+                          onClick={() => setOpen(false)} 
+                          href={item.href} 
+                          className="block px-2 py-1 text-sm rounded hover:bg-gray-100 transition-colors"
+                        >
+                          {item.name}
+                        </a>
                       ))}
                     </div>
                   ))}
