@@ -1,98 +1,193 @@
 import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+
   const navItems = [
-    { name: 'Treatments', href: '#treatments' },
-    { name: 'Telehealth', href: '#telehealth' },
-    { name: 'Supplements', href: '#supplements' },
-    { name: 'Membership', href: '#membership' },
-    { name: 'FAQ', href: '#faqs' },
+    { name: 'Home', href: '#hero' },
+    { name: 'Pricing', href: '#pricing' },
+    { name: 'FAQ', href: '#faq' },
     { name: 'Contact', href: '#contact' }
   ];
 
+  const servicesMegaItems = [
+    {
+      name: "Sexual Wellness",
+      href: "#sexual-wellness",
+      description: "Discreet, clinically backed treatments."
+    },
+    {
+      name: "Telehealth Services", 
+      href: "#telehealth",
+      description: "Fast online consults with licensed providers."
+    },
+    {
+      name: "NAD+ & Peptides",
+      href: "#nad", 
+      description: "Recovery, focus & longevity support."
+    },
+    {
+      name: "Supplements",
+      href: "#supplements",
+      description: "Evidence-based stack delivered to you."
+    }
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpen(false);
+        setServicesOpen(false);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur border-b border-border">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <header 
+      className={`sticky top-0 z-50 transition-all border-b border-gray-100 ${
+        scrolled ? 'glass' : 'bg-white/80 glass'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="h-16 flex items-center justify-between">
+          {/* Brand */}
           <a href="#" className="flex items-center space-x-2">
-            <span className="inline-flex h-9 w-9 rounded-xl bg-primary/10 items-center justify-center">💧</span>
-            <span className="text-lg font-semibold tracking-tight text-foreground">Stay Dripped IV & Wellness Co.</span>
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-tr from-primary to-accent text-white font-bold">
+              SD
+            </span>
+            <span className="font-heading font-semibold text-lg text-foreground">StayDripped</span>
           </a>
 
-          <nav className="hidden lg:flex items-center space-x-8 text-[15px]">
-            {navItems.map((item) => (
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center space-x-8">
+            <a href="#hero" className="nav-link">Home</a>
+            
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+              onFocus={() => setServicesOpen(true)}
+              onBlur={() => setServicesOpen(false)}
+            >
+              <button className="nav-link inline-flex items-center space-x-1" aria-haspopup="menu" aria-expanded={servicesOpen} aria-controls="services-menu">
+                <span>Services</span>
+                <svg 
+                  className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} 
+                  viewBox="0 0 20 20" 
+                  fill="currentColor"
+                >
+                  <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clipRule="evenodd"/>
+                </svg>
+              </button>
+              
+              {/* Mega panel */}
+              {servicesOpen && (
+                <div id="services-menu" className="absolute left-0 mt-3 w-[560px] bg-white rounded-2xl shadow-10xl p-6 grid grid-cols-2 gap-6 z-50">
+                  {servicesMegaItems.map((item) => (
+                    <a 
+                      key={item.name}
+                      href={item.href} 
+                      className="group p-4 rounded-xl hover:bg-gray-50 transition"
+                    >
+                      <div className="font-semibold mb-1 text-foreground">{item.name}</div>
+                      <p className="text-sm text-muted-foreground">{item.description}</p>
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+            
+            {navItems.slice(1).map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="nav-link"
               >
                 {item.name}
               </a>
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center space-x-3">
-            <Button variant="outline" size="sm" className="btn btn-outline">
-              Book Now
-            </Button>
-            <Button size="sm" className="btn btn-primary">
-              Shop Supplements
-            </Button>
+          {/* Actions */}
+          <div className="hidden md:flex items-center space-x-3">
+            <a href="#newsletter" className="btn-ghost-enhanced">Newsletter</a>
+            <a href="#book" className="btn-primary-enhanced">Book consult</a>
           </div>
 
-          {/* Mobile menu - Alpine.js will be handled by the browser */}
-          <div className="lg:hidden relative" x-data="{open:false}">
-            <button 
-              className="h-10 w-10 rounded-xl border border-border grid place-items-center"
-              x-on:click="open=!open"
-            >
-              <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+          {/* Mobile toggle */}
+          <button 
+            onClick={() => setOpen(!open)} 
+            className="md:hidden p-2 rounded-md border border-gray-300 hover:border-gray-400 transition-colors"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label="Toggle navigation menu"
+          >
+            {!open ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
               </svg>
-              <svg x-show="open" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/>
               </svg>
-            </button>
+            )}
+          </button>
+        </div>
 
-            <div 
-              x-show="open" 
-              x-transition:enter="transition ease-out duration-200"
-              x-transition:enter-start="opacity-0 transform scale-95"
-              x-transition:enter-end="opacity-100 transform scale-100"
-              x-transition:leave="transition ease-in duration-75"
-              x-transition:leave-start="opacity-100 transform scale-100"
-              x-transition:leave-end="opacity-0 transform scale-95"
-              x-cloak
-              className="absolute right-0 mt-2 w-64 py-3 bg-background border border-border rounded-2xl shadow-lg"
-            >
-              {navItems.map((item) => (
+        {/* Mobile panel */}
+        {open && (
+          <div id="mobile-menu" className="md:hidden pb-4">
+            <div className="grid gap-2">
+              <a 
+                onClick={() => setOpen(false)} 
+                href="#hero" 
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                Home
+              </a>
+              {servicesMegaItems.map((item) => (
                 <a 
                   key={item.name}
+                  onClick={() => setOpen(false)} 
                   href={item.href} 
-                  className="block px-4 py-2 hover:bg-muted text-foreground"
-                  x-on:click="open=false"
+                  className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
                 >
                   {item.name}
                 </a>
               ))}
-              <div className="mt-2 border-t border-border"></div>
+              {navItems.slice(1).map((item) => (
+                <a 
+                  key={item.name}
+                  onClick={() => setOpen(false)} 
+                  href={item.href} 
+                  className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                  {item.name}
+                </a>
+              ))}
               <a 
-                href="#booking" 
-                className="block px-4 py-2 font-medium text-primary"
-                x-on:click="open=false"
+                onClick={() => setOpen(false)} 
+                href="#book" 
+                className="btn-primary-enhanced text-center mt-2"
               >
-                Book Now
-              </a>
-              <a 
-                href="#shop" 
-                className="block px-4 py-2 text-foreground"
-                x-on:click="open=false"
-              >
-                Shop Supplements
+                Book consult
               </a>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </header>
   );

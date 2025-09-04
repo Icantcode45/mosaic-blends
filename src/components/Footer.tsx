@@ -62,6 +62,34 @@ const Footer = () => {
                 <span>Scottsdale, AZ</span>
               </div>
             </div>
+
+            <div className="pt-4">
+              <a
+                href="https://www.bbb.org/standards-for-trust"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="BBB Accredited Business"
+                className="inline-flex"
+              >
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F337c720945064b44af05129952e6433b%2Fe5eb19e7d19b49f9a483cf13884a13cc?format=webp&width=800"
+                  alt="BBB Accredited Business badge"
+                  className="h-14 w-auto rounded-md bg-white border border-accent-foreground/20 shadow-elev-1"
+                  loading="lazy"
+                />
+              </a>
+              <p className="mt-2 text-xs opacity-80">
+                BBB Accredited Business. Upholding the{' '}
+                <a
+                  href="https://www.bbb.org/standards-for-trust"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:opacity-100"
+                >
+                  BBB Standards for Trust
+                </a>.
+              </p>
+            </div>
           </div>
 
           {footerSections.map((section, index) => (
