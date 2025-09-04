@@ -197,14 +197,25 @@ const EnhancedHeader = () => {
                         <h4 className="font-semibold text-primary text-sm uppercase tracking-wide">{category.category}</h4>
                         <div className="space-y-3">
                           {category.items.map((item) => (
-                            <a 
-                              key={item.name}
-                              href={item.href} 
-                              className="block p-3 rounded-xl hover:bg-gray-50 transition group"
-                            >
-                              <div className="font-semibold mb-1 text-foreground group-hover:text-primary transition">{item.name}</div>
-                              <p className="text-xs text-muted-foreground">{item.description}</p>
-                            </a>
+                            item.href.startsWith('/') ? (
+                              <Link
+                                key={item.name}
+                                to={item.href}
+                                className="block p-3 rounded-xl hover:bg-gray-50 transition group"
+                              >
+                                <div className="font-semibold mb-1 text-foreground group-hover:text-primary transition">{item.name}</div>
+                                <p className="text-xs text-muted-foreground">{item.description}</p>
+                              </Link>
+                            ) : (
+                              <a
+                                key={item.name}
+                                href={item.href}
+                                className="block p-3 rounded-xl hover:bg-gray-50 transition group"
+                              >
+                                <div className="font-semibold mb-1 text-foreground group-hover:text-primary transition">{item.name}</div>
+                                <p className="text-xs text-muted-foreground">{item.description}</p>
+                              </a>
+                            )
                           ))}
                         </div>
                       </div>
@@ -240,14 +251,25 @@ const EnhancedHeader = () => {
                         <h4 className="font-semibold text-primary text-sm uppercase tracking-wide">{category.category}</h4>
                         <div className="space-y-3">
                           {category.items.map((item) => (
-                            <a 
-                              key={item.name}
-                              href={item.href} 
-                              className="block p-3 rounded-xl hover:bg-gray-50 transition group"
-                            >
-                              <div className="font-semibold mb-1 text-foreground group-hover:text-primary transition">{item.name}</div>
-                              <p className="text-xs text-muted-foreground">{item.description}</p>
-                            </a>
+                            item.href.startsWith('/') ? (
+                              <Link
+                                key={item.name}
+                                to={item.href}
+                                className="block p-3 rounded-xl hover:bg-gray-50 transition group"
+                              >
+                                <div className="font-semibold mb-1 text-foreground group-hover:text-primary transition">{item.name}</div>
+                                <p className="text-xs text-muted-foreground">{item.description}</p>
+                              </Link>
+                            ) : (
+                              <a
+                                key={item.name}
+                                href={item.href}
+                                className="block p-3 rounded-xl hover:bg-gray-50 transition group"
+                              >
+                                <div className="font-semibold mb-1 text-foreground group-hover:text-primary transition">{item.name}</div>
+                                <p className="text-xs text-muted-foreground">{item.description}</p>
+                              </a>
+                            )
                           ))}
                         </div>
                       </div>
