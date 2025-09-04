@@ -1,21 +1,33 @@
-import { Card } from "@/components/ui/card";
-import PayPalButton from "./PayPalButton";
+import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { useCart, type Product } from "@/contexts/CartContext";
+import ProductCard from "./ProductCard";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const SupplementsSection = () => {
-  const supplements = [
-    {
-      category: "Probiotics & Gut Health",
-      description: "Clinically‑validated strains for GI balance and immunity."
-    },
-    {
-      category: "Vitamins & Minerals", 
-      description: "Foundational nutrients with practitioner dosing."
-    },
-    {
-      category: "Test Kits & Panels",
-      description: "At‑home collection with clear results & guidance."
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const { openCart } = useCart();
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('products')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+      setProducts(data || []);
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    } finally {
+      setLoading(false);
     }
-  ];
+  };
 
   return (
     <section id="supplements" className="py-20 bg-muted/30">
@@ -24,29 +36,40 @@ const SupplementsSection = () => {
           <h2 className="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-foreground">
             Physician‑trusted supplements
           </h2>
-          <a href="#shop" className="hidden sm:inline-flex text-primary font-medium hover:text-primary/80">
-            View catalog →
-          </a>
+          <button 
+            onClick={openCart}
+            className="hidden sm:inline-flex text-primary font-medium hover:text-primary/80"
+          >
+            View cart →
+          </button>
         </div>
-        <div className="grid md:grid-cols-3 gap-5">
-          {supplements.map((supplement, index) => (
-            <Card key={index} className="p-6">
-              <div className="text-sm font-medium text-primary">Featured</div>
-              <h3 className="mt-2 font-semibold text-lg text-foreground">{supplement.category}</h3>
-              <p className="mt-1 text-muted-foreground">{supplement.description}</p>
-              <div className="mt-3 space-y-2">
-                <a href="#shop" className="inline-flex text-primary font-medium hover:text-primary/80">
-                  Shop →
-                </a>
-                <PayPalButton className="w-full" />
+        
+        {loading ? (
+          <div className="grid md:grid-cols-3 gap-5">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div key={i} className="space-y-3">
+                <Skeleton className="aspect-square w-full" />
+                <Skeleton className="h-4 w-3/4" />
+                <Skeleton className="h-4 w-1/2" />
+                <Skeleton className="h-10 w-full" />
               </div>
-            </Card>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-3 gap-5">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        )}
+        
         <div className="mt-8 sm:hidden">
-          <a href="#shop" className="text-primary font-medium hover:text-primary/80">
-            View catalog →
-          </a>
+          <button 
+            onClick={openCart}
+            className="text-primary font-medium hover:text-primary/80"
+          >
+            View cart →
+          </button>
         </div>
       </div>
     </section>

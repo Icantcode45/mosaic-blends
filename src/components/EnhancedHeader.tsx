@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import CartDrawer from "./CartDrawer";
 
 const EnhancedHeader = () => {
   const [open, setOpen] = useState(false);
@@ -135,16 +136,7 @@ const EnhancedHeader = () => {
                     <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
                   </svg>
                 </a>
-                <button className="relative text-gray-600 hover:text-primary transition-colors" aria-label="Shopping cart">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
-                  </svg>
-                  {cartCount > 0 && (
-                    <span className="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
-                      {cartCount}
-                    </span>
-                  )}
-                </button>
+                <CartDrawer />
               </div>
             </div>
           </div>
@@ -304,6 +296,7 @@ const EnhancedHeader = () => {
 
             {/* Actions */}
             <div className="hidden lg:flex items-center space-x-3">
+              <CartDrawer />
               <a href="#newsletter" className="btn-ghost-enhanced">Newsletter</a>
               <a href="#book" className="btn-primary-enhanced">Book Now</a>
             </div>

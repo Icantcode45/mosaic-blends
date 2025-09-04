@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import CartDrawer from "./CartDrawer";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -123,6 +124,7 @@ const Header = () => {
 
           {/* Actions */}
           <div className="hidden md:flex items-center space-x-3">
+            <CartDrawer />
             <a href="#newsletter" className="btn-ghost-enhanced">Newsletter</a>
             <a href="#book" className="btn-primary-enhanced">Book consult</a>
           </div>
@@ -151,6 +153,10 @@ const Header = () => {
         {open && (
           <div id="mobile-menu" className="md:hidden pb-4">
             <div className="grid gap-2">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-sm font-medium text-muted-foreground">Cart</span>
+                <CartDrawer />
+              </div>
               <a 
                 onClick={() => setOpen(false)} 
                 href="#hero" 
