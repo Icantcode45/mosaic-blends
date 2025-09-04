@@ -37,7 +37,7 @@ const EnhancedHeader = () => {
       items: [
         { name: "Sexual Wellness", href: "#sexual-wellness", description: "Discreet wellness solutions" },
         { name: "Probiotics & Gut Health", href: "#probiotics", description: "Digestive health support" },
-        { name: "Professional Supplements", href: "#supplements", description: "Physician-trusted products" }
+        { name: "Professional Supplements", href: "/supplements", description: "Physician-trusted products" }
       ]
     },
     {
