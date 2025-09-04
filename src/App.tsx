@@ -10,6 +10,10 @@ import EnhancedFooter from "./components/EnhancedFooter";
 import Telehealth from "./pages/Telehealth";
 import MobileTestingKits from "./pages/MobileTestingKits";
 import Supplements from "./pages/Supplements";
+import FirstTimePatients from "./pages/FirstTimePatients";
+import Events from "./pages/Events";
+import GiftCards from "./pages/GiftCards";
+import Privacy from "./pages/Privacy";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +31,10 @@ const App = () => (
               <Route path="/telehealth" element={<Telehealth />} />
               <Route path="/mobile-testing-kits" element={<MobileTestingKits />} />
               <Route path="/supplements" element={<Supplements />} />
+              <Route path="/first-time-patients" element={<FirstTimePatients />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/gift-cards" element={<GiftCards />} />
+              <Route path="/privacy" element={<Privacy />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
