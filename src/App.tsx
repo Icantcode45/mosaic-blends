@@ -24,6 +24,9 @@ const App = () => (
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<EnhancedIndex />} />
+              <Route path="/telehealth" element={<Telehealth />} />
+              <Route path="/mobile-testing-kits" element={<MobileTestingKits />} />
+              <Route path="/supplements" element={<Supplements />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
