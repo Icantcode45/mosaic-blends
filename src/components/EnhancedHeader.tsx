@@ -43,8 +43,8 @@ const EnhancedHeader = () => {
     {
       category: "Services & Testing",
       items: [
-        { name: "Mobile Testing", href: "#mobile-testing", description: "At-home lab services" },
-        { name: "Telehealth", href: "#telehealth", description: "Virtual consultations" }
+        { name: "Mobile Testing", href: "/mobile-testing-kits", description: "At-home lab services" },
+        { name: "Telehealth", href: "/telehealth", description: "Virtual consultations" }
       ]
     }
   ];
