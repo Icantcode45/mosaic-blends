@@ -7,6 +7,9 @@ import EnhancedIndex from "./pages/EnhancedIndex";
 import NotFound from "./pages/NotFound";
 import EnhancedHeader from "./components/EnhancedHeader";
 import EnhancedFooter from "./components/EnhancedFooter";
+import Telehealth from "./pages/Telehealth";
+import MobileTestingKits from "./pages/MobileTestingKits";
+import Supplements from "./pages/Supplements";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +24,9 @@ const App = () => (
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<EnhancedIndex />} />
+              <Route path="/telehealth" element={<Telehealth />} />
+              <Route path="/mobile-testing-kits" element={<MobileTestingKits />} />
+              <Route path="/supplements" element={<Supplements />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
