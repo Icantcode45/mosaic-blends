@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Clock, FileText, Heart, Stethoscope, UserCheck } from "lucide-react";
+import QualiphyWidget from "@/components/QualiphyWidget";
 
 const FirstTimePatients = () => {
   return (
@@ -15,12 +16,15 @@ const FirstTimePatients = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Your journey to optimal wellness starts here. We've made it simple to get started with our comprehensive IV therapy and wellness services.
             </p>
-            <Button size="lg" className="mr-4">
-              Book Your First Appointment
-            </Button>
-            <Button variant="outline" size="lg">
-              Download New Patient Forms
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+              <Button size="lg">
+                Book Your First Appointment
+              </Button>
+              <Button variant="outline" size="lg">
+                Download New Patient Forms
+              </Button>
+              <QualiphyWidget />
+            </div>
           </div>
         </div>
       </section>
