@@ -1,69 +1,146 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const NadPeptides = () => {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [showQuickView, setShowQuickView] = useState(false);
+  const [selectedPeptide, setSelectedPeptide] = useState(null);
+
   useEffect(() => {
     document.title = "NAD+ & Peptides | Stay Dripped IV & Wellness Co.";
   }, []);
 
-  const nadProducts = [
-    {
-      category: "NAD+ Therapy",
-      title: "NAD+ IV Infusion",
-      description: "Boost cellular energy production and support anti-aging processes with our premium NAD+ IV therapy.",
-      price: "$299",
-      features: [
-        "500mg NAD+ infusion",
-        "Cellular regeneration support",
-        "Enhanced mental clarity",
-        "Anti-aging benefits",
-        "Metabolic optimization"
+  // Comprehensive peptide database
+  const peptideDatabase = {
+    'nad+ iv therapy': {
+      name: 'NAD+ IV Therapy',
+      category: 'Anti-Aging',
+      price: '$299',
+      duration: '3-4 hours',
+      dosage: '250-500mg per infusion',
+      administration: 'Intravenous infusion',
+      benefits: [
+        'Enhanced cellular energy',
+        'Improved mental clarity',
+        'Better sleep quality',
+        'Addiction recovery support',
+        'Anti-aging effects',
+        'DNA repair support'
       ],
-      badge: "Popular"
+      description: 'NAD+ IV therapy delivers nicotinamide adenine dinucleotide directly to your cells for enhanced energy production and cellular repair.',
+      howItWorks: 'Replenishes cellular NAD+ levels, supporting mitochondrial function and DNA repair mechanisms.',
+      idealFor: 'Individuals seeking enhanced energy, mental clarity, anti-aging benefits, or addiction recovery support.',
+      frequency: 'Weekly to monthly infusions depending on individual goals',
+      sideEffects: 'Mild nausea, cramping during infusion (rate dependent), temporary flushing'
     },
-    {
-      category: "NAD+ Therapy",
-      title: "NAD+ Booster",
-      description: "A concentrated dose of NAD+ for quick cellular energy enhancement and recovery.",
-      price: "$199",
-      features: [
-        "250mg NAD+ infusion", 
-        "Quick 30-minute treatment",
-        "Energy enhancement",
-        "Mental focus support",
-        "Recovery acceleration"
-      ]
-    },
-    {
-      category: "Peptide Therapy",
-      title: "Anti-Aging Peptides",
-      description: "Advanced peptide therapy to promote cellular repair and longevity.",
-      price: "$349",
-      features: [
-        "Customized peptide blend",
-        "Cellular repair activation",
-        "Collagen production boost",
-        "Hormone optimization",
-        "Tissue regeneration"
+    'bpc-157': {
+      name: 'BPC-157',
+      category: 'Healing & Recovery',
+      price: '$120',
+      duration: '5 minutes',
+      dosage: '250-500mcg per injection',
+      administration: 'Subcutaneous injection',
+      benefits: [
+        'Accelerated tissue repair',
+        'Reduced inflammation',
+        'Improved gut health',
+        'Enhanced wound healing',
+        'Joint and tendon repair',
+        'Neuroprotective effects'
       ],
-      badge: "Advanced"
+      description: 'BPC-157 is a synthetic peptide derived from a protective protein found in human gastric juice, known for its remarkable healing properties.',
+      howItWorks: 'Promotes angiogenesis, collagen synthesis, and modulates growth factors to accelerate healing processes.',
+      idealFor: 'Athletes, individuals with injuries, digestive issues, or those seeking enhanced recovery.',
+      frequency: 'Daily injections for acute issues, 3-5 times weekly for maintenance',
+      sideEffects: 'Generally well tolerated with minimal side effects'
     },
-    {
-      category: "Peptide Therapy", 
-      title: "Recovery Peptides",
-      description: "Specialized peptides designed to accelerate healing and recovery processes.",
-      price: "$279",
-      features: [
-        "Recovery-focused peptides",
-        "Inflammation reduction",
-        "Muscle repair support",
-        "Faster healing",
-        "Performance enhancement"
-      ]
+    'tb-500': {
+      name: 'TB-500',
+      category: 'Healing & Recovery',
+      price: '$135',
+      duration: '5 minutes',
+      dosage: '2-5mg per injection',
+      administration: 'Subcutaneous injection',
+      benefits: [
+        'Enhanced muscle repair',
+        'Improved flexibility',
+        'Faster injury recovery',
+        'Reduced inflammation',
+        'Better endurance',
+        'Cardiovascular benefits'
+      ],
+      description: 'TB-500 is a synthetic peptide that mimics thymosin beta-4, promoting healing and recovery throughout the body.',
+      howItWorks: 'Promotes cell migration, blood vessel formation, and tissue repair through actin regulation.',
+      idealFor: 'Athletes with injuries, individuals seeking improved recovery, or those with chronic inflammatory conditions.',
+      frequency: 'Twice weekly for 4-6 weeks, then maintenance dosing',
+      sideEffects: 'Generally well tolerated, possible mild injection site reactions'
+    },
+    'cjc-1295': {
+      name: 'CJC-1295',
+      category: 'Growth Hormone',
+      price: '$145',
+      duration: '5 minutes',
+      dosage: '100-300mcg per injection',
+      administration: 'Subcutaneous injection',
+      benefits: [
+        'Increased growth hormone',
+        'Enhanced muscle growth',
+        'Improved recovery',
+        'Better sleep quality',
+        'Fat loss support',
+        'Anti-aging effects'
+      ],
+      description: 'CJC-1295 stimulates natural growth hormone release, supporting muscle growth, recovery, and overall wellness.',
+      howItWorks: 'Stimulates the pituitary gland to release growth hormone in natural pulses.',
+      idealFor: 'Individuals seeking natural growth hormone optimization, muscle growth, or anti-aging benefits.',
+      frequency: '2-3 times per week before bed for optimal GH release',
+      sideEffects: 'Possible water retention, injection site reactions, mild fatigue initially'
+    },
+    'ipamorelin': {
+      name: 'Ipamorelin',
+      category: 'Growth Hormone',
+      price: '$130',
+      duration: '5 minutes',
+      dosage: '200-300mcg per injection',
+      administration: 'Subcutaneous injection',
+      benefits: [
+        'Selective GH release',
+        'No cortisol increase',
+        'Enhanced recovery',
+        'Improved sleep',
+        'Muscle preservation',
+        'Fat loss support'
+      ],
+      description: 'Ipamorelin is the most selective growth hormone releasing peptide, providing GH benefits without unwanted side effects.',
+      howItWorks: 'Selectively binds to growth hormone secretagogue receptors to stimulate natural GH release.',
+      idealFor: 'Individuals seeking growth hormone benefits with minimal side effects and excellent tolerability.',
+      frequency: 'Daily injections, often combined with CJC-1295 for synergistic effects',
+      sideEffects: 'Excellent tolerability profile with minimal side effects'
+    },
+    'sermorelin': {
+      name: 'Sermorelin',
+      category: 'Growth Hormone',
+      price: '$125',
+      duration: '5 minutes',
+      dosage: '200-500mcg per injection',
+      administration: 'Subcutaneous injection',
+      benefits: [
+        'Natural GH stimulation',
+        'Improved sleep quality',
+        'Enhanced recovery',
+        'Better body composition',
+        'Increased energy',
+        'Anti-aging support'
+      ],
+      description: 'Sermorelin is a GHRH analog that naturally stimulates growth hormone production by the pituitary gland.',
+      howItWorks: 'Mimics natural GHRH to stimulate physiological growth hormone release patterns.',
+      idealFor: 'Adults seeking natural growth hormone optimization with physiological dosing patterns.',
+      frequency: 'Daily bedtime injections for optimal natural GH rhythm',
+      sideEffects: 'Generally well tolerated, possible injection site reactions'
     }
-  ];
+  };
 
   const benefitsInfo = [
     {
@@ -87,6 +164,24 @@ const NadPeptides = () => {
       description: "Clinically-proven treatments delivered by licensed medical professionals using the highest quality compounds."
     }
   ];
+
+  // Get all categories
+  const categories = ['all', ...new Set(Object.values(peptideDatabase).map(p => p.category))];
+
+  // Filter peptides by category
+  const filteredPeptides = selectedCategory === 'all' 
+    ? Object.entries(peptideDatabase)
+    : Object.entries(peptideDatabase).filter(([_, peptide]) => peptide.category === selectedCategory);
+
+  const openQuickView = (peptideKey) => {
+    setSelectedPeptide(peptideDatabase[peptideKey]);
+    setShowQuickView(true);
+  };
+
+  const closeQuickView = () => {
+    setShowQuickView(false);
+    setSelectedPeptide(null);
+  };
 
   return (
     <>
@@ -175,46 +270,71 @@ const NadPeptides = () => {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2">
-            {nadProducts.map((product, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-2xl bg-card shadow-lg border transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
-                {product.badge && (
-                  <div className="absolute right-4 top-4 z-10 rounded-full bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-foreground">
-                    {product.badge}
-                  </div>
-                )}
-                
-                <div className="h-56 bg-gradient-to-br from-slate-700 to-slate-800 relative">
+          {/* Category Navigation */}
+          <div className="mb-12 flex flex-wrap justify-center gap-3">
+            {categories.map((category) => (
+              <Button
+                key={category}
+                variant={selectedCategory === category ? "default" : "outline"}
+                onClick={() => setSelectedCategory(category)}
+                className="capitalize"
+              >
+                {category.replace('-', ' ')}
+              </Button>
+            ))}
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {filteredPeptides.map(([key, peptide]) => (
+              <div key={key} className="group relative overflow-hidden rounded-2xl bg-card shadow-lg border transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
+                <div className="h-48 bg-gradient-to-br from-slate-700 to-slate-800 relative">
                   <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center opacity-30" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute top-4 right-4 z-10 rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary-foreground">
+                    {peptide.category}
+                  </div>
                 </div>
                 
-                <div className="p-8">
-                  <div className="mb-2 text-sm font-semibold uppercase tracking-wide text-primary">
-                    {product.category}
-                  </div>
-                  <h3 className="mb-3 text-2xl font-bold text-foreground">
-                    {product.title}
+                <div className="p-6">
+                  <h3 className="mb-2 text-xl font-bold text-foreground">
+                    {peptide.name}
                   </h3>
-                  <p className="mb-6 text-muted-foreground leading-relaxed">
-                    {product.description}
+                  <p className="mb-4 text-muted-foreground text-sm leading-relaxed">
+                    {peptide.description.substring(0, 120)}...
                   </p>
                   
-                  <ul className="mb-8 space-y-3">
-                    {product.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start gap-3 text-muted-foreground">
-                        <span className="mt-1 text-secondary">✓</span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <div className="flex items-center justify-between">
-                    <div className="text-3xl font-bold text-primary">
-                      {product.price}
+                  <div className="mb-4 grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="font-semibold text-primary">Price:</span>
+                      <div className="text-lg font-bold text-primary">{peptide.price}</div>
                     </div>
-                    <Button className="px-6 py-3" asChild>
-                      <Link to="/first-time-patients">Book Treatment</Link>
+                    <div>
+                      <span className="font-semibold text-primary">Duration:</span>
+                      <div>{peptide.duration}</div>
+                    </div>
+                  </div>
+                  
+                  <div className="mb-4">
+                    <span className="font-semibold text-primary text-sm">Key Benefits:</span>
+                    <ul className="mt-2 space-y-1">
+                      {peptide.benefits.slice(0, 3).map((benefit, index) => (
+                        <li key={index} className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <span className="text-secondary">✓</span>
+                          {benefit}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="flex gap-2">
+                    <Button 
+                      size="sm" 
+                      className="flex-1"
+                      onClick={() => openQuickView(key)}
+                    >
+                      Learn More
+                    </Button>
+                    <Button size="sm" variant="outline" className="flex-1" asChild>
+                      <Link to="/first-time-patients">Book Now</Link>
                     </Button>
                   </div>
                 </div>
@@ -223,6 +343,98 @@ const NadPeptides = () => {
           </div>
         </div>
       </section>
+
+      {/* Quick View Modal */}
+      {showQuickView && selectedPeptide && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4" onClick={closeQuickView}>
+          <div className="max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-white rounded-2xl shadow-2xl" onClick={(e) => e.stopPropagation()}>
+            <div className="sticky top-0 bg-white border-b p-6 flex items-center justify-between">
+              <div>
+                <h2 className="text-2xl font-bold text-foreground">{selectedPeptide.name}</h2>
+                <span className="inline-block mt-1 px-3 py-1 bg-primary text-primary-foreground rounded-full text-sm font-semibold">
+                  {selectedPeptide.category}
+                </span>
+              </div>
+              <Button variant="ghost" onClick={closeQuickView} className="text-2xl">
+                ×
+              </Button>
+            </div>
+            
+            <div className="p-6">
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div className="bg-muted p-4 rounded-lg text-center">
+                  <h4 className="text-primary font-semibold mb-2">Price</h4>
+                  <p className="text-2xl font-bold text-foreground">{selectedPeptide.price}</p>
+                </div>
+                <div className="bg-muted p-4 rounded-lg text-center">
+                  <h4 className="text-primary font-semibold mb-2">Duration</h4>
+                  <p className="text-lg font-semibold text-foreground">{selectedPeptide.duration}</p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-lg font-semibold text-foreground mb-2">Description</h4>
+                  <p className="text-muted-foreground leading-relaxed">{selectedPeptide.description}</p>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-foreground mb-2">How It Works</h4>
+                  <p className="text-muted-foreground leading-relaxed">{selectedPeptide.howItWorks}</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <h5 className="font-semibold text-primary mb-1">Dosage</h5>
+                    <p className="text-sm text-muted-foreground">{selectedPeptide.dosage}</p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-primary mb-1">Administration</h5>
+                    <p className="text-sm text-muted-foreground">{selectedPeptide.administration}</p>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-foreground mb-3">Key Benefits</h4>
+                  <div className="grid md:grid-cols-2 gap-2">
+                    {selectedPeptide.benefits.map((benefit, index) => (
+                      <div key={index} className="flex items-center gap-2">
+                        <span className="text-secondary font-bold">✓</span>
+                        <span className="text-muted-foreground text-sm">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4 p-4 bg-muted rounded-lg">
+                  <div>
+                    <h5 className="font-semibold text-primary mb-1">Ideal For</h5>
+                    <p className="text-sm text-muted-foreground">{selectedPeptide.idealFor}</p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-primary mb-1">Frequency</h5>
+                    <p className="text-sm text-muted-foreground">{selectedPeptide.frequency}</p>
+                  </div>
+                </div>
+
+                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <h5 className="font-semibold text-red-800 mb-1 text-sm">Side Effects & Considerations</h5>
+                  <p className="text-red-700 text-sm">{selectedPeptide.sideEffects}</p>
+                </div>
+
+                <div className="flex gap-4 pt-4">
+                  <Button size="lg" className="flex-1" asChild>
+                    <Link to="/first-time-patients">Book Consultation</Link>
+                  </Button>
+                  <Button size="lg" variant="outline" className="flex-1" asChild>
+                    <Link to="/telehealth">Ask Questions</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Call to Action Section */}
       <section className="bg-background py-20">
