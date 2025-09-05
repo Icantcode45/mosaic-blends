@@ -63,11 +63,10 @@ const IVTherapy = () => {
         badge: 'Foundation',
         description: 'Foundational nutrient blend for general wellness and immune support.',
         features: [
-          'Vitamin C 500mg',
-          'B-Complex Vitamins',
-          'Magnesium',
-          'Calcium',
-          'Immune Support'
+          'Vitamin B-Complex',
+          'Vitamin B12',
+          'Vitamin C',
+          'Glutathione'
         ]
       },
       {
@@ -78,11 +77,12 @@ const IVTherapy = () => {
         badge: 'Classic',
         description: 'The classic Myers\' formula for comprehensive nutrient support and wellness optimization.',
         features: [
-          'Vitamin C 1000mg',
-          'B-Complex Vitamins',
-          'B12 1000mcg',
-          'Magnesium',
-          'Comprehensive Wellness'
+          'Vitamin B-Complex',
+          'Vitamin B12',
+          'Vitamin C',
+          'Zinc',
+          'Glutathione',  
+          'Magnesium'
         ]
       },
       {
@@ -107,11 +107,11 @@ const IVTherapy = () => {
         badge: 'Hangover Relief',
         description: 'Rapid recovery from hangovers with targeted hydration and detoxification support.',
         features: [
-          'Rapid Rehydration',
+          'Vitamin B-Complex',
+          'Vitamin B12',
           'Anti-Nausea Medication',
-          'B-Vitamins',
-          'Electrolyte Balance',
-          'Fast Relief'
+          'Glutathione',
+          'Vitamin C'
         ]
       }
     ],
@@ -138,11 +138,12 @@ const IVTherapy = () => {
         price: '$275',
         description: 'Elite athletic performance formula for professional-level optimization.',
         features: [
-          'Athletic Performance Blend',
-          'Recovery Amino Acids',
-          'Electrolyte Optimization',
-          'Muscle Recovery',
-          'Peak Performance'
+          'Vitamin B6',
+          'Vitamin B12',
+          'Vitamin C',
+          'Glutathione',
+          'Amino Blend',
+          'Magnesium'
         ]
       },
       {
@@ -168,11 +169,28 @@ const IVTherapy = () => {
         badge: 'Beauty',
         description: 'Beauty and anti-aging formula for radiant skin and enhanced vitality.',
         features: [
-          'Glutathione (Master Antioxidant)',
-          'Biotin for Hair & Nails',
-          'Vitamin C for Collagen',
-          'Beauty Vitamins',
-          'Anti-Aging Support'
+          'Vitamin B-Complex',
+          'Vitamin B12',
+          'MICC',
+          'Zinc',
+          'Glutathione',
+          'Biotin'
+        ]
+      },
+      {
+        id: 'arizona-detox',
+        name: 'The "Arizona" Detox & Cleanse IV Drip',
+        category: 'Specialty Treatments',
+        price: '$225',
+        badge: 'Detox',
+        description: 'Comprehensive detoxification formula to cleanse and revitalize your body.',
+        features: [
+          'Vitamin B-Complex',
+          'Alpha Lipoic Acid',
+          'Vitamin C',
+          'Zinc',
+          'Glutathione',
+          'Magnesium'
         ]
       },
       {
@@ -417,46 +435,126 @@ const IVTherapy = () => {
           </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {getCurrentServices().map((service) => (
-              <div key={service.id} className="group relative overflow-hidden rounded-2xl bg-card shadow-lg border transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
-                <div className="h-48 bg-gradient-to-br from-slate-700 to-slate-800 relative">
-                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center opacity-30" />
-                  {service.badge && (
-                    <div className="absolute top-4 right-4 z-10 rounded-full bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-foreground">
-                      {service.badge}
+            {getCurrentServices().map((service) => {
+              // Define custom styling for each specific treatment
+              const getServiceStyle = (serviceId: string) => {
+                switch (serviceId) {
+                  case 'hangover':
+                    return {
+                      bgGradient: 'from-yellow-400 to-yellow-600',
+                      titleColor: 'text-yellow-900',
+                      badgeColor: 'bg-yellow-500',
+                      title: 'THE DAY-AFTER',
+                      subtitle: '"HANGOVER BAG"'
+                    };
+                  case 'd-book':
+                    return {
+                      bgGradient: 'from-purple-400 to-purple-600', 
+                      titleColor: 'text-purple-900',
+                      badgeColor: 'bg-purple-500',
+                      title: 'THE D-BOOK',
+                      subtitle: 'PERFORMANCE BAG'
+                    };
+                  case 'scottsdale':
+                    return {
+                      bgGradient: 'from-pink-400 to-pink-600',
+                      titleColor: 'text-pink-900', 
+                      badgeColor: 'bg-pink-500',
+                      title: 'THE SCOTTSDALE',
+                      subtitle: 'BEAUTY BAG'
+                    };
+                  case 'jr-myers':
+                    return {
+                      bgGradient: 'from-green-400 to-green-600',
+                      titleColor: 'text-green-900',
+                      badgeColor: 'bg-green-500',
+                      title: 'JR MYERS',
+                      subtitle: 'COCKTAIL'
+                    };
+                  case 'myers':
+                    return {
+                      bgGradient: 'from-cyan-400 to-blue-500',
+                      titleColor: 'text-blue-900',
+                      badgeColor: 'bg-blue-500',
+                      title: 'MYERS',
+                      subtitle: 'COCKTAIL'
+                    };
+                  case 'arizona-detox':
+                    return {
+                      bgGradient: 'from-teal-400 to-teal-600',
+                      titleColor: 'text-teal-900',
+                      badgeColor: 'bg-teal-500',
+                      title: 'THE ARIZONA',
+                      subtitle: 'DETOX & CLEANSE'
+                    };
+                  default:
+                    return {
+                      bgGradient: 'from-slate-700 to-slate-800',
+                      titleColor: 'text-white',
+                      badgeColor: 'bg-accent',
+                      title: service.name.split(' ').slice(0, 2).join(' ').toUpperCase(),
+                      subtitle: service.name.split(' ').slice(2).join(' ').toUpperCase()
+                    };
+                }
+              };
+
+              const style = getServiceStyle(service.id);
+
+              return (
+                <div key={service.id} className="group relative overflow-hidden rounded-2xl bg-card shadow-lg border transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
+                  <div className={`h-48 bg-gradient-to-br ${style.bgGradient} relative overflow-hidden`}>
+                    {/* IV Bag silhouette effect */}
+                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMDAgMTBDOTAgMTAgODAgMjAgODAgMzBMODAgMTcwQzgwIDE4MCA5MCAxOTAgMTAwIDE5MEMxMTAgMTkwIDEyMCAxODAgMTIwIDE3MEwxMjAgMzBDMTIwIDIwIDExMCAxMCAxMDAgMTBaIiBmaWxsPSJibGFjayIgZmlsbC1vcGFjaXR5PSIwLjEiLz4KPC9zdmc+')] bg-center bg-no-repeat opacity-20" />
+                    
+                    {service.badge && (
+                      <div className={`absolute top-4 right-4 z-10 rounded-full ${style.badgeColor} px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white`}>
+                        {service.badge}
+                      </div>
+                    )}
+                    
+                    {/* IV Bag Label */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="bg-black/80 rounded-lg p-4 text-white max-w-[140px]">
+                          <div className="text-xs font-bold mb-1 text-gray-300">STAY DRIPPED</div>
+                          <div className="text-sm font-bold mb-2">{style.title}</div>
+                          <div className="text-xs">{style.subtitle}</div>
+                          <div className="text-right text-xs mt-2 opacity-75">1000ML</div>
+                        </div>
+                      </div>
                     </div>
-                  )}
-                </div>
+                  </div>
                 
-                <div className="p-6">
-                  <div className="text-primary font-semibold text-sm uppercase tracking-wide mb-2">
-                    {service.category}
-                  </div>
-                  <h3 className="mb-3 text-xl font-bold text-foreground">
-                    {service.name}
-                  </h3>
-                  <p className="mb-4 text-muted-foreground text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                  
-                  <ul className="mb-6 space-y-2">
-                    {service.features.map((feature, index) => (
-                      <li key={index} className="flex items-center gap-2 text-xs text-muted-foreground">
-                        <span className="text-secondary">✓</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <div className="flex items-center justify-between">
-                    <div className="text-2xl font-bold text-primary">{service.price}</div>
-                    <Button asChild>
-                      <Link to="/first-time-patients">Book Now</Link>
-                    </Button>
+                  <div className="p-6">
+                    <div className="text-primary font-semibold text-sm uppercase tracking-wide mb-2">
+                      {service.category}
+                    </div>
+                    <h3 className="mb-3 text-xl font-bold text-foreground">
+                      {service.name}
+                    </h3>
+                    <p className="mb-4 text-muted-foreground text-sm leading-relaxed">
+                      {service.description}
+                    </p>
+                    
+                    <ul className="mb-6 space-y-2">
+                      {service.features.map((feature, index) => (
+                        <li key={index} className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <span className="text-secondary">✓</span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="text-2xl font-bold text-primary">{service.price}</div>
+                      <Button asChild>
+                        <Link to="/first-time-patients">Book Now</Link>
+                      </Button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
