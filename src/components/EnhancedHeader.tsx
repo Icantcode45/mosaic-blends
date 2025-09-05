@@ -131,11 +131,11 @@ const EnhancedHeader = () => {
                     <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                   </svg>
                 </a>
-                <a href="#booking" className="text-gray-600 hover:text-primary transition-colors" aria-label="Book appointment">
+                <Link to="/first-time-patients" className="text-gray-600 hover:text-primary transition-colors" aria-label="Book appointment">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
                   </svg>
-                </a>
+                </Link>
                 <CartDrawer />
               </div>
             </div>
@@ -152,18 +152,18 @@ const EnhancedHeader = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="h-16 flex items-center justify-between">
             {/* Brand */}
-            <a href="#" className="flex items-center space-x-3">
+            <Link to="/" className="flex items-center space-x-3">
               <img 
                 src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2Ff74b8d31183c4e73ad423862ef65b827?format=webp&width=800" 
                 alt="Stay Dripped IV & Wellness Co. Logo" 
                 className="h-8 w-auto"
                 loading="eager"
               />
-            </a>
+            </Link>
 
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center space-x-8">
-              <a href="#hero" className="nav-link">Home</a>
+              <Link to="/" className="nav-link">Home</Link>
               
               {/* Services Dropdown */}
               <div 
@@ -297,8 +297,12 @@ const EnhancedHeader = () => {
             {/* Actions */}
             <div className="hidden lg:flex items-center space-x-3">
               <CartDrawer />
-              <a href="#newsletter" className="btn-ghost-enhanced">Newsletter</a>
-              <a href="#book" className="btn-primary-enhanced">Book Now</a>
+              <Button variant="ghost" className="btn-ghost-enhanced" asChild>
+                <Link to="/#newsletter">Newsletter</Link>
+              </Button>
+              <Button className="btn-primary-enhanced" asChild>
+                <Link to="/first-time-patients">Book Now</Link>
+              </Button>
             </div>
 
             {/* Mobile toggle */}
@@ -325,13 +329,13 @@ const EnhancedHeader = () => {
           {open && (
             <div id="mobile-menu" className="lg:hidden pb-4">
               <div className="grid gap-2">
-                <a 
+                <Link 
                   onClick={() => setOpen(false)} 
-                  href="#hero" 
+                  to="/" 
                   className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
                 >
                   Home
-                </a>
+                </Link>
                 
                 {/* Mobile Services */}
                 <div className="px-3 py-2">
@@ -416,13 +420,13 @@ const EnhancedHeader = () => {
                     </a>
                   )
                 ))}
-                <a 
+                <Button 
                   onClick={() => setOpen(false)} 
-                  href="#book" 
                   className="btn-primary-enhanced text-center mt-2"
+                  asChild
                 >
-                  Book Now
-                </a>
+                  <Link to="/first-time-patients">Book Now</Link>
+                </Button>
               </div>
             </div>
           )}

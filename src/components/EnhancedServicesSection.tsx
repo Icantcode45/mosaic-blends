@@ -1,5 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const EnhancedServicesSection = () => {
   const serviceCategories = [
@@ -248,8 +250,12 @@ const EnhancedServicesSection = () => {
             Schedule a consultation with our medical team to create a personalized wellness plan that fits your lifestyle and goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#book" className="btn-primary-enhanced">Book Consultation</a>
-            <a href="#contact" className="btn-ghost-enhanced">Talk to Provider</a>
+            <Button className="btn-primary-enhanced" asChild>
+              <Link to="/first-time-patients">Book Consultation</Link>
+            </Button>
+            <Button variant="outline" className="btn-ghost-enhanced" asChild>
+              <Link to="/#contact">Talk to Provider</Link>
+            </Button>
           </div>
         </div>
       </div>

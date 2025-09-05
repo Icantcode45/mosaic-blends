@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 type Category = "all" | "allergies" | "sex-specific" | "general";
@@ -31,7 +32,7 @@ const ProductCard = ({
       <div className="mt-6 flex items-center justify-between">
         <div className="text-2xl font-extrabold text-primary">{price}</div>
         <Button asChild>
-          <a href="/book">Order Test</a>
+          <Link to="/first-time-patients">Order Test</Link>
         </Button>
       </div>
     </div>
@@ -57,7 +58,7 @@ const MobileTestingKits = () => {
             Comprehensive at-home testing kits for complete health monitoring and optimization. Get lab-quality results from the comfort of your home.
           </p>
           <div className="mt-6 inline-flex">
-            <Button asChild size="lg"><a href="/book">Order Test Kit</a></Button>
+            <Button asChild size="lg"><Link to="/first-time-patients">Order Test Kit</Link></Button>
           </div>
         </div>
       </section>

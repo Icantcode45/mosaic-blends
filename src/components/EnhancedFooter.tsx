@@ -1,70 +1,71 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const EnhancedFooter = () => {
   const footerSections = [
     {
       title: "Services",
       links: [
-        { name: "IV Hydration", href: "#iv-therapy" },
-        { name: "Energy & Wellness", href: "#energy" },
-        { name: "Immune Support", href: "#immune" },
-        { name: "Recovery Therapy", href: "#recovery" },
-        { name: "Beauty Treatments", href: "#beauty" },
-        { name: "NAD+ Therapy", href: "#nad" },
-        { name: "Vitamin Injections", href: "#vitamins" },
-        { name: "Weight Management", href: "#weight" }
+        { name: "IV Hydration", href: "/#iv-therapy" },
+        { name: "Energy & Wellness", href: "/#energy" },
+        { name: "Immune Support", href: "/#immune" },
+        { name: "Recovery Therapy", href: "/#recovery" },
+        { name: "Beauty Treatments", href: "/#beauty" },
+        { name: "NAD+ Therapy", href: "/#nad" },
+        { name: "Vitamin Injections", href: "/vitamin-injections" },
+        { name: "Weight Management", href: "/#weight" }
       ]
     },
     {
       title: "Advanced Care",
       links: [
-        { name: "Sexual Wellness", href: "#sexual-wellness" },
-        { name: "Hormone Therapy", href: "#hormones" },
-        { name: "Peptide Treatments", href: "#peptides" },
-        { name: "Telehealth Services", href: "#telehealth" },
-        { name: "Mobile Testing", href: "#testing" },
-        { name: "Lab Services", href: "#labs" },
-        { name: "Nutrition Counseling", href: "#nutrition" },
-        { name: "Wellness Coaching", href: "#coaching" }
+        { name: "Sexual Wellness", href: "/#sexual-wellness" },
+        { name: "Hormone Therapy", href: "/#hormones" },
+        { name: "Peptide Treatments", href: "/#peptides" },
+        { name: "Telehealth Services", href: "/telehealth" },
+        { name: "Mobile Testing", href: "/mobile-testing-kits" },
+        { name: "Lab Services", href: "/#labs" },
+        { name: "Nutrition Counseling", href: "/#nutrition" },
+        { name: "Wellness Coaching", href: "/#coaching" }
       ]
     },
     {
       title: "Company",
       links: [
-        { name: "About Us", href: "#about" },
-        { name: "Our Team", href: "#team" },
-        { name: "Service Areas", href: "#areas" },
-        { name: "Careers", href: "#careers" },
-        { name: "Press & Media", href: "#press" },
-        { name: "Partner With Us", href: "#partners" },
-        { name: "Investor Relations", href: "#investors" },
-        { name: "Corporate Wellness", href: "#corporate" }
+        { name: "About Us", href: "/#about" },
+        { name: "Our Team", href: "/#team" },
+        { name: "Service Areas", href: "/#areas" },
+        { name: "Careers", href: "/#careers" },
+        { name: "Press & Media", href: "/#press" },
+        { name: "Partner With Us", href: "/#partners" },
+        { name: "Investor Relations", href: "/#investors" },
+        { name: "Corporate Wellness", href: "/#corporate" }
       ]
     },
     {
       title: "Support & Resources",
       links: [
-        { name: "Book Treatment", href: "#book" },
-        { name: "Patient Portal", href: "#portal" },
-        { name: "Insurance Info", href: "#insurance" },
-        { name: "Payment Options", href: "#payment" },
-        { name: "First-Time Patients", href: "#first-time" },
-        { name: "FAQ", href: "#faq" },
-        { name: "Health Resources", href: "#resources" },
-        { name: "Contact Support", href: "#support" }
+        { name: "Book Treatment", href: "/first-time-patients" },
+        { name: "Patient Portal", href: "/#portal" },
+        { name: "Insurance Info", href: "/#insurance" },
+        { name: "Payment Options", href: "/#payment" },
+        { name: "First-Time Patients", href: "/first-time-patients" },
+        { name: "FAQ", href: "/#faq" },
+        { name: "Health Resources", href: "/#resources" },
+        { name: "Contact Support", href: "/#support" }
       ]
     },
     {
       title: "Legal & Compliance",
       links: [
-        { name: "Privacy Practices", href: "#privacy" },
-        { name: "Terms of Service", href: "#terms" },
-        { name: "HIPAA Notice", href: "#hipaa" },
-        { name: "Telehealth Consent", href: "#telehealth-consent" },
-        { name: "Patient Rights", href: "#rights" },
-        { name: "Accessibility", href: "#accessibility" },
-        { name: "State Licenses", href: "#licenses" },
-        { name: "Compliance Info", href: "#compliance" }
+        { name: "Privacy Practices", href: "/privacy" },
+        { name: "Terms of Service", href: "/#terms" },
+        { name: "HIPAA Notice", href: "/#hipaa" },
+        { name: "Telehealth Consent", href: "/#telehealth-consent" },
+        { name: "Patient Rights", href: "/#rights" },
+        { name: "Accessibility", href: "/#accessibility" },
+        { name: "State Licenses", href: "/#licenses" },
+        { name: "Compliance Info", href: "/#compliance" }
       ]
     }
   ];
@@ -79,10 +80,10 @@ const EnhancedFooter = () => {
   ];
 
   const quickActions = [
-    { name: "Book IV Therapy", href: "#book", urgent: true },
+    { name: "Book IV Therapy", href: "/first-time-patients", urgent: true },
     { name: "Emergency Line", href: "tel:+1-602-688-9825", urgent: true },
-    { name: "Telehealth Portal", href: "#telehealth" },
-    { name: "Member Login", href: "#login" }
+    { name: "Telehealth Portal", href: "/telehealth" },
+    { name: "Member Login", href: "/#login" }
   ];
 
   return (
@@ -188,12 +189,21 @@ const EnhancedFooter = () => {
               <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a 
-                      href={link.href} 
-                      className="text-sm opacity-90 hover:opacity-100 transition-opacity hover:underline"
-                    >
-                      {link.name}
-                    </a>
+                    {link.href.startsWith('/') ? (
+                      <Link 
+                        to={link.href} 
+                        className="text-sm opacity-90 hover:opacity-100 transition-opacity hover:underline"
+                      >
+                        {link.name}
+                      </Link>
+                    ) : (
+                      <a 
+                        href={link.href} 
+                        className="text-sm opacity-90 hover:opacity-100 transition-opacity hover:underline"
+                      >
+                        {link.name}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -213,7 +223,11 @@ const EnhancedFooter = () => {
                 asChild
                 className={action.urgent ? "bg-primary text-primary-foreground hover:bg-primary/90" : ""}
               >
-                <a href={action.href}>{action.name}</a>
+                {action.href.startsWith('/') ? (
+                  <Link to={action.href}>{action.name}</Link>
+                ) : (
+                  <a href={action.href}>{action.name}</a>
+                )}
               </Button>
             ))}
           </div>
@@ -245,7 +259,7 @@ const EnhancedFooter = () => {
                 className="bg-primary text-primary-foreground hover:bg-primary/90"
                 asChild
               >
-                <a href="#book">Book Now 📧</a>
+                <Link to="/first-time-patients">Book Now 📧</Link>
               </Button>
             </div>
           </div>

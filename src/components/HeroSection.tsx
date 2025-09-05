@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -23,10 +24,10 @@ const HeroSection = () => {
             {/* CTAs */}
             <div className="flex flex-wrap gap-3 mb-6">
               <Button asChild size="lg" className="px-6 py-3 rounded-full bg-black text-white hover:bg-primary transition">
-                <a href="#book">Book Mobile IV</a>
+                <Link to="/first-time-patients">Book Mobile IV</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="px-6 py-3 rounded-full border border-gray-200 hover:border-gray-300">
-                <a href="#pricing">Explore Membership</a>
+                <Link to="/#pricing">Explore Membership</Link>
               </Button>
             </div>
             

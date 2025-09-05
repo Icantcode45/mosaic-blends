@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const features = {
   consultations: [
@@ -52,7 +53,7 @@ const Card = ({
       ))}
     </ul>
     <Button asChild>
-      <a href="/book">Book Now</a>
+      <Link to="/first-time-patients">Book Now</Link>
     </Button>
   </div>
 );
@@ -68,7 +69,7 @@ const Telehealth = () => {
           </p>
           <div className="mt-6 inline-flex">
             <Button asChild size="lg">
-              <a href="/book">Schedule Consultation</a>
+              <Link to="/first-time-patients">Schedule Consultation</Link>
             </Button>
           </div>
         </div>
