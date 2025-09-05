@@ -15,6 +15,7 @@ import FirstTimePatients from "./pages/FirstTimePatients";
 import Events from "./pages/Events";
 import GiftCards from "./pages/GiftCards";
 import Privacy from "./pages/Privacy";
+import VitaminInjections from "./pages/VitaminInjections";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
                 <Route path="/first-time-patients" element={<FirstTimePatients />} />
                 <Route path="/events" element={<Events />} />
                 <Route path="/gift-cards" element={<GiftCards />} />
+                <Route path="/vitamin-injections" element={<VitaminInjections />} />
                 <Route path="/privacy" element={<Privacy />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
