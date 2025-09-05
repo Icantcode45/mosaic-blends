@@ -6,7 +6,7 @@ const EnhancedFooter = () => {
     {
       title: "Services",
       links: [
-        { name: "IV Hydration", href: "/#iv-therapy" },
+        { name: "IV Therapy", href: "/iv-therapy" },
         { name: "Energy & Wellness", href: "/#energy" },
         { name: "Immune Support", href: "/#immune" },
         { name: "Recovery Therapy", href: "/#recovery" },

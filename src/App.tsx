@@ -17,6 +17,7 @@ import GiftCards from "./pages/GiftCards";
 import Privacy from "./pages/Privacy";
 import VitaminInjections from "./pages/VitaminInjections";
 import NadPeptides from "./pages/NadPeptides";
+import IVTherapy from "./pages/IVTherapy";
 
 const queryClient = new QueryClient();
 
@@ -38,8 +39,9 @@ const App = () => (
                 <Route path="/first-time-patients" element={<FirstTimePatients />} />
                 <Route path="/events" element={<Events />} />
                 <Route path="/gift-cards" element={<GiftCards />} />
-                <Route path="/vitamin-injections" element={<VitaminInjections />} />
-                <Route path="/nad-peptides" element={<NadPeptides />} />
+          <Route path="/vitamin-injections" element={<VitaminInjections />} />
+          <Route path="/nad-peptides" element={<NadPeptides />} />
+          <Route path="/iv-therapy" element={<IVTherapy />} />
                 <Route path="/privacy" element={<Privacy />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />

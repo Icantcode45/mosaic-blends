@@ -25,8 +25,8 @@ const EnhancedHeader = () => {
     {
       category: "IV Therapy",
       items: [
-        { name: "IV Therapy Services", href: "#iv-therapy", description: "Hydration and nutrient therapy" },
-        { name: "Vitamin Injections", href: "#vitamin-injections", description: "Quick nutrient boost" }
+        { name: "IV Therapy Services", href: "/iv-therapy", description: "Hydration and nutrient therapy" },
+        { name: "Vitamin Injections", href: "/vitamin-injections", description: "Quick nutrient boost" }
       ]
     },
     {
