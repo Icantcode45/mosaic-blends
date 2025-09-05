@@ -32,8 +32,8 @@ const EnhancedHeader = () => {
     {
       category: "Advanced Treatments", 
       items: [
-        { name: "NAD+ & Peptides", href: "#nad-peptides", description: "Cellular support and recovery" },
-        { name: "Weight Management", href: "#weight-management", description: "Comprehensive weight programs" }
+        { name: "NAD+ & Peptides", href: "/nad-peptides", description: "Cellular support and recovery" },
+        { name: "Weight Management", href: "/#weight-management", description: "Comprehensive weight programs" }
       ]
     },
     {

@@ -11,7 +11,7 @@ const EnhancedFooter = () => {
         { name: "Immune Support", href: "/#immune" },
         { name: "Recovery Therapy", href: "/#recovery" },
         { name: "Beauty Treatments", href: "/#beauty" },
-        { name: "NAD+ Therapy", href: "/#nad" },
+        { name: "NAD+ Therapy", href: "/nad-peptides" },
         { name: "Vitamin Injections", href: "/vitamin-injections" },
         { name: "Weight Management", href: "/#weight" }
       ]
@@ -21,7 +21,7 @@ const EnhancedFooter = () => {
       links: [
         { name: "Sexual Wellness", href: "/#sexual-wellness" },
         { name: "Hormone Therapy", href: "/#hormones" },
-        { name: "Peptide Treatments", href: "/#peptides" },
+        { name: "Peptide Treatments", href: "/nad-peptides" },
         { name: "Telehealth Services", href: "/telehealth" },
         { name: "Mobile Testing", href: "/mobile-testing-kits" },
         { name: "Lab Services", href: "/#labs" },
