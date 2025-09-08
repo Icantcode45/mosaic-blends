@@ -1,12 +1,12 @@
 import HeroSection from "@/components/HeroSection";
 import EnhancedTrustBarSection from "@/components/EnhancedTrustBarSection";
 import EnhancedServicesSection from "@/components/EnhancedServicesSection";
+import LifestyleShowcase from "@/components/LifestyleShowcase";
 import EnhancedStatsSection from "@/components/EnhancedStatsSection";
-import TeamSection from "@/components/TeamSection";
 import TelehealthSection from "@/components/TelehealthSection";
 import SupplementsSection from "@/components/SupplementsSection";
-import EnhancedPartnersSection from "@/components/EnhancedPartnersSection";
 import EnhancedMembershipSection from "@/components/EnhancedMembershipSection";
+import EnhancedPartnersSection from "@/components/EnhancedPartnersSection";
 import FAQSection from "@/components/FAQSection";
 import NewsletterSection from "@/components/NewsletterSection";
 import EnhancedContactSection from "@/components/EnhancedContactSection";
@@ -14,38 +14,40 @@ import EnhancedContactSection from "@/components/EnhancedContactSection";
 const EnhancedIndex = () => {
   return (
     <div>
-      {/* Hero Section */}
+      {/* 1. Hero Section - Primary value proposition */}
       <HeroSection />
       
-      {/* Enhanced Trust Bar with Company Logos */}
+      {/* 2. Trust Indicators - Build immediate credibility */}
       <EnhancedTrustBarSection />
       
-      {/* Enhanced Services Section with Comprehensive Programs */}
+      {/* 3. Services Overview - Show what we offer */}
       <EnhancedServicesSection />
       
-      {/* Enhanced Stats Section with Multiple Metrics */}
+      {/* 4. Lifestyle Experience - Show the premium mobile experience */}
+      <LifestyleShowcase />
+      
+      {/* 5. Results & Stats - Prove effectiveness with data */}
       <EnhancedStatsSection />
       
-      
-      {/* Telehealth Section */}
+      {/* 6. Telehealth Services - Additional service offering */}
       <TelehealthSection />
       
-      {/* Supplements Section */}
+      {/* 7. Supplements - Complementary products */}
       <SupplementsSection />
       
-      {/* Enhanced Partners Section with Logos and Certifications */}
-      <EnhancedPartnersSection />
-      
-      {/* Enhanced Membership Section with Detailed Pricing */}
+      {/* 8. Membership Plans - Convert visitors with pricing */}
       <EnhancedMembershipSection />
       
-      {/* FAQ Section */}
+      {/* 9. Partners & Certifications - Additional credibility */}
+      <EnhancedPartnersSection />
+      
+      {/* 10. FAQ - Address common concerns */}
       <FAQSection />
       
-      {/* Newsletter Section */}
+      {/* 11. Newsletter - Capture leads */}
       <NewsletterSection />
       
-      {/* Enhanced Contact Section with Business Hours */}
+      {/* 12. Contact - Make it easy to get in touch */}
       <EnhancedContactSection />
     </div>
   );
