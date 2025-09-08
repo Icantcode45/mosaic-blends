@@ -6,6 +6,7 @@ import TelehealthSection from "@/components/TelehealthSection";
 import SupplementsSection from "@/components/SupplementsSection";
 import PartnersSection from "@/components/PartnersSection";
 import MembershipSection from "@/components/MembershipSection";
+import GoogleReviewsSection from "@/components/GoogleReviewsSection";
 import FAQSection from "@/components/FAQSection";
 import NewsletterSection from "@/components/NewsletterSection";
 import ContactSection from "@/components/ContactSection";
@@ -20,6 +21,7 @@ const Index = () => {
       <TelehealthSection />
       <SupplementsSection />
       <MembershipSection />
+      <GoogleReviewsSection />
       <FAQSection />
       <NewsletterSection />
       <ContactSection />
