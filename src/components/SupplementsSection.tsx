@@ -34,7 +34,7 @@ const SupplementsSection = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-end justify-between mb-10">
           <h2 className="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-foreground">
-            Physician‑trusted supplements
+            Premium Supplements
           </h2>
           <button 
             onClick={openCart}
