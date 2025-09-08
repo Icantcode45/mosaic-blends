@@ -8,9 +8,9 @@ const BBBAccreditation = () => {
           </h2>
           <div className="mt-6 flex justify-center">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F337c720945064b44af05129952e6433b%2Fe5eb19e7d19b49f9a483cf13884a13cc?format=webp&width=800"
+              src="/lovable-uploads/74e642ad-6285-46d4-97a2-54c66465e576.png"
               alt="BBB Accredited Business badge"
-              className="h-24 w-auto rounded-md shadow-elev-1 border border-gray-100"
+              className="h-32 w-auto rounded-md shadow-elev-1 border border-gray-100"
               loading="lazy"
             />
           </div>

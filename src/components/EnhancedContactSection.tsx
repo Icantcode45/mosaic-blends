@@ -192,6 +192,14 @@ const EnhancedContactSection = () => {
               <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                 <span>📍</span> Service Areas
               </h3>
+              <div className="mb-4">
+                <img
+                  src="/lovable-uploads/87caaf08-61ac-438e-9d68-0f01c9f5adbf.png"
+                  alt="Service area map covering Phoenix, Scottsdale, and surrounding areas"
+                  className="w-full h-48 object-cover rounded-lg border border-gray-200"
+                  loading="lazy"
+                />
+              </div>
               <div className="space-y-4">
                 {serviceAreas.map((location, index) => (
                   <div key={index}>
