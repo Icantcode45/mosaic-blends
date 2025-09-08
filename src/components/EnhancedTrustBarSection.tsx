@@ -11,7 +11,7 @@ const EnhancedTrustBarSection = () => {
   ];
 
   const trustIndicators = [
-    { icon: "⭐", text: "4.9/5 Patient Rating" },
+    { icon: "⭐", text: "5.0/5 Patient Rating" },
     { icon: "🏥", text: "Licensed Medical Professionals" },
     { icon: "🔒", text: "HIPAA Compliant" },
     { icon: "📱", text: "Same-Day Availability" },

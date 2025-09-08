@@ -3,6 +3,7 @@ import EnhancedTrustBarSection from "@/components/EnhancedTrustBarSection";
 import EnhancedServicesSection from "@/components/EnhancedServicesSection";
 import LifestyleShowcase from "@/components/LifestyleShowcase";
 import EnhancedStatsSection from "@/components/EnhancedStatsSection";
+import GoogleReviewsSection from "@/components/GoogleReviewsSection";
 import TelehealthSection from "@/components/TelehealthSection";
 import SupplementsSection from "@/components/SupplementsSection";
 import EnhancedMembershipSection from "@/components/EnhancedMembershipSection";
@@ -29,25 +30,28 @@ const EnhancedIndex = () => {
       {/* 5. Results & Stats - Prove effectiveness with data */}
       <EnhancedStatsSection />
       
-      {/* 6. Telehealth Services - Additional service offering */}
+      {/* 6. Client Reviews - Showcase perfect 5.0 rating */}
+      <GoogleReviewsSection />
+      
+      {/* 7. Telehealth Services - Additional service offering */}
       <TelehealthSection />
       
-      {/* 7. Supplements - Complementary products */}
+      {/* 8. Supplements - Complementary products */}
       <SupplementsSection />
       
-      {/* 8. Membership Plans - Convert visitors with pricing */}
+      {/* 9. Membership Plans - Convert visitors with pricing */}
       <EnhancedMembershipSection />
       
-      {/* 9. Partners & Certifications - Additional credibility */}
+      {/* 10. Partners & Certifications - Additional credibility */}
       <EnhancedPartnersSection />
       
-      {/* 10. FAQ - Address common concerns */}
+      {/* 11. FAQ - Address common concerns */}
       <FAQSection />
       
-      {/* 11. Newsletter - Capture leads */}
+      {/* 12. Newsletter - Capture leads */}
       <NewsletterSection />
       
-      {/* 12. Contact - Make it easy to get in touch */}
+      {/* 13. Contact - Make it easy to get in touch */}
       <EnhancedContactSection />
     </div>
   );
