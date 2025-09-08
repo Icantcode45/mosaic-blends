@@ -31,15 +31,6 @@ const HeroSection = () => {
               </Button>
             </div>
             
-            {/* Trust indicators */}
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span className="inline-flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-500"></span> 
-                Board-certified providers
-              </span>
-              <span className="hidden sm:inline">•</span>
-              <span className="inline-flex items-center gap-2">HIPAA secure</span>
-            </div>
           </div>
 
           {/* Right Column - Visual */}
@@ -53,34 +44,6 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
             
-            {/* Floating cards */}
-            <div className="absolute -bottom-6 -left-6 max-w-xs">
-              <div className="bg-white rounded-2xl p-4 shadow-elev-2 border border-gray-100">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <span className="text-green-600 text-lg">✓</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-sm text-foreground">Same-day availability</div>
-                    <div className="text-xs text-muted-foreground">Book now, feel better today</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="absolute -top-6 -right-6 max-w-xs">
-              <div className="bg-white rounded-2xl p-4 shadow-elev-2 border border-gray-100">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-primary text-lg">⭐</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-sm text-foreground">4.9 from patients</div>
-                    <div className="text-xs text-muted-foreground">Trusted by thousands</div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

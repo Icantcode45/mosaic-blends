@@ -218,30 +218,6 @@ const EnhancedServicesSection = () => {
           ))}
         </div>
 
-        {/* Service Features */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <div className="text-center p-6">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🏠</span>
-            </div>
-            <h3 className="font-semibold text-lg mb-2">Mobile Services</h3>
-            <p className="text-muted-foreground text-sm">We come to you - home, office, or hotel across the Phoenix metro</p>
-          </div>
-          <div className="text-center p-6">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">👩‍⚕️</span>
-            </div>
-            <h3 className="font-semibold text-lg mb-2">Licensed Professionals</h3>
-            <p className="text-muted-foreground text-sm">All treatments administered by licensed RNs and supervised by MDs</p>
-          </div>
-          <div className="text-center p-6">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🕐</span>
-            </div>
-            <h3 className="font-semibold text-lg mb-2">Same-Day Available</h3>
-            <p className="text-muted-foreground text-sm">Book morning for afternoon appointments, 7 days a week</p>
-          </div>
-        </div>
 
         {/* CTA Section */}
         <div className="text-center bg-white rounded-3xl p-8 shadow-lg">

@@ -1,11 +1,11 @@
 import HeroSection from "@/components/HeroSection";
-import EnhancedTrustBarSection from "@/components/EnhancedTrustBarSection";
+
 import EnhancedServicesSection from "@/components/EnhancedServicesSection";
 import LifestyleShowcase from "@/components/LifestyleShowcase";
 import EnhancedStatsSection from "@/components/EnhancedStatsSection";
 import GoogleReviewsSection from "@/components/GoogleReviewsSection";
 import TelehealthSection from "@/components/TelehealthSection";
-import SupplementsSection from "@/components/SupplementsSection";
+
 import EnhancedMembershipSection from "@/components/EnhancedMembershipSection";
 import EnhancedPartnersSection from "@/components/EnhancedPartnersSection";
 import FAQSection from "@/components/FAQSection";
@@ -18,8 +18,6 @@ const EnhancedIndex = () => {
       {/* 1. Hero Section - Primary value proposition */}
       <HeroSection />
       
-      {/* 2. Trust Indicators - Build immediate credibility */}
-      <EnhancedTrustBarSection />
       
       {/* 3. Services Overview - Show what we offer */}
       <EnhancedServicesSection />
@@ -36,8 +34,6 @@ const EnhancedIndex = () => {
       {/* 7. Telehealth Services - Additional service offering */}
       <TelehealthSection />
       
-      {/* 8. Supplements - Complementary products */}
-      <SupplementsSection />
       
       {/* 9. Membership Plans - Convert visitors with pricing */}
       <EnhancedMembershipSection />
