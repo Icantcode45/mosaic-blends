@@ -3,13 +3,7 @@ import { Badge } from "@/components/ui/badge";
 const EnhancedPartnersSection = () => {
   const partners = [
     { name: "AUGMENT", category: "Technology Partner", description: "Advanced IV monitoring systems" },
-    { name: "CuraTurf", category: "Sports Medicine", description: "Professional athlete recovery" },
-    { name: "Phoenix Suns", category: "Sports Partnership", description: "Official wellness provider" },
-    { name: "Scottsdale Healthcare", category: "Medical Partner", description: "Clinical oversight and support" },
-    { name: "Arizona Coyotes", category: "Sports Partnership", description: "Team recovery protocols" },
-    { name: "Mayo Clinic", category: "Research Partner", description: "Evidence-based protocols" },
-    { name: "Banner Health", category: "Healthcare Network", description: "Referral partnerships" },
-    { name: "TGen", category: "Research Institute", description: "Genomic wellness research" }
+    { name: "CuraTurf", category: "Sports Medicine", description: "Professional athlete recovery" }
   ];
 
   const certifications = [

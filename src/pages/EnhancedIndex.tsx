@@ -26,8 +26,6 @@ const EnhancedIndex = () => {
       {/* Enhanced Stats Section with Multiple Metrics */}
       <EnhancedStatsSection />
       
-      {/* Team Section with Carousel */}
-      <TeamSection />
       
       {/* Telehealth Section */}
       <TelehealthSection />

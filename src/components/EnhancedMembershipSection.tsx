@@ -238,19 +238,6 @@ const EnhancedMembershipSection = () => {
             ))}
           </div>
 
-          {/* Additional Benefits */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-center mb-12">All Members Enjoy</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {additionalBenefits.map((benefit, index) => (
-                <div key={index} className="text-center p-6">
-                  <div className="text-4xl mb-4">{benefit.icon}</div>
-                  <h4 className="font-semibold text-lg mb-2">{benefit.title}</h4>
-                  <p className="text-sm text-muted-foreground">{benefit.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
 
           {/* FAQ */}
           <div className="bg-muted/30 rounded-3xl p-8">
