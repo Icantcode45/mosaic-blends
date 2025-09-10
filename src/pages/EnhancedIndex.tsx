@@ -1,6 +1,5 @@
 import HeroSection from "@/components/HeroSection";
 
-import EnhancedServicesSection from "@/components/EnhancedServicesSection";
 import LifestyleShowcase from "@/components/LifestyleShowcase";
 import EnhancedStatsSection from "@/components/EnhancedStatsSection";
 import GoogleReviewsSection from "@/components/GoogleReviewsSection";
@@ -18,36 +17,32 @@ const EnhancedIndex = () => {
       {/* 1. Hero Section - Primary value proposition */}
       <HeroSection />
       
-      
-      {/* 3. Services Overview - Show what we offer */}
-      <EnhancedServicesSection />
-      
-      {/* 4. Lifestyle Experience - Show the premium mobile experience */}
+      {/* 2. Lifestyle Experience - Show the premium mobile experience */}
       <LifestyleShowcase />
       
-      {/* 5. Results & Stats - Prove effectiveness with data */}
+      {/* 3. Results & Stats - Prove effectiveness with data */}
       <EnhancedStatsSection />
       
-      {/* 6. Client Reviews - Showcase perfect 5.0 rating */}
+      {/* 4. Client Reviews - Showcase perfect 5.0 rating */}
       <GoogleReviewsSection />
       
-      {/* 7. Telehealth Services - Additional service offering */}
+      {/* 5. Telehealth Services - Additional service offering */}
       <TelehealthSection />
       
       
-      {/* 9. Membership Plans - Convert visitors with pricing */}
+      {/* 6. Membership Plans - Convert visitors with pricing */}
       <EnhancedMembershipSection />
       
-      {/* 10. Partners & Certifications - Additional credibility */}
+      {/* 7. Partners & Certifications - Additional credibility */}
       <EnhancedPartnersSection />
       
-      {/* 11. FAQ - Address common concerns */}
+      {/* 8. FAQ - Address common concerns */}
       <FAQSection />
       
-      {/* 12. Newsletter - Capture leads */}
+      {/* 9. Newsletter - Capture leads */}
       <NewsletterSection />
       
-      {/* 13. Contact - Make it easy to get in touch */}
+      {/* 10. Contact - Make it easy to get in touch */}
       <EnhancedContactSection />
     </div>
   );
