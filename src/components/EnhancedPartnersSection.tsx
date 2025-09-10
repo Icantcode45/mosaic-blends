@@ -2,8 +2,14 @@ import { Badge } from "@/components/ui/badge";
 
 const EnhancedPartnersSection = () => {
   const partners = [
-    { name: "AUGMENT", category: "Technology Partner", description: "Advanced IV monitoring systems" },
-    { name: "CuraTurf", category: "Sports Medicine", description: "Professional athlete recovery" }
+    { name: "Arizona State Athletics", category: "Sports Partnership", description: "Official IV therapy partner for ASU athletics" },
+    { name: "Fight Ready MMA", category: "Combat Sports", description: "Recovery partner for professional fighters" },
+    { name: "Queen Creek High School Athletics", category: "High School Sports", description: "Supporting student athlete recovery" },
+    { name: "Arizona Combat Sports", category: "MMA & BJJ", description: "Performance and recovery optimization" },
+    { name: "Social Scottsdale", category: "Entertainment Venue", description: "Wellness partnership in Scottsdale" },
+    { name: "Steve Levine Entertainment", category: "Event Production", description: "Event wellness and recovery services" },
+    { name: "NelkBoys & Fullsend Golf", category: "Content & Golf", description: "Lifestyle and wellness collaboration" },
+    { name: "Augment Health & Wellness", category: "Health & Wellness", description: "Comprehensive wellness partnership" }
   ];
 
   const certifications = [
