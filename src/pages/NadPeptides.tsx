@@ -409,13 +409,13 @@ const NadPeptides = () => {
             </div>
             
             <div className="p-6">
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+                <p className="text-red-800 text-sm font-semibold">⚠️ FDA DISCLAIMER: These statements have not been evaluated by the FDA. These compounds are not intended to diagnose, treat, cure, or prevent any disease. For research and educational purposes only.</p>
+              </div>
+              
+              <div className="grid md:grid-cols-1 gap-6 mb-6">
                 <div className="bg-muted p-4 rounded-lg text-center">
-                  <h4 className="text-primary font-semibold mb-2">Price</h4>
-                  <p className="text-2xl font-bold text-foreground">{selectedPeptide.price}</p>
-                </div>
-                <div className="bg-muted p-4 rounded-lg text-center">
-                  <h4 className="text-primary font-semibold mb-2">Duration</h4>
+                  <h4 className="text-primary font-semibold mb-2">Research Duration</h4>
                   <p className="text-lg font-semibold text-foreground">{selectedPeptide.duration}</p>
                 </div>
               </div>
@@ -431,27 +431,24 @@ const NadPeptides = () => {
                   <p className="text-muted-foreground leading-relaxed">{selectedPeptide.howItWorks}</p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-1 gap-4">
                   <div>
-                    <h5 className="font-semibold text-primary mb-1">Dosage</h5>
-                    <p className="text-sm text-muted-foreground">{selectedPeptide.dosage}</p>
-                  </div>
-                  <div>
-                    <h5 className="font-semibold text-primary mb-1">Administration</h5>
+                    <h5 className="font-semibold text-primary mb-1">Research Administration Method</h5>
                     <p className="text-sm text-muted-foreground">{selectedPeptide.administration}</p>
                   </div>
                 </div>
 
                 <div>
-                  <h4 className="text-lg font-semibold text-foreground mb-3">Key Benefits</h4>
+                  <h4 className="text-lg font-semibold text-foreground mb-3">Research Applications*</h4>
                   <div className="grid md:grid-cols-2 gap-2">
                     {selectedPeptide.benefits.map((benefit, index) => (
                       <div key={index} className="flex items-center gap-2">
-                        <span className="text-secondary font-bold">✓</span>
+                        <span className="text-secondary font-bold">•</span>
                         <span className="text-muted-foreground text-sm">{benefit}</span>
                       </div>
                     ))}
                   </div>
+                  <p className="text-xs text-red-600 mt-2">*Research purposes only - not intended for treatment claims</p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-4 p-4 bg-muted rounded-lg">
@@ -496,7 +493,7 @@ const NadPeptides = () => {
               What Our Clients Say
             </h2>
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-              Read authentic reviews from real clients who have experienced our NAD+ and peptide therapies.
+              Read authentic reviews from participants in our NAD+ and peptide research programs and educational consultations.
             </p>
           </div>
 
@@ -517,7 +514,7 @@ const NadPeptides = () => {
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                The NAD+ therapy has been life-changing! I've noticed incredible improvements in my energy levels and mental clarity. The team at Stay Dripped is professional and knowledgeable. Highly recommend!
+                I participated in the NAD+ research program and found the educational experience valuable. The team at Stay Dripped is professional and knowledgeable about cellular research compounds. Great learning opportunity!
               </p>
             </div>
 
@@ -537,7 +534,7 @@ const NadPeptides = () => {
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                BPC-157 helped me recover from a sports injury faster than I ever expected. The peptide therapy combined with their expertise made all the difference in my recovery journey.
+                I participated in the BPC-157 research study and gained valuable knowledge about peptide compounds. The research program was well-structured and educational. Appreciate the scientific approach to wellness research.
               </p>
             </div>
 
@@ -557,7 +554,7 @@ const NadPeptides = () => {
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                Exceptional service and results! The convenience of mobile therapy is unmatched, and the medical team is top-notch. My sleep and recovery have improved dramatically.
+                Exceptional educational experience! The convenience of mobile research consultations is unmatched, and the medical team is top-notch. The research program provided valuable insights into wellness compounds.
               </p>
             </div>
           </div>
@@ -606,10 +603,10 @@ const NadPeptides = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="mb-6 text-4xl font-bold text-foreground sm:text-5xl">
-              Book Your NAD+ & Peptide Therapy
+              Schedule Your Research Consultation
             </h2>
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-              Schedule your advanced anti-aging and cellular repair treatments online. Choose from our comprehensive menu of NAD+ IV therapy and peptide treatments.
+              Schedule your consultation to learn about NAD+ and peptide research compounds. Educational consultations only - not for treatment purposes. Healthcare provider supervision required.
             </p>
           </div>
 
@@ -642,11 +639,11 @@ const NadPeptides = () => {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl rounded-3xl bg-gradient-to-r from-primary/10 to-secondary/10 p-12 text-center">
             <h3 className="mb-6 text-3xl font-bold text-foreground">
-              Ready to Optimize Your Health?
+              Ready to Learn About Wellness Research?
             </h3>
             <p className="mb-8 text-lg text-muted-foreground">
-              Schedule a consultation with our medical team to create a personalized NAD+ and peptide therapy plan 
-              that fits your wellness goals and lifestyle.
+              Schedule a consultation with our medical team to learn about NAD+ and peptide research compounds 
+              and their applications in wellness research. Educational purposes only.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <Button 
