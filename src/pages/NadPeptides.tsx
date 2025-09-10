@@ -279,26 +279,6 @@ const NadPeptides = () => {
 
   const benefitsInfo = [
     {
-      icon: "🧬",
-      title: "Cellular Research",
-      description: "NAD+ compounds are studied for their potential role in cellular function and mitochondrial research for educational purposes.*"
-    },
-    {
-      icon: "🧠", 
-      title: "Cognitive Studies",
-      description: "Research explores potential cognitive applications through cellular energy pathways in scientific literature.*"
-    },
-    {
-      icon: "⚡",
-      title: "Energy Research",
-      description: "Scientific studies investigate cellular energy processes and fatigue research using NAD+ and peptide compounds.*"
-    },
-    {
-      icon: "🔬",
-      title: "Scientific Approach",
-      description: "Research-based compounds provided by licensed medical professionals following established safety protocols and guidelines.*"
-    },
-    {
       icon: "🩺",
       title: "Medical Supervision",
       description: "All peptide research protocols require healthcare provider consultation and ongoing medical supervision for safety.*"
