@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { Phone, Mail, MessageCircle, Smartphone, MapPin, Building2, CheckCircle, Shield, Award, Users2 } from "lucide-react";
 
 const EnhancedPartnersSection = () => {
   const partners = [
@@ -13,12 +14,12 @@ const EnhancedPartnersSection = () => {
   ];
 
   const certifications = [
-    { name: "FDA Registered", icon: "🏛️", description: "FDA registered facility" },
-    { name: "DEA Licensed", icon: "🔐", description: "DEA controlled substance license" },
-    { name: "State Licensed", icon: "📋", description: "Arizona state medical license" },
-    { name: "HIPAA Compliant", icon: "🔒", description: "Privacy protection certified" },
-    { name: "Joint Commission", icon: "⭐", description: "Quality and safety accredited" },
-    { name: "BBB Accredited", icon: "🅱️", description: "Better Business Bureau member" }
+    { name: "FDA Registered", icon: Building2, description: "FDA registered facility" },
+    { name: "DEA Licensed", icon: Shield, description: "DEA controlled substance license" },
+    { name: "State Licensed", icon: CheckCircle, description: "Arizona state medical license" },
+    { name: "HIPAA Compliant", icon: Shield, description: "Privacy protection certified" },
+    { name: "Joint Commission", icon: Award, description: "Quality and safety accredited" },
+    { name: "BBB Accredited", icon: Users2, description: "Better Business Bureau member" }
   ];
 
   return (
@@ -84,7 +85,7 @@ const EnhancedPartnersSection = () => {
                 className="group bg-background rounded-xl p-6 text-center hover:shadow-elev-2 transition-all duration-300"
               >
                 <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">
-                  {cert.icon}
+                  <cert.icon className="w-8 h-8 text-primary" />
                 </div>
                 <div className="font-semibold text-sm mb-2 text-foreground group-hover:text-primary transition-colors">
                   {cert.name}
@@ -108,7 +109,7 @@ const EnhancedPartnersSection = () => {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center p-4">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">👨‍⚕️</span>
+                  <Users2 className="w-8 h-8 text-primary" />
                 </div>
                 <h4 className="font-semibold text-lg mb-2">Dr. Michael Thompson, MD</h4>
                 <p className="text-sm text-muted-foreground mb-1">Emergency Medicine</p>
@@ -117,7 +118,7 @@ const EnhancedPartnersSection = () => {
               
               <div className="text-center p-4">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">👩‍⚕️</span>
+                  <Users2 className="w-8 h-8 text-primary" />
                 </div>
                 <h4 className="font-semibold text-lg mb-2">Dr. Sarah Rodriguez, MD</h4>
                 <p className="text-sm text-muted-foreground mb-1">Internal Medicine</p>
@@ -126,7 +127,7 @@ const EnhancedPartnersSection = () => {
               
               <div className="text-center p-4">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">👨‍⚕️</span>
+                  <Users2 className="w-8 h-8 text-primary" />
                 </div>
                 <h4 className="font-semibold text-lg mb-2">Dr. James Wilson, PharmD</h4>
                 <p className="text-sm text-muted-foreground mb-1">Clinical Pharmacy</p>

@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import CartDrawer from "./CartDrawer";
+import SearchSystem from "./SearchSystem";
+import { ChevronDown, Menu, Search, Phone, Calendar } from "lucide-react";
 
 const EnhancedHeader = () => {
   const [open, setOpen] = useState(false);
@@ -9,6 +11,7 @@ const EnhancedHeader = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const navItems = [
     { name: 'Home', href: '#hero' },
@@ -108,21 +111,18 @@ const EnhancedHeader = () => {
             
             <div className="flex items-center gap-4">
               <div className="relative">
-                <div className="flex items-center bg-white border border-gray-300 rounded-lg px-3 py-1">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-400">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.35-4.35"></path>
-                  </svg>
-                  <input 
-                    type="text" 
-                    placeholder="Search services..." 
-                    id="topbar-search"
-                    className="ml-2 bg-transparent border-none outline-none text-sm w-32"
-                  />
-                  <kbd className="hidden sm:inline-flex items-center gap-1 rounded border bg-gray-100 px-1.5 py-0.5 text-xs text-gray-500">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setSearchOpen(true)}
+                  className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors"
+                >
+                  <Search className="h-4 w-4" />
+                  <span className="hidden sm:inline">Search</span>
+                  <kbd className="hidden lg:inline-flex items-center gap-1 rounded border bg-gray-100 px-1.5 py-0.5 text-xs text-gray-500">
                     ⌘K
                   </kbd>
-                </div>
+                </Button>
               </div>
               
               <div className="flex items-center gap-3">
@@ -432,6 +432,13 @@ const EnhancedHeader = () => {
           )}
         </div>
       </header>
+
+      {/* Search System */}
+      <SearchSystem 
+        isOpen={searchOpen}
+        onOpen={() => setSearchOpen(true)}
+        onClose={() => setSearchOpen(false)}
+      />
     </>
   );
 };

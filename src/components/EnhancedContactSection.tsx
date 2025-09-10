@@ -3,32 +3,33 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Phone, Mail, MessageCircle, Smartphone, Clock, MapPin, CreditCard, Building2, Shield, AlertTriangle } from "lucide-react";
 
 const EnhancedContactSection = () => {
   const contactMethods = [
     {
-      icon: "📞",
+      icon: Phone,
       title: "Call Us",
       primary: "(602) 688-9825",
       secondary: "24/7 Emergency Line",
       description: "Speak directly with our medical team"
     },
     {
-      icon: "✉️", 
+      icon: Mail, 
       title: "Email Us",
       primary: "info@staydrippediv.com",
       secondary: "Response within 2 hours",
       description: "General inquiries and scheduling"
     },
     {
-      icon: "💬",
+      icon: MessageCircle,
       title: "Live Chat",
       primary: "Available Now",
       secondary: "Average response: 30 seconds",
       description: "Instant support via our website"
     },
     {
-      icon: "📱",
+      icon: Smartphone,
       title: "Text Us",
       primary: "(602) 688-9825",
       secondary: "SMS available 7am-9pm",
@@ -73,8 +74,10 @@ const EnhancedContactSection = () => {
         {/* Contact Methods Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {contactMethods.map((method, index) => (
-            <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="text-4xl mb-4">{method.icon}</div>
+            <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow animate-fade-in">
+              <div className="mb-4">
+                <method.icon className="w-12 h-12 mx-auto text-primary" />
+              </div>
               <h3 className="font-semibold text-lg mb-2">{method.title}</h3>
               <div className="text-primary font-medium mb-1">{method.primary}</div>
               <div className="text-sm text-success mb-2">{method.secondary}</div>
@@ -164,9 +167,10 @@ const EnhancedContactSection = () => {
             
             {/* Business Hours */}
             <Card className="p-6">
-              <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                <span>🕐</span> Business Hours
-              </h3>
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <Clock className="w-5 h-5 text-primary" />
+              Business Hours
+            </h3>
               <div className="space-y-3">
                 {businessHours.map((schedule, index) => (
                   <div key={index} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
@@ -190,7 +194,8 @@ const EnhancedContactSection = () => {
             {/* Service Areas */}
             <Card className="p-6">
               <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                <span>📍</span> Service Areas
+                <MapPin className="w-5 h-5 text-primary" />
+                Service Areas
               </h3>
               <div className="mb-4">
                 <iframe
