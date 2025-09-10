@@ -17,6 +17,7 @@ const NadPeptides = () => {
   const [showAgeVerification, setShowAgeVerification] = useState(false);
   const [isAgeVerified, setIsAgeVerified] = useState(false);
   const [showPaymentCompliance, setShowPaymentCompliance] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
   const { toast } = useToast();
 
   useEffect(() => {
@@ -34,8 +35,8 @@ const NadPeptides = () => {
   const peptideDatabase = {
     'nad+ iv therapy': {
       name: 'NAD+ IV Support',
-      category: 'Wellness & Longevity',
-      duration: 'Extended session',
+      category: 'Cellular Wellness',
+      duration: 'Extended session (2-4 hours)',
       administration: 'Intravenous administration',
       benefits: [
         'May support cellular energy pathways*',
@@ -43,18 +44,21 @@ const NadPeptides = () => {
         'Sleep quality studies ongoing*',
         'Studied for wellness applications*',
         'Research in aging science*',
-        'Cellular function research*'
+        'Cellular function research*',
+        'Mitochondrial health studies*',
+        'Cognitive function research*'
       ],
-      description: 'NAD+ IV administration delivers nicotinamide adenine dinucleotide for research purposes. Individual results may vary.',
-      howItWorks: 'Research suggests potential support for cellular NAD+ levels and mitochondrial pathways.*',
-      idealFor: 'Adults interested in wellness research and cellular health education.',
+      description: 'NAD+ IV administration delivers nicotinamide adenine dinucleotide directly into the bloodstream for research purposes. Individual results may vary.',
+      howItWorks: 'Research suggests NAD+ may support cellular NAD+ levels and mitochondrial pathways through direct bioavailability.*',
+      idealFor: 'Adults interested in cellular wellness research and energy optimization studies.',
       frequency: 'Consultation with healthcare provider required for individual protocols',
-      sideEffects: 'Consult healthcare provider. Possible mild discomfort during administration.'
+      sideEffects: 'Consult healthcare provider. Possible mild discomfort during administration, flushing, or nausea.',
+      researchStatus: 'Active research in longevity and cellular health applications'
     },
     'bpc-157': {
       name: 'BPC-157 Peptide',
-      category: 'Research & Wellness',
-      duration: 'Brief administration',
+      category: 'Research & Recovery',
+      duration: 'Brief administration (5-10 minutes)',
       administration: 'Subcutaneous administration',
       benefits: [
         'Research compound of interest*',
@@ -62,18 +66,21 @@ const NadPeptides = () => {
         'Digestive wellness research*',
         'Tissue health studies*',
         'Joint wellness research*',
-        'Ongoing scientific studies*'
+        'Ongoing scientific studies*',
+        'Inflammatory response research*',
+        'Vascular health studies*'
       ],
-      description: 'BPC-157 is a research peptide compound derived from gastric proteins. Research purposes only.*',
-      howItWorks: 'Research suggests potential interactions with cellular growth factors and healing pathways.*',
-      idealFor: 'Adults interested in peptide research and wellness education.',
+      description: 'BPC-157 is a pentadecapeptide research compound derived from gastric protective proteins. Research purposes only.*',
+      howItWorks: 'Research suggests potential interactions with cellular growth factors and healing pathways through VEGF and nitric oxide mechanisms.*',
+      idealFor: 'Adults interested in peptide research and tissue wellness education.',
       frequency: 'Healthcare provider consultation required for research protocols',
-      sideEffects: 'Research compound - consult healthcare provider before use.'
+      sideEffects: 'Research compound - consult healthcare provider before use. Generally well-tolerated in studies.',
+      researchStatus: 'Extensive preclinical research, human studies emerging'
     },
     'tb-500': {
-      name: 'TB-500 Peptide',
-      category: 'Research & Wellness',
-      duration: 'Brief administration',
+      name: 'TB-500 (Thymosin Beta-4)',
+      category: 'Research & Recovery',
+      duration: 'Brief administration (5-10 minutes)',
       administration: 'Subcutaneous administration',
       benefits: [
         'Research in cellular mobility*',
@@ -81,18 +88,21 @@ const NadPeptides = () => {
         'Recovery research ongoing*',
         'Cellular process studies*',
         'Endurance research*',
-        'Cardiovascular wellness studies*'
+        'Cardiovascular wellness studies*',
+        'Hair growth research*',
+        'Wound healing studies*'
       ],
-      description: 'TB-500 is a research peptide that mimics natural thymosin beta-4. For research and education purposes.*',
-      howItWorks: 'Research suggests potential support for cellular migration and tissue wellness pathways.*',
-      idealFor: 'Adults interested in cellular health research and wellness education.',
+      description: 'TB-500 is a research peptide that mimics natural thymosin beta-4, studied for cellular migration properties. For research and education purposes.*',
+      howItWorks: 'Research suggests potential support for cellular migration and tissue wellness pathways through actin regulation.*',
+      idealFor: 'Adults interested in cellular health research and recovery optimization education.',
       frequency: 'Healthcare provider consultation required for research applications',
-      sideEffects: 'Research compound - healthcare provider consultation recommended.'
+      sideEffects: 'Research compound - healthcare provider consultation recommended. Studies show good tolerance.',
+      researchStatus: 'Ongoing research in tissue repair and regenerative medicine'
     },
     'cjc-1295': {
       name: 'CJC-1295 Peptide',
       category: 'Hormone Research',
-      duration: 'Brief administration',
+      duration: 'Brief administration (5-10 minutes)',
       administration: 'Subcutaneous administration',
       benefits: [
         'Growth hormone pathway research*',
@@ -100,18 +110,21 @@ const NadPeptides = () => {
         'Recovery research ongoing*',
         'Sleep quality studies*',
         'Body composition research*',
-        'Aging science studies*'
+        'Aging science studies*',
+        'Protein synthesis research*',
+        'Bone density studies*'
       ],
-      description: 'CJC-1295 is studied for its potential interaction with natural growth hormone pathways. Research purposes.*',
-      howItWorks: 'Research suggests potential interaction with pituitary hormone release patterns.*',
+      description: 'CJC-1295 is a research peptide studied for its potential interaction with natural growth hormone releasing pathways. Research purposes.*',
+      howItWorks: 'Research suggests potential interaction with pituitary GHRH receptors for extended hormone release patterns.*',
       idealFor: 'Adults interested in hormone research and wellness optimization studies.',
       frequency: 'Healthcare provider consultation required for research protocols',
-      sideEffects: 'Research compound - possible water retention, consult healthcare provider.'
+      sideEffects: 'Research compound - possible water retention, injection site reactions, consult healthcare provider.',
+      researchStatus: 'Clinical studies ongoing for growth hormone optimization'
     },
     'ipamorelin': {
       name: 'Ipamorelin Peptide',
       category: 'Hormone Research',
-      duration: 'Brief administration',
+      duration: 'Brief administration (5-10 minutes)',
       administration: 'Subcutaneous administration',
       benefits: [
         'Selective research applications*',
@@ -119,18 +132,21 @@ const NadPeptides = () => {
         'Recovery research*',
         'Sleep wellness studies*',
         'Body composition research*',
-        'Wellness optimization studies*'
+        'Wellness optimization studies*',
+        'Selective growth hormone research*',
+        'Appetite regulation studies*'
       ],
-      description: 'Ipamorelin is a research peptide studied for selective hormone pathway interactions. Research and education only.*',
-      howItWorks: 'Research suggests selective interaction with growth hormone secretagogue receptors.*',
+      description: 'Ipamorelin is a research peptide studied for selective hormone pathway interactions with minimal side effects. Research and education only.*',
+      howItWorks: 'Research suggests selective interaction with growth hormone secretagogue receptors without affecting cortisol or prolactin.*',
       idealFor: 'Adults seeking education on peptide research with minimal study variables.',
       frequency: 'Healthcare provider consultation required - often studied with other compounds',
-      sideEffects: 'Research indicates good tolerability profile - consult healthcare provider.'
+      sideEffects: 'Research indicates excellent tolerability profile - consult healthcare provider.',
+      researchStatus: 'Preferred research compound due to selectivity profile'
     },
     'sermorelin': {
-      name: 'Sermorelin Peptide',
+      name: 'Sermorelin Acetate',
       category: 'Hormone Research',
-      duration: 'Brief administration',
+      duration: 'Brief administration (5-10 minutes)',
       administration: 'Subcutaneous administration',
       benefits: [
         'Natural hormone pathway research*',
@@ -138,13 +154,126 @@ const NadPeptides = () => {
         'Recovery research*',
         'Body composition studies*',
         'Energy wellness research*',
-        'Longevity science studies*'
+        'Longevity science studies*',
+        'Natural GHRH analog research*',
+        'Circadian rhythm studies*'
       ],
-      description: 'Sermorelin is a research analog studied for natural hormone pathway support. Educational and research purposes.*',
-      howItWorks: 'Research suggests potential mimicking of natural GHRH for physiological study patterns.*',
+      description: 'Sermorelin is an FDA-approved research analog studied for natural hormone pathway support. Educational and research purposes.*',
+      howItWorks: 'Research suggests potential mimicking of natural GHRH for physiological circadian release patterns.*',
       idealFor: 'Adults interested in natural hormone research and physiological wellness education.',
       frequency: 'Healthcare provider consultation required for research timing protocols',
-      sideEffects: 'Research indicates good tolerance - consult healthcare provider before use.'
+      sideEffects: 'Research indicates good tolerance - possible injection site reactions, consult healthcare provider.',
+      researchStatus: 'FDA-approved compound with established safety profile'
+    },
+    'tesamorelin': {
+      name: 'Tesamorelin Peptide',
+      category: 'Hormone Research',
+      duration: 'Brief administration (5-10 minutes)',
+      administration: 'Subcutaneous administration',
+      benefits: [
+        'Body composition research*',
+        'Visceral fat studies*',
+        'Metabolic wellness research*',
+        'Hormone pathway studies*',
+        'Cardiovascular health research*',
+        'Liver function studies*',
+        'FDA-approved applications*',
+        'Lipodystrophy research*'
+      ],
+      description: 'Tesamorelin is an FDA-approved synthetic peptide studied for metabolic applications and body composition research.*',
+      howItWorks: 'Research shows interaction with GHRH receptors to stimulate natural growth hormone release for metabolic benefits.*',
+      idealFor: 'Adults interested in metabolic research and body composition optimization studies.',
+      frequency: 'Daily administration protocols studied - healthcare provider consultation required',
+      sideEffects: 'FDA-approved with known side effect profile - consult healthcare provider.',
+      researchStatus: 'FDA-approved for specific indications with ongoing research'
+    },
+    'aod-9604': {
+      name: 'AOD-9604 Peptide',
+      category: 'Metabolic Research',
+      duration: 'Brief administration (5-10 minutes)',
+      administration: 'Subcutaneous administration',
+      benefits: [
+        'Fat metabolism research*',
+        'Body composition studies*',
+        'Metabolic pathway research*',
+        'Weight management studies*',
+        'Exercise performance research*',
+        'Recovery optimization studies*',
+        'Cartilage repair research*',
+        'Joint health studies*'
+      ],
+      description: 'AOD-9604 is a research peptide derived from human growth hormone, studied for metabolic applications. Research purposes only.*',
+      howItWorks: 'Research suggests potential interaction with fat metabolism pathways without affecting blood sugar or growth.*',
+      idealFor: 'Adults interested in metabolic research and body composition education.',
+      frequency: 'Healthcare provider consultation required for research protocols',
+      sideEffects: 'Research compound - generally well-tolerated in studies, consult healthcare provider.',
+      researchStatus: 'Ongoing research in metabolic applications and joint health'
+    },
+    'melanotan-ii': {
+      name: 'Melanotan II Research',
+      category: 'Research Compounds',
+      duration: 'Brief administration (5-10 minutes)',
+      administration: 'Subcutaneous administration',
+      benefits: [
+        'Melanogenesis research*',
+        'Pigmentation studies*',
+        'UV protection research*',
+        'Appetite regulation studies*',
+        'Libido research applications*',
+        'Photoprotection studies*',
+        'Skin health research*',
+        'Metabolic pathway studies*'
+      ],
+      description: 'Melanotan II is a research peptide studied for pigmentation and metabolic applications. Research and educational purposes only.*',
+      howItWorks: 'Research suggests interaction with melanocortin receptors affecting pigmentation and metabolic pathways.*',
+      idealFor: 'Adults interested in pigmentation research and UV protection studies.',
+      frequency: 'Healthcare provider consultation required - careful dosing protocols studied',
+      sideEffects: 'Research compound - possible nausea, darkening of skin/moles, consult healthcare provider.',
+      researchStatus: 'Research compound with ongoing safety and efficacy studies'
+    },
+    'pt-141': {
+      name: 'PT-141 (Bremelanotide)',
+      category: 'Wellness Research',
+      duration: 'Brief administration (5-10 minutes)',
+      administration: 'Subcutaneous administration',
+      benefits: [
+        'Sexual wellness research*',
+        'Libido enhancement studies*',
+        'Arousal pathway research*',
+        'Relationship wellness studies*',
+        'Quality of life research*',
+        'Hormone-independent studies*',
+        'CNS pathway research*',
+        'FDA-approved applications*'
+      ],
+      description: 'PT-141 (Bremelanotide) is an FDA-approved peptide studied for sexual wellness applications in both men and women.*',
+      howItWorks: 'Research shows interaction with melanocortin receptors in the central nervous system affecting arousal pathways.*',
+      idealFor: 'Adults interested in sexual wellness research and relationship health education.',
+      frequency: 'Healthcare provider consultation required - as-needed dosing protocols',
+      sideEffects: 'FDA-approved with known profile - possible nausea, flushing, consult healthcare provider.',
+      researchStatus: 'FDA-approved for specific indications with ongoing research'
+    },
+    'hexarelin': {
+      name: 'Hexarelin Peptide',
+      category: 'Hormone Research',
+      duration: 'Brief administration (5-10 minutes)',
+      administration: 'Subcutaneous administration',
+      benefits: [
+        'Growth hormone research*',
+        'Cardiovascular studies*',
+        'Neuroprotection research*',
+        'Recovery optimization studies*',
+        'Body composition research*',
+        'Anti-aging studies*',
+        'Cardiac function research*',
+        'Muscle preservation studies*'
+      ],
+      description: 'Hexarelin is a research peptide studied for growth hormone releasing properties and cardiovascular applications.*',
+      howItWorks: 'Research suggests potent interaction with growth hormone secretagogue receptors and potential cardiac benefits.*',
+      idealFor: 'Adults interested in advanced hormone research and cardiovascular wellness studies.',
+      frequency: 'Healthcare provider consultation required - cycling protocols studied',
+      sideEffects: 'Research compound - possible desensitization with continuous use, consult healthcare provider.',
+      researchStatus: 'Research compound with unique cardiovascular applications'
     }
   };
 
@@ -168,16 +297,48 @@ const NadPeptides = () => {
       icon: "🔬",
       title: "Scientific Approach",
       description: "Research-based compounds provided by licensed medical professionals following established safety protocols and guidelines.*"
+    },
+    {
+      icon: "🩺",
+      title: "Medical Supervision",
+      description: "All peptide research protocols require healthcare provider consultation and ongoing medical supervision for safety.*"
+    },
+    {
+      icon: "🛡️",
+      title: "Safety First",
+      description: "Comprehensive screening, monitoring, and safety protocols ensure responsible research applications and patient safety.*"
+    },
+    {
+      icon: "📊",
+      title: "Evidence-Based",
+      description: "Research compounds selected based on published scientific literature and ongoing clinical research studies.*"
+    },
+    {
+      icon: "🎯",
+      title: "Personalized Research",
+      description: "Individual consultation to determine appropriate research compounds based on health goals and medical history.*"
     }
   ];
 
   // Get all categories
   const categories = ['all', ...new Set(Object.values(peptideDatabase).map(p => p.category))];
 
-  // Filter peptides by category
+  // Filter peptides by category and search term
   const filteredPeptides = selectedCategory === 'all' 
-    ? Object.entries(peptideDatabase)
-    : Object.entries(peptideDatabase).filter(([_, peptide]) => peptide.category === selectedCategory);
+    ? Object.entries(peptideDatabase).filter(([key, peptide]) => 
+        searchTerm === '' || 
+        peptide.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        peptide.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        peptide.benefits.some(benefit => benefit.toLowerCase().includes(searchTerm.toLowerCase()))
+      )
+    : Object.entries(peptideDatabase).filter(([key, peptide]) => 
+        peptide.category === selectedCategory && (
+          searchTerm === '' || 
+          peptide.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          peptide.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          peptide.benefits.some(benefit => benefit.toLowerCase().includes(searchTerm.toLowerCase()))
+        )
+      );
 
   const openQuickView = (peptideKey) => {
     setSelectedPeptide(peptideDatabase[peptideKey]);
@@ -287,14 +448,14 @@ const NadPeptides = () => {
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {benefitsInfo.map((benefit, index) => (
-              <div key={index} className="text-center">
-                <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-3xl text-white">
+              <div key={index} className="text-center group">
+                <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-3xl text-white group-hover:scale-110 transition-transform duration-300">
                   {benefit.icon}
                 </div>
                 <h3 className="mb-4 text-xl font-semibold text-foreground">
                   {benefit.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed text-sm">
                   {benefit.description}
                 </p>
               </div>
@@ -319,6 +480,24 @@ const NadPeptides = () => {
             </p>
           </div>
 
+          {/* Search Bar */}
+          <div className="mb-8 max-w-md mx-auto">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search peptides and research compounds..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full px-4 py-3 pl-12 rounded-full border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg className="h-5 w-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
           {/* Category Navigation */}
           <div className="mb-12 flex flex-wrap justify-center gap-3">
             {categories.map((category) => (
@@ -326,9 +505,9 @@ const NadPeptides = () => {
                 key={category}
                 variant={selectedCategory === category ? "default" : "outline"}
                 onClick={() => setSelectedCategory(category)}
-                className="capitalize"
+                className="capitalize hover:scale-105 transition-transform duration-200"
               >
-                {category.replace('-', ' ')}
+                {category.replace('-', ' ').replace('&', '&')}
               </Button>
             ))}
           </div>
@@ -336,59 +515,88 @@ const NadPeptides = () => {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {filteredPeptides.map(([key, peptide]) => (
               <div key={key} className="group relative overflow-hidden rounded-2xl bg-card shadow-lg border transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
-                <div className="h-48 bg-gradient-to-br from-slate-700 to-slate-800 relative">
-                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center opacity-30" />
-                  <div className="absolute top-4 right-4 z-10 rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary-foreground">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                
+                <div className="h-48 bg-gradient-to-br from-slate-700 to-slate-800 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center opacity-30 group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute top-4 right-4 z-10 rounded-full bg-primary/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary-foreground">
                     {peptide.category}
                   </div>
+                  {peptide.researchStatus && (
+                    <div className="absolute bottom-4 left-4 z-10 rounded-full bg-secondary/90 backdrop-blur-sm px-2 py-1 text-xs text-secondary-foreground">
+                      {peptide.researchStatus.includes('FDA') ? '🔬 FDA Research' : '📊 Active Research'}
+                    </div>
+                  )}
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="mb-2 text-xl font-bold text-foreground">
+                  <h3 className="mb-2 text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                     {peptide.name}
                   </h3>
                   <p className="mb-4 text-muted-foreground text-sm leading-relaxed">
-                    {peptide.description.substring(0, 120)}...
+                    {peptide.description.substring(0, 140)}...
                   </p>
                   
-                  <div className="mb-4">
-                    <span className="font-semibold text-primary">Duration:</span>
-                    <div>{peptide.duration}</div>
+                  <div className="mb-4 space-y-2">
+                    <div className="flex items-center gap-2 text-sm">
+                      <span className="font-semibold text-primary">⏱️ Duration:</span>
+                      <span className="text-muted-foreground">{peptide.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <span className="font-semibold text-primary">💉 Method:</span>
+                      <span className="text-muted-foreground">{peptide.administration}</span>
+                    </div>
                   </div>
                   
-                  <div className="mb-4">
-                    <span className="font-semibold text-primary text-sm">Research Applications*:</span>
-                    <ul className="mt-2 space-y-1">
-                      {peptide.benefits.slice(0, 3).map((benefit, index) => (
-                        <li key={index} className="flex items-center gap-2 text-xs text-muted-foreground">
-                          <span className="text-secondary">•</span>
-                          {benefit}
+                  <div className="mb-6">
+                    <span className="font-semibold text-primary text-sm flex items-center gap-1 mb-2">
+                      🔬 Research Applications*:
+                    </span>
+                    <ul className="space-y-1">
+                      {peptide.benefits.slice(0, 4).map((benefit, index) => (
+                        <li key={index} className="flex items-start gap-2 text-xs text-muted-foreground">
+                          <span className="text-secondary mt-0.5">•</span>
+                          <span>{benefit}</span>
                         </li>
                       ))}
+                      {peptide.benefits.length > 4 && (
+                        <li className="text-xs text-primary font-medium">
+                          +{peptide.benefits.length - 4} more applications...
+                        </li>
+                      )}
                     </ul>
                   </div>
                   
                   <div className="flex gap-2">
                     <Button 
                       size="sm" 
-                      className="flex-1"
+                      className="flex-1 group-hover:shadow-lg transition-shadow"
                       onClick={() => openQuickView(key)}
                     >
-                      Learn More
+                      🔍 Learn More
                     </Button>
                     <Button 
                       size="sm" 
                       variant="outline" 
-                      className="flex-1"
+                      className="flex-1 hover:bg-primary hover:text-primary-foreground"
                       onClick={handleBookingAttempt}
                     >
-                      Book Now (18+)
+                      📅 Book (18+)
                     </Button>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+          
+          {filteredPeptides.length === 0 && (
+            <div className="text-center py-12">
+              <div className="text-4xl mb-4">🔍</div>
+              <h3 className="text-xl font-semibold text-foreground mb-2">No compounds found</h3>
+              <p className="text-muted-foreground">Try adjusting your search or category filter.</p>
+            </div>
+          )}
         </div>
       </section>
 
