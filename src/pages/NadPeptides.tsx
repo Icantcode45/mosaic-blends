@@ -30,156 +30,144 @@ const NadPeptides = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Comprehensive peptide database
+  // Comprehensive peptide information database
   const peptideDatabase = {
     'nad+ iv therapy': {
-      name: 'NAD+ IV Therapy',
-      category: 'Anti-Aging',
-      price: '$299',
-      duration: '3-4 hours',
-      dosage: '250-500mg per infusion',
-      administration: 'Intravenous infusion',
+      name: 'NAD+ IV Support',
+      category: 'Wellness & Longevity',
+      duration: 'Extended session',
+      administration: 'Intravenous administration',
       benefits: [
-        'Enhanced cellular energy',
-        'Improved mental clarity',
-        'Better sleep quality',
-        'Addiction recovery support',
-        'Anti-aging effects',
-        'DNA repair support'
+        'May support cellular energy pathways*',
+        'Associated with mental clarity research*',
+        'Sleep quality studies ongoing*',
+        'Studied for wellness applications*',
+        'Research in aging science*',
+        'Cellular function research*'
       ],
-      description: 'NAD+ IV therapy delivers nicotinamide adenine dinucleotide directly to your cells for enhanced energy production and cellular repair.',
-      howItWorks: 'Replenishes cellular NAD+ levels, supporting mitochondrial function and DNA repair mechanisms.',
-      idealFor: 'Individuals seeking enhanced energy, mental clarity, anti-aging benefits, or addiction recovery support.',
-      frequency: 'Weekly to monthly infusions depending on individual goals',
-      sideEffects: 'Mild nausea, cramping during infusion (rate dependent), temporary flushing'
+      description: 'NAD+ IV administration delivers nicotinamide adenine dinucleotide for research purposes. Individual results may vary.',
+      howItWorks: 'Research suggests potential support for cellular NAD+ levels and mitochondrial pathways.*',
+      idealFor: 'Adults interested in wellness research and cellular health education.',
+      frequency: 'Consultation with healthcare provider required for individual protocols',
+      sideEffects: 'Consult healthcare provider. Possible mild discomfort during administration.'
     },
     'bpc-157': {
-      name: 'BPC-157',
-      category: 'Healing & Recovery',
-      price: '$120',
-      duration: '5 minutes',
-      dosage: '250-500mcg per injection',
-      administration: 'Subcutaneous injection',
+      name: 'BPC-157 Peptide',
+      category: 'Research & Wellness',
+      duration: 'Brief administration',
+      administration: 'Subcutaneous administration',
       benefits: [
-        'Accelerated tissue repair',
-        'Reduced inflammation',
-        'Improved gut health',
-        'Enhanced wound healing',
-        'Joint and tendon repair',
-        'Neuroprotective effects'
+        'Research compound of interest*',
+        'Studies in cellular processes*',
+        'Digestive wellness research*',
+        'Tissue health studies*',
+        'Joint wellness research*',
+        'Ongoing scientific studies*'
       ],
-      description: 'BPC-157 is a synthetic peptide derived from a protective protein found in human gastric juice, known for its remarkable healing properties.',
-      howItWorks: 'Promotes angiogenesis, collagen synthesis, and modulates growth factors to accelerate healing processes.',
-      idealFor: 'Athletes, individuals with injuries, digestive issues, or those seeking enhanced recovery.',
-      frequency: 'Daily injections for acute issues, 3-5 times weekly for maintenance',
-      sideEffects: 'Generally well tolerated with minimal side effects'
+      description: 'BPC-157 is a research peptide compound derived from gastric proteins. Research purposes only.*',
+      howItWorks: 'Research suggests potential interactions with cellular growth factors and healing pathways.*',
+      idealFor: 'Adults interested in peptide research and wellness education.',
+      frequency: 'Healthcare provider consultation required for research protocols',
+      sideEffects: 'Research compound - consult healthcare provider before use.'
     },
     'tb-500': {
-      name: 'TB-500',
-      category: 'Healing & Recovery',
-      price: '$135',
-      duration: '5 minutes',
-      dosage: '2-5mg per injection',
-      administration: 'Subcutaneous injection',
+      name: 'TB-500 Peptide',
+      category: 'Research & Wellness',
+      duration: 'Brief administration',
+      administration: 'Subcutaneous administration',
       benefits: [
-        'Enhanced muscle repair',
-        'Improved flexibility',
-        'Faster injury recovery',
-        'Reduced inflammation',
-        'Better endurance',
-        'Cardiovascular benefits'
+        'Research in cellular mobility*',
+        'Flexibility wellness studies*',
+        'Recovery research ongoing*',
+        'Cellular process studies*',
+        'Endurance research*',
+        'Cardiovascular wellness studies*'
       ],
-      description: 'TB-500 is a synthetic peptide that mimics thymosin beta-4, promoting healing and recovery throughout the body.',
-      howItWorks: 'Promotes cell migration, blood vessel formation, and tissue repair through actin regulation.',
-      idealFor: 'Athletes with injuries, individuals seeking improved recovery, or those with chronic inflammatory conditions.',
-      frequency: 'Twice weekly for 4-6 weeks, then maintenance dosing',
-      sideEffects: 'Generally well tolerated, possible mild injection site reactions'
+      description: 'TB-500 is a research peptide that mimics natural thymosin beta-4. For research and education purposes.*',
+      howItWorks: 'Research suggests potential support for cellular migration and tissue wellness pathways.*',
+      idealFor: 'Adults interested in cellular health research and wellness education.',
+      frequency: 'Healthcare provider consultation required for research applications',
+      sideEffects: 'Research compound - healthcare provider consultation recommended.'
     },
     'cjc-1295': {
-      name: 'CJC-1295',
-      category: 'Growth Hormone',
-      price: '$145',
-      duration: '5 minutes',
-      dosage: '100-300mcg per injection',
-      administration: 'Subcutaneous injection',
+      name: 'CJC-1295 Peptide',
+      category: 'Hormone Research',
+      duration: 'Brief administration',
+      administration: 'Subcutaneous administration',
       benefits: [
-        'Increased growth hormone',
-        'Enhanced muscle growth',
-        'Improved recovery',
-        'Better sleep quality',
-        'Fat loss support',
-        'Anti-aging effects'
+        'Growth hormone pathway research*',
+        'Muscle wellness studies*',
+        'Recovery research ongoing*',
+        'Sleep quality studies*',
+        'Body composition research*',
+        'Aging science studies*'
       ],
-      description: 'CJC-1295 stimulates natural growth hormone release, supporting muscle growth, recovery, and overall wellness.',
-      howItWorks: 'Stimulates the pituitary gland to release growth hormone in natural pulses.',
-      idealFor: 'Individuals seeking natural growth hormone optimization, muscle growth, or anti-aging benefits.',
-      frequency: '2-3 times per week before bed for optimal GH release',
-      sideEffects: 'Possible water retention, injection site reactions, mild fatigue initially'
+      description: 'CJC-1295 is studied for its potential interaction with natural growth hormone pathways. Research purposes.*',
+      howItWorks: 'Research suggests potential interaction with pituitary hormone release patterns.*',
+      idealFor: 'Adults interested in hormone research and wellness optimization studies.',
+      frequency: 'Healthcare provider consultation required for research protocols',
+      sideEffects: 'Research compound - possible water retention, consult healthcare provider.'
     },
     'ipamorelin': {
-      name: 'Ipamorelin',
-      category: 'Growth Hormone',
-      price: '$130',
-      duration: '5 minutes',
-      dosage: '200-300mcg per injection',
-      administration: 'Subcutaneous injection',
+      name: 'Ipamorelin Peptide',
+      category: 'Hormone Research',
+      duration: 'Brief administration',
+      administration: 'Subcutaneous administration',
       benefits: [
-        'Selective GH release',
-        'No cortisol increase',
-        'Enhanced recovery',
-        'Improved sleep',
-        'Muscle preservation',
-        'Fat loss support'
+        'Selective research applications*',
+        'Hormone pathway studies*',
+        'Recovery research*',
+        'Sleep wellness studies*',
+        'Body composition research*',
+        'Wellness optimization studies*'
       ],
-      description: 'Ipamorelin is the most selective growth hormone releasing peptide, providing GH benefits without unwanted side effects.',
-      howItWorks: 'Selectively binds to growth hormone secretagogue receptors to stimulate natural GH release.',
-      idealFor: 'Individuals seeking growth hormone benefits with minimal side effects and excellent tolerability.',
-      frequency: 'Daily injections, often combined with CJC-1295 for synergistic effects',
-      sideEffects: 'Excellent tolerability profile with minimal side effects'
+      description: 'Ipamorelin is a research peptide studied for selective hormone pathway interactions. Research and education only.*',
+      howItWorks: 'Research suggests selective interaction with growth hormone secretagogue receptors.*',
+      idealFor: 'Adults seeking education on peptide research with minimal study variables.',
+      frequency: 'Healthcare provider consultation required - often studied with other compounds',
+      sideEffects: 'Research indicates good tolerability profile - consult healthcare provider.'
     },
     'sermorelin': {
-      name: 'Sermorelin',
-      category: 'Growth Hormone',
-      price: '$125',
-      duration: '5 minutes',
-      dosage: '200-500mcg per injection',
-      administration: 'Subcutaneous injection',
+      name: 'Sermorelin Peptide',
+      category: 'Hormone Research',
+      duration: 'Brief administration',
+      administration: 'Subcutaneous administration',
       benefits: [
-        'Natural GH stimulation',
-        'Improved sleep quality',
-        'Enhanced recovery',
-        'Better body composition',
-        'Increased energy',
-        'Anti-aging support'
+        'Natural hormone pathway research*',
+        'Sleep quality studies*',
+        'Recovery research*',
+        'Body composition studies*',
+        'Energy wellness research*',
+        'Longevity science studies*'
       ],
-      description: 'Sermorelin is a GHRH analog that naturally stimulates growth hormone production by the pituitary gland.',
-      howItWorks: 'Mimics natural GHRH to stimulate physiological growth hormone release patterns.',
-      idealFor: 'Adults seeking natural growth hormone optimization with physiological dosing patterns.',
-      frequency: 'Daily bedtime injections for optimal natural GH rhythm',
-      sideEffects: 'Generally well tolerated, possible injection site reactions'
+      description: 'Sermorelin is a research analog studied for natural hormone pathway support. Educational and research purposes.*',
+      howItWorks: 'Research suggests potential mimicking of natural GHRH for physiological study patterns.*',
+      idealFor: 'Adults interested in natural hormone research and physiological wellness education.',
+      frequency: 'Healthcare provider consultation required for research timing protocols',
+      sideEffects: 'Research indicates good tolerance - consult healthcare provider before use.'
     }
   };
 
   const benefitsInfo = [
     {
       icon: "🧬",
-      title: "Cellular Regeneration",
-      description: "NAD+ therapy supports mitochondrial function and cellular repair processes for optimal health and longevity."
+      title: "Cellular Research",
+      description: "NAD+ compounds are studied for their potential role in cellular function and mitochondrial research for educational purposes.*"
     },
     {
       icon: "🧠", 
-      title: "Mental Clarity",
-      description: "Enhanced cognitive function, improved focus, and mental clarity through optimized cellular energy production."
+      title: "Cognitive Studies",
+      description: "Research explores potential cognitive applications through cellular energy pathways in scientific literature.*"
     },
     {
       icon: "⚡",
-      title: "Energy Enhancement",
-      description: "Restore cellular energy levels and combat fatigue with advanced NAD+ and peptide treatments."
+      title: "Energy Research",
+      description: "Scientific studies investigate cellular energy processes and fatigue research using NAD+ and peptide compounds.*"
     },
     {
       icon: "🔬",
-      title: "Scientific Precision",
-      description: "Clinically-proven treatments delivered by licensed medical professionals using the highest quality compounds."
+      title: "Scientific Approach",
+      description: "Research-based compounds provided by licensed medical professionals following established safety protocols and guidelines.*"
     }
   ];
 
@@ -237,21 +225,21 @@ const NadPeptides = () => {
   return (
     <>
       <Helmet>
-        <title>NAD+ & Peptides | Stay Dripped IV & Wellness Co.</title>
-        <meta name="description" content="Advanced anti-aging and cellular repair therapies in Scottsdale, AZ. NAD+ IV therapy and peptide treatments for optimal health and longevity." />
+        <title>NAD+ & Peptides Research | Stay Dripped IV & Wellness Co.</title>
+        <meta name="description" content="NAD+ and peptide research compounds for educational and wellness research purposes in Scottsdale, AZ. Healthcare provider consultation required." />
         <meta name="robots" content="max-image-preview:large" />
         <link rel="canonical" href="https://staydrippediv.com/nad-peptides" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="NAD+ & Peptides | Stay Dripped IV & Wellness Co." />
-        <meta property="og:description" content="Advanced anti-aging and cellular repair therapies in Scottsdale, AZ. NAD+ IV therapy and peptide treatments for optimal health and longevity." />
+        <meta property="og:title" content="NAD+ & Peptides Research | Stay Dripped IV & Wellness Co." />
+        <meta property="og:description" content="NAD+ and peptide research compounds for educational and wellness research purposes in Scottsdale, AZ. Healthcare provider consultation required." />
         <meta property="og:url" content="https://staydrippediv.com/nad-peptides" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="NAD+ & Peptides | Stay Dripped IV & Wellness Co." />
-        <meta name="twitter:description" content="Advanced anti-aging and cellular repair therapies in Scottsdale, AZ. NAD+ IV therapy and peptide treatments for optimal health and longevity." />
+        <meta name="twitter:title" content="NAD+ & Peptides Research | Stay Dripped IV & Wellness Co." />
+        <meta name="twitter:description" content="NAD+ and peptide research compounds for educational and wellness research purposes in Scottsdale, AZ. Healthcare provider consultation required." />
       </Helmet>
 
       {/* Hero Section */}
@@ -261,11 +249,11 @@ const NadPeptides = () => {
         
         <div className="container relative z-10 mx-auto px-4 py-32 text-center">
           <h1 className="mb-6 text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-            NAD+ & Peptides
+            NAD+ & Peptide Research
           </h1>
           <p className="mx-auto mb-10 max-w-3xl text-xl font-light leading-relaxed opacity-90">
-            Advanced anti-aging and cellular repair therapies designed to optimize your health at the molecular level. 
-            Experience cutting-edge treatments for longevity and peak performance.
+            Educational and research applications of cellular compounds studied for wellness applications. 
+            Healthcare provider consultation required. Individual results may vary.*
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             <Button 
@@ -273,11 +261,14 @@ const NadPeptides = () => {
               className="px-8 py-4 text-lg font-semibold uppercase tracking-wide"
               onClick={handleBookingAttempt}
             >
-              Book Treatment (18+ Only)
+              Consultation (18+ Only)
             </Button>
             <Button variant="outline" size="lg" className="px-8 py-4 text-lg font-semibold uppercase tracking-wide border-white text-white hover:bg-white hover:text-slate-800" asChild>
               <Link to="/telehealth">Consult Provider</Link>
             </Button>
+          </div>
+          <div className="mt-8 text-sm opacity-75">
+            *These statements have not been evaluated by the FDA. Not intended to diagnose, treat, cure, or prevent any disease.
           </div>
         </div>
       </section>
@@ -287,10 +278,10 @@ const NadPeptides = () => {
         <div className="container mx-auto px-4">
           <div className="mb-16 text-center">
             <h2 className="mb-6 text-4xl font-bold text-foreground sm:text-5xl">
-              Why Choose NAD+ & Peptide Therapy?
+              Why Research NAD+ & Peptide Compounds?
             </h2>
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-              Discover the science-backed benefits of advanced cellular therapy treatments that optimize your body's natural healing and regenerative processes.
+              Explore the science behind advanced cellular research compounds that are being studied for their potential applications in wellness and longevity research.*
             </p>
           </div>
 
@@ -320,11 +311,11 @@ const NadPeptides = () => {
         <div className="container mx-auto px-4">
           <div className="mb-16 text-center">
             <h2 className="mb-6 text-4xl font-bold text-foreground sm:text-5xl">
-              Advanced Treatments Available
+              Research Compounds Available
             </h2>
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-              Our comprehensive selection of NAD+ and peptide therapies are designed to address your specific wellness goals 
-              with precision and scientific excellence.
+              Our selection of NAD+ and peptide research compounds are available for educational purposes and 
+              scientific research with appropriate healthcare provider oversight.*
             </p>
           </div>
 
@@ -360,23 +351,17 @@ const NadPeptides = () => {
                     {peptide.description.substring(0, 120)}...
                   </p>
                   
-                  <div className="mb-4 grid grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <span className="font-semibold text-primary">Price:</span>
-                      <div className="text-lg font-bold text-primary">{peptide.price}</div>
-                    </div>
-                    <div>
-                      <span className="font-semibold text-primary">Duration:</span>
-                      <div>{peptide.duration}</div>
-                    </div>
+                  <div className="mb-4">
+                    <span className="font-semibold text-primary">Duration:</span>
+                    <div>{peptide.duration}</div>
                   </div>
                   
                   <div className="mb-4">
-                    <span className="font-semibold text-primary text-sm">Key Benefits:</span>
+                    <span className="font-semibold text-primary text-sm">Research Applications*:</span>
                     <ul className="mt-2 space-y-1">
                       {peptide.benefits.slice(0, 3).map((benefit, index) => (
                         <li key={index} className="flex items-center gap-2 text-xs text-muted-foreground">
-                          <span className="text-secondary">✓</span>
+                          <span className="text-secondary">•</span>
                           {benefit}
                         </li>
                       ))}
