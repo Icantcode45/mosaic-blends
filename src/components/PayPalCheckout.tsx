@@ -62,23 +62,23 @@ export default function PayPalCheckout() {
         try {
           const details = await actions.order.capture();
           
-          // Create order in database
-          const { data: order, error: orderError } = await supabase
+          // Create order in database without selecting it (RLS-secure)
+          const orderId = crypto.randomUUID();
+          const { error: orderError } = await supabase
             .from('orders')
             .insert({
+              id: orderId,
               email: details.payer?.email_address || 'guest@example.com',
               total_amount: getTotalPrice(),
               status: 'paid',
               paypal_payment_id: details.id,
-            })
-            .select()
-            .single();
+            });
 
           if (orderError) throw orderError;
 
           // Create order items
           const orderItems = state.items.map(item => ({
-            order_id: order.id,
+            order_id: orderId,
             product_id: item.product.id,
             quantity: item.quantity,
             price: item.product.price,
@@ -92,7 +92,7 @@ export default function PayPalCheckout() {
 
           toast({
             title: "Payment successful!",
-            description: `Your order has been confirmed. Order ID: ${order.id.slice(0, 8)}`,
+            description: `Your order has been confirmed. Order ID: ${orderId.slice(0, 8)}`,
           });
 
           clearCart();
