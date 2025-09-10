@@ -154,8 +154,8 @@ const EnhancedHeader = () => {
             {/* Brand */}
             <Link to="/" className="flex items-center space-x-3">
               <img 
-                src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2Ff74b8d31183c4e73ad423862ef65b827?format=webp&width=800" 
-                alt="Stay Dripped IV & Wellness Co. Logo" 
+                src="/lovable-uploads/ed8aafa4-26e1-49c7-b39e-ba28edd0824c.png" 
+                alt="Stay Dripped IV & Wellness Co. Logo - Premier Mobile IV Therapy" 
                 className="h-8 w-auto"
                 loading="eager"
               />

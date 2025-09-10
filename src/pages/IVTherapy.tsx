@@ -314,7 +314,7 @@ const IVTherapy = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-800 via-slate-700 to-slate-600 text-white">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-secondary/20" />
-        <div className="absolute inset-0 bg-[url('https://cdn.builder.io/api/v1/image/assets%2F337c720945064b44af05129952e6433b%2F8cc151d1bce143b29d10814a372358a1?format=webp&width=800')] bg-cover bg-center opacity-30" />
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/70be9185-5ffd-412a-bb54-4561e7cf88c2.png')] bg-cover bg-center opacity-30" />
         
         <div className="container relative z-10 mx-auto px-4 py-32 text-center">
           <h1 className="mb-6 text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">

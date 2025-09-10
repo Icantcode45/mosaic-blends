@@ -3,20 +3,20 @@ import { Card } from "@/components/ui/card";
 const LifestyleShowcase = () => {
   const lifestyleImages = [
     {
-      src: "/lovable-uploads/9c0f05a0-c83c-411e-a1a2-90d1dc05bfe2.png",
-      alt: "Friends enjoying IV therapy together",
+      src: "/lovable-uploads/b0faa61f-22ef-4eed-bb90-b544636afd28.png",
+      alt: "Friends enjoying IV therapy together in luxury setting",
       title: "Social Wellness",
       description: "Share the experience with friends"
     },
     {
-      src: "/lovable-uploads/87ea9671-09eb-4d1d-8531-0e9c9fe854c0.png",
-      alt: "Relaxing poolside IV therapy session",
+      src: "/lovable-uploads/1fac1b4b-2289-4274-b058-98ac68b44e03.png",
+      alt: "Professional IV therapy in modern comfortable environment",
       title: "Luxury Experience",
       description: "Unwind in your preferred setting"
     },
     {
-      src: "/lovable-uploads/26fbb213-d18c-42c5-b714-7b4721744ef4.png",
-      alt: "Professional IV therapy service",
+      src: "/lovable-uploads/a2316986-ad33-4422-b338-f02dcd158a69.png",
+      alt: "Professional IV therapy service with medical supervision",
       title: "Professional Care",
       description: "Expert treatment wherever you are"
     }

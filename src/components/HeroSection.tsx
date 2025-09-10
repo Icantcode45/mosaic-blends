@@ -37,8 +37,8 @@ const HeroSection = () => {
           <div className="relative">
             <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-primary/10 to-white border border-gray-100 shadow-elev-2 overflow-hidden">
               <img 
-                src="/lovable-uploads/26fbb213-d18c-42c5-b714-7b4721744ef4.png" 
-                alt="IV Therapy Lifestyle Experience" 
+                src="/lovable-uploads/b0faa61f-22ef-4eed-bb90-b544636afd28.png" 
+                alt="IV Therapy Lifestyle Experience - Friends enjoying mobile IV therapy" 
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
