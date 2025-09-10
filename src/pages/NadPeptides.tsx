@@ -2,6 +2,11 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import AgeVerificationModal from "@/components/compliance/AgeVerificationModal";
+import ComplianceDisclaimers from "@/components/compliance/ComplianceDisclaimers";
+import RegulatoryUpdates from "@/components/compliance/RegulatoryUpdates";
+import PaymentCompliance from "@/components/compliance/PaymentCompliance";
+import { useToast } from "@/components/ui/use-toast";
 
 const NadPeptides = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -9,6 +14,10 @@ const NadPeptides = () => {
   const [selectedPeptide, setSelectedPeptide] = useState(null);
   const [chatVisible, setChatVisible] = useState(false);
   const [showChatModal, setShowChatModal] = useState(false);
+  const [showAgeVerification, setShowAgeVerification] = useState(false);
+  const [isAgeVerified, setIsAgeVerified] = useState(false);
+  const [showPaymentCompliance, setShowPaymentCompliance] = useState(false);
+  const { toast } = useToast();
 
   useEffect(() => {
     document.title = "NAD+ & Peptides | Stay Dripped IV & Wellness Co.";
@@ -192,6 +201,39 @@ const NadPeptides = () => {
     setSelectedPeptide(null);
   };
 
+  const handleBookingAttempt = () => {
+    if (!isAgeVerified) {
+      setShowAgeVerification(true);
+    } else {
+      setShowPaymentCompliance(true);
+    }
+  };
+
+  const handleAgeVerified = () => {
+    setIsAgeVerified(true);
+    setShowAgeVerification(false);
+    setShowPaymentCompliance(true);
+    toast({
+      title: "Age Verified ✓",
+      description: "You can now proceed with booking peptide treatments.",
+    });
+  };
+
+  const handleAgeDeclined = () => {
+    setShowAgeVerification(false);
+    toast({
+      title: "Access Restricted",
+      description: "Peptide treatments are only available to adults 18 and older.",
+      variant: "destructive",
+    });
+  };
+
+  const proceedToBooking = () => {
+    setShowPaymentCompliance(false);
+    // Navigate to booking - in real implementation this would redirect
+    window.open('/first-time-patients', '_blank');
+  };
+
   return (
     <>
       <Helmet>
@@ -226,8 +268,12 @@ const NadPeptides = () => {
             Experience cutting-edge treatments for longevity and peak performance.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
-            <Button size="lg" className="px-8 py-4 text-lg font-semibold uppercase tracking-wide" asChild>
-              <Link to="/first-time-patients">Book Treatment</Link>
+            <Button 
+              size="lg" 
+              className="px-8 py-4 text-lg font-semibold uppercase tracking-wide"
+              onClick={handleBookingAttempt}
+            >
+              Book Treatment (18+ Only)
             </Button>
             <Button variant="outline" size="lg" className="px-8 py-4 text-lg font-semibold uppercase tracking-wide border-white text-white hover:bg-white hover:text-slate-800" asChild>
               <Link to="/telehealth">Consult Provider</Link>
@@ -265,6 +311,9 @@ const NadPeptides = () => {
           </div>
         </div>
       </section>
+
+      {/* Compliance Disclaimers */}
+      <ComplianceDisclaimers />
 
       {/* Products Section */}
       <section className="bg-muted/50 py-20">
@@ -342,8 +391,13 @@ const NadPeptides = () => {
                     >
                       Learn More
                     </Button>
-                    <Button size="sm" variant="outline" className="flex-1" asChild>
-                      <Link to="/first-time-patients">Book Now</Link>
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="flex-1"
+                      onClick={handleBookingAttempt}
+                    >
+                      Book Now (18+)
                     </Button>
                   </div>
                 </div>
@@ -432,8 +486,12 @@ const NadPeptides = () => {
                 </div>
 
                 <div className="flex gap-4 pt-4">
-                  <Button size="lg" className="flex-1" asChild>
-                    <Link to="/first-time-patients">Book Consultation</Link>
+                  <Button 
+                    size="lg" 
+                    className="flex-1"
+                    onClick={handleBookingAttempt}
+                  >
+                    Book Consultation (18+)
                   </Button>
                   <Button size="lg" variant="outline" className="flex-1" asChild>
                     <Link to="/telehealth">Ask Questions</Link>
@@ -555,6 +613,9 @@ const NadPeptides = () => {
         </div>
       </section>
 
+      {/* Regulatory Updates Section */}
+      <RegulatoryUpdates />
+
       {/* Online Booking Section */}
       <section className="bg-gradient-to-br from-muted/50 to-secondary/5 py-20">
         <div className="container mx-auto px-4">
@@ -603,8 +664,12 @@ const NadPeptides = () => {
               that fits your wellness goals and lifestyle.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Button size="lg" className="px-8 py-4 text-lg font-semibold" asChild>
-                <Link to="/first-time-patients">Book Consultation</Link>
+              <Button 
+                size="lg" 
+                className="px-8 py-4 text-lg font-semibold"
+                onClick={handleBookingAttempt}
+              >
+                Book Consultation (18+)
               </Button>
               <Button variant="outline" size="lg" className="px-8 py-4 text-lg font-semibold" asChild>
                 <Link to="/telehealth">Talk to Provider</Link>
@@ -675,6 +740,38 @@ const NadPeptides = () => {
                 className="flex-1 px-3 py-2 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
               />
               <Button size="sm">Send</Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Age Verification Modal */}
+      <AgeVerificationModal 
+        isOpen={showAgeVerification}
+        onVerified={handleAgeVerified}
+        onDeclined={handleAgeDeclined}
+      />
+
+      {/* Payment Compliance Modal */}
+      {showPaymentCompliance && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+          <div className="max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-white rounded-2xl shadow-2xl">
+            <div className="sticky top-0 bg-white border-b p-6 flex items-center justify-between">
+              <h2 className="text-2xl font-bold text-gray-800">Payment & Compliance Information</h2>
+              <Button 
+                variant="ghost" 
+                onClick={() => setShowPaymentCompliance(false)}
+                className="text-2xl"
+              >
+                ×
+              </Button>
+            </div>
+            
+            <div className="p-6">
+              <PaymentCompliance 
+                onProceedToPayment={proceedToBooking}
+                showFullDisclosure={true}
+              />
             </div>
           </div>
         </div>
