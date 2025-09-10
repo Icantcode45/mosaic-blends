@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { useCart } from "@/contexts/CartContext";
+import { useToast } from "@/hooks/use-toast";
 
 const categories = [
   "Supplements",
@@ -14,29 +16,54 @@ const ProductCard = ({
   name,
   description,
   price,
+  id,
 }: {
   category: string;
   name: string;
   description: string;
   price: string;
-}) => (
-  <div className="rounded-2xl bg-white shadow-4xl-soft hover:shadow-8xl transition-transform hover:-translate-y-2 overflow-hidden">
-    <div
-      className="w-full h-52 bg-[length:contain] bg-center bg-no-repeat bg-gradient-to-br from-muted to-muted/60"
-      style={{
-        backgroundImage:
-          "url(https://cdn.builder.io/api/v1/image/assets%2Fd86ad443e90f49f6824eddb927a8e06f%2F1bb3a1ef45384ef3907b8f30baeec5a4?format=webp&width=800)",
-      }}
-    />
-    <div className="p-6">
-      <div className="text-primary text-xs font-semibold uppercase tracking-wide">{category}</div>
-      <h3 className="mt-1 text-lg font-semibold text-foreground">{name}</h3>
-      <p className="mt-2 text-sm text-muted-foreground">{description}</p>
-      <div className="mt-4 text-xl font-bold text-primary">{price}</div>
-      <Button className="w-full mt-4">Add to Cart</Button>
+  id: string;
+}) => {
+  const { addItem } = useCart();
+  const { toast } = useToast();
+
+  const handleAddToCart = () => {
+    const product = {
+      id,
+      name,
+      description,
+      price: parseFloat(price.replace('$', '')),
+      image_url: null,
+      category,
+      stock_quantity: 10
+    };
+    
+    addItem(product);
+    toast({
+      title: "Added to cart",
+      description: `${name} has been added to your cart.`,
+    });
+  };
+
+  return (
+    <div className="rounded-2xl bg-white shadow-4xl-soft hover:shadow-8xl transition-transform hover:-translate-y-2 overflow-hidden">
+      <div
+        className="w-full h-52 bg-[length:contain] bg-center bg-no-repeat bg-gradient-to-br from-muted to-muted/60"
+        style={{
+          backgroundImage:
+            "url(https://cdn.builder.io/api/v1/image/assets%2Fd86ad443e90f49f6824eddb927a8e06f%2F1bb3a1ef45384ef3907b8f30baeec5a4?format=webp&width=800)",
+        }}
+      />
+      <div className="p-6">
+        <div className="text-primary text-xs font-semibold uppercase tracking-wide">{category}</div>
+        <h3 className="mt-1 text-lg font-semibold text-foreground">{name}</h3>
+        <p className="mt-2 text-sm text-muted-foreground">{description}</p>
+        <div className="mt-4 text-xl font-bold text-primary">{price}</div>
+        <Button className="w-full mt-4" onClick={handleAddToCart}>Add to Cart</Button>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Supplements = () => {
   return (
@@ -89,12 +116,12 @@ const Supplements = () => {
           </div>
 
           <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-8">
-            <ProductCard category="Supplements" name="Premium Multivitamin Complex" description="Complete daily nutrition with essential vitamins and minerals for optimal health." price="$49.99" />
-            <ProductCard category="Vitamins & Minerals" name="Vitamin D3 + K2" description="High-potency vitamin D3 with K2 for bone health and immune support." price="$34.99" />
-            <ProductCard category="Sports Nutrition" name="Performance Recovery" description="Advanced recovery formula with amino acids and electrolytes." price="$59.99" />
-            <ProductCard category="Health Conditions" name="Immune Support Complex" description="Powerful immune system support with vitamin C, zinc, and elderberry." price="$44.99" />
-            <ProductCard category="Personal Care" name="Collagen Beauty Formula" description="Premium collagen peptides for skin, hair, and nail health." price="$69.99" />
-            <ProductCard category="Supplements" name="Omega-3 Ultra" description="High-purity fish oil with EPA and DHA for heart and brain health." price="$39.99" />
+            <ProductCard id="multivitamin" category="Supplements" name="Premium Multivitamin Complex" description="Complete daily nutrition with essential vitamins and minerals for optimal health." price="$49.99" />
+            <ProductCard id="vitamin-d3-k2" category="Vitamins & Minerals" name="Vitamin D3 + K2" description="High-potency vitamin D3 with K2 for bone health and immune support." price="$34.99" />
+            <ProductCard id="performance-recovery" category="Sports Nutrition" name="Performance Recovery" description="Advanced recovery formula with amino acids and electrolytes." price="$59.99" />
+            <ProductCard id="immune-support" category="Health Conditions" name="Immune Support Complex" description="Powerful immune system support with vitamin C, zinc, and elderberry." price="$44.99" />
+            <ProductCard id="collagen-beauty" category="Personal Care" name="Collagen Beauty Formula" description="Premium collagen peptides for skin, hair, and nail health." price="$69.99" />
+            <ProductCard id="omega-3-ultra" category="Supplements" name="Omega-3 Ultra" description="High-purity fish oil with EPA and DHA for heart and brain health." price="$39.99" />
           </div>
         </div>
       </section>

@@ -14,7 +14,7 @@ const EnhancedHeader = () => {
   const [searchOpen, setSearchOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#hero' },
+    { name: 'Home', href: '/' },
     { name: 'Telehealth', href: '/telehealth' },
     { name: 'Mobile Testing Kits', href: '/mobile-testing-kits' },
     { name: 'Supplements', href: '/supplements' },
@@ -36,14 +36,14 @@ const EnhancedHeader = () => {
       category: "Advanced Treatments", 
       items: [
         { name: "NAD+ & Peptides", href: "/nad-peptides", description: "Cellular support and recovery" },
-        { name: "Weight Management", href: "/#weight-management", description: "Comprehensive weight programs" }
+        { name: "Weight Management", href: "/iv-therapy", description: "Comprehensive weight programs" }
       ]
     },
     {
       category: "Wellness & Health",
       items: [
-        { name: "Sexual Wellness", href: "#sexual-wellness", description: "Discreet wellness solutions" },
-        { name: "Probiotics & Gut Health", href: "#probiotics", description: "Digestive health support" },
+        { name: "Sexual Wellness", href: "/iv-therapy", description: "Discreet wellness solutions" },
+        { name: "Probiotics & Gut Health", href: "/supplements", description: "Digestive health support" },
         { name: "Professional Supplements", href: "/supplements", description: "Physician-trusted products" }
       ]
     },
@@ -61,13 +61,13 @@ const EnhancedHeader = () => {
       category: "Supplements",
       items: [
         { name: "Professional Supplements", href: "/supplements", description: "High-quality formulations" },
-        { name: "Probiotics & Gut Health", href: "#probiotics", description: "Digestive wellness" }
+        { name: "Probiotics & Gut Health", href: "/supplements", description: "Digestive wellness" }
       ]
     },
     {
       category: "Vitamins & Minerals",
       items: [
-        { name: "Vitamin Injections", href: "#vitamins", description: "Injectable nutrients" }
+        { name: "Vitamin Injections", href: "/vitamin-injections", description: "Injectable nutrients" }
       ]
     }
   ];

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Clock, FileText, Heart, Stethoscope, UserCheck } from "lucide-react";
+import { Link } from "react-router-dom";
 import QualiphyWidget from "@/components/QualiphyWidget";
 
 const FirstTimePatients = () => {
@@ -17,10 +18,10 @@ const FirstTimePatients = () => {
               Your journey to optimal wellness starts here. We've made it simple to get started with our comprehensive IV therapy and wellness services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-              <Button size="lg">
-                Book Your First Appointment
+              <Button size="lg" asChild>
+                <Link to="/first-time-patients">Book Your First Appointment</Link>
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" onClick={() => window.open('https://forms.gle/example', '_blank')}>
                 Download New Patient Forms
               </Button>
               <QualiphyWidget />
