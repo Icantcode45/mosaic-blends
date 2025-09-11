@@ -44,7 +44,7 @@ const IVTherapy = () => {
       {
         id: 'rehydrate-plus',
         name: 'Rehydrate Plus IV Drip',
-        category: 'Enhanced Hydration',
+        category: 'Basic Hydration',
         price: '$150',
         description: 'Enhanced hydration with vitamins and minerals for superior wellness support.',
         features: [
@@ -54,26 +54,28 @@ const IVTherapy = () => {
           'Magnesium',
           'Enhanced Recovery'
         ]
+      },
+      {
+        id: 'rehydrate-deluxe',
+        name: 'Rehydrate Deluxe IV Drip',
+        category: 'Basic Hydration',
+        price: '$175',
+        badge: 'Premium Hydration',
+        description: 'Deluxe hydration therapy with premium vitamins and electrolytes for maximum wellness support.',
+        features: [
+          'Normal Saline 1000ml',
+          'Premium B-Complex',
+          'High-Dose Vitamin C',
+          'Magnesium + Calcium',
+          'Enhanced Electrolytes',
+          'Superior Recovery'
+        ]
       }
     ],
     standard: [
       {
-        id: 'jr-myers',
-        name: "Jr. Myers' Cocktail IV Drip",
-        category: 'Standard Wellness',
-        price: '$175',
-        badge: 'Foundation',
-        description: 'Foundational nutrient blend for general wellness and immune support.',
-        features: [
-          'Vitamin B-Complex',
-          'Vitamin B12',
-          'Vitamin C',
-          'Glutathione'
-        ]
-      },
-      {
         id: 'myers',
-        name: "Myers' Cocktail IV Drip",
+        name: "Myers Cocktail IV Drip",
         category: 'Standard Wellness',
         price: '$200',
         badge: 'Classic',
@@ -88,23 +90,82 @@ const IVTherapy = () => {
         ]
       },
       {
-        id: 'mega-myers',
-        name: "Mega Myers' Cocktail IV Drip",
+        id: 'jr-myers',
+        name: "Jr. Myers Cocktail IV Drip",
         category: 'Standard Wellness',
-        price: '$250',
-        description: 'Maximum strength Myers\' formula for intensive wellness support and recovery.',
+        price: '$175',
+        badge: 'Foundation',
+        description: 'Foundational nutrient blend for general wellness and immune support.',
         features: [
-          'High-Dose Vitamin C',
-          'B-Complex + B12',
-          'Magnesium + Calcium',
-          'Zinc + Selenium',
-          'Maximum Potency'
+          'Vitamin B-Complex',
+          'Vitamin B12',
+          'Vitamin C',
+          'Glutathione'
         ]
       },
       {
-        id: 'hangover',
-        name: 'The Day After Hangover Relief IV Drip',
+        id: 'anti-inflammatory',
+        name: 'Anti-Inflammatory IV Drip',
         category: 'Standard Wellness',
+        price: '$275',
+        description: 'Powerful anti-inflammatory formula to reduce inflammation and promote healing.',
+        features: [
+          'Curcumin',
+          'Glutathione',
+          'Vitamin C',
+          'Anti-Inflammatory Support',
+          'Pain Relief'
+        ]
+      },
+      {
+        id: 'weight-management',
+        name: 'Weight Management IV Drip',
+        category: 'Standard Wellness',
+        price: '$225',
+        badge: 'Metabolism',
+        description: 'Metabolic support formula designed to enhance weight management and energy.',
+        features: [
+          'L-Carnitine',
+          'B-Complex Vitamins',
+          'Chromium',
+          'Metabolism Boosters',
+          'Energy Enhancement'
+        ]
+      },
+      {
+        id: 'stress-relief',
+        name: 'Stress Relief IV Drip',
+        category: 'Standard Wellness',
+        price: '$200',
+        description: 'Calming formula to reduce stress and promote relaxation and mental clarity.',
+        features: [
+          'Magnesium for Relaxation',
+          'B-Complex for Stress',
+          'Taurine',
+          'Stress Reduction',
+          'Mental Clarity'
+        ]
+      },
+      {
+        id: 'mental-clarity',
+        name: 'Mental Clarity IV Drip',
+        category: 'Standard Wellness',
+        price: '$225',
+        description: 'Cognitive enhancement formula for improved focus, memory, and mental performance.',
+        features: [
+          'Nootropic Nutrients',
+          'B-Complex for Brain',
+          'Phosphatidylcholine',
+          'Enhanced Focus',
+          'Memory Support'
+        ]
+      }
+    ],
+    specialty: [
+      {
+        id: 'hangover',
+        name: 'The Day After "Hangover" IV Drip',
+        category: 'Specialty Treatments',
         price: '$175',
         badge: 'Hangover Relief',
         description: 'Rapid recovery from hangovers with targeted hydration and detoxification support.',
@@ -115,12 +176,10 @@ const IVTherapy = () => {
           'Glutathione',
           'Vitamin C'
         ]
-      }
-    ],
-    specialty: [
+      },
       {
         id: 'sun-devil',
-        name: 'The "Sun Devil" Energy Booster IV Drip',
+        name: 'The "Sun Devil" Energy Boost IV Drip',
         category: 'Specialty Treatments',
         price: '$225',
         badge: 'Performance',
@@ -134,23 +193,8 @@ const IVTherapy = () => {
         ]
       },
       {
-        id: 'd-book',
-        name: 'The "D-Book" Performance Booster IV Drip',
-        category: 'Specialty Treatments',
-        price: '$275',
-        description: 'Elite athletic performance formula for professional-level optimization.',
-        features: [
-          'Vitamin B6',
-          'Vitamin B12',
-          'Vitamin C',
-          'Glutathione',
-          'Amino Blend',
-          'Magnesium'
-        ]
-      },
-      {
-        id: 'diamond-back',
-        name: 'The "Diamond-Back" Immune Booster IV Drip',
+        id: 'diamondback',
+        name: 'The "Diamondback" Immune Booster IV Drip',
         category: 'Specialty Treatments',
         price: '$200',
         badge: 'Immunity',
@@ -161,22 +205,6 @@ const IVTherapy = () => {
           'Immune Boosters',
           'Antioxidant Protection',
           'Cold & Flu Defense'
-        ]
-      },
-      {
-        id: 'scottsdale',
-        name: 'The "Scottsdale" Beauty IV Bag',
-        category: 'Specialty Treatments',
-        price: '$250',
-        badge: 'Beauty',
-        description: 'Beauty and anti-aging formula for radiant skin and enhanced vitality.',
-        features: [
-          'Vitamin B-Complex',
-          'Vitamin B12',
-          'MICC',
-          'Zinc',
-          'Glutathione',
-          'Biotin'
         ]
       },
       {
@@ -196,51 +224,87 @@ const IVTherapy = () => {
         ]
       },
       {
-        id: 'stress-relief',
-        name: 'The Stress Relief IV Drip',
-        category: 'Specialty Treatments',
-        price: '$200',
-        description: 'Calming formula to reduce stress and promote relaxation and mental clarity.',
-        features: [
-          'Magnesium for Relaxation',
-          'B-Complex for Stress',
-          'Taurine',
-          'Stress Reduction',
-          'Mental Clarity'
-        ]
-      },
-      {
-        id: 'mental-clarity',
-        name: 'The Mental Clarity IV Drip',
-        category: 'Specialty Treatments',
-        price: '$225',
-        description: 'Cognitive enhancement formula for improved focus, memory, and mental performance.',
-        features: [
-          'Nootropic Nutrients',
-          'B-Complex for Brain',
-          'Phosphatidylcholine',
-          'Enhanced Focus',
-          'Memory Support'
-        ]
-      },
-      {
-        id: 'anti-inflammatory',
-        name: 'The Anti-Inflammatory IV Drip',
+        id: 'd-book',
+        name: 'The "D-Book" Performance IV Drip',
         category: 'Specialty Treatments',
         price: '$275',
-        description: 'Powerful anti-inflammatory formula to reduce inflammation and promote healing.',
+        description: 'Elite athletic performance formula for professional-level optimization.',
         features: [
-          'Curcumin',
-          'Glutathione',
+          'Vitamin B6',
+          'Vitamin B12',
           'Vitamin C',
-          'Anti-Inflammatory Support',
-          'Pain Relief'
+          'Glutathione',
+          'Amino Blend',
+          'Magnesium'
+        ]
+      },
+      {
+        id: 'scottsdale-beauty',
+        name: 'The Scottsdale Beauty Bag IV Drip',
+        category: 'Specialty Treatments',
+        price: '$250',
+        badge: 'Beauty',
+        description: 'Beauty and anti-aging formula for radiant skin and enhanced vitality.',
+        features: [
+          'Vitamin B-Complex',
+          'Vitamin B12',
+          'MICC',
+          'Zinc',
+          'Glutathione',
+          'Biotin'
+        ]
+      }
+    ],
+    premium: [
+      {
+        id: 'mega-myers',
+        name: 'The Mega Myers Cocktail IV Drip',
+        category: 'Premium Therapies',
+        price: '$250',
+        badge: 'Maximum Strength',
+        description: 'Maximum strength Myers\' formula for intensive wellness support and recovery.',
+        features: [
+          'High-Dose Vitamin C',
+          'B-Complex + B12',
+          'Magnesium + Calcium',
+          'Zinc + Selenium',
+          'Maximum Potency'
+        ]
+      },
+      {
+        id: 'gold',
+        name: 'The "Gold" Ultimate Hydration IV Drip',
+        category: 'Premium Therapies',
+        price: '$300',
+        badge: 'Premium',
+        description: 'Premium hydration and recovery formula with advanced nutrient blend.',
+        features: [
+          'Advanced Hydration Formula',
+          'Recovery Amino Acids',
+          'Premium Vitamins',
+          'Electrolyte Optimization',
+          'Ultimate Recovery'
+        ]
+      },
+      {
+        id: 'platinum',
+        name: 'The "Platinum" Ultimate Hydration IV Drip',
+        category: 'Premium Therapies',
+        price: '$400',
+        badge: 'Ultra Premium',
+        description: 'Our most comprehensive hydration and wellness formula with premium nutrients.',
+        features: [
+          'Ultra Premium Hydration',
+          'Complete Amino Complex',
+          'Maximum Vitamin Blend',
+          'Advanced Antioxidants',
+          'Elite Recovery Support'
         ]
       },
       {
         id: 'stay-dripped',
-        name: 'The Stay Dripped Special IV Drip',
-        category: 'Specialty Treatments',
+        name: 'The "Stay Dripped" Special IV Drip',
+        category: 'Premium Therapies',
         price: '$325',
         badge: 'Signature',
         description: 'Our signature blend combining the best of all our treatments for ultimate wellness.',
@@ -253,37 +317,73 @@ const IVTherapy = () => {
         ]
       }
     ],
-    premium: [
-      {
-        id: 'gold',
-        name: 'The "Gold" Ultimate Hydration & Recovery IV Drip',
-        category: 'Premium Therapies',
-        price: '$300',
-        badge: 'Premium',
-        description: 'Premium hydration and recovery formula with advanced nutrient blend.',
-        features: [
-          'Advanced Hydration Formula',
-          'Recovery Amino Acids',
-          'Premium Vitamins',
-          'Electrolyte Optimization',
-          'Ultimate Recovery'
-        ]
-      }
-    ],
     nad: [
       {
-        id: 'nad-iv',
-        name: 'NAD+ IV Infusion',
+        id: 'nad-plain',
+        name: 'The NAD+ IV Drip (Plain Saline + Single 50mg Dose of NAD+)',
         category: 'NAD+ Therapy',
         price: '$299',
-        badge: 'Anti-Aging',
-        description: 'Advanced NAD+ therapy for cellular repair and anti-aging benefits.',
+        badge: 'Basic NAD+',
+        description: 'Pure NAD+ therapy with plain saline for cellular repair and energy restoration.',
         features: [
-          'NAD+ 250-500mg',
+          'Plain Saline 500ml',
+          'NAD+ 50mg',
           'Cellular Energy Restoration',
-          'Anti-Aging Support',
-          'Mental Clarity Enhancement',
-          '3-4 hour treatment'
+          'Basic Anti-Aging Support',
+          '2-3 hour treatment'
+        ]
+      },
+      {
+        id: 'fountain-youth',
+        name: 'The "Fountain Of Youth" NAD+ IV Drip',
+        category: 'NAD+ Therapy',
+        price: '$549',
+        badge: 'Beauty + NAD+',
+        description: 'Same ingredients as the Scottsdale Beauty Bag IV Drip plus 50mg NAD+ for enhanced anti-aging.',
+        features: [
+          'Vitamin B-Complex',
+          'Vitamin B12',
+          'MICC',
+          'Zinc',
+          'Glutathione',
+          'Biotin',
+          'NAD+ 50mg',
+          'Anti-Aging Complex'
+        ]
+      },
+      {
+        id: 'diamond-nad',
+        name: 'The "Diamond" NAD+',
+        category: 'NAD+ Therapy',
+        price: '$499',
+        badge: 'Myers + NAD+',
+        description: 'Same ingredients as the Myers Cocktail IV Drip plus 50-150mg NAD+. Increase of $75 from 50mg to 100mg and $50 from 100mg to 150mg.',
+        features: [
+          'Vitamin B-Complex',
+          'Vitamin B12',
+          'Vitamin C',
+          'Zinc',
+          'Glutathione',
+          'Magnesium',
+          'NAD+ 50-150mg',
+          'Premium Anti-Aging'
+        ]
+      },
+      {
+        id: 'elite-nad',
+        name: 'The "Elite" NAD+ IV Drip',
+        category: 'NAD+ Therapy',
+        price: '$799',
+        badge: 'Ultimate NAD+',
+        description: 'The Platinum Ultimate Hydration IV Drip plus 100mg-250mg NAD+ for maximum anti-aging benefits.',
+        features: [
+          'Ultra Premium Hydration',
+          'Complete Amino Complex',
+          'Maximum Vitamin Blend',
+          'Advanced Antioxidants',
+          'NAD+ 100-250mg',
+          'Elite Anti-Aging Support',
+          '4-6 hour treatment'
         ]
       }
     ]
