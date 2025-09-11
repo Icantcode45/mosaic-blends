@@ -593,22 +593,16 @@ const IVTherapy = () => {
                     
                     <div className="flex items-center justify-between">
                       <div className="text-2xl font-bold text-primary">{service.price}</div>
-                      <ServiceBookingButton serviceId={service.id} serviceName={service.name} />
+                      <ServiceBookingButton 
+                        serviceId={service.id} 
+                        serviceName={service.name} 
+                        serviceCategory={service.category}
+                      />
                     </div>
                   </div>
                 </div>
               );
             })}
-          </div>
-        </div>
-        
-        {/* IntakeQ Booking Widget for Current Category */}
-        <div className="mt-16">
-          <div className="bg-muted/30 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-center text-foreground mb-6">
-              Book Your {categories.find(cat => cat.id === selectedCategory)?.name} Treatment
-            </h3>
-            <IntakeQWidget categoryId={getCategoryId(selectedCategory)} />
           </div>
         </div>
       </section>

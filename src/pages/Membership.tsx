@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import IntakeQWidget from '@/components/IntakeQWidget';
 import { Helmet } from 'react-helmet';
+import MembershipBookingButton from '@/components/MembershipBookingButton';
 
 const Membership = () => {
   const [activeWidget, setActiveWidget] = useState<string | null>(null);
@@ -177,31 +178,14 @@ const Membership = () => {
                     ))}
                   </ul>
                   
-                  <Dialog open={activeWidget === plan.id} onOpenChange={(open) => setActiveWidget(open ? plan.id : null)}>
-                    <DialogTrigger asChild>
-                      <Button className={`w-full ${plan.featured ? 'btn-featured' : ''}`}>
-                        Join {plan.name}
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-                      <DialogHeader>
-                        <DialogTitle>Join {plan.name} Membership</DialogTitle>
-                      </DialogHeader>
-                      <IntakeQWidget serviceId={plan.intakeqId} />
-                    </DialogContent>
-                  </Dialog>
+                  <MembershipBookingButton 
+                    membershipName={plan.name}
+                    membershipType={plan.id as 'basic' | 'premium' | 'elite' | 'starter'}
+                  />
                 </div>
               </div>
             ))}
           </div>
-        </div>
-        
-        {/* Membership Booking Widget */}
-        <div className="bg-muted/30 rounded-2xl p-8 mx-auto max-w-4xl">
-          <h3 className="text-2xl font-bold text-center text-foreground mb-6">
-            Join Stay Dripped Monthly Memberships
-          </h3>
-          <IntakeQWidget categoryId="a594f9e5-0db6-4ca0-bbfb-47c944af7007" />
         </div>
       </section>
     </div>

@@ -7,6 +7,7 @@ import ComplianceDisclaimers from "@/components/compliance/ComplianceDisclaimers
 import RegulatoryUpdates from "@/components/compliance/RegulatoryUpdates";
 import PaymentCompliance from "@/components/compliance/PaymentCompliance";
 import { useToast } from "@/components/ui/use-toast";
+import PeptideBookingButton from "@/components/PeptideBookingButton";
 
 const NadPeptides = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -556,14 +557,10 @@ const NadPeptides = () => {
                     >
                       🔍 Learn More
                     </Button>
-                    <Button 
-                      size="sm" 
-                      variant="outline" 
-                      className="flex-1 hover:bg-primary hover:text-primary-foreground"
-                      onClick={handleBookingAttempt}
-                    >
-                      📅 Book (18+)
-                    </Button>
+                    <PeptideBookingButton 
+                      peptideName={peptide.name}
+                      peptideCategory={peptide.category}
+                    />
                   </div>
                 </div>
               </div>
@@ -656,13 +653,10 @@ const NadPeptides = () => {
                 </div>
 
                 <div className="flex gap-4 pt-4">
-                  <Button 
-                    size="lg" 
-                    className="flex-1"
-                    onClick={handleBookingAttempt}
-                  >
-                    Book Consultation (18+)
-                  </Button>
+                  <PeptideBookingButton 
+                    peptideName={selectedPeptide.name}
+                    peptideCategory={selectedPeptide.category}
+                  />
                   <Button size="lg" variant="outline" className="flex-1" asChild>
                     <Link to="/telehealth">Ask Questions</Link>
                   </Button>

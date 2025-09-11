@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/contexts/CartContext";
 import { useToast } from "@/hooks/use-toast";
+import SupplementBookingButton from "@/components/SupplementBookingButton";
 
 const categories = [
   "Supplements",
@@ -59,7 +60,10 @@ const ProductCard = ({
         <h3 className="mt-1 text-lg font-semibold text-foreground">{name}</h3>
         <p className="mt-2 text-sm text-muted-foreground">{description}</p>
         <div className="mt-4 text-xl font-bold text-primary">{price}</div>
-        <Button className="w-full mt-4" onClick={handleAddToCart}>Add to Cart</Button>
+        <div className="mt-4 flex gap-2">
+          <Button className="flex-1" onClick={handleAddToCart}>Add to Cart</Button>
+          <SupplementBookingButton supplementName={name} />
+        </div>
       </div>
     </div>
   );
