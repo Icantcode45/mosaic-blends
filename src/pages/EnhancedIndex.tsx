@@ -7,7 +7,6 @@ import TelehealthSection from "@/components/TelehealthSection";
 
 import EnhancedMembershipSection from "@/components/EnhancedMembershipSection";
 import EnhancedPartnersSection from "@/components/EnhancedPartnersSection";
-import FAQSection from "@/components/FAQSection";
 import NewsletterSection from "@/components/NewsletterSection";
 import EnhancedContactSection from "@/components/EnhancedContactSection";
 
@@ -32,16 +31,13 @@ const EnhancedIndex = () => {
       {/* 6. Partners & Certifications - Additional credibility */}
       <EnhancedPartnersSection />
       
-      {/* 7. FAQ - Address common concerns */}
-      <FAQSection />
-      
-      {/* 8. Client Reviews - Showcase perfect 5.0 rating */}
+      {/* 7. Client Reviews - Showcase perfect 5.0 rating */}
       <GoogleReviewsSection />
       
-      {/* 9. Newsletter - Capture leads */}
+      {/* 8. Newsletter - Capture leads */}
       <NewsletterSection />
       
-      {/* 10. Contact - Make it easy to get in touch */}
+      {/* 9. Contact - Make it easy to get in touch */}
       <EnhancedContactSection />
     </div>
   );

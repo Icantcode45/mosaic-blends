@@ -2,14 +2,54 @@ import { Badge } from "@/components/ui/badge";
 
 const EnhancedPartnersSection = () => {
   const partners = [
-    { name: "Arizona State Athletics", category: "Sports Partnership", description: "Official IV therapy partner for ASU athletics" },
-    { name: "Fight Ready MMA", category: "Combat Sports", description: "Recovery partner for professional fighters" },
-    { name: "Queen Creek High School Athletics", category: "High School Sports", description: "Supporting student athlete recovery" },
-    { name: "Arizona Combat Sports", category: "MMA & BJJ", description: "Performance and recovery optimization" },
-    { name: "Social Scottsdale", category: "Entertainment Venue", description: "Wellness partnership in Scottsdale" },
-    { name: "Steve Levine Entertainment", category: "Event Production", description: "Event wellness and recovery services" },
-    { name: "NelkBoys & Fullsend Golf", category: "Content & Golf", description: "Lifestyle and wellness collaboration" },
-    { name: "Augment Health & Wellness", category: "Health & Wellness", description: "Comprehensive wellness partnership" }
+    { 
+      name: "Arizona State Athletics", 
+      category: "Sports Partnership", 
+      description: "Official IV therapy partner for ASU athletics",
+      logo: "/lovable-uploads/f9b4e15f-3ba4-492d-9673-b9dd33979fbd.png"
+    },
+    { 
+      name: "Fight Ready MMA", 
+      category: "Combat Sports", 
+      description: "Recovery partner for professional fighters",
+      logo: "/lovable-uploads/a0611a04-5ce8-48f5-af4b-e3dd5916fcf5.png"
+    },
+    { 
+      name: "Queen Creek High School Athletics", 
+      category: "High School Sports", 
+      description: "Supporting student athlete recovery",
+      logo: "/lovable-uploads/7b84226a-c816-411c-9f4e-373be221089d.png"
+    },
+    { 
+      name: "Arizona Combat Sports", 
+      category: "MMA & BJJ", 
+      description: "Performance and recovery optimization",
+      logo: "/lovable-uploads/ffa52aa5-4204-44f6-9e66-1c8e6618f6f8.png"
+    },
+    { 
+      name: "Social Scottsdale", 
+      category: "Entertainment Venue", 
+      description: "Wellness partnership in Scottsdale",
+      logo: "/lovable-uploads/335fb85f-581d-43bb-9dab-00583c6b2e9e.png"
+    },
+    { 
+      name: "Steve Levine Entertainment", 
+      category: "Event Production", 
+      description: "Event wellness and recovery services",
+      logo: "/lovable-uploads/335fb85f-581d-43bb-9dab-00583c6b2e9e.png"
+    },
+    { 
+      name: "NelkBoys & Fullsend Golf", 
+      category: "Content & Golf", 
+      description: "Lifestyle and wellness collaboration",
+      logo: "/lovable-uploads/335fb85f-581d-43bb-9dab-00583c6b2e9e.png"
+    },
+    { 
+      name: "Augment Health & Wellness", 
+      category: "Health & Wellness", 
+      description: "Comprehensive wellness partnership",
+      logo: "/lovable-uploads/6e06577a-5945-4079-92bf-743d5a2a807b.png"
+    }
   ];
 
   return (
@@ -40,8 +80,17 @@ const EnhancedPartnersSection = () => {
                   className="group bg-background rounded-xl shadow-elev-1 p-6 hover:shadow-elev-2 transition-all duration-300"
                 >
                   <div className="space-y-3">
-                    <div className="text-xs font-semibold text-primary uppercase tracking-wide">
-                      {partner.category}
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="text-xs font-semibold text-primary uppercase tracking-wide">
+                        {partner.category}
+                      </div>
+                      {partner.logo && (
+                        <img 
+                          src={partner.logo} 
+                          alt={`${partner.name} logo`} 
+                          className="h-8 w-auto object-contain"
+                        />
+                      )}
                     </div>
                     <div className="font-bold text-lg text-foreground group-hover:text-primary transition-colors">
                       {partner.name}
