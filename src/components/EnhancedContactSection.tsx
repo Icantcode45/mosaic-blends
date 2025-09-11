@@ -28,7 +28,7 @@ const EnhancedContactSection = () => {
       description: "Instant support via our website"
     },
     {
-      icon: "/lovable-uploads/d3c7dea0-2e46-4dcb-a23c-09f86aede0aa.png",
+      icon: "/lovable-uploads/19ac5dfe-66b0-4e2f-be16-ed814d9cc475.png",
       title: "Text Us",
       primary: "(602) 688-9825",
       secondary: "SMS available 7am-9pm",

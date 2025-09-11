@@ -121,7 +121,7 @@ const PaymentCompliance = ({ onProceedToPayment, showFullDisclosure = true }: Pa
             I Understand - Proceed to Payment
           </Button>
         )}
-        <Button variant="outline" className="flex-1">
+        <Button variant="outline" className="flex-1" asChild>
           <a href="tel:+1-602-688-9825">Questions? Call Us</a>
         </Button>
       </div>

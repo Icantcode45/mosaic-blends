@@ -105,11 +105,10 @@ const GiftCards = () => {
             Share the gift of health and vitality with Stay Dripped IV & Wellness Co. gift cards. 
             Perfect for birthdays, holidays, or any special occasion.
           </p>
-          <Button size="lg" className="bg-accent hover:bg-accent/90 px-8 py-4 text-lg font-semibold" asChild>
-            <a href="#gift-cards">
+          <Button size="lg" className="bg-accent hover:bg-accent/90 px-8 py-4 text-lg font-semibold" 
+            onClick={() => document.getElementById('gift-cards')?.scrollIntoView({ behavior: 'smooth' })}>
               🎁 Shop Gift Cards
-            </a>
-          </Button>
+            </Button>
         </div>
       </section>
 

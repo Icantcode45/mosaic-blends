@@ -144,7 +144,7 @@ const RegulatoryUpdates = () => {
               <p className="text-sm text-gray-600 mb-4">
                 Questions about our regulatory compliance or recent updates?
               </p>
-              <Button variant="outline">
+              <Button variant="outline" asChild>
                 <a href="tel:+1-602-688-9825">Contact Compliance Team</a>
               </Button>
             </div>

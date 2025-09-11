@@ -51,7 +51,7 @@ const ProductCard = ({
         className="w-full h-52 bg-[length:contain] bg-center bg-no-repeat bg-gradient-to-br from-muted to-muted/60"
         style={{
           backgroundImage:
-            "url(/lovable-uploads/170ac576-14a4-43e1-9d0b-5f830c86b90b.png)",
+            "url(/lovable-uploads/ed8aafa4-26e1-49c7-b39e-ba28edd0824c.png)",
         }}
       />
       <div className="p-6">
