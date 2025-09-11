@@ -42,7 +42,8 @@ const EnhancedPartnersSection = () => {
       name: "NelkBoys & Fullsend Golf", 
       category: "Content & Golf", 
       description: "Lifestyle and wellness collaboration",
-      logo: "/lovable-uploads/335fb85f-581d-43bb-9dab-00583c6b2e9e.png"
+      logo: "/lovable-uploads/700619f7-edd4-438b-bb29-f64a257fbd87.png",
+      secondaryLogo: "/lovable-uploads/05e85b0c-cda4-49fd-82eb-4768a712c780.png"
     },
     { 
       name: "Augment Health & Wellness", 
@@ -84,13 +85,22 @@ const EnhancedPartnersSection = () => {
                       <div className="text-xs font-semibold text-primary uppercase tracking-wide">
                         {partner.category}
                       </div>
-                      {partner.logo && (
-                        <img 
-                          src={partner.logo} 
-                          alt={`${partner.name} logo`} 
-                          className="h-8 w-auto object-contain"
-                        />
-                      )}
+                      <div className="flex items-center gap-2">
+                        {partner.logo && (
+                          <img 
+                            src={partner.logo} 
+                            alt={`${partner.name} logo`} 
+                            className="h-6 w-auto object-contain"
+                          />
+                        )}
+                        {partner.secondaryLogo && (
+                          <img 
+                            src={partner.secondaryLogo} 
+                            alt={`${partner.name} secondary logo`} 
+                            className="h-6 w-auto object-contain"
+                          />
+                        )}
+                      </div>
                     </div>
                     <div className="font-bold text-lg text-foreground group-hover:text-primary transition-colors">
                       {partner.name}
