@@ -23,21 +23,20 @@ const EnhancedIndex = () => {
       {/* 3. Results & Stats - Prove effectiveness with data */}
       <EnhancedStatsSection />
       
-      {/* 4. Client Reviews - Showcase perfect 5.0 rating */}
-      <GoogleReviewsSection />
-      
-      {/* 5. Telehealth Services - Additional service offering */}
+      {/* 4. Telehealth Services - Additional service offering */}
       <TelehealthSection />
       
-      
-      {/* 6. Membership Plans - Convert visitors with pricing */}
+      {/* 5. Membership Plans - Convert visitors with pricing */}
       <EnhancedMembershipSection />
       
-      {/* 7. Partners & Certifications - Additional credibility */}
+      {/* 6. Partners & Certifications - Additional credibility */}
       <EnhancedPartnersSection />
       
-      {/* 8. FAQ - Address common concerns */}
+      {/* 7. FAQ - Address common concerns */}
       <FAQSection />
+      
+      {/* 8. Client Reviews - Showcase perfect 5.0 rating */}
+      <GoogleReviewsSection />
       
       {/* 9. Newsletter - Capture leads */}
       <NewsletterSection />
