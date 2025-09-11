@@ -19,6 +19,7 @@ import Privacy from "./pages/Privacy";
 import VitaminInjections from "./pages/VitaminInjections";
 import NadPeptides from "./pages/NadPeptides";
 import IVTherapy from "./pages/IVTherapy";
+import EventInquiry from "./pages/EventInquiry";
 import Membership from "./pages/Membership";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const App = () => (
                 <Route path="/supplements" element={<Supplements />} />
                 <Route path="/first-time-patients" element={<FirstTimePatients />} />
                 <Route path="/events" element={<Events />} />
+                <Route path="/event-inquiry" element={<EventInquiry />} />
                 <Route path="/gift-cards" element={<GiftCards />} />
           <Route path="/vitamin-injections" element={<VitaminInjections />} />
           <Route path="/nad-peptides" element={<NadPeptides />} />

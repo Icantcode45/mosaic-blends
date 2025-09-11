@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const MembershipSection = () => {
   const [isYearly, setIsYearly] = useState(true);
@@ -106,8 +107,9 @@ const MembershipSection = () => {
                     variant={plan.buttonVariant} 
                     className="w-full"
                     size="lg"
+                    asChild
                   >
-                    {plan.buttonText}
+                    <Link to="/membership">{plan.buttonText}</Link>
                   </Button>
                 </div>
               </Card>

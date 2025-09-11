@@ -14,15 +14,13 @@ const EnhancedHeader = () => {
   const [searchOpen, setSearchOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '/' },
     { name: 'Telehealth', href: '/telehealth' },
     { name: 'Mobile Testing Kits', href: '/mobile-testing-kits' },
     { name: 'Supplements', href: '/supplements' },
     { name: 'Membership', href: '/membership' },
+    { name: 'Event Inquiry', href: '/event-inquiry' },
     { name: 'First-Time Patients', href: '/first-time-patients' },
-    { name: 'Events', href: '/events' },
-    { name: 'Gift Cards', href: '/gift-cards' },
-    { name: 'Privacy', href: '/privacy' }
+    { name: 'Gift Cards', href: '/gift-cards' }
   ];
 
   const servicesMegaItems = [
