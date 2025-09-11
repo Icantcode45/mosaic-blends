@@ -1,10 +1,20 @@
 import { useEffect } from 'react';
 
-const IntakeQWidget = () => {
+interface IntakeQWidgetProps {
+  serviceId?: string;
+  clientArea?: boolean;
+}
+
+const IntakeQWidget = ({ serviceId, clientArea = false }: IntakeQWidgetProps) => {
   useEffect(() => {
     // Set up IntakeQ configuration
     (window as any).intakeq = "68b14c4e0b7b143488664c75";
-    (window as any).intakeqClientArea = true;
+    
+    if (clientArea) {
+      (window as any).intakeqClientArea = true;
+    } else if (serviceId) {
+      (window as any).intakeqServiceId = serviceId;
+    }
 
     // Create and load the IntakeQ script
     const script = document.createElement("script");
@@ -20,7 +30,7 @@ const IntakeQWidget = () => {
         document.head.removeChild(existingScript);
       }
     };
-  }, []);
+  }, [serviceId, clientArea]);
 
   return (
     <div className="w-full">

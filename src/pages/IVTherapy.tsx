@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import IntakeQWidget from "@/components/IntakeQWidget";
+import ServiceBookingButton from "@/components/ServiceBookingButton";
 
 const IVTherapy = () => {
   const [selectedCategory, setSelectedCategory] = useState('basic');
@@ -346,7 +347,7 @@ const IVTherapy = () => {
               Already a client? Manage your appointments, view your treatment history, and schedule follow-up sessions.
             </p>
           </div>
-          <IntakeQWidget />
+          <IntakeQWidget clientArea={true} />
         </div>
       </section>
 
@@ -596,9 +597,7 @@ const IVTherapy = () => {
                     
                     <div className="flex items-center justify-between">
                       <div className="text-2xl font-bold text-primary">{service.price}</div>
-                      <Button asChild>
-                        <Link to="/first-time-patients">Book Now</Link>
-                      </Button>
+                      <ServiceBookingButton serviceId={service.id} serviceName={service.name} />
                     </div>
                   </div>
                 </div>
