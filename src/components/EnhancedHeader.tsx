@@ -18,6 +18,7 @@ const EnhancedHeader = () => {
     { name: 'Telehealth', href: '/telehealth' },
     { name: 'Mobile Testing Kits', href: '/mobile-testing-kits' },
     { name: 'Supplements', href: '/supplements' },
+    { name: 'Membership', href: '/membership' },
     { name: 'First-Time Patients', href: '/first-time-patients' },
     { name: 'Events', href: '/events' },
     { name: 'Gift Cards', href: '/gift-cards' },
