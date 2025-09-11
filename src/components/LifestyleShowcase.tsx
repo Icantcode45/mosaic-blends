@@ -3,8 +3,8 @@ import { Card } from "@/components/ui/card";
 const LifestyleShowcase = () => {
   const lifestyleImages = [
     {
-      src: "/lovable-uploads/1fac1b4b-2289-4274-b058-98ac68b44e03.png",
-      alt: "Professional IV therapy in modern comfortable environment",
+      src: "/lovable-uploads/34c99661-1ae3-4de4-a24f-48d93504109b.png",
+      alt: "Premium IV therapy in luxury outdoor setting",
       title: "Luxury Experience",
       description: "Unwind in your preferred setting"
     },

@@ -42,7 +42,9 @@ const EnhancedContactSection = () => {
     { area: "Paradise Valley", zones: ["All areas"] },
     { area: "Tempe", zones: ["ASU Area", "Downtown Tempe", "South Tempe"] },
     { area: "Mesa", zones: ["East Mesa", "Central Mesa", "Las Sendas"] },
-    { area: "Chandler", zones: ["Downtown Chandler", "Ahwatukee Foothills"] }
+    { area: "Chandler", zones: ["Downtown Chandler", "Ahwatukee Foothills"] },
+    { area: "Gilbert", zones: ["Heritage District", "Agritopia", "Seville"] },
+    { area: "Queen Creek", zones: ["San Tan Valley", "Queen Creek Proper"] }
   ];
 
   const businessHours = [
@@ -230,19 +232,17 @@ const EnhancedContactSection = () => {
               </div>
             </Card>
 
-            {/* Emergency Information */}
-            <Card className="p-6 bg-red-50 border-red-200">
-              <h3 className="text-xl font-bold mb-4 text-red-800 flex items-center gap-2">
-                <span>🚨</span> Medical Emergency
-              </h3>
-              <p className="text-red-700 mb-4">
-                If you are experiencing a medical emergency, call 911 immediately. 
-                Our services are not intended for emergency medical situations.
-              </p>
-              <div className="space-y-2 text-sm text-red-600">
-                <p><strong>Poison Control:</strong> 1-800-222-1222</p>
-                <p><strong>Crisis Text Line:</strong> Text HOME to 741741</p>
-                <p><strong>Suicide Prevention:</strong> 988</p>
+            {/* BBB Accreditation */}
+            <Card className="p-6 bg-blue-50 border-blue-200">
+              <div className="text-center">
+                <img 
+                  src="/lovable-uploads/6ffc838e-d9fd-4897-bac2-cfcdc2fb1373.png" 
+                  alt="BBB Accredited Business - Stay Dripped IV & Wellness Co." 
+                  className="mx-auto mb-4 max-w-full h-auto"
+                />
+                <p className="text-blue-700 text-sm">
+                  Trusted by the Better Business Bureau for our commitment to excellence and customer satisfaction.
+                </p>
               </div>
             </Card>
           </div>
