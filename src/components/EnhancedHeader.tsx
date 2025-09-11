@@ -172,8 +172,6 @@ const EnhancedHeader = () => {
 
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center space-x-8">
-              <Link to="/" className="nav-link">Home</Link>
-              
               {/* Services Dropdown */}
               <div 
                 className="relative"
