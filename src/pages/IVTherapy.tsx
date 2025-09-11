@@ -336,21 +336,6 @@ const IVTherapy = () => {
         </div>
       </section>
 
-      {/* Existing Clients - Appointment Management */}
-      <section className="py-12 bg-primary/5 border-b">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              Existing Clients
-            </h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Already a client? Manage your appointments, view your treatment history, and schedule follow-up sessions.
-            </p>
-          </div>
-          <IntakeQWidget clientArea={true} />
-        </div>
-      </section>
-
       {/* Filter Section */}
       <section className="bg-muted/50 py-8 border-b">
         <div className="container mx-auto px-4">
