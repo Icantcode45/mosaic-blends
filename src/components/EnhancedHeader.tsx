@@ -172,7 +172,7 @@ const EnhancedHeader = () => {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center space-x-6 overflow-x-auto whitespace-nowrap flex-1 min-w-0">
               {/* Services Dropdown */}
               <div 
                 className="relative"
@@ -335,7 +335,7 @@ const EnhancedHeader = () => {
 
           {/* Mobile panel */}
           {open && (
-            <div id="mobile-menu" className="lg:hidden pb-4">
+            <div id="mobile-menu" className="lg:hidden pb-4 max-h-[70vh] overflow-y-auto">
               <div className="grid gap-2">
                 <Link 
                   onClick={() => setOpen(false)} 
