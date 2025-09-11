@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 const EnhancedMembershipSection = () => {
   const [isYearly, setIsYearly] = useState(true);
 
@@ -224,8 +224,9 @@ const EnhancedMembershipSection = () => {
                     variant={plan.buttonVariant} 
                     className={`w-full ${plan.popular ? 'bg-primary hover:bg-primary/90' : ''}`}
                     size="lg"
+                    asChild
                   >
-                    {plan.buttonText}
+                    <Link to="/first-time-patients">{plan.buttonText}</Link>
                   </Button>
 
                   {plan.popular && (
@@ -268,8 +269,8 @@ const EnhancedMembershipSection = () => {
             </div>
             
             <div className="text-center mt-8">
-              <Button variant="outline" size="lg">
-                View Complete Terms & Benefits
+              <Button variant="outline" size="lg" asChild>
+                <Link to="/privacy">View Complete Terms & Benefits</Link>
               </Button>
             </div>
           </div>

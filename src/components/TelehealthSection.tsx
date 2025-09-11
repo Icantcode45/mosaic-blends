@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-
+import { Link } from "react-router-dom";
 const TelehealthSection = () => {
   const programs = [
     "Weight Management",
@@ -34,14 +34,14 @@ const TelehealthSection = () => {
                 Transparent pricing
               </li>
             </ul>
-            <div className="mt-8 flex gap-3">
-              <Button size="lg" className="btn btn-primary">
-                Start telehealth
-              </Button>
-              <Button variant="outline" size="lg" className="btn btn-outline">
-                How it works
-              </Button>
-            </div>
+              <div className="mt-8 flex gap-3">
+                <Button size="lg" asChild>
+                  <Link to="/telehealth">Start telehealth</Link>
+                </Button>
+                <Button variant="outline" size="lg" asChild>
+                  <Link to="/first-time-patients">How it works</Link>
+                </Button>
+              </div>
           </div>
           <Card className="p-6">
             <div className="rounded-2xl bg-muted/30 p-6">
