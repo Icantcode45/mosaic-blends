@@ -24,15 +24,36 @@ const HeroSection = () => {
             {/* Key Benefits with 3D Icons */}
             <div className="flex flex-wrap gap-6 mb-10">
               <div className="flex items-center gap-2">
-                <img src="/lovable-uploads/1845c426-94c3-4d3b-b1d0-8d8c7c205410.png" alt="Fast Service" className="w-5 h-5" />
+                <img 
+                  src="/lovable-uploads/1845c426-94c3-4d3b-b1d0-8d8c7c205410.png" 
+                  alt="Fast Service" 
+                  className="w-5 h-5" 
+                  width="20" 
+                  height="20"
+                  loading="eager"
+                />
                 <span className="text-sm font-medium">Rapid Response</span>
               </div>
               <div className="flex items-center gap-2">
-                <img src="/lovable-uploads/e41d24f9-14f6-4efb-adf0-5b53c1901fc1.png" alt="Mobile Service" className="w-5 h-5" />
+                <img 
+                  src="/lovable-uploads/e41d24f9-14f6-4efb-adf0-5b53c1901fc1.png" 
+                  alt="Mobile Service" 
+                  className="w-5 h-5" 
+                  width="20" 
+                  height="20"
+                  loading="eager"
+                />
                 <span className="text-sm font-medium">Mobile Service</span>
               </div>
               <div className="flex items-center gap-2">
-                <img src="/lovable-uploads/a498444a-fff1-4bd4-98b3-2dca2244bc5f.png" alt="Licensed" className="w-5 h-5" />
+                <img 
+                  src="/lovable-uploads/a498444a-fff1-4bd4-98b3-2dca2244bc5f.png" 
+                  alt="Licensed" 
+                  className="w-5 h-5" 
+                  width="20" 
+                  height="20"
+                  loading="eager"
+                />
                 <span className="text-sm font-medium">Licensed Providers</span>
               </div>
             </div>
@@ -56,6 +77,10 @@ const HeroSection = () => {
                 src="/lovable-uploads/b0faa61f-22ef-4eed-bb90-b544636afd28.png" 
                 alt="IV Therapy Lifestyle Experience - Friends enjoying mobile IV therapy" 
                 className="w-full h-full object-cover"
+                width="786"
+                height="777"
+                loading="eager"
+                fetchPriority="high"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>

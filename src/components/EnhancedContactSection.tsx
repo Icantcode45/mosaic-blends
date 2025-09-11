@@ -11,14 +11,16 @@ const EnhancedContactSection = () => {
       title: "Call Us",
       primary: "(602) 688-9825",
       secondary: "24/7 Emergency Line",
-      description: "Speak directly with our medical team"
+      description: "Speak directly with our medical team",
+      iconSize: { width: 24, height: 24 }
     },
     {
       icon: "/lovable-uploads/2bf8cace-459c-4234-809a-23f96c9ffbcb.png", 
       title: "Email Us",
       primary: "info@staydrippediv.com",
       secondary: "Response within 2 hours",
-      description: "General inquiries and scheduling"
+      description: "General inquiries and scheduling",
+      iconSize: { width: 24, height: 24 }
     },
     {
       icon: "/lovable-uploads/19ac5dfe-66b0-4e2f-be16-ed814d9cc475.png",
@@ -195,7 +197,14 @@ const EnhancedContactSection = () => {
             {/* Service Areas */}
             <Card className="p-6">
               <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                <img src="/lovable-uploads/e41d24f9-14f6-4efb-adf0-5b53c1901fc1.png" alt="Location" className="w-6 h-6" />
+                <img 
+                  src="/lovable-uploads/e41d24f9-14f6-4efb-adf0-5b53c1901fc1.png" 
+                  alt="Location" 
+                  className="w-6 h-6" 
+                  width="24" 
+                  height="24"
+                  loading="lazy"
+                />
                 Service Areas
               </h3>
               <div className="mb-4">
@@ -254,7 +263,14 @@ const EnhancedContactSection = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <img src="/lovable-uploads/1845c426-94c3-4d3b-b1d0-8d8c7c205410.png" alt="Payment" className="w-12 h-12" />
+                <img 
+                  src="/lovable-uploads/1845c426-94c3-4d3b-b1d0-8d8c7c205410.png" 
+                  alt="Payment" 
+                  className="w-12 h-12" 
+                  width="48" 
+                  height="48"
+                  loading="lazy"
+                />
               </div>
               <h4 className="font-semibold mb-2">Payment Options</h4>
               <p className="text-sm text-muted-foreground">
@@ -263,7 +279,14 @@ const EnhancedContactSection = () => {
             </div>
             <div className="text-center">
               <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <img src="/lovable-uploads/a498444a-fff1-4bd4-98b3-2dca2244bc5f.png" alt="Insurance" className="w-12 h-12" />
+                <img 
+                  src="/lovable-uploads/a498444a-fff1-4bd4-98b3-2dca2244bc5f.png" 
+                  alt="Insurance" 
+                  className="w-12 h-12" 
+                  width="48" 
+                  height="48"
+                  loading="lazy"
+                />
               </div>
               <h4 className="font-semibold mb-2">Insurance</h4>
               <p className="text-sm text-muted-foreground">
