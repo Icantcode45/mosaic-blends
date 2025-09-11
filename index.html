@@ -8,14 +8,16 @@
   <meta name="description" content="Premium mobile IV therapy and wellness treatments in Arizona. Licensed medical professionals deliver hydration, vitamin drips, and wellness services to your location." />
   <meta name="author" content="Stay Dripped IV & Wellness Co." />
   
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Fonts with font-display swap for better loading performance -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   
-  <!-- Qualiphy Widget Stylesheet -->
-  <link rel="stylesheet" href="https://firebasestorage.googleapis.com/v0/b/qualiphy-web-d918b.appspot.com/o/style-v4.css?alt=media&token=34735782-16e8-4a2f-9eaa-426d65af48b2" />
+  <!-- Qualiphy Widget Stylesheet - Load asynchronously -->
+  <link rel="preload" href="https://firebasestorage.googleapis.com/v0/b/qualiphy-web-d918b.appspot.com/o/style-v4.css?alt=media&token=34735782-16e8-4a2f-9eaa-426d65af48b2" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://firebasestorage.googleapis.com/v0/b/qualiphy-web-d918b.appspot.com/o/style-v4.css?alt=media&token=34735782-16e8-4a2f-9eaa-426d65af48b2" /></noscript>
   
-  <!-- PayPal SDK -->
-  <script src="https://www.paypal.com/sdk/js?client-id=BAAN_qBYe1fGc_Al8j8Bten5_oOK87GN4EGG4BxPBnCbtDrCzCm6pHr-694awQ_lzUNfGA555_JhOXGgz0&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+  <!-- PayPal SDK - Load asynchronously -->
+  <script async src="https://www.paypal.com/sdk/js?client-id=BAAN_qBYe1fGc_Al8j8Bten5_oOK87GN4EGG4BxPBnCbtDrCzCm6pHr-694awQ_lzUNfGA555_JhOXGgz0&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
 
   <!-- Alpine.js -->
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -34,8 +36,8 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     
-    <!-- Qualiphy Widget Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script id="qualiphy-script" type="text/javascript" src="https://www.app.qualiphy.me/scripts/quidget_disclosure.js" data-formsrc='https://www.app.qualiphy.me/qualiphy-widget?clinic=Stay Dripped Mobile IV LLC&clinicId=3454&first_name=&last_name=&email=&phone_number=&gender=&exams=selectable&tele_state_required=true&token=25f1c2618e146d725e934313417e918418a5068e' data-timezone='-6' data-examhours='[{"SUN":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"MON":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"TUE":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"WED":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"THU":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"FRI":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"SAT":{"FROM":"00:00","TO":"23:59","isDaySelected":true}}]'></script>
+    <!-- Qualiphy Widget Scripts - Defer loading -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script defer id="qualiphy-script" type="text/javascript" src="https://www.app.qualiphy.me/scripts/quidget_disclosure.js" data-formsrc='https://www.app.qualiphy.me/qualiphy-widget?clinic=Stay Dripped Mobile IV LLC&clinicId=3454&first_name=&last_name=&email=&phone_number=&gender=&exams=selectable&tele_state_required=true&token=25f1c2618e146d725e934313417e918418a5068e' data-timezone='-6' data-examhours='[{"SUN":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"MON":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"TUE":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"WED":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"THU":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"FRI":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"SAT":{"FROM":"00:00","TO":"23:59","isDaySelected":true}}]'></script>
   </body>
 </html>
