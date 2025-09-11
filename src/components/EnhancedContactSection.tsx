@@ -3,33 +3,32 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Phone, Mail, MessageCircle, Smartphone, Clock, MapPin, CreditCard, Building2, Shield, AlertTriangle } from "lucide-react";
 
 const EnhancedContactSection = () => {
   const contactMethods = [
     {
-      icon: Phone,
+      icon: "/lovable-uploads/d3c7dea0-2e46-4dcb-a23c-09f86aede0aa.png",
       title: "Call Us",
       primary: "(602) 688-9825",
       secondary: "24/7 Emergency Line",
       description: "Speak directly with our medical team"
     },
     {
-      icon: Mail, 
+      icon: "/lovable-uploads/2bf8cace-459c-4234-809a-23f96c9ffbcb.png", 
       title: "Email Us",
       primary: "info@staydrippediv.com",
       secondary: "Response within 2 hours",
       description: "General inquiries and scheduling"
     },
     {
-      icon: MessageCircle,
+      icon: "/lovable-uploads/19ac5dfe-66b0-4e2f-be16-ed814d9cc475.png",
       title: "Live Chat",
       primary: "Available Now",
       secondary: "Average response: 30 seconds",
       description: "Instant support via our website"
     },
     {
-      icon: Smartphone,
+      icon: "/lovable-uploads/d3c7dea0-2e46-4dcb-a23c-09f86aede0aa.png",
       title: "Text Us",
       primary: "(602) 688-9825",
       secondary: "SMS available 7am-9pm",
@@ -76,7 +75,7 @@ const EnhancedContactSection = () => {
           {contactMethods.map((method, index) => (
             <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow animate-fade-in">
               <div className="mb-4">
-                <method.icon className="w-12 h-12 mx-auto text-primary" />
+                <img src={method.icon} alt={method.title} className="w-12 h-12 mx-auto" />
               </div>
               <h3 className="font-semibold text-lg mb-2">{method.title}</h3>
               <div className="text-primary font-medium mb-1">{method.primary}</div>
@@ -168,7 +167,7 @@ const EnhancedContactSection = () => {
             {/* Business Hours */}
             <Card className="p-6">
             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-              <Clock className="w-5 h-5 text-primary" />
+              <img src="/lovable-uploads/ab3d275e-f410-4e17-a882-c49f89b1c4d2.png" alt="Schedule" className="w-6 h-6" />
               Business Hours
             </h3>
               <div className="space-y-3">
@@ -194,7 +193,7 @@ const EnhancedContactSection = () => {
             {/* Service Areas */}
             <Card className="p-6">
               <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-primary" />
+                <img src="/lovable-uploads/e41d24f9-14f6-4efb-adf0-5b53c1901fc1.png" alt="Location" className="w-6 h-6" />
                 Service Areas
               </h3>
               <div className="mb-4">
@@ -254,8 +253,8 @@ const EnhancedContactSection = () => {
           <h3 className="text-2xl font-bold text-center mb-8">Frequently Requested Information</h3>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">💳</span>
+              <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <img src="/lovable-uploads/1845c426-94c3-4d3b-b1d0-8d8c7c205410.png" alt="Payment" className="w-12 h-12" />
               </div>
               <h4 className="font-semibold mb-2">Payment Options</h4>
               <p className="text-sm text-muted-foreground">
@@ -263,8 +262,8 @@ const EnhancedContactSection = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🏥</span>
+              <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <img src="/lovable-uploads/a498444a-fff1-4bd4-98b3-2dca2244bc5f.png" alt="Insurance" className="w-12 h-12" />
               </div>
               <h4 className="font-semibold mb-2">Insurance</h4>
               <p className="text-sm text-muted-foreground">
@@ -272,8 +271,8 @@ const EnhancedContactSection = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🔒</span>
+              <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <img src="/lovable-uploads/f118b4cb-2d58-44d5-b19a-4aae6422477b.png" alt="Privacy" className="w-12 h-12" />
               </div>
               <h4 className="font-semibold mb-2">Privacy</h4>
               <p className="text-sm text-muted-foreground">

@@ -17,9 +17,25 @@ const HeroSection = () => {
             <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl tracking-tighter leading-tight mb-6 text-foreground">
               Hydration, recovery & care—delivered to you.
             </h1>
-            <p className="text-muted-foreground text-lg md:text-xl mb-10">
+            <p className="text-muted-foreground text-lg md:text-xl mb-8">
               Medical-grade IV therapy, telehealth, and curated supplements. Join the membership for VIP pricing & perks.
             </p>
+            
+            {/* Key Benefits with 3D Icons */}
+            <div className="flex flex-wrap gap-6 mb-10">
+              <div className="flex items-center gap-2">
+                <img src="/lovable-uploads/1845c426-94c3-4d3b-b1d0-8d8c7c205410.png" alt="Fast Service" className="w-5 h-5" />
+                <span className="text-sm font-medium">Rapid Response</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <img src="/lovable-uploads/e41d24f9-14f6-4efb-adf0-5b53c1901fc1.png" alt="Mobile Service" className="w-5 h-5" />
+                <span className="text-sm font-medium">Mobile Service</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <img src="/lovable-uploads/a498444a-fff1-4bd4-98b3-2dca2244bc5f.png" alt="Licensed" className="w-5 h-5" />
+                <span className="text-sm font-medium">Licensed Providers</span>
+              </div>
+            </div>
             
             {/* CTAs */}
             <div className="flex flex-wrap gap-3 mb-6">

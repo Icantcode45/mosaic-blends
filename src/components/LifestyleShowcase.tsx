@@ -26,6 +26,9 @@ const LifestyleShowcase = () => {
     <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="text-center mb-12">
+          <div className="flex justify-center mb-4">
+            <img src="/lovable-uploads/16b76d74-4b9e-45db-9b78-f5bc16c51634.png" alt="Premium Quality" className="w-12 h-12" />
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Experience Wellness Your Way
           </h2>
