@@ -195,6 +195,14 @@ const Membership = () => {
             ))}
           </div>
         </div>
+        
+        {/* Membership Booking Widget */}
+        <div className="bg-muted/30 rounded-2xl p-8 mx-auto max-w-4xl">
+          <h3 className="text-2xl font-bold text-center text-foreground mb-6">
+            Join Stay Dripped Monthly Memberships
+          </h3>
+          <IntakeQWidget categoryId="a594f9e5-0db6-4ca0-bbfb-47c944af7007" />
+        </div>
       </section>
     </div>
   );

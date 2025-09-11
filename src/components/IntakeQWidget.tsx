@@ -2,10 +2,11 @@ import { useEffect } from 'react';
 
 interface IntakeQWidgetProps {
   serviceId?: string;
+  categoryId?: string;
   clientArea?: boolean;
 }
 
-const IntakeQWidget = ({ serviceId, clientArea = false }: IntakeQWidgetProps) => {
+const IntakeQWidget = ({ serviceId, categoryId, clientArea = false }: IntakeQWidgetProps) => {
   useEffect(() => {
     // Set up IntakeQ configuration
     (window as any).intakeq = "68b14c4e0b7b143488664c75";
@@ -14,6 +15,8 @@ const IntakeQWidget = ({ serviceId, clientArea = false }: IntakeQWidgetProps) =>
       (window as any).intakeqClientArea = true;
     } else if (serviceId) {
       (window as any).intakeqServiceId = serviceId;
+    } else if (categoryId) {
+      (window as any).intakeqCategoryId = categoryId;
     }
 
     // Create and load the IntakeQ script
@@ -29,8 +32,12 @@ const IntakeQWidget = ({ serviceId, clientArea = false }: IntakeQWidgetProps) =>
       if (existingScript) {
         document.head.removeChild(existingScript);
       }
+      // Clean up IntakeQ configuration
+      delete (window as any).intakeqServiceId;
+      delete (window as any).intakeqCategoryId;
+      delete (window as any).intakeqClientArea;
     };
-  }, [serviceId, clientArea]);
+  }, [serviceId, categoryId, clientArea]);
 
   return (
     <div className="w-full">

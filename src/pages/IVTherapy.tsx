@@ -293,6 +293,17 @@ const IVTherapy = () => {
     return ivTherapyServices[selectedCategory as keyof typeof ivTherapyServices] || [];
   };
 
+  const getCategoryId = (category: string) => {
+    const categoryMapping: Record<string, string> = {
+      'basic': '76b7e0a3-c252-479f-982a-a841edbfdda5',
+      'standard': '19872648-7926-447a-97cd-24e1e44f8579', 
+      'specialty': '314c20c9-4f5c-47f5-b58d-9e7f557598b4',
+      'premium': '0fd23879-ea54-45f3-9b7e-204d87b3fd2c',
+      'nad': 'dc59af69-156c-4431-a8a1-f9af17b4e286'
+    };
+    return categoryMapping[category];
+  };
+
   return (
     <>
       <Helmet>
@@ -588,6 +599,16 @@ const IVTherapy = () => {
                 </div>
               );
             })}
+          </div>
+        </div>
+        
+        {/* IntakeQ Booking Widget for Current Category */}
+        <div className="mt-16">
+          <div className="bg-muted/30 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-6">
+              Book Your {categories.find(cat => cat.id === selectedCategory)?.name} Treatment
+            </h3>
+            <IntakeQWidget categoryId={getCategoryId(selectedCategory)} />
           </div>
         </div>
       </section>

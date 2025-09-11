@@ -19,6 +19,7 @@ const EnhancedHeader = () => {
     { name: 'Supplements', href: '/supplements' },
     { name: 'Membership', href: '/membership' },
     { name: 'Event Inquiry', href: '/event-inquiry' },
+    { name: 'Specialty Treatments', href: '/specialty-treatments' },
     { name: 'First-Time Patients', href: '/first-time-patients' },
     { name: 'Gift Cards', href: '/gift-cards' }
   ];
