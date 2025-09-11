@@ -441,7 +441,7 @@ const IVTherapy = () => {
                 switch (serviceId) {
                   case 'rehydrate':
                     return {
-                      bgGradient: 'from-sky-300 to-sky-500',
+                      bgGradient: 'from-white to-white',
                       titleColor: 'text-sky-900',
                       badgeColor: 'bg-sky-500',
                       title: 'REHYDRATE',
@@ -450,7 +450,7 @@ const IVTherapy = () => {
                     };
                   case 'rehydrate-plus':
                     return {
-                      bgGradient: 'from-cyan-300 to-cyan-500',
+                      bgGradient: 'from-white to-white',
                       titleColor: 'text-cyan-900',
                       badgeColor: 'bg-cyan-500',
                       title: 'REHYDRATE PLUS',
@@ -459,7 +459,7 @@ const IVTherapy = () => {
                     };
                   case 'jr-myers':
                     return {
-                      bgGradient: 'from-green-400 to-green-600',
+                      bgGradient: 'from-white to-white',
                       titleColor: 'text-green-900',
                       badgeColor: 'bg-green-500',
                       title: 'JR MYERS',
@@ -468,7 +468,7 @@ const IVTherapy = () => {
                     };
                   case 'myers':
                     return {
-                      bgGradient: 'from-pink-400 to-pink-600',
+                      bgGradient: 'from-white to-white',
                       titleColor: 'text-pink-900',
                       badgeColor: 'bg-pink-500',
                       title: 'MYERS',
@@ -477,7 +477,7 @@ const IVTherapy = () => {
                     };
                   case 'hangover':
                     return {
-                      bgGradient: 'from-yellow-400 to-yellow-600',
+                      bgGradient: 'from-white to-white',
                       titleColor: 'text-yellow-900',
                       badgeColor: 'bg-yellow-500',
                       title: 'THE DAY-AFTER',
@@ -486,7 +486,7 @@ const IVTherapy = () => {
                     };
                   case 'sun-devil':
                     return {
-                      bgGradient: 'from-red-400 to-pink-500',
+                      bgGradient: 'from-white to-white',
                       titleColor: 'text-red-900',
                       badgeColor: 'bg-red-500',
                       title: 'THE SUN DEVIL',
@@ -495,7 +495,7 @@ const IVTherapy = () => {
                     };
                   case 'd-book':
                     return {
-                      bgGradient: 'from-purple-400 to-purple-600',
+                      bgGradient: 'from-white to-white',
                       titleColor: 'text-purple-900',
                       badgeColor: 'bg-purple-500',
                       title: 'THE D-BOOK',
@@ -504,7 +504,7 @@ const IVTherapy = () => {
                     };
                   case 'scottsdale':
                     return {
-                      bgGradient: 'from-pink-400 to-fuchsia-500',
+                      bgGradient: 'from-white to-white',
                       titleColor: 'text-pink-900', 
                       badgeColor: 'bg-pink-500',
                       title: 'THE SCOTTSDALE',
@@ -513,7 +513,7 @@ const IVTherapy = () => {
                     };
                   case 'arizona-detox':
                     return {
-                      bgGradient: 'from-cyan-400 to-blue-500',
+                      bgGradient: 'from-white to-white',
                       titleColor: 'text-cyan-900',
                       badgeColor: 'bg-cyan-500',
                       title: 'THE ARIZONA',
@@ -522,8 +522,8 @@ const IVTherapy = () => {
                     };
                   default:
                     return {
-                      bgGradient: 'from-slate-700 to-slate-800',
-                      titleColor: 'text-white',
+                      bgGradient: 'from-white to-white',
+                      titleColor: 'text-foreground',
                       badgeColor: 'bg-accent',
                       title: service.name.split(' ').slice(0, 2).join(' ').toUpperCase(),
                       subtitle: service.name.split(' ').slice(2).join(' ').toUpperCase(),
