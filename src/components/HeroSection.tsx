@@ -80,7 +80,7 @@ const HeroSection = () => {
                 width="786"
                 height="777"
                 loading="eager"
-                fetchPriority="high"
+                {...({ fetchpriority: "high" } as any)}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>

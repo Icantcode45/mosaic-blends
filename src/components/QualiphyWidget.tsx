@@ -10,8 +10,16 @@ export default function QualiphyWidget() {
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    // The showDisclosureModal function is loaded by the Qualiphy script
-    // We just need to ensure it's available when the component mounts
+    // Wait for the Qualiphy script to load
+    const checkScript = () => {
+      if (window.showDisclosureModal) {
+        return;
+      }
+      // Check again after a short delay if script isn't ready
+      setTimeout(checkScript, 100);
+    };
+    
+    checkScript();
   }, []);
 
   const handleClick = () => {
