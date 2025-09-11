@@ -439,29 +439,23 @@ const IVTherapy = () => {
               // Define custom styling for each specific treatment
               const getServiceStyle = (serviceId: string) => {
                 switch (serviceId) {
-                  case 'hangover':
+                  case 'rehydrate':
                     return {
-                      bgGradient: 'from-yellow-400 to-yellow-600',
-                      titleColor: 'text-yellow-900',
-                      badgeColor: 'bg-yellow-500',
-                      title: 'THE DAY-AFTER',
-                      subtitle: '"HANGOVER BAG"'
+                      bgGradient: 'from-sky-300 to-sky-500',
+                      titleColor: 'text-sky-900',
+                      badgeColor: 'bg-sky-500',
+                      title: 'REHYDRATE',
+                      subtitle: '',
+                      bagImage: '/lovable-uploads/e81e5847-0fe3-48b2-bee5-10a1d7b6665f.png'
                     };
-                  case 'd-book':
+                  case 'rehydrate-plus':
                     return {
-                      bgGradient: 'from-purple-400 to-purple-600', 
-                      titleColor: 'text-purple-900',
-                      badgeColor: 'bg-purple-500',
-                      title: 'THE D-BOOK',
-                      subtitle: 'PERFORMANCE BAG'
-                    };
-                  case 'scottsdale':
-                    return {
-                      bgGradient: 'from-pink-400 to-pink-600',
-                      titleColor: 'text-pink-900', 
-                      badgeColor: 'bg-pink-500',
-                      title: 'THE SCOTTSDALE',
-                      subtitle: 'BEAUTY BAG'
+                      bgGradient: 'from-cyan-300 to-cyan-500',
+                      titleColor: 'text-cyan-900',
+                      badgeColor: 'bg-cyan-500',
+                      title: 'REHYDRATE PLUS',
+                      subtitle: '',
+                      bagImage: '/lovable-uploads/63791b25-36b1-4a68-8b2b-4de6ec40c35f.png'
                     };
                   case 'jr-myers':
                     return {
@@ -469,23 +463,62 @@ const IVTherapy = () => {
                       titleColor: 'text-green-900',
                       badgeColor: 'bg-green-500',
                       title: 'JR MYERS',
-                      subtitle: 'COCKTAIL'
+                      subtitle: 'COCKTAIL',
+                      bagImage: '/lovable-uploads/535cce13-e549-426e-9562-da1e83740c9e.png'
                     };
                   case 'myers':
                     return {
-                      bgGradient: 'from-cyan-400 to-blue-500',
-                      titleColor: 'text-blue-900',
-                      badgeColor: 'bg-blue-500',
+                      bgGradient: 'from-pink-400 to-pink-600',
+                      titleColor: 'text-pink-900',
+                      badgeColor: 'bg-pink-500',
                       title: 'MYERS',
-                      subtitle: 'COCKTAIL'
+                      subtitle: 'COCKTAIL',
+                      bagImage: '/lovable-uploads/5e166b5e-d73a-4a58-8f6c-b653d9ebb5b1.png'
+                    };
+                  case 'hangover':
+                    return {
+                      bgGradient: 'from-yellow-400 to-yellow-600',
+                      titleColor: 'text-yellow-900',
+                      badgeColor: 'bg-yellow-500',
+                      title: 'THE DAY-AFTER',
+                      subtitle: '"HANGOVER BAG"',
+                      bagImage: '/lovable-uploads/0ab0b2fc-eb5e-4c68-bc62-48374b5a46f6.png'
+                    };
+                  case 'sun-devil':
+                    return {
+                      bgGradient: 'from-red-400 to-pink-500',
+                      titleColor: 'text-red-900',
+                      badgeColor: 'bg-red-500',
+                      title: 'THE SUN DEVIL',
+                      subtitle: 'ENERGY BOOST',
+                      bagImage: '/lovable-uploads/7551a773-d7e4-4584-a6e9-e6c5fdd49f50.png'
+                    };
+                  case 'd-book':
+                    return {
+                      bgGradient: 'from-purple-400 to-purple-600',
+                      titleColor: 'text-purple-900',
+                      badgeColor: 'bg-purple-500',
+                      title: 'THE D-BOOK',
+                      subtitle: 'PERFORMANCE BAG',
+                      bagImage: '/lovable-uploads/a5d1ca6c-d9ad-4fe6-861d-dc838db70801.png'
+                    };
+                  case 'scottsdale':
+                    return {
+                      bgGradient: 'from-pink-400 to-fuchsia-500',
+                      titleColor: 'text-pink-900', 
+                      badgeColor: 'bg-pink-500',
+                      title: 'THE SCOTTSDALE',
+                      subtitle: 'BEAUTY BAG',
+                      bagImage: '/lovable-uploads/8c4a3599-d5d5-4493-83f7-d4058876e25d.png'
                     };
                   case 'arizona-detox':
                     return {
-                      bgGradient: 'from-teal-400 to-teal-600',
-                      titleColor: 'text-teal-900',
-                      badgeColor: 'bg-teal-500',
+                      bgGradient: 'from-cyan-400 to-blue-500',
+                      titleColor: 'text-cyan-900',
+                      badgeColor: 'bg-cyan-500',
                       title: 'THE ARIZONA',
-                      subtitle: 'DETOX & CLEANSE'
+                      subtitle: 'DETOX & CLEANSE',
+                      bagImage: '/lovable-uploads/bcef40ff-face-4462-965d-5f9d26ee8403.png'
                     };
                   default:
                     return {
@@ -493,7 +526,8 @@ const IVTherapy = () => {
                       titleColor: 'text-white',
                       badgeColor: 'bg-accent',
                       title: service.name.split(' ').slice(0, 2).join(' ').toUpperCase(),
-                      subtitle: service.name.split(' ').slice(2).join(' ').toUpperCase()
+                      subtitle: service.name.split(' ').slice(2).join(' ').toUpperCase(),
+                      bagImage: undefined
                     };
                 }
               };
@@ -503,26 +537,25 @@ const IVTherapy = () => {
               return (
                 <div key={service.id} className="group relative overflow-hidden rounded-2xl bg-card shadow-lg border transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
                   <div className={`h-48 bg-gradient-to-br ${style.bgGradient} relative overflow-hidden`}>
-                    {/* IV Bag silhouette effect */}
-                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMDAgMTBDOTAgMTAgODAgMjAgODAgMzBMODAgMTcwQzgwIDE4MCA5MCAxOTAgMTAwIDE5MEMxMTAgMTkwIDEyMCAxODAgMTIwIDE3MEwxMjAgMzBDMTIwIDIwIDExMCAxMCAxMDAgMTBaIiBmaWxsPSJibGFjayIgZmlsbC1vcGFjaXR5PSIwLjEiLz4KPC9zdmc+')] bg-center bg-no-repeat opacity-20" />
+                    {/* IV Bag image */}
+                    {style.bagImage ? (
+                      <div className="absolute inset-0 flex items-center justify-center p-4">
+                        <img 
+                          src={style.bagImage}
+                          alt={`${service.name} IV Bag`}
+                          className="h-full w-auto object-contain drop-shadow-2xl"
+                          loading="lazy"
+                        />
+                      </div>
+                    ) : (
+                      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMDAgMTBDOTAgMTAgODAgMjAgODAgMzBMODAgMTcwQzgwIDE4MCA5MCAxOTAgMTAwIDE5MEMxMTAgMTkwIDEyMCAxODAgMTIwIDE3MEwxMjAgMzBDMTIwIDIwIDExMCAxMCAxMDAgMTBaIiBmaWxsPSJibGFjayIgZmlsbC1vcGFjaXR5PSIwLjEiLz4KPC9zdmc+')] bg-center bg-no-repeat opacity-20" />
+                    )}
                     
                     {service.badge && (
                       <div className={`absolute top-4 right-4 z-10 rounded-full ${style.badgeColor} px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white`}>
                         {service.badge}
                       </div>
                     )}
-                    
-                    {/* IV Bag Label */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="bg-black/80 rounded-lg p-4 text-white max-w-[140px]">
-                          <div className="text-xs font-bold mb-1 text-gray-300">STAY DRIPPED</div>
-                          <div className="text-sm font-bold mb-2">{style.title}</div>
-                          <div className="text-xs">{style.subtitle}</div>
-                          <div className="text-right text-xs mt-2 opacity-75">1000ML</div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 
                   <div className="p-6">
