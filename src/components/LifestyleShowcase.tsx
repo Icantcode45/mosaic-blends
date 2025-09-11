@@ -3,12 +3,6 @@ import { Card } from "@/components/ui/card";
 const LifestyleShowcase = () => {
   const lifestyleImages = [
     {
-      src: "/lovable-uploads/b0faa61f-22ef-4eed-bb90-b544636afd28.png",
-      alt: "Friends enjoying IV therapy together in luxury setting",
-      title: "Social Wellness",
-      description: "Share the experience with friends"
-    },
-    {
       src: "/lovable-uploads/1fac1b4b-2289-4274-b058-98ac68b44e03.png",
       alt: "Professional IV therapy in modern comfortable environment",
       title: "Luxury Experience",
@@ -19,6 +13,12 @@ const LifestyleShowcase = () => {
       alt: "Professional IV therapy service with medical supervision",
       title: "Professional Care",
       description: "Expert treatment wherever you are"
+    },
+    {
+      src: "/lovable-uploads/b0faa61f-22ef-4eed-bb90-b544636afd28.png",
+      alt: "Friends enjoying IV therapy together in luxury setting",
+      title: "Social Wellness",
+      description: "Share the experience with friends"
     }
   ];
 
