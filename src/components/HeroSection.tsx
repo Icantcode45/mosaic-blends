@@ -74,7 +74,7 @@ const HeroSection = () => {
           <div className="relative">
             <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-primary/10 to-accent/5 border border-gray-100 shadow-elev-2 overflow-hidden">
               <img 
-                src="/lovable-uploads/34c99661-1ae3-4de4-a24f-48d93504109b.png" 
+                src="/src/assets/iv-therapy-hero-new.jpg" 
                 alt="Premium IV therapy in luxury outdoor setting" 
                 className="w-full h-full object-cover"
                 width="786"

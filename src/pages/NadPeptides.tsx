@@ -938,6 +938,13 @@ const NadPeptides = () => {
       <div className="text-xs scale-75 transform-gpu origin-top">
         <ComplianceDisclaimers />
         <RegulatoryUpdates />
+        
+        {/* Additional Disclaimer */}
+        <div className="bg-muted/30 py-4 px-6 mt-4">
+          <p className="text-center text-muted-foreground">
+            All treatments and peptide therapy programs offered by Stay Dripped® IV & Wellness Co. are physician-supervised. Services are available only after telehealth evaluation and approval by a licensed healthcare provider. We do not sell research chemicals or unregulated substances. Products and services comply with all applicable federal and state regulations.
+          </p>
+        </div>
       </div>
     </>
   );
