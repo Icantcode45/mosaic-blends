@@ -446,9 +446,6 @@ const NadPeptides = () => {
         </div>
       </section>
 
-      {/* Compliance Disclaimers */}
-      <ComplianceDisclaimers />
-
       {/* Products Section */}
       <section className="bg-muted/50 py-20">
         <div className="container mx-auto px-4">
@@ -778,9 +775,6 @@ const NadPeptides = () => {
         </div>
       </section>
 
-      {/* Regulatory Updates Section */}
-      <RegulatoryUpdates />
-
       {/* Online Booking Section */}
       <section className="bg-gradient-to-br from-muted/50 to-secondary/5 py-20">
         <div className="container mx-auto px-4">
@@ -939,6 +933,12 @@ const NadPeptides = () => {
           </div>
         </div>
       )}
+
+      {/* Compliance and Regulatory Information - Footer */}
+      <div className="text-xs scale-75 transform-gpu origin-top">
+        <ComplianceDisclaimers />
+        <RegulatoryUpdates />
+      </div>
     </>
   );
 };
