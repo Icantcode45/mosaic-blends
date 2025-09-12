@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import IntakeQWidget from './IntakeQWidget';
+import QualiphyWidget from './QualiphyWidget';
 
 interface PeptideBookingButtonProps {
   peptideName: string;
@@ -32,18 +32,7 @@ const PeptideBookingButton = ({ peptideName, peptideCategory }: PeptideBookingBu
         <DialogHeader>
           <DialogTitle>Book Consultation for {peptideName}</DialogTitle>
         </DialogHeader>
-        {intakeqCategoryId ? (
-          <IntakeQWidget categoryId={intakeqCategoryId} />
-        ) : (
-          <div className="text-center py-8">
-            <p className="text-muted-foreground mb-4">
-              Please call us to schedule your peptide consultation:
-            </p>
-            <Button asChild>
-              <a href="tel:+1-602-688-9825">Call (602) 688-9825</a>
-            </Button>
-          </div>
-        )}
+        <QualiphyWidget />
       </DialogContent>
     </Dialog>
   );
