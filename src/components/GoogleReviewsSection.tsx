@@ -98,15 +98,36 @@ const GoogleReviewsSection = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
           <Button variant="outline" size="lg" asChild>
-            <a href="https://wanderlog.com/place/details/13453687#PlaceRatingsAndReviewsSection__id" target="_blank" rel="noopener noreferrer">
+            <a href="https://g.co/kgs/dCj7w8R" target="_blank" rel="noopener noreferrer">
               View All Reviews
             </a>
           </Button>
           <Button size="lg" asChild>
-            <a href="https://share.google/IS2IppThdkxiqV0MO" target="_blank" rel="noopener noreferrer">
+            <a href="https://g.co/kgs/dCj7w8R" target="_blank" rel="noopener noreferrer">
               Write a Review
             </a>
           </Button>
+        </div>
+
+        {/* Google Reviews Widget */}
+        <div className="mt-12 flex justify-center">
+          <div 
+            className="g-review" 
+            data-href="https://search.google.com/local/reviews?placeid=ChIJdwXBnfYKK4cRq7jdV8i2SjY"
+            data-name="Stay Dripped IV & Wellness Co."
+            data-rating="5.0"
+          >
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!4v1699393200000!6m8!1m7!1s0bG0yfOSaDQg3xF_yqH_iw!2m2!1d33.4942!2d-111.9261!3f0!4f0!5f0!7i13312!8i6656" 
+              width="600" 
+              height="450" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Stay Dripped IV & Wellness Co. Google Reviews"
+            ></iframe>
+          </div>
         </div>
       </div>
     </section>

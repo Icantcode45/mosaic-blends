@@ -775,41 +775,6 @@ const NadPeptides = () => {
         </div>
       </section>
 
-      {/* Online Booking Section */}
-      <section className="bg-gradient-to-br from-muted/50 to-secondary/5 py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="mb-6 text-4xl font-bold text-foreground sm:text-5xl">
-              Schedule Your Research Consultation
-            </h2>
-            <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-              Schedule your consultation to learn about NAD+ and peptide research compounds. Educational consultations only - not for treatment purposes. Healthcare provider supervision required.
-            </p>
-          </div>
-
-          <div className="bg-card rounded-2xl p-8 max-w-4xl mx-auto shadow-lg border">
-            <div className="max-w-3xl mx-auto">
-              {showQuickView && <div className="text-center py-8 text-muted-foreground">IntakeQ booking widget would be integrated here</div>}
-            </div>
-          </div>
-
-          <div className="text-center mt-8">
-            <p className="text-muted-foreground mb-4">Need help choosing the right treatment?</p>
-            <div className="flex justify-center gap-4 flex-wrap">
-              <Button asChild>
-                <a href="tel:+1-602-688-9825">
-                  📞 Call (602) 688-9825
-                </a>
-              </Button>
-              <Button variant="outline" asChild>
-                <a href="sms:+1-602-688-9825">
-                  💬 Text Us
-                </a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Call to Action Section */}
       <section className="bg-background py-20">
