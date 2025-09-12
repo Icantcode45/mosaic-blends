@@ -226,7 +226,7 @@ const EnhancedMembershipSection = () => {
                     size="lg"
                     asChild
                   >
-                    <Link to="/first-time-patients">{plan.buttonText}</Link>
+                    <Link to="/membership">{plan.buttonText}</Link>
                   </Button>
 
                   {plan.popular && (
@@ -270,7 +270,7 @@ const EnhancedMembershipSection = () => {
             
             <div className="text-center mt-8">
               <Button variant="outline" size="lg" asChild>
-                <Link to="/privacy">View Complete Terms & Benefits</Link>
+                <Link to="/membership">View Complete Terms & Benefits</Link>
               </Button>
             </div>
           </div>
