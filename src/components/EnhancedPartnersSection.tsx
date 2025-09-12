@@ -23,9 +23,9 @@ const EnhancedPartnersSection = () => {
       logo: nelkboysLogo
     },
     { 
-      name: "Full Send", 
-      category: "Brand Partnership", 
-      description: "Performance and recovery optimization",
+      name: "Full Send Golf", 
+      category: "Golf & Lifestyle", 
+      description: "Golf community wellness partnership",
       logo: fullSendLogo
     },
     { 

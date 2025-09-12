@@ -9,6 +9,7 @@ import EnhancedMembershipSection from "@/components/EnhancedMembershipSection";
 import EnhancedPartnersSection from "@/components/EnhancedPartnersSection";
 import NewsletterSection from "@/components/NewsletterSection";
 import EnhancedContactSection from "@/components/EnhancedContactSection";
+import BBBAccreditation from "@/components/BBBAccreditation";
 
 const EnhancedIndex = () => {
   return (
@@ -39,6 +40,9 @@ const EnhancedIndex = () => {
       
       {/* 9. Contact - Make it easy to get in touch */}
       <EnhancedContactSection />
+      
+      {/* 10. BBB Accreditation - Trust and credibility */}
+      <BBBAccreditation />
     </div>
   );
 };

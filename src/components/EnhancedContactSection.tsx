@@ -94,7 +94,7 @@ const EnhancedContactSection = () => {
           
           {/* Contact Form */}
           <Card className="p-8">
-            <h3 className="text-2xl font-bold mb-6">Book Your Appointment</h3>
+            <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
             <form className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
@@ -240,64 +240,49 @@ const EnhancedContactSection = () => {
                 </p>
               </div>
             </Card>
-
-            {/* BBB Accreditation */}
-            <Card className="p-6 bg-blue-50 border-blue-200">
-              <div className="text-center">
-                <img 
-                  src="/lovable-uploads/6ffc838e-d9fd-4897-bac2-cfcdc2fb1373.png" 
-                  alt="BBB Accredited Business - Stay Dripped IV & Wellness Co." 
-                  className="mx-auto mb-4 max-w-full h-auto"
-                />
-                <p className="text-blue-700 text-sm">
-                  Trusted by the Better Business Bureau for our commitment to excellence and customer satisfaction.
-                </p>
-              </div>
-            </Card>
           </div>
         </div>
 
         {/* Additional Resources */}
-        <div className="bg-white rounded-3xl p-8 shadow-lg">
-          <h3 className="text-2xl font-bold text-center mb-8">Frequently Requested Information</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+        <div className="bg-white rounded-2xl p-6 shadow-md">
+          <h3 className="text-lg font-semibold text-center mb-6">Frequently Requested Information</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+              <div className="w-10 h-10 flex items-center justify-center mx-auto mb-3">
                 <img 
                   src="/lovable-uploads/1845c426-94c3-4d3b-b1d0-8d8c7c205410.png" 
                   alt="Payment" 
-                  className="w-12 h-12" 
-                  width="48" 
-                  height="48"
+                  className="w-8 h-8" 
+                  width="32" 
+                  height="32"
                   loading="lazy"
                 />
               </div>
-              <h4 className="font-semibold mb-2">Payment Options</h4>
+              <h4 className="font-medium mb-2">Payment Options</h4>
               <p className="text-sm text-muted-foreground">
                 We accept all major credit cards, HSA/FSA, and offer flexible payment plans for memberships.
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <div className="w-10 h-10 flex items-center justify-center mx-auto mb-3">
                 <img 
                   src="/lovable-uploads/a498444a-fff1-4bd4-98b3-2dca2244bc5f.png" 
                   alt="Insurance" 
-                  className="w-12 h-12" 
-                  width="48" 
-                  height="48"
+                  className="w-8 h-8" 
+                  width="32" 
+                  height="32"
                   loading="lazy"
                 />
               </div>
-              <h4 className="font-semibold mb-2">Insurance</h4>
+              <h4 className="font-medium mb-2">Insurance</h4>
               <p className="text-sm text-muted-foreground">
                 While we don't bill insurance directly, we provide detailed receipts for potential reimbursement.
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <img src="/lovable-uploads/f118b4cb-2d58-44d5-b19a-4aae6422477b.png" alt="Privacy" className="w-12 h-12" />
+              <div className="w-10 h-10 flex items-center justify-center mx-auto mb-3">
+                <img src="/lovable-uploads/f118b4cb-2d58-44d5-b19a-4aae6422477b.png" alt="Privacy" className="w-8 h-8" />
               </div>
-              <h4 className="font-semibold mb-2">Privacy</h4>
+              <h4 className="font-medium mb-2">Privacy</h4>
               <p className="text-sm text-muted-foreground">
                 All consultations and treatments follow strict HIPAA guidelines to protect your health information.
               </p>
