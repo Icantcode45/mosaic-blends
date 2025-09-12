@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import QualiphyWidget from "@/components/QualiphyWidget";
 
 const features = {
   consultations: [
@@ -52,9 +53,7 @@ const Card = ({
         <li key={it} className="py-2">{it}</li>
       ))}
     </ul>
-    <Button asChild>
-      <Link to="/first-time-patients">Book Now</Link>
-    </Button>
+    <QualiphyWidget />
   </div>
 );
 
@@ -68,9 +67,7 @@ const Telehealth = () => {
             Virtual consultations and ongoing care management from the comfort of your home with our licensed medical professionals.
           </p>
           <div className="mt-6 inline-flex">
-            <Button asChild size="lg">
-              <Link to="/first-time-patients">Schedule Consultation</Link>
-            </Button>
+            <QualiphyWidget />
           </div>
         </div>
       </section>

@@ -8,6 +8,7 @@ import RegulatoryUpdates from "@/components/compliance/RegulatoryUpdates";
 import PaymentCompliance from "@/components/compliance/PaymentCompliance";
 import { useToast } from "@/components/ui/use-toast";
 import PeptideBookingButton from "@/components/PeptideBookingButton";
+import QualiphyWidget from "@/components/QualiphyWidget";
 
 const NadPeptides = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -835,9 +836,7 @@ const NadPeptides = () => {
               >
                 Book Consultation (18+)
               </Button>
-              <Button variant="outline" size="lg" className="px-8 py-4 text-lg font-semibold" asChild>
-                <Link to="/telehealth">Talk to Provider</Link>
-              </Button>
+              <QualiphyWidget />
             </div>
           </div>
         </div>

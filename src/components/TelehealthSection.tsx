@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import QualiphyWidget from "@/components/QualiphyWidget";
 const TelehealthSection = () => {
   const programs = [
     "Weight Management",
@@ -35,9 +36,7 @@ const TelehealthSection = () => {
               </li>
             </ul>
               <div className="mt-8 flex gap-3">
-                <Button size="lg" asChild>
-                  <Link to="/telehealth">Start telehealth</Link>
-                </Button>
+                <QualiphyWidget />
                 <Button variant="outline" size="lg" asChild>
                   <Link to="/first-time-patients">How it works</Link>
                 </Button>
