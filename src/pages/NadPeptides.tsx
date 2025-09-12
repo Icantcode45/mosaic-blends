@@ -160,11 +160,11 @@ const NadPeptides = () => {
         'Natural GHRH analog research*',
         'Circadian rhythm studies*'
       ],
-      description: 'Sermorelin is an FDA-approved research analog studied for natural hormone pathway support. Educational and research purposes.*',
-      howItWorks: 'Research suggests potential mimicking of natural GHRH for physiological circadian release patterns.*',
-      idealFor: 'Adults interested in natural hormone research and physiological wellness education.',
-      frequency: 'Healthcare provider consultation required for research timing protocols',
-      sideEffects: 'Research indicates good tolerance - possible injection site reactions, consult healthcare provider.',
+      description: 'Sermorelin is an FDA-approved analog that supports natural hormone pathways for wellness applications.',
+      howItWorks: 'Mimics natural GHRH to support physiological circadian release patterns.',
+      idealFor: 'Adults seeking natural hormone pathway support and physiological wellness.',
+      frequency: 'Healthcare provider consultation required for individual protocols',
+      sideEffects: 'Generally well-tolerated - possible injection site reactions, consult healthcare provider.',
       researchStatus: 'FDA-approved compound with established safety profile'
     },
     'tesamorelin': {
@@ -182,10 +182,10 @@ const NadPeptides = () => {
         'FDA-approved applications*',
         'Lipodystrophy research*'
       ],
-      description: 'Tesamorelin is an FDA-approved synthetic peptide studied for metabolic applications and body composition research.*',
-      howItWorks: 'Research shows interaction with GHRH receptors to stimulate natural growth hormone release for metabolic benefits.*',
-      idealFor: 'Adults interested in metabolic research and body composition optimization studies.',
-      frequency: 'Daily administration protocols studied - healthcare provider consultation required',
+      description: 'Tesamorelin is an FDA-approved synthetic peptide for metabolic applications and body composition optimization.',
+      howItWorks: 'Interacts with GHRH receptors to stimulate natural growth hormone release for metabolic benefits.',
+      idealFor: 'Adults seeking metabolic support and body composition optimization.',
+      frequency: 'Daily administration protocols - healthcare provider consultation required',
       sideEffects: 'FDA-approved with known side effect profile - consult healthcare provider.',
       researchStatus: 'FDA-approved for specific indications with ongoing research'
     },
@@ -248,11 +248,11 @@ const NadPeptides = () => {
         'CNS pathway research*',
         'FDA-approved applications*'
       ],
-      description: 'PT-141 (Bremelanotide) is an FDA-approved peptide studied for sexual wellness applications in both men and women.*',
-      howItWorks: 'Research shows interaction with melanocortin receptors in the central nervous system affecting arousal pathways.*',
-      idealFor: 'Adults interested in sexual wellness research and relationship health education.',
-      frequency: 'Healthcare provider consultation required - as-needed dosing protocols',
-      sideEffects: 'FDA-approved with known profile - possible nausea, flushing, consult healthcare provider.',
+      description: 'PT-141 (Bremelanotide) is an FDA-approved peptide for sexual wellness applications in both men and women.',
+      howItWorks: 'Interacts with melanocortin receptors in the central nervous system to support arousal pathways.',
+      idealFor: 'Adults seeking sexual wellness support and relationship health enhancement.',
+      frequency: 'Healthcare provider consultation required - as-needed dosing',
+      sideEffects: 'FDA-approved with established safety profile - possible nausea, flushing, consult healthcare provider.',
       researchStatus: 'FDA-approved for specific indications with ongoing research'
     },
     'hexarelin': {
