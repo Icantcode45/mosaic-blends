@@ -16,7 +16,7 @@ const VitaminInjections = () => {
       description: "Energy-boosting methylcobalamin B12 for mental clarity and vitality.",
       price: 13,
       originalPrice: 15,
-      image_url: null,
+      image_url: "/src/assets/vials/b12-injection.jpeg",
       category: "Vitamin Injections",
       stock_quantity: 100,
       features: [
@@ -84,7 +84,7 @@ const VitaminInjections = () => {
       description: "Master antioxidant for detoxification and radiant skin health.",
       price: 48,
       originalPrice: 50,
-      image_url: null,
+      image_url: "/src/assets/vials/glutathione-injection.jpeg",
       category: "Vitamin Injections",
       stock_quantity: 100,
       features: [
@@ -118,7 +118,7 @@ const VitaminInjections = () => {
       description: "Essential amino acids for muscle recovery and athletic performance.",
       price: 33,
       originalPrice: 35,
-      image_url: null,
+      image_url: "/src/assets/vials/l-glutamine-injection.jpeg",
       category: "Vitamin Injections",
       stock_quantity: 100,
       features: [
@@ -152,7 +152,7 @@ const VitaminInjections = () => {
       description: "Beauty vitamin for stronger hair, skin, and nail health.",
       price: 13,
       originalPrice: 15,
-      image_url: null,
+      image_url: "/src/assets/vials/biotin-injection.webp",
       category: "Vitamin Injections",
       stock_quantity: 100,
       features: [
@@ -264,6 +264,16 @@ const VitaminInjections = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {vitaminInjections.map((injection) => (
                 <Card key={injection.id} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  {injection.image_url && (
+                    <div className="relative overflow-hidden rounded-t-lg">
+                      <img 
+                        src={injection.image_url} 
+                        alt={injection.name}
+                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
                   <CardHeader>
                     <CardTitle className="text-xl text-foreground">
                       {injection.name}

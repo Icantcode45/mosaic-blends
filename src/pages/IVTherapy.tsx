@@ -245,6 +245,7 @@ const IVTherapy = () => {
         price: '$250',
         badge: 'Beauty',
         description: 'Beauty and anti-aging formula for radiant skin and enhanced vitality.',
+        image_url: '/src/assets/iv-bags/scottsdale-beauty-bag.jpeg',
         features: [
           'Vitamin B-Complex',
           'Vitamin B12',
@@ -325,6 +326,7 @@ const IVTherapy = () => {
         price: '$299',
         badge: 'Basic NAD+',
         description: 'Pure NAD+ therapy with plain saline for cellular repair and energy restoration.',
+        image_url: '/src/assets/vials/nad-injection.webp',
         features: [
           'Plain Saline 500ml',
           'NAD+ 50mg',
@@ -615,14 +617,14 @@ const IVTherapy = () => {
                       subtitle: 'PERFORMANCE BAG',
                       bagImage: '/lovable-uploads/a5d1ca6c-d9ad-4fe6-861d-dc838db70801.png'
                     };
-                  case 'scottsdale':
+                  case 'scottsdale-beauty':
                     return {
                       bgGradient: 'from-white to-white',
                       titleColor: 'text-pink-900', 
                       badgeColor: 'bg-pink-500',
                       title: 'THE SCOTTSDALE',
                       subtitle: 'BEAUTY BAG',
-                      bagImage: '/lovable-uploads/8c4a3599-d5d5-4493-83f7-d4058876e25d.png'
+                      bagImage: '/src/assets/iv-bags/scottsdale-beauty-bag.jpeg'
                     };
                   case 'arizona-detox':
                     return {
