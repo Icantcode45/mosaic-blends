@@ -13,12 +13,6 @@ const LifestyleShowcase = () => {
       alt: "Professional IV therapy service with medical supervision",
       title: "Professional Care",
       description: "Expert treatment wherever you are"
-    },
-    {
-      src: "/lovable-uploads/b0faa61f-22ef-4eed-bb90-b544636afd28.png",
-      alt: "Friends enjoying IV therapy together in luxury setting",
-      title: "Social Wellness",
-      description: "Share the experience with friends"
     }
   ];
 
@@ -44,7 +38,7 @@ const LifestyleShowcase = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {lifestyleImages.map((image, index) => (
             <Card key={index} className="overflow-hidden group hover:shadow-lg transition-shadow duration-300">
               <div className="aspect-[4/3] overflow-hidden">

@@ -1,4 +1,10 @@
+import { useCountUp } from "@/hooks/useCountUp";
+
 const EnhancedStatsSection = () => {
+  const { count: count1, ref: ref1 } = useCountUp({ end: 16200, duration: 2500, delay: 200 });
+  const { count: count2, ref: ref2 } = useCountUp({ end: 117, duration: 2000, delay: 400 });
+  const { count: count3, ref: ref3 } = useCountUp({ end: 82, duration: 1800, delay: 600 });
+
   return (
     <>
       {/* Primary Stats Section */}
@@ -14,24 +20,24 @@ const EnhancedStatsSection = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-10">
-            <div className="text-center">
+            <div className="text-center" ref={ref1}>
               <p className="text-3xl sm:text-4xl xl:text-5xl text-gray-900">
                 <span>More than </span>
-                <span className="font-heading font-bold bg-gradient-orange">16,200 </span>
+                <span className="font-heading font-bold bg-gradient-orange">{count1.toLocaleString()} </span>
                 <span>successful treatments delivered</span>
               </p>
             </div>
-            <div className="text-center">
+            <div className="text-center" ref={ref2}>
               <p className="text-3xl sm:text-4xl xl:text-5xl text-gray-900">
                 <span>Achieved </span>
-                <span className="font-heading font-bold bg-gradient-purple">117% </span>
+                <span className="font-heading font-bold bg-gradient-purple">{count2}% </span>
                 <span>growth in patient satisfaction</span>
               </p>
             </div>
-            <div className="text-center">
+            <div className="text-center" ref={ref3}>
               <p className="text-3xl sm:text-4xl xl:text-5xl text-gray-900">
                 <span>Over </span>
-                <span className="font-heading font-bold bg-gradient-blue">82% </span>
+                <span className="font-heading font-bold bg-gradient-blue">{count3}% </span>
                 <span>of patients book follow-up visits</span>
               </p>
             </div>

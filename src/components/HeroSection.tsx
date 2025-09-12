@@ -72,10 +72,10 @@ const HeroSection = () => {
 
           {/* Right Column - Visual */}
           <div className="relative">
-            <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-primary/10 to-white border border-gray-100 shadow-elev-2 overflow-hidden">
+            <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-primary/10 to-accent/5 border border-gray-100 shadow-elev-2 overflow-hidden">
               <img 
-                src="/lovable-uploads/b0faa61f-22ef-4eed-bb90-b544636afd28.png" 
-                alt="IV Therapy Lifestyle Experience - Friends enjoying mobile IV therapy" 
+                src="/lovable-uploads/34c99661-1ae3-4de4-a24f-48d93504109b.png" 
+                alt="Premium IV therapy in luxury outdoor setting" 
                 className="w-full h-full object-cover"
                 width="786"
                 height="777"
