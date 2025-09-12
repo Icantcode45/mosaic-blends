@@ -247,6 +247,7 @@ const EnhancedContactSection = () => {
         <div className="bg-white rounded-2xl p-6 shadow-md">
           <h3 className="text-lg font-semibold text-center mb-6">Frequently Requested Information</h3>
           <div className="grid md:grid-cols-3 gap-6">
+            <div className="text-center">
               <div className="w-10 h-10 flex items-center justify-center mx-auto mb-3">
                 <img 
                   src="/lovable-uploads/1845c426-94c3-4d3b-b1d0-8d8c7c205410.png" 
