@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import CartDrawer from "./CartDrawer";
 import SearchSystem from "./SearchSystem";
 import { ChevronDown, Menu, Search, Phone, Calendar } from "lucide-react";
+import stayDrippedLogo from "@/assets/stay-dripped-main-logo.jpeg";
 
 const EnhancedHeader = () => {
   const [open, setOpen] = useState(false);
@@ -163,7 +164,7 @@ const EnhancedHeader = () => {
             {/* Brand */}
             <Link to="/" className="flex items-center space-x-3">
               <img 
-                src="/src/assets/stay-dripped-main-logo.jpeg" 
+                src={stayDrippedLogo} 
                 alt="Stay Dripped Mobile IV Service - Premier Mobile IV Therapy" 
                 className="h-10 w-auto"
                 loading="eager"
