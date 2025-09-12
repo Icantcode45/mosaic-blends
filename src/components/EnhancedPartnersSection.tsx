@@ -9,8 +9,8 @@ import bulldogLogo from "@/assets/partners/bulldog-logo.png";
 import betterHospitalityLogo from "@/assets/partners/better-hospitality-logo.jpeg";
 import socialScottsdaleLogo from "@/assets/partners/social-scottsdale-logo.jpeg";
 import scottsdaleBusLogo from "@/assets/partners/scottsdale-party-bus-logo.jpeg";
-import veritasWellnessLogo from "@/assets/partners/veritas-wellness-logo.png";
 import curaTurfLogo from "@/assets/partners/curaturf-logo.jpeg";
+import augmentWellnessLogo from "@/assets/partners/augment-wellness-logo.jpeg";
 
 const EnhancedPartnersSection = () => {
   const partners = [
@@ -60,7 +60,7 @@ const EnhancedPartnersSection = () => {
       name: "Augment Wellness", 
       category: "Wellness Partnership", 
       description: "Comprehensive wellness and recovery services",
-      logo: null
+      logo: augmentWellnessLogo
     },
     { 
       name: "Social Scottsdale", 
@@ -85,12 +85,6 @@ const EnhancedPartnersSection = () => {
       category: "Transportation", 
       description: "Luxury transportation and wellness experiences",
       logo: scottsdaleBusLogo
-    },
-    { 
-      name: "Veritas Wellness", 
-      category: "Wellness Center", 
-      description: "Advanced wellness and recovery solutions",
-      logo: veritasWellnessLogo
     }
   ];
 
