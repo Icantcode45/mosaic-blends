@@ -6,7 +6,11 @@ import fightReadyLogo from "@/assets/partners/fight-ready-logo.png";
 import arizonaCombatSportsLogo from "@/assets/partners/arizona-combat-sports-logo.png";
 import sleLogo from "@/assets/partners/sle-logo.png";
 import bulldogLogo from "@/assets/partners/bulldog-logo.png";
-import logoA from "@/assets/partners/logo-a.jpeg";
+import betterHospitalityLogo from "@/assets/partners/better-hospitality-logo.jpeg";
+import socialScottsdaleLogo from "@/assets/partners/social-scottsdale-logo.jpeg";
+import scottsdaleBusLogo from "@/assets/partners/scottsdale-party-bus-logo.jpeg";
+import veritasWellnessLogo from "@/assets/partners/veritas-wellness-logo.png";
+import curaTurfLogo from "@/assets/partners/curaturf-logo.jpeg";
 
 const EnhancedPartnersSection = () => {
   const partners = [
@@ -47,16 +51,46 @@ const EnhancedPartnersSection = () => {
       logo: sleLogo
     },
     { 
-      name: "Bulldogs Athletics", 
-      category: "Sports Partnership", 
-      description: "Supporting elite athlete recovery",
+      name: "Queen Creek High School Athletics", 
+      category: "High School Sports", 
+      description: "Supporting student athlete recovery",
       logo: bulldogLogo
     },
     { 
-      name: "Premier Athletes", 
-      category: "Elite Sports", 
-      description: "High-performance athletic recovery",
-      logo: logoA
+      name: "Augment Wellness", 
+      category: "Wellness Partnership", 
+      description: "Comprehensive wellness and recovery services",
+      logo: null
+    },
+    { 
+      name: "Social Scottsdale", 
+      category: "Social Club", 
+      description: "Premium social and lifestyle experiences",
+      logo: socialScottsdaleLogo
+    },
+    { 
+      name: "CuraTurf", 
+      category: "Artificial Grass", 
+      description: "#1 Artificial grass cleaning services",
+      logo: curaTurfLogo
+    },
+    { 
+      name: "Better. Hospitality", 
+      category: "Hospitality Group", 
+      description: "Premium hospitality and event services",
+      logo: betterHospitalityLogo
+    },
+    { 
+      name: "Scottsdale Party Bus & Limo", 
+      category: "Transportation", 
+      description: "Luxury transportation and wellness experiences",
+      logo: scottsdaleBusLogo
+    },
+    { 
+      name: "Veritas Wellness", 
+      category: "Wellness Center", 
+      description: "Advanced wellness and recovery solutions",
+      logo: veritasWellnessLogo
     }
   ];
 
