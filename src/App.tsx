@@ -23,6 +23,7 @@ import EventInquiry from "./pages/EventInquiry";
 import Membership from "./pages/Membership";
 import EnhancedMembership from "./pages/EnhancedMembership";
 import SpecialtyTreatments from "./pages/SpecialtyTreatments";
+import AboutUs from "./pages/AboutUs";
 
 const queryClient = new QueryClient();
 
@@ -50,7 +51,8 @@ const App = () => (
           <Route path="/nad-peptides" element={<NadPeptides />} />
           <Route path="/iv-therapy" element={<IVTherapy />} />
           <Route path="/membership" element={<EnhancedMembership />} />
-          <Route path="/specialty-treatments" element={<SpecialtyTreatments />} />
+           <Route path="/specialty-treatments" element={<SpecialtyTreatments />} />
+                <Route path="/about" element={<AboutUs />} />
                 <Route path="/privacy" element={<Privacy />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />

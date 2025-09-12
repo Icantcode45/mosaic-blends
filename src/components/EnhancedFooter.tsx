@@ -32,7 +32,7 @@ const EnhancedFooter = () => {
     {
       title: "Company",
       links: [
-        { name: "About Us", href: "/#about" },
+        { name: "About Us", href: "/about" },
         { name: "Our Team", href: "/#team" },
         { name: "Service Areas", href: "/#areas" },
         { name: "Careers", href: "/#careers" },
