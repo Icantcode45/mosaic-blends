@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import IntakeQWidget from "@/components/IntakeQWidget";
 import ServiceBookingButton from "@/components/ServiceBookingButton";
+import NADIVBagCard from "@/components/NADIVBagCard";
 
 const IVTherapy = () => {
   const [selectedCategory, setSelectedCategory] = useState('basic');
@@ -359,7 +360,7 @@ const IVTherapy = () => {
         category: 'NAD+ Therapy',
         price: '$499',
         badge: 'Myers + NAD+',
-        description: 'Same ingredients as the Myers Cocktail IV Drip plus 50-150mg NAD+. Increase of $75 from 50mg to 100mg and $50 from 100mg to 150mg.',
+        description: 'Same ingredients as the Myers Cocktail IV Drip plus NAD+ for premium anti-aging benefits.',
         features: [
           'Vitamin B-Complex',
           'Vitamin B12',
@@ -367,7 +368,7 @@ const IVTherapy = () => {
           'Zinc',
           'Glutathione',
           'Magnesium',
-          'NAD+ 50-150mg',
+          'NAD+ (customizable dosage)',
           'Premium Anti-Aging'
         ]
       },
@@ -377,13 +378,13 @@ const IVTherapy = () => {
         category: 'NAD+ Therapy',
         price: '$799',
         badge: 'Ultimate NAD+',
-        description: 'The Platinum Ultimate Hydration IV Drip plus 100mg-250mg NAD+ for maximum anti-aging benefits.',
+        description: 'The Platinum Ultimate Hydration IV Drip plus NAD+ for maximum anti-aging benefits.',
         features: [
           'Ultra Premium Hydration',
           'Complete Amino Complex',
           'Maximum Vitamin Blend',
           'Advanced Antioxidants',
-          'NAD+ 100-250mg',
+          'NAD+ (customizable dosage)',
           'Elite Anti-Aging Support',
           '4-6 hour treatment'
         ]
@@ -634,20 +635,68 @@ const IVTherapy = () => {
                       title: 'THE ARIZONA',
                       subtitle: 'DETOX & CLEANSE',
                       bagImage: '/lovable-uploads/bcef40ff-face-4462-965d-5f9d26ee8403.png'
-                    };
-                  default:
-                    return {
-                      bgGradient: 'from-white to-white',
-                      titleColor: 'text-foreground',
-                      badgeColor: 'bg-accent',
-                      title: service.name.split(' ').slice(0, 2).join(' ').toUpperCase(),
-                      subtitle: service.name.split(' ').slice(2).join(' ').toUpperCase(),
-                      bagImage: undefined
-                    };
+                     };
+                   case 'nad-plain':
+                     return {
+                       bgGradient: 'from-white to-white',
+                       titleColor: 'text-purple-900',
+                       badgeColor: 'bg-purple-500',
+                       title: 'NAD+ IV DRIP',
+                       subtitle: 'PLAIN SALINE',
+                       bagImage: '/src/assets/vials/nad-injection.webp'
+                     };
+                   case 'fountain-youth':
+                     return {
+                       bgGradient: 'from-white to-white',
+                       titleColor: 'text-rose-900',
+                       badgeColor: 'bg-rose-500',
+                       title: 'FOUNTAIN OF YOUTH',
+                       subtitle: 'NAD+ BEAUTY',
+                       bagImage: '/src/assets/vials/nad-injection.webp'
+                     };
+                   case 'diamond-nad':
+                     return {
+                       bgGradient: 'from-white to-white',
+                       titleColor: 'text-indigo-900',
+                       badgeColor: 'bg-indigo-500',
+                       title: 'THE DIAMOND',
+                       subtitle: 'NAD+',
+                       bagImage: '/src/assets/vials/nad-injection.webp'
+                     };
+                   case 'elite-nad':
+                     return {
+                       bgGradient: 'from-white to-white',
+                       titleColor: 'text-amber-900',
+                       badgeColor: 'bg-amber-500',
+                       title: 'THE ELITE',
+                       subtitle: 'NAD+ IV DRIP',
+                       bagImage: '/src/assets/vials/nad-injection.webp'
+                     };
+                   default:
+                     return {
+                       bgGradient: 'from-white to-white',
+                       titleColor: 'text-foreground',
+                       badgeColor: 'bg-accent',
+                       title: service.name.split(' ').slice(0, 2).join(' ').toUpperCase(),
+                       subtitle: service.name.split(' ').slice(2).join(' ').toUpperCase(),
+                       bagImage: undefined
+                     };
                 }
               };
 
               const style = getServiceStyle(service.id);
+
+              // Use NAD+ component for specific NAD+ services with dosage options
+              if (service.id === 'diamond-nad' || service.id === 'elite-nad') {
+                return (
+                  <NADIVBagCard
+                    key={service.id}
+                    service={service}
+                    serviceStyle={style}
+                    categoryId={getCategoryId(selectedCategory)}
+                  />
+                );
+              }
 
               return (
                 <div key={service.id} className="group relative overflow-hidden rounded-2xl bg-card shadow-lg border transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
