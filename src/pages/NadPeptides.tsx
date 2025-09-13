@@ -150,6 +150,7 @@ const NadPeptides = () => {
       category: 'Hormone Research',
       duration: 'Brief administration (5-10 minutes)',
       administration: 'Subcutaneous administration',
+      image_url: '/src/assets/vials/sermorelin-injection.webp',
       benefits: [
         'Natural hormone pathway research*',
         'Sleep quality studies*',
@@ -276,6 +277,29 @@ const NadPeptides = () => {
       frequency: 'Healthcare provider consultation required - cycling protocols studied',
       sideEffects: 'Research compound - possible desensitization with continuous use, consult healthcare provider.',
       researchStatus: 'Research compound with unique cardiovascular applications'
+    },
+    'liraglutide': {
+      name: 'Liraglutide (GLP-1)',
+      category: 'Metabolic Support',
+      duration: 'Daily subcutaneous administration',
+      administration: 'Subcutaneous injection',
+      image_url: '/src/assets/vials/liraglutide-injection-dual.jpeg',
+      benefits: [
+        'Weight management support*',
+        'Blood sugar wellness research*',
+        'Appetite regulation studies*',
+        'Metabolic health research*',
+        'Cardiovascular wellness studies*',
+        'GLP-1 pathway research*',
+        'Satiety enhancement studies*',
+        'FDA-approved applications*'
+      ],
+      description: 'Liraglutide is an FDA-approved GLP-1 receptor agonist for weight management and metabolic wellness applications.',
+      howItWorks: 'Mimics natural GLP-1 hormones to support satiety, slow gastric emptying, and enhance metabolic function.',
+      idealFor: 'Adults seeking physician-supervised weight management and metabolic optimization.',
+      frequency: 'Daily administration - healthcare provider supervision required',
+      sideEffects: 'FDA-approved with established profile - possible nausea, gastrointestinal effects, consult healthcare provider.',
+      researchStatus: 'FDA-approved for weight management with extensive clinical data'
     }
   };
 

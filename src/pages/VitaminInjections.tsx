@@ -33,7 +33,7 @@ const VitaminInjections = () => {
       description: "High-dose vitamin D3 for immune support and bone health.",
       price: 28,
       originalPrice: 30,
-      image_url: null,
+      image_url: "/src/assets/vials/vitamin-d3-injection.webp",
       category: "Vitamin Injections",
       stock_quantity: 100,
       features: [
@@ -63,15 +63,15 @@ const VitaminInjections = () => {
     },
     {
       id: "magnesium-injection",
-      name: "Magnesium Injection",
+      name: "Magnesium Chloride Injection",
       description: "Essential mineral for muscle relaxation and nerve function support.",
       price: 18,
       originalPrice: 20,
-      image_url: null,
+      image_url: "/src/assets/vials/magnesium-chloride-injection.jpeg",
       category: "Vitamin Injections",
       stock_quantity: 100,
       features: [
-        "200mg Magnesium Sulfate",
+        "300mg Magnesium Chloride",
         "Muscle relaxation",
         "Nerve function support",
         "Reduces muscle cramps",
@@ -192,6 +192,108 @@ const VitaminInjections = () => {
         "20% off additional shots",
         "Priority booking",
         "Mobile service included"
+      ]
+    },
+    {
+      id: "pyridoxine-injection",
+      name: "Pyridoxine (Vitamin B6) Injection",
+      description: "Essential B-vitamin for metabolism and neurological function.",
+      price: 15,
+      originalPrice: 18,
+      image_url: "/src/assets/vials/pyridoxine-injection.webp",
+      category: "Vitamin Injections",
+      stock_quantity: 100,
+      features: [
+        "85mg Pyridoxine HCl",
+        "Supports nervous system",
+        "Aids protein metabolism",
+        "Enhances brain function",
+        "5-minute treatment"
+      ]
+    },
+    {
+      id: "vita-complex-injection",
+      name: "Olympia Vita-Complex Injection",
+      description: "Comprehensive B-vitamin complex for complete wellness support.",
+      price: 35,
+      originalPrice: 40,
+      image_url: "/src/assets/vials/vita-complex-injection.webp",
+      category: "Vitamin Injections",
+      stock_quantity: 100,
+      features: [
+        "Niacinamide 100mg/ml",
+        "Riboflavin-5-Phosphate",
+        "Dexpanthenol 2mg/ml",
+        "Pyridoxine HCl 2mg/ml",
+        "15-minute treatment"
+      ]
+    },
+    {
+      id: "mineral-blend-injection",
+      name: "Olympia Mineral Blend Injection",
+      description: "Essential minerals blend for optimal body function.",
+      price: 25,
+      originalPrice: 30,
+      image_url: "/src/assets/vials/mineral-blend-injection.jpeg",
+      category: "Vitamin Injections",
+      stock_quantity: 100,
+      features: [
+        "Magnesium Chloride 80mg/ml",
+        "Zinc Sulfate 1mg/ml",
+        "Manganese Sulfate 20mcg/ml",
+        "Copper Gluconate 0.2mg/ml",
+        "10-minute treatment"
+      ]
+    },
+    {
+      id: "l-proline-injection",
+      name: "L-Proline Amino Acid Injection",
+      description: "Essential amino acid for collagen synthesis and tissue repair.",
+      price: 22,
+      originalPrice: 25,
+      image_url: "/src/assets/vials/l-proline-injection.jpeg",
+      category: "Vitamin Injections",
+      stock_quantity: 100,
+      features: [
+        "100mg L-Proline per ml",
+        "Supports collagen synthesis",
+        "Aids tissue repair",
+        "Promotes wound healing",
+        "5-minute treatment"
+      ]
+    },
+    {
+      id: "taurine-injection",
+      name: "Taurine Amino Acid Injection",
+      description: "Conditionally essential amino acid for cardiovascular and neurological support.",
+      price: 20,
+      originalPrice: 23,
+      image_url: "/src/assets/vials/taurine-injection.jpeg",
+      category: "Vitamin Injections",
+      stock_quantity: 100,
+      features: [
+        "50mg Taurine per ml",
+        "Cardiovascular support",
+        "Neurological function",
+        "Antioxidant properties",
+        "5-minute treatment"
+      ]
+    },
+    {
+      id: "acetylcysteine-injection",
+      name: "N-Acetylcysteine (NAC) Injection",
+      description: "Powerful antioxidant and mucolytic agent for respiratory and liver support.",
+      price: 30,
+      originalPrice: 35,
+      image_url: "/src/assets/vials/acetylcysteine-injection.jpeg",
+      category: "Vitamin Injections",
+      stock_quantity: 100,
+      features: [
+        "200mg N-Acetylcysteine",
+        "Potent antioxidant",
+        "Respiratory support",
+        "Liver detoxification",
+        "10-minute treatment"
       ]
     },
     {
