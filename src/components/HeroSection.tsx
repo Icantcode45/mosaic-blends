@@ -74,8 +74,8 @@ const HeroSection = () => {
           <div className="relative">
             <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-primary/10 to-accent/5 border border-gray-100 shadow-elev-2 overflow-hidden">
               <img 
-                src="/src/assets/iv-therapy-hero-new.jpg" 
-                alt="Premium IV therapy in luxury outdoor setting" 
+                src="/src/assets/stay-dripped-cowboy-logo-main.png" 
+                alt="Stay Dripped IV & Wellness Co. - Premier IV therapy with cowboy on horseback logo" 
                 className="w-full h-full object-cover"
                 width="786"
                 height="777"

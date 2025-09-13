@@ -23,7 +23,7 @@ const NadPeptides = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    document.title = "NAD+ & Peptides | Stay Dripped IV & Wellness Co.";
+    document.title = "Peptide Therapy | Stay Dripped IV & Wellness Co.";
     
     // Show chat widget after 5 seconds
     const timer = setTimeout(() => {
@@ -35,24 +35,24 @@ const NadPeptides = () => {
 
   // Comprehensive peptide information database
   const peptideDatabase = {
-    'nad+ iv therapy': {
-      name: 'NAD+ IV Support',
+    'peptide therapy': {
+      name: 'Peptide Support Programs',
       category: 'Cellular Wellness',
-      duration: 'Extended session (2-4 hours)',
-      administration: 'Intravenous administration',
+      duration: 'Varies by protocol',
+      administration: 'Injectable peptides',
       benefits: [
-        'May support cellular energy pathways*',
-        'Associated with mental clarity research*',
+        'May support cellular wellness pathways*',
+        'Associated with recovery research*',
         'Sleep quality studies ongoing*',
         'Studied for wellness applications*',
-        'Research in aging science*',
+        'Research in performance science*',
         'Cellular function research*',
-        'Mitochondrial health studies*',
+        'Recovery support studies*',
         'Cognitive function research*'
       ],
-      description: 'NAD+ IV administration delivers nicotinamide adenine dinucleotide directly into the bloodstream for research purposes. Individual results may vary.',
-      howItWorks: 'Research suggests NAD+ may support cellular NAD+ levels and mitochondrial pathways through direct bioavailability.*',
-      idealFor: 'Adults interested in cellular wellness research and energy optimization studies.',
+      description: 'Peptide therapy programs deliver targeted peptides for wellness support through physician-supervised protocols. Individual results may vary.',
+      howItWorks: 'Research suggests peptides may support cellular pathways and wellness goals through targeted bioactive compounds.*',
+      idealFor: 'Adults interested in wellness optimization and performance enhancement under medical supervision.',
       frequency: 'Consultation with healthcare provider required for individual protocols',
       sideEffects: 'Consult healthcare provider. Possible mild discomfort during administration, flushing, or nausea.',
       researchStatus: 'Active research in longevity and cellular health applications'
@@ -368,21 +368,21 @@ const NadPeptides = () => {
   return (
     <>
       <Helmet>
-        <title>NAD+ & Peptides Research | Stay Dripped IV & Wellness Co.</title>
-        <meta name="description" content="NAD+ and peptide research compounds for educational and wellness research purposes in Scottsdale, AZ. Healthcare provider consultation required." />
+        <title>Peptide Therapy | Stay Dripped IV & Wellness Co.</title>
+        <meta name="description" content="Physician-supervised peptide therapy programs for wellness, recovery, and performance optimization in Scottsdale, AZ. Healthcare provider consultation required." />
         <meta name="robots" content="max-image-preview:large" />
         <link rel="canonical" href="https://staydrippediv.com/nad-peptides" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="NAD+ & Peptides Research | Stay Dripped IV & Wellness Co." />
-        <meta property="og:description" content="NAD+ and peptide research compounds for educational and wellness research purposes in Scottsdale, AZ. Healthcare provider consultation required." />
+        <meta property="og:title" content="Peptide Therapy | Stay Dripped IV & Wellness Co." />
+        <meta property="og:description" content="Physician-supervised peptide therapy programs for wellness, recovery, and performance optimization in Scottsdale, AZ. Healthcare provider consultation required." />
         <meta property="og:url" content="https://staydrippediv.com/nad-peptides" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="NAD+ & Peptides Research | Stay Dripped IV & Wellness Co." />
-        <meta name="twitter:description" content="NAD+ and peptide research compounds for educational and wellness research purposes in Scottsdale, AZ. Healthcare provider consultation required." />
+        <meta name="twitter:title" content="Peptide Therapy | Stay Dripped IV & Wellness Co." />
+        <meta name="twitter:description" content="Physician-supervised peptide therapy programs for wellness, recovery, and performance optimization in Scottsdale, AZ. Healthcare provider consultation required." />
       </Helmet>
 
       {/* Hero Section */}
@@ -392,11 +392,11 @@ const NadPeptides = () => {
         
         <div className="container relative z-10 mx-auto px-4 py-32 text-center">
           <h1 className="mb-6 text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-            NAD+ & Peptide Research
+            Physician-Supervised Peptide Therapy
           </h1>
           <p className="mx-auto mb-10 max-w-3xl text-xl font-light leading-relaxed opacity-90">
-            Educational and research applications of cellular compounds studied for wellness applications. 
-            Healthcare provider consultation required. Individual results may vary.*
+            Prescription-based peptide programs for wellness, recovery, and performance optimization. 
+            All treatments require telehealth evaluation and medical approval.*
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             <Button 
@@ -421,7 +421,7 @@ const NadPeptides = () => {
         <div className="container mx-auto px-4">
           <div className="mb-16 text-center">
             <h2 className="mb-6 text-4xl font-bold text-foreground sm:text-5xl">
-              Why Research NAD+ & Peptide Compounds?
+              Why Choose Peptide Therapy Programs?
             </h2>
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Explore the science behind advanced cellular research compounds that are being studied for their potential applications in wellness and longevity research.*
@@ -451,11 +451,11 @@ const NadPeptides = () => {
         <div className="container mx-auto px-4">
           <div className="mb-16 text-center">
             <h2 className="mb-6 text-4xl font-bold text-foreground sm:text-5xl">
-              Research Compounds Available
+              Peptide Therapy Programs Available
             </h2>
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-              Our selection of NAD+ and peptide research compounds are available for educational purposes and 
-              scientific research with appropriate healthcare provider oversight.*
+              Our selection of peptide therapy programs are available for wellness and performance goals 
+              with physician supervision and prescription approval.*
             </p>
           </div>
 
@@ -464,7 +464,7 @@ const NadPeptides = () => {
             <div className="relative">
               <input
                 type="text"
-                placeholder="Search peptides and research compounds..."
+                placeholder="Search peptide therapy programs..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full px-4 py-3 pl-12 rounded-full border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
@@ -673,7 +673,7 @@ const NadPeptides = () => {
               What Our Clients Say
             </h2>
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-              Read authentic reviews from participants in our NAD+ and peptide research programs and educational consultations.
+              Read authentic reviews from participants in our peptide therapy programs and wellness consultations.
             </p>
           </div>
 
@@ -694,7 +694,7 @@ const NadPeptides = () => {
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                I participated in the NAD+ research program and found the educational experience valuable. The team at Stay Dripped is professional and knowledgeable about cellular research compounds. Great learning opportunity!
+                I participated in the peptide therapy program and found the wellness experience valuable. The team at Stay Dripped is professional and knowledgeable about peptide wellness programs. Great results and support!
               </p>
             </div>
 
@@ -784,8 +784,8 @@ const NadPeptides = () => {
               Ready to Learn About Wellness Research?
             </h3>
             <p className="mb-8 text-lg text-muted-foreground">
-              Schedule a consultation with our medical team to learn about NAD+ and peptide research compounds 
-              and their applications in wellness research. Educational purposes only.
+              Schedule a consultation with our medical team to learn about peptide therapy programs 
+              and their applications in wellness and performance optimization. Medical supervision required.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <Button 
@@ -831,7 +831,7 @@ const NadPeptides = () => {
         <div className="fixed bottom-5 right-5 w-96 h-[500px] bg-card rounded-2xl shadow-2xl border z-50 flex flex-col overflow-hidden animate-in slide-in-from-bottom-5">
           <div className="bg-primary text-primary-foreground p-4 flex justify-between items-center">
             <div>
-              <h3 className="font-semibold">NAD+ & Peptide Specialist</h3>
+              <h3 className="font-semibold">Peptide Therapy Specialist</h3>
               <p className="text-xs opacity-90">Online • Typically responds in minutes</p>
             </div>
             <button 
@@ -844,7 +844,7 @@ const NadPeptides = () => {
           
           <div className="flex-1 p-4 overflow-y-auto bg-muted/20">
             <div className="bg-card rounded-lg p-3 mb-4 border">
-              <p className="text-sm">Hello! I'm here to help with any questions about our NAD+ and peptide therapies. How can I assist you today?</p>
+              <p className="text-sm">Hello! I'm here to help with any questions about our peptide therapy programs. How can I assist you today?</p>
               <span className="text-xs text-muted-foreground">Now</span>
             </div>
           </div>
@@ -852,7 +852,7 @@ const NadPeptides = () => {
           <div className="p-4 border-t bg-card">
             <p className="text-xs text-muted-foreground mb-2">Popular questions:</p>
             <div className="flex flex-wrap gap-2 mb-3">
-              <button className="text-xs bg-muted hover:bg-primary hover:text-primary-foreground px-3 py-1 rounded-full transition-colors">What is NAD+ therapy?</button>
+              <button className="text-xs bg-muted hover:bg-primary hover:text-primary-foreground px-3 py-1 rounded-full transition-colors">What is peptide therapy?</button>
               <button className="text-xs bg-muted hover:bg-primary hover:text-primary-foreground px-3 py-1 rounded-full transition-colors">How long do treatments take?</button>
             </div>
             <div className="flex gap-2">
