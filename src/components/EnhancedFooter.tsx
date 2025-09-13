@@ -59,13 +59,13 @@ const EnhancedFooter = () => {
       title: "Legal & Compliance",
       links: [
         { name: "Privacy Practices", href: "/privacy" },
-        { name: "Terms of Service", href: "/#terms" },
+        { name: "Terms of Service", href: "/terms" },
+        { name: "Medical Compliance", href: "/medical-compliance" },
         { name: "HIPAA Notice", href: "/#hipaa" },
         { name: "Telehealth Consent", href: "/#telehealth-consent" },
         { name: "Patient Rights", href: "/#rights" },
         { name: "Accessibility", href: "/#accessibility" },
-        { name: "State Licenses", href: "/#licenses" },
-        { name: "Compliance Info", href: "/#compliance" }
+        { name: "State Licenses", href: "/#licenses" }
       ]
     }
   ];
@@ -234,6 +234,17 @@ const EnhancedFooter = () => {
         </div>
       </div>
       
+      {/* Medical Disclaimer */}
+      <div className="border-t border-accent-foreground/20 py-6">
+        <div className="container mx-auto px-6">
+          <div className="bg-muted/20 p-4 rounded-lg">
+            <p className="text-xs text-muted-foreground leading-relaxed text-center">
+              <strong>Medical Disclaimer:</strong> Stay Dripped® IV & Wellness Co. provides physician-supervised IV therapy, vitamin injections, and wellness programs. All peptide services require telehealth evaluation and prescription approval. Research peptides are not FDA-approved for human use. This website does not provide medical advice.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Bottom Bar */}
       <div className="border-t border-accent-foreground/20 py-6">
         <div className="container mx-auto px-6">
