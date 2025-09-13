@@ -4,41 +4,41 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern Design System - Clean & Professional */
+/* Hims-Inspired Clean Design System */
 
 @layer base {
   :root {
-    /* Clean Color Palette - Hims-inspired */
+    /* Ultra-Clean Color Palette */
     --background: 255 255 255;
-    --foreground: 15 23 42;
+    --foreground: 17 24 39;
     
     --card: 255 255 255;
-    --card-foreground: 15 23 42;
+    --card-foreground: 17 24 39;
     
     --popover: 255 255 255;
-    --popover-foreground: 15 23 42;
+    --popover-foreground: 17 24 39;
     
-    /* Primary Brand - Clean Blue */
-    --primary: 37 99 235;
+    /* Primary Brand - Sophisticated Blue */
+    --primary: 59 130 246;
     --primary-foreground: 255 255 255;
-    --primary-hover: 29 78 216;
-    --primary-light: 219 234 254;
-    --primary-dark: 30 64 175;
+    --primary-hover: 37 99 235;
+    --primary-light: 239 246 255;
+    --primary-dark: 29 78 216;
     
-    /* Secondary - Sophisticated Gray */
-    --secondary: 248 250 252;
-    --secondary-foreground: 71 85 105;
+    /* Secondary - Ultra Light */
+    --secondary: 249 250 251;
+    --secondary-foreground: 75 85 99;
     
-    /* Accent - Subtle Purple */
-    --accent: 241 245 249;
-    --accent-foreground: 51 65 85;
+    /* Accent - Minimal Gray */
+    --accent: 248 250 252;
+    --accent-foreground: 71 85 105;
     
-    /* Neutral System */
+    /* Neutral System - Cleaner */
     --muted: 248 250 252;
-    --muted-foreground: 100 116 139;
-    --border: 226 232 240;
-    --input: 241 245 249;
-    --ring: 37 99 235;
+    --muted-foreground: 107 114 128;
+    --border: 229 231 235;
+    --input: 249 250 251;
+    --ring: 59 130 246;
     
     /* Status Colors */
     --success: 34 197 94;
@@ -48,29 +48,29 @@
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
     
-    /* Enhanced Brand Colors */
+    /* Minimal Brand Accents */
     --brand-teal: 20 184 166;
     --brand-emerald: 16 185 129;
-    --brand-violet: 139 92 246;
-    --brand-rose: 244 63 94;
+    --brand-violet: 124 58 237;
+    --brand-rose: 236 72 153;
     
-    /* Spacing & Layout */
-    --radius: 0.75rem;
-    --radius-sm: 0.5rem;
-    --radius-md: 0.75rem;
-    --radius-lg: 1rem;
-    --radius-xl: 1.5rem;
+    /* Clean Radius System */
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
     
-    /* Shadows - Modern & Subtle */
-    --shadow-subtle: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-large: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-extra: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    /* Ultra-Subtle Shadows */
+    --shadow-subtle: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -1px rgb(0 0 0 / 0.03);
+    --shadow-large: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -2px rgb(0 0 0 / 0.03);
+    --shadow-extra: 0 25px 50px -12px rgb(0 0 0 / 0.12);
     
-    /* Modern Gradients */
+    /* Clean Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-hover)) 100%);
     --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--primary-light)) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--muted) / 0.3) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--accent)) 100%);
     
     /* Sidebar */
     --sidebar-background: 255 255 255;
@@ -139,27 +139,30 @@
     line-height: 1.6;
   }
   
-  /* Modern Typography Hierarchy */
+  /* Hims-Inspired Typography */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-semibold tracking-tight;
-    line-height: 1.2;
+    @apply font-heading font-bold tracking-tight;
+    line-height: 1.1;
   }
   
   h1 { 
-    @apply text-4xl md:text-5xl lg:text-6xl; 
-    letter-spacing: -0.025em;
+    @apply text-5xl md:text-6xl lg:text-7xl; 
+    letter-spacing: -0.03em;
+    font-weight: 800;
   }
   h2 { 
-    @apply text-3xl md:text-4xl lg:text-5xl; 
+    @apply text-4xl md:text-5xl lg:text-6xl; 
     letter-spacing: -0.025em;
+    font-weight: 700;
   }
   h3 { 
-    @apply text-2xl md:text-3xl; 
-    letter-spacing: -0.020em;
+    @apply text-3xl md:text-4xl; 
+    letter-spacing: -0.02em;
+    font-weight: 600;
   }
-  h4 { @apply text-xl md:text-2xl; }
-  h5 { @apply text-lg md:text-xl; }
-  h6 { @apply text-base md:text-lg; }
+  h4 { @apply text-2xl md:text-3xl font-semibold; }
+  h5 { @apply text-xl md:text-2xl font-medium; }
+  h6 { @apply text-lg md:text-xl font-medium; }
   
   p {
     @apply text-muted-foreground leading-relaxed;
@@ -179,61 +182,60 @@
 }
 
 @layer components {
-  /* Modern Button System */
-  .btn-modern {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg;
-    @apply px-6 py-3 text-sm font-medium transition-all duration-200;
+  /* Hims-Style Button System */
+  .btn-hims {
+    @apply inline-flex items-center justify-center gap-2 rounded-full;
+    @apply px-8 py-4 text-sm font-semibold transition-all duration-200;
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
-    @apply active:scale-95;
+    @apply hover:scale-105 active:scale-95;
   }
   
-  .btn-primary-modern {
-    @apply btn-modern bg-primary text-primary-foreground;
+  .btn-primary-hims {
+    @apply btn-hims bg-primary text-primary-foreground;
     @apply hover:bg-primary-hover hover:shadow-medium;
-    @apply focus-visible:ring-primary/20;
-    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05), 0 0 0 1px hsl(var(--primary) / 0.1);
+    @apply focus-visible:ring-primary/30;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 0.06);
   }
   
-  .btn-secondary-modern {
-    @apply btn-modern bg-secondary text-secondary-foreground;
-    @apply hover:bg-secondary/80 hover:shadow-subtle;
-    @apply border border-border/50;
+  .btn-secondary-hims {
+    @apply btn-hims bg-white text-foreground border-2 border-border;
+    @apply hover:bg-accent hover:border-primary/20;
   }
   
-  .btn-outline-modern {
-    @apply btn-modern bg-background text-foreground;
-    @apply border border-border hover:bg-accent hover:text-accent-foreground;
-    @apply hover:border-border/80 hover:shadow-subtle;
+  .btn-outline-hims {
+    @apply btn-hims bg-transparent text-foreground;
+    @apply border-2 border-border hover:bg-white hover:border-primary/20;
+    @apply hover:shadow-subtle;
   }
   
-  .btn-ghost-modern {
-    @apply btn-modern bg-transparent text-foreground;
-    @apply hover:bg-accent hover:text-accent-foreground;
+  .btn-ghost-hims {
+    @apply btn-hims bg-transparent text-muted-foreground;
+    @apply hover:bg-accent hover:text-foreground;
   }
   
-  /* Modern Card System */
-  .card-clean {
-    @apply bg-card text-card-foreground rounded-xl;
-    @apply border border-border/50 shadow-subtle;
+  /* Hims-Style Card System */
+  .card-hims {
+    @apply bg-white text-card-foreground rounded-2xl;
+    @apply border border-gray-100 shadow-subtle;
     @apply transition-all duration-300;
   }
   
-  .card-hover {
-    @apply card-clean hover:shadow-medium hover:-translate-y-1;
-    @apply hover:border-border/80;
+  .card-hover-hims {
+    @apply card-hims hover:shadow-medium hover:-translate-y-1;
+    @apply hover:border-gray-200;
   }
   
-  .card-interactive {
-    @apply card-hover hover:shadow-large hover:-translate-y-2;
-    @apply cursor-pointer active:scale-98;
+  .card-interactive-hims {
+    @apply card-hover-hims hover:shadow-large hover:-translate-y-2;
+    @apply cursor-pointer active:scale-[0.98];
   }
   
-  /* Modern Input System */
-  .input-clean {
-    @apply w-full rounded-lg border border-border/60;
-    @apply bg-background px-4 py-3 text-sm;
-    @apply placeholder:text-muted-foreground;
-    @apply focus:border-primary/60 focus:ring-2 focus:ring-primary/10;
+  /* Hims-Style Input System */
+  .input-hims {
+    @apply w-full rounded-xl border-2 border-gray-200;
+    @apply bg-white px-4 py-4 text-sm;
+    @apply placeholder:text-gray-400;
+    @apply focus:border-primary focus:ring-0 focus:outline-none;
     @apply transition-all duration-200;
   }
   
@@ -386,7 +388,6 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-}
 
 /* Enhanced styles from new design */
 @layer components {
