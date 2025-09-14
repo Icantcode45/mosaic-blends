@@ -64,7 +64,7 @@ const Telehealth = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground">Telehealth Services</h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Virtual consultations and ongoing care management from the comfort of your home with our licensed medical professionals.
+            Virtual consultations and ongoing care management from the comfort of your home with our licensed medical professionals nationwide.
           </p>
           <div className="mt-6 inline-flex">
             <QualiphyWidget />
@@ -83,7 +83,7 @@ const Telehealth = () => {
             <Card
               title="Virtual Consultations"
               price="$150"
-              description="Comprehensive medical consultations with our licensed healthcare providers."
+              description="Comprehensive medical consultations with our licensed healthcare providers nationwide."
               items={features.consultations}
             />
             <Card

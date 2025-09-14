@@ -75,36 +75,6 @@ const IVTherapy = () => {
     ],
     standard: [
       {
-        id: 'myers',
-        name: "Myers Cocktail IV Drip",
-        category: 'Standard Wellness',
-        price: '$200',
-        badge: 'Classic',
-        description: 'The classic Myers\' formula for comprehensive nutrient support and wellness optimization.',
-        features: [
-          'Vitamin B-Complex',
-          'Vitamin B12',
-          'Vitamin C',
-          'Zinc',
-          'Glutathione',  
-          'Magnesium'
-        ]
-      },
-      {
-        id: 'jr-myers',
-        name: "Jr. Myers Cocktail IV Drip",
-        category: 'Standard Wellness',
-        price: '$175',
-        badge: 'Foundation',
-        description: 'Foundational nutrient blend for general wellness and immune support.',
-        features: [
-          'Vitamin B-Complex',
-          'Vitamin B12',
-          'Vitamin C',
-          'Glutathione'
-        ]
-      },
-      {
         id: 'anti-inflammatory',
         name: 'Anti-Inflammatory IV Drip',
         category: 'Standard Wellness',
@@ -259,21 +229,6 @@ const IVTherapy = () => {
     ],
     premium: [
       {
-        id: 'mega-myers',
-        name: 'The Mega Myers Cocktail IV Drip',
-        category: 'Premium Therapies',
-        price: '$250',
-        badge: 'Maximum Strength',
-        description: 'Maximum strength Myers\' formula for intensive wellness support and recovery.',
-        features: [
-          'High-Dose Vitamin C',
-          'B-Complex + B12',
-          'Magnesium + Calcium',
-          'Zinc + Selenium',
-          'Maximum Potency'
-        ]
-      },
-      {
         id: 'gold',
         name: 'The "Gold" Ultimate Hydration IV Drip',
         category: 'Premium Therapies',
@@ -352,24 +307,6 @@ const IVTherapy = () => {
           'Biotin',
           'NAD+ 50mg',
           'Anti-Aging Complex'
-        ]
-      },
-      {
-        id: 'diamond-nad',
-        name: 'The "Diamond" NAD+',
-        category: 'NAD+ Therapy',
-        price: '$499',
-        badge: 'Myers + NAD+',
-        description: 'Same ingredients as the Myers Cocktail IV Drip plus NAD+ for premium anti-aging benefits.',
-        features: [
-          'Vitamin B-Complex',
-          'Vitamin B12',
-          'Vitamin C',
-          'Zinc',
-          'Glutathione',
-          'Magnesium',
-          'NAD+ (customizable dosage)',
-          'Premium Anti-Aging'
         ]
       },
       {
