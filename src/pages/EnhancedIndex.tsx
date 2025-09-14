@@ -8,7 +8,6 @@ import TelehealthSection from "@/components/TelehealthSection";
 import EnhancedMembershipSection from "@/components/EnhancedMembershipSection";
 import EnhancedPartnersSection from "@/components/EnhancedPartnersSection";
 import NewsletterSection from "@/components/NewsletterSection";
-import EnhancedContactSection from "@/components/EnhancedContactSection";
 import BBBAccreditation from "@/components/BBBAccreditation";
 
 const EnhancedIndex = () => {
@@ -38,10 +37,7 @@ const EnhancedIndex = () => {
       {/* 8. Newsletter - Capture leads */}
       <NewsletterSection />
       
-      {/* 9. Contact - Make it easy to get in touch */}
-      <EnhancedContactSection />
-      
-      {/* 10. BBB Accreditation - Trust and credibility */}
+      {/* 9. BBB Accreditation - Trust and credibility */}
       <BBBAccreditation />
     </div>
   );
