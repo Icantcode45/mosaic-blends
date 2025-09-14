@@ -179,20 +179,6 @@ const VitaminInjections = () => {
         "Aids in weight management",
         "5-minute treatment"
       ]
-    }
-  ];
-
-  const membershipPlans = [
-    {
-      name: "Basic Package",
-      price: "$199/year",
-      description: "Perfect for occasional wellness support with significant savings on vitamin injections.",
-      features: [
-        "6 vitamin injections per year",
-        "20% off additional shots",
-        "Priority booking",
-        "Mobile service included"
-      ]
     },
     {
       id: "pyridoxine-injection",
@@ -213,7 +199,7 @@ const VitaminInjections = () => {
     },
     {
       id: "vita-complex-injection",
-      name: "Olympia Vita-Complex Injection",
+      name: "Vitamin B-Complex Injection",
       description: "Comprehensive B-vitamin complex for complete wellness support.",
       price: 35,
       originalPrice: 40,
@@ -230,7 +216,7 @@ const VitaminInjections = () => {
     },
     {
       id: "mineral-blend-injection",
-      name: "Olympia Mineral Blend Injection",
+      name: "Mineral Blend Injection",
       description: "Essential minerals blend for optimal body function.",
       price: 25,
       originalPrice: 30,
@@ -247,7 +233,7 @@ const VitaminInjections = () => {
     },
     {
       id: "l-proline-injection",
-      name: "L-Proline Amino Acid Injection",
+      name: "L-Proline Injection",
       description: "Essential amino acid for collagen synthesis and tissue repair.",
       price: 22,
       originalPrice: 25,
@@ -264,7 +250,7 @@ const VitaminInjections = () => {
     },
     {
       id: "taurine-injection",
-      name: "Taurine Amino Acid Injection",
+      name: "Taurine Injection",
       description: "Conditionally essential amino acid for cardiovascular and neurological support.",
       price: 20,
       originalPrice: 23,
@@ -294,6 +280,32 @@ const VitaminInjections = () => {
         "Respiratory support",
         "Liver detoxification",
         "10-minute treatment"
+      ]
+    }
+  ];
+
+  const membershipPlans = [
+    {
+      name: "Shot Pass Membership",
+      price: "$99/month",
+      description: "Unlimited vitamin injections membership with maximum flexibility and value.",
+      features: [
+        "Unlimited vitamin injections",
+        "All injection types included",
+        "Priority booking",
+        "Mobile service included",
+        "Cancel anytime"
+      ]
+    },
+    {
+      name: "Basic Package",
+      price: "$199/year",
+      description: "Perfect for occasional wellness support with significant savings on vitamin injections.",
+      features: [
+        "6 vitamin injections per year",
+        "20% off additional shots",
+        "Priority booking",
+        "Mobile service included"
       ]
     },
     {
