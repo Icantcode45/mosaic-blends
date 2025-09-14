@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/iv-therapy-hero-professional.jpg";
+import heroImage from "@/assets/stay-dripped-hero-logo.png";
 
 const HeroSection = () => {
   return (
@@ -64,7 +64,7 @@ const HeroSection = () => {
                   <div className="relative bg-white rounded-3xl p-8 shadow-extra">
                     <img 
                       src={heroImage} 
-                      alt="Professional IV therapy treatment setup" 
+                      alt="Stay Dripped - Premier IV Therapy & Wellness Company" 
                       className="w-full h-auto rounded-2xl"
                       loading="eager"
                     />
