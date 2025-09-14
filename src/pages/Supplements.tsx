@@ -35,7 +35,7 @@ const professionalProducts: Product[] = [
     id: "1",
     name: "Cortisol Manager",
     brand: "Integrative Therapeutics",
-    image: "https://assets.fullscript.io/Product/IT0020/400_front.png",
+    image: "/lovable-uploads/1845c426-94c3-4d3b-b1d0-8d8c7c205410.png",
     size: "30 tablets",
     wholesalePrice: 13.50,
     msrp: 25.99,
@@ -46,7 +46,7 @@ const professionalProducts: Product[] = [
     id: "2", 
     name: "Vitamin D3 5000 + K",
     brand: "Metagenics",
-    image: "https://assets.fullscript.io/Product/MI0318/400_front.png",
+    image: "/lovable-uploads/2bf8cace-459c-4234-809a-23f96c9ffbcb.png",
     size: "60 Softgels",
     wholesalePrice: 15.00,
     msrp: 28.99,
@@ -57,7 +57,7 @@ const professionalProducts: Product[] = [
     id: "3",
     name: "Berberine",
     brand: "Thorne",
-    image: "https://assets.fullscript.io/Product/TH0363/400_front.png",
+    image: "/lovable-uploads/34c99661-1ae3-4de4-a24f-48d93504109b.png",
     size: "60 capsules",
     wholesalePrice: 21.53,
     msrp: 42.99,
@@ -68,10 +68,32 @@ const professionalProducts: Product[] = [
     id: "4",
     name: "Berberine 500mg",
     brand: "Integrative Therapeutics", 
-    image: "https://assets.fullscript.io/Product/VL0078/400_front.png",
+    image: "/lovable-uploads/535cce13-e549-426e-9562-da1e83740c9e.png",
     size: "120 capsules",
     wholesalePrice: 30.00,
     msrp: 60.99,
+    badges: ["tested"],
+    category: "supplements"
+  },
+  {
+    id: "5",
+    name: "Omega-3 Ultra",
+    brand: "Nordic Naturals",
+    image: "/lovable-uploads/5e166b5e-d73a-4a58-8f6c-b653d9ebb5b1.png",
+    size: "90 softgels",
+    wholesalePrice: 28.00,
+    msrp: 55.99,
+    badges: ["top-pick"],
+    category: "supplements"
+  },
+  {
+    id: "6",
+    name: "Magnesium Glycinate",
+    brand: "Pure Encapsulations",
+    image: "/lovable-uploads/63791b25-36b1-4a68-8b2b-4de6ec40c35f.png",
+    size: "120 capsules",
+    wholesalePrice: 18.50,
+    msrp: 36.99,
     badges: ["tested"],
     category: "supplements"
   }
@@ -369,14 +391,14 @@ const Supplements = () => {
 
                   <div>
                     <div className="product-actions">
-                      <a className="btn" href="https://staydrippediv.com/fullscript?sku=MSB-60" target="_blank" rel="noopener">Order via Fullscript</a>
                       <button 
-                        className="btn btn-secondary" 
+                        className="btn btn-primary" 
                         type="button"
                         onClick={() => addToCart({sku: 'MSB-60', name: 'MegaSporeBiotic', brand: 'Microbiome Labs', price: '59'})}
                       >
                         Add to Cart
                       </button>
+                      <button className="btn btn-secondary">Learn More</button>
                     </div>
                     <p className="product-note">Tip: Start with 1 capsule every other day for the first week, then increase as tolerated.</p>
                   </div>
@@ -413,14 +435,14 @@ const Supplements = () => {
 
                   <div>
                     <div className="product-actions">
-                      <a className="btn" href="https://staydrippediv.com/fullscript?sku=PE-ONE-60" target="_blank" rel="noopener">Order via Fullscript</a>
                       <button 
-                        className="btn btn-secondary" 
+                        className="btn btn-primary" 
                         type="button"
                         onClick={() => addToCart({sku: 'PE-ONE-60', name: 'O.N.E. Multivitamin', brand: 'Pure Encapsulations', price: '43'})}
                       >
                         Add to Cart
                       </button>
+                      <button className="btn btn-secondary">Learn More</button>
                     </div>
                     <p className="product-note">If sensitive to B-vitamins, consider taking earlier in the day.</p>
                   </div>
@@ -438,13 +460,43 @@ const Supplements = () => {
             <p className="section-description">Browse our complete collection of premium supplements for every health goal.</p>
           </div>
 
-          <div className="fullscript-catalog">
-            <h3>Stay Dripped Supplement Catalog</h3>
-            <div className="fullscript-grid">
-              <p className="text-center text-muted-foreground">
-                Visit our <a href="https://staydrippediv.com/fullscript" target="_blank" rel="noopener" className="text-primary hover:underline">Fullscript catalog</a> to browse our complete collection of professional-grade supplements.
-              </p>
-            </div>
+          <div className="products-grid">
+            {professionalProducts.filter(p => p.category === 'supplements').map((product) => (
+              <div key={product.id} className="product-card">
+                <div className="product-content">
+                  <div className="product-image">
+                    <img src={product.image} alt={`${product.name} ${product.size}`} width="320" height="320" loading="lazy" />
+                    {product.badges.includes("top-pick") && <div className="product-badge">Top Pick</div>}
+                    {product.badges.includes("tested") && <div className="product-badge">Tested</div>}
+                  </div>
+                  <div className="product-info">
+                    <div>
+                      <p className="product-brand">{product.brand}</p>
+                      <h3 className="product-title">{product.name}</h3>
+                      <div className="product-price">${product.wholesalePrice.toFixed(2)}</div>
+                      
+                      <div className="product-pills">
+                        <span className="pill">{product.size}</span>
+                        <span className="pill">Professional Grade</span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="product-actions">
+                        <button 
+                          className="btn btn-primary" 
+                          type="button"
+                          onClick={() => handleAddToCart(product)}
+                        >
+                          Add to Cart
+                        </button>
+                        <button className="btn btn-secondary">Learn More</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -520,7 +572,13 @@ const Supplements = () => {
 
                   <div>
                     <div className="product-actions">
-                      <a className="btn" href="https://staydrippediv.com/fullscript" target="_blank" rel="noopener">Order via Fullscript</a>
+                      <button 
+                        className="btn btn-primary" 
+                        type="button"
+                        onClick={() => addToCart({sku: 'VD3-K2', name: 'Vitamin D3 + K2', brand: 'Essential Vitamins', price: '45'})}
+                      >
+                        Add to Cart
+                      </button>
                       <button className="btn btn-secondary">Learn More</button>
                     </div>
                     <p className="product-note">Professional-grade vitamin D3 with synergistic K2.</p>
@@ -550,7 +608,13 @@ const Supplements = () => {
 
                   <div>
                     <div className="product-actions">
-                      <a className="btn" href="https://staydrippediv.com/fullscript" target="_blank" rel="noopener">Order via Fullscript</a>
+                      <button 
+                        className="btn btn-primary" 
+                        type="button"
+                        onClick={() => addToCart({sku: 'B-COMPLEX', name: 'Active B-Complex', brand: 'B-Complex', price: '38'})}
+                      >
+                        Add to Cart
+                      </button>
                       <button className="btn btn-secondary">Learn More</button>
                     </div>
                     <p className="product-note">Bioactive forms of B vitamins for optimal utilization.</p>
@@ -591,7 +655,13 @@ const Supplements = () => {
 
                   <div>
                     <div className="product-actions">
-                      <a className="btn" href="https://staydrippediv.com/fullscript" target="_blank" rel="noopener">Order via Fullscript</a>
+                      <button 
+                        className="btn btn-primary" 
+                        type="button"
+                        onClick={() => addToCart({sku: 'BRAIN-SUPPORT', name: 'Brain Support Complex', brand: 'Cognitive Health', price: '89'})}
+                      >
+                        Add to Cart
+                      </button>
                       <button className="btn btn-secondary">Learn More</button>
                     </div>
                     <p className="product-note">Advanced cognitive support with clinically studied ingredients.</p>
@@ -621,7 +691,13 @@ const Supplements = () => {
 
                   <div>
                     <div className="product-actions">
-                      <a className="btn" href="https://staydrippediv.com/fullscript" target="_blank" rel="noopener">Order via Fullscript</a>
+                      <button 
+                        className="btn btn-primary" 
+                        type="button"
+                        onClick={() => addToCart({sku: 'HORMONE-BALANCE', name: 'Hormone Balance Formula', brand: 'Endocrine Health', price: '76'})}
+                      >
+                        Add to Cart
+                      </button>
                       <button className="btn btn-secondary">Learn More</button>
                     </div>
                     <p className="product-note">Comprehensive hormone support with botanical extracts.</p>
