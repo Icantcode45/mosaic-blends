@@ -178,7 +178,7 @@ const EnhancedMembership = () => {
             </Badge>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 animate-fade-in">
-              Transform Your <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Wellness Journey</span>
+              Transform Your <span className="text-gradient-animated">Wellness Journey</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in">
@@ -213,7 +213,7 @@ const EnhancedMembership = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 animate-fade-in">
-                Why Choose <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Membership?</span>
+                Why Choose <span className="text-gradient-animated">Membership?</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in">
                 Experience the ultimate in convenience and savings with our VIP membership benefits designed for your wellness journey.
@@ -255,7 +255,7 @@ const EnhancedMembership = () => {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 animate-fade-in">
-                Choose Your <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Perfect Plan</span>
+                Choose Your <span className="text-gradient-animated">Perfect Plan</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in">
                 Select the membership plan that best fits your wellness needs and lifestyle. All plans include our satisfaction guarantee.
@@ -342,7 +342,7 @@ const EnhancedMembership = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 animate-fade-in">
-                What Our <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Members Say</span>
+                What Our <span className="text-gradient-animated">Members Say</span>
               </h2>
               <p className="text-xl text-muted-foreground animate-fade-in">
                 Join thousands of satisfied members who have transformed their wellness journey with us.
@@ -386,7 +386,7 @@ const EnhancedMembership = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 animate-fade-in">
-              Ready to Start Your <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Wellness Journey?</span>
+              Ready to Start Your <span className="text-gradient-animated">Wellness Journey?</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8 animate-fade-in">
               Join thousands of satisfied members and experience the difference that premium wellness care can make.

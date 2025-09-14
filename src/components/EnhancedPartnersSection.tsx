@@ -100,7 +100,7 @@ const EnhancedPartnersSection = () => {
             </Badge>
             
             <h2 className="text-4xl md:text-6xl font-bold text-foreground font-heading mb-6 animate-fade-in">
-              Partnered with <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Elite Brands</span> Across Arizona
+              Partnered with <span className="text-gradient-animated">Elite Brands</span> Across Arizona
             </h2>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
