@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { scrollToSection } from "@/utils/scrollToSection";
 import heroImage from "@/assets/stay-dripped-hero-logo.png";
 
 const HeroSection = () => {
@@ -50,8 +51,13 @@ const HeroSection = () => {
                   <Button asChild size="lg" variant="medical" className="text-white font-bold shadow-large">
                     <Link to="/iv-therapy">Start consultation</Link>
                   </Button>
-                  <Button asChild variant="medical-outline" size="lg" className="font-bold">
-                    <a href="#services">Explore treatments</a>
+                  <Button 
+                    variant="medical-outline" 
+                    size="lg" 
+                    className="font-bold"
+                    onClick={() => scrollToSection('services')}
+                  >
+                    Explore treatments
                   </Button>
                 </div>
                 

@@ -382,8 +382,17 @@ const IVTherapy = () => {
             Professional mobile IV treatments delivered to your location in Scottsdale, AZ
           </p>
           <div className="flex flex-wrap justify-center gap-6">
-            <Button size="lg" className="px-8 py-4 text-lg font-semibold uppercase tracking-wide" asChild>
-              <a href="#services">View Services</a>
+            <Button 
+              size="lg" 
+              className="px-8 py-4 text-lg font-semibold uppercase tracking-wide"
+              onClick={() => {
+                const servicesSection = document.getElementById('services');
+                if (servicesSection) {
+                  servicesSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              View Services
             </Button>
             <Button variant="outline" size="lg" className="px-8 py-4 text-lg font-semibold uppercase tracking-wide border-white text-white hover:bg-white hover:text-slate-800" asChild>
               <a href="tel:+1-602-688-9825">Call (602) 688-9825</a>

@@ -22,9 +22,13 @@ const SupplementsSection = () => {
 
       if (error) throw error;
       setProducts(data || []);
-    } catch (error) {
-      console.error('Error fetching products:', error);
-    } finally {
+      } catch (error) {
+        // Log error for debugging but don't expose to user
+        console.error('Error fetching products:', error);
+        
+        // Show user-friendly error message
+        setProducts([]);
+      } finally {
       setLoading(false);
     }
   };

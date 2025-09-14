@@ -251,7 +251,11 @@ const Supplements = () => {
       }));
 
     } catch (error) {
-      console.error('Error adding to cart:', error);
+      // Log error for debugging in development
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Error adding to cart:', error);
+      }
+      
       toast({
         title: "Error",
         description: "Failed to add item to cart. Please try again.",
@@ -277,7 +281,8 @@ const Supplements = () => {
   };
 
   const toggleFavorite = (productId: string) => {
-    console.log(`Toggle favorite for product ${productId}`);
+    // TODO: Implement favorite functionality
+    // This could integrate with user preferences or local storage
   };
 
   return (

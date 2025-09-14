@@ -21,7 +21,12 @@ const NewsletterSection = () => {
           Get wellness tips, member perks and early access to promos.
         </p>
         
-        <form className="grid gap-3 sm:grid-cols-2">
+        <form className="grid gap-3 sm:grid-cols-2" onSubmit={(e) => {
+          e.preventDefault();
+          // Form submission would be handled here
+          // For now, we'll just show a success message
+          alert('Thank you for subscribing to our newsletter!');
+        }}>
           <Input 
             required 
             placeholder="First & last name" 
@@ -33,7 +38,7 @@ const NewsletterSection = () => {
             placeholder="Email address" 
             className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring focus:ring-primary/20"
           />
-          <Button className="sm:col-span-2 px-6 py-3 rounded-xl bg-primary text-white hover:bg-foreground transition">
+          <Button type="submit" className="sm:col-span-2 px-6 py-3 rounded-xl bg-primary text-white hover:bg-foreground transition">
             Subscribe
           </Button>
         </form>

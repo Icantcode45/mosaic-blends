@@ -215,13 +215,17 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       if (session) {
         await syncCartToDatabase();
       }
-    } catch (error) {
-      console.error('Error adding item to database:', error);
-      toast({
-        title: "Warning",
-        description: "Item added to cart but failed to sync. Please refresh if you experience issues.",
-        variant: "default",
-      });
+      } catch (error) {
+        // Log error for debugging in development
+        if (process.env.NODE_ENV === 'development') {
+          console.error('Error adding item to database:', error);
+        }
+        
+        toast({
+          title: "Warning",
+          description: "Item added to cart but failed to sync. Please refresh if you experience issues.",
+          variant: "default",
+        });
     }
   };
 

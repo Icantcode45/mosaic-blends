@@ -1,14 +1,14 @@
 import HeroSection from "@/components/HeroSection";
-
+import ServicesSection from "@/components/ServicesSection";
 import LifestyleShowcase from "@/components/LifestyleShowcase";
 import EnhancedStatsSection from "@/components/EnhancedStatsSection";
 import GoogleReviewsSection from "@/components/GoogleReviewsSection";
 import TelehealthSection from "@/components/TelehealthSection";
-
 import EnhancedMembershipSection from "@/components/EnhancedMembershipSection";
 import EnhancedPartnersSection from "@/components/EnhancedPartnersSection";
 import NewsletterSection from "@/components/NewsletterSection";
 import BBBAccreditation from "@/components/BBBAccreditation";
+import EnhancedContactSection from "@/components/EnhancedContactSection";
 
 const EnhancedIndex = () => {
   return (
@@ -16,28 +16,34 @@ const EnhancedIndex = () => {
       {/* 1. Hero Section - Primary value proposition */}
       <HeroSection />
       
-      {/* 2. Lifestyle Experience - Show the premium mobile experience */}
+      {/* 2. Services - Treatment options */}
+      <ServicesSection />
+      
+      {/* 3. Lifestyle Experience - Show the premium mobile experience */}
       <LifestyleShowcase />
       
-      {/* 3. Results & Stats - Prove effectiveness with data */}
+      {/* 4. Results & Stats - Prove effectiveness with data */}
       <EnhancedStatsSection />
       
-      {/* 4. Telehealth Services - Additional service offering */}
+      {/* 5. Telehealth Services - Additional service offering */}
       <TelehealthSection />
       
-      {/* 5. Membership Plans - Convert visitors with pricing */}
+      {/* 6. Membership Plans - Convert visitors with pricing */}
       <EnhancedMembershipSection />
       
-      {/* 6. Partners & Certifications - Additional credibility */}
+      {/* 7. Partners & Certifications - Additional credibility */}
       <EnhancedPartnersSection />
       
-      {/* 7. Client Reviews - Showcase perfect 5.0 rating */}
+      {/* 8. Client Reviews - Showcase perfect 5.0 rating */}
       <GoogleReviewsSection />
       
-      {/* 8. Newsletter - Capture leads */}
+      {/* 9. Newsletter - Capture leads */}
       <NewsletterSection />
       
-      {/* 9. BBB Accreditation - Trust and credibility */}
+      {/* 10. Contact Section - Get in touch */}
+      <EnhancedContactSection />
+      
+      {/* 11. BBB Accreditation - Trust and credibility */}
       <BBBAccreditation />
     </div>
   );

@@ -101,7 +101,11 @@ export default function PayPalCheckout() {
 
           clearCart();
         } catch (error) {
-          console.error('Error processing order:', error);
+          // Log error for debugging in development
+          if (process.env.NODE_ENV === 'development') {
+            console.error('Error processing order:', error);
+          }
+          
           toast({
             title: "Payment error",
             description: "There was an issue processing your order. Please try again.",
@@ -112,7 +116,11 @@ export default function PayPalCheckout() {
         }
       },
       onError: (err: any) => {
-        console.error('PayPal error:', err);
+        // Log error for debugging in development
+        if (process.env.NODE_ENV === 'development') {
+          console.error('PayPal error:', err);
+        }
+        
         toast({
           title: "Payment error",
           description: "There was an issue with PayPal. Please try again.",
