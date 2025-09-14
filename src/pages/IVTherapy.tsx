@@ -8,7 +8,7 @@ import ServiceBookingButton from "@/components/ServiceBookingButton";
 import NADIVBagCard from "@/components/NADIVBagCard";
 
 const IVTherapy = () => {
-  const [selectedCategory, setSelectedCategory] = useState('basic');
+  const [selectedCategory, setSelectedCategory] = useState('all');
   const [priceFilter, setPriceFilter] = useState('any');
   const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
   const [showPriceDropdown, setShowPriceDropdown] = useState(false);
@@ -18,6 +18,7 @@ const IVTherapy = () => {
   }, []);
 
   const categories = [
+    { id: 'all', name: 'All IV Therapy', label: 'All Therapies' },
     { id: 'basic', name: 'Basic IV Therapy', label: 'Basic Hydration' },
     { id: 'standard', name: 'Standard IV Therapy', label: 'Standard Wellness' },
     { id: 'specialty', name: 'Specialty IV Therapy', label: 'Specialty Treatments' },
@@ -330,6 +331,10 @@ const IVTherapy = () => {
   };
 
   const getCurrentServices = () => {
+    if (selectedCategory === 'all') {
+      // Return all services from all categories
+      return Object.values(ivTherapyServices).flat();
+    }
     return ivTherapyServices[selectedCategory as keyof typeof ivTherapyServices] || [];
   };
 

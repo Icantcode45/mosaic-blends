@@ -41,14 +41,6 @@ const EnhancedHeader = () => {
     {
       category: "Wellness & Health",
       items: [
-        { name: "Sexual Wellness", href: "/iv-therapy", description: "Discreet wellness solutions" },
-        { name: "Probiotics & Gut Health", href: "/supplements", description: "Digestive health support" },
-        { name: "Professional Supplements", href: "/supplements", description: "Physician-trusted products" }
-      ]
-    },
-    {
-      category: "Services & Testing",
-      items: [
         { name: "Mobile Testing", href: "/mobile-testing-kits", description: "At-home lab services" },
         { name: "Telehealth", href: "/telehealth", description: "Virtual consultations" }
       ]
@@ -57,17 +49,11 @@ const EnhancedHeader = () => {
 
   const productsMegaItems = [
     {
-      category: "Supplements",
+      category: "Supplements & Products",
       items: [
         { name: "Professional Supplements", href: "/supplements", description: "High-quality formulations" },
         { name: "Probiotics & Gut Health", href: "/supplements", description: "Digestive wellness" },
-        { name: "Professional Catalog", href: "/supplements", description: "Browse our full catalog" }
-      ]
-    },
-    {
-      category: "Vitamins & Minerals",
-      items: [
-        { name: "Vitamin Injections", href: "/vitamin-injections", description: "Injectable nutrients" }
+        { name: "Test Kits & Panels", href: "/supplements", description: "Comprehensive health testing" }
       ]
     }
   ];
