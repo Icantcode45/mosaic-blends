@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const FAQSection = () => {
   const faqs = [
@@ -53,8 +54,8 @@ const FAQSection = () => {
           </Accordion>
 
           <div className="text-center mt-12">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Book Mobile IV
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+              <Link to="/iv-therapy">Book Mobile IV</Link>
             </Button>
           </div>
         </div>

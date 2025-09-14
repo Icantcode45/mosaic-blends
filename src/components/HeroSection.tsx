@@ -52,7 +52,7 @@ const HeroSection = () => {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="text-white font-semibold">
-                <Link to="/first-time-patients">Book Mobile IV</Link>
+                <Link to="/iv-therapy">Book Mobile IV</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="font-semibold">
                 <a href="#pricing">Explore Membership</a>
