@@ -15,12 +15,6 @@ import augmentWellnessLogo from "@/assets/partners/augment-wellness-logo.jpeg";
 const EnhancedPartnersSection = () => {
   const partners = [
     { 
-      name: "Stay Dripped Mobile IV", 
-      category: "Premium Mobile Service", 
-      description: "Premier IV Therapy & Wellness Company",
-      logo: stayDrippedLogo
-    },
-    { 
       name: "NelkBoys", 
       category: "Content Creators", 
       description: "Lifestyle and wellness collaboration",

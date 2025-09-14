@@ -166,7 +166,7 @@ const EnhancedHeader = () => {
             <Link to="/" className="flex items-center space-x-3">
               <img 
                 src={stayDrippedLogo} 
-                alt="Stay Dripped Mobile IV Service - Premier Mobile IV Therapy" 
+                alt="Stay Dripped IV & Wellness Co. - Premier IV Therapy" 
                 className="h-10 w-auto"
                 loading="eager"
               />
