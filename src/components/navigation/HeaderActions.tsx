@@ -17,7 +17,7 @@ const HeaderActions = () => {
         className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium" 
         asChild
       >
-        <Link to="/#newsletter">Newsletter</Link>
+        <Link to="/newsletter">Newsletter</Link>
       </Button>
       
       {/* Auth Dropdown */}

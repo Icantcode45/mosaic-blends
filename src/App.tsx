@@ -31,6 +31,9 @@ import SpecialtyTreatments from "./pages/SpecialtyTreatments";
 import AboutUs from "./pages/AboutUs";
 import MedicalCompliance from "./pages/MedicalCompliance";
 import TermsOfService from "./pages/TermsOfService";
+import Sponsorship from "@/pages/Sponsorship";
+import Newsletter from "@/pages/Newsletter";
+import Contact from "@/pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -68,6 +71,9 @@ const App = () => (
                 <Route path="/medical-compliance" element={<MedicalCompliance />} />
                 <Route path="/terms" element={<TermsOfService />} />
                 <Route path="/privacy" element={<Privacy />} />
+                <Route path="/sponsorship" element={<Sponsorship />} />
+                <Route path="/newsletter" element={<Newsletter />} />
+                <Route path="/contact" element={<Contact />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>

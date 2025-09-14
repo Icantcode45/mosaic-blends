@@ -21,7 +21,8 @@ const EnhancedHeader = () => {
     { name: 'Event Inquiry', href: '/event-inquiry' },
     { name: 'Specialty Treatments', href: '/specialty-treatments' },
     { name: 'First-Time Patients', href: '/first-time-patients' },
-    { name: 'Gift Cards', href: '/gift-cards' }
+    { name: 'Gift Cards', href: '/gift-cards' },
+    { name: 'Become Partner', href: '/sponsorship' }
   ];
 
   const servicesMegaItems = [

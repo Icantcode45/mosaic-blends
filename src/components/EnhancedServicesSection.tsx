@@ -256,7 +256,7 @@ const EnhancedServicesSection = () => {
               <Link to="/first-time-patients">Book Consultation</Link>
             </Button>
             <Button variant="outline" className="btn-ghost-enhanced" asChild>
-              <Link to="/#contact">Talk to Provider</Link>
+              <Link to="/contact">Talk to Provider</Link>
             </Button>
           </div>
         </div>
