@@ -4,9 +4,23 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { useCart } from "@/contexts/CartContext";
 import { useAuth } from "@/contexts/AuthContext";
-import { Search, Star, Heart, ShoppingCart, Minus, Plus, X } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { Search, Star, Heart, ShoppingCart, Minus, Plus, X, MapPin, MoreVertical, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { Helmet } from "react-helmet";
 import "../styles/supplements.css";
+
+interface Product {
+  id: string;
+  name: string;
+  brand: string;
+  image: string;
+  size: string;
+  wholesalePrice: number;
+  msrp: number;
+  badges: string[];
+  category: string;
+  isFavorite?: boolean;
+}
 
 interface CartItem {
   id: string;
@@ -16,12 +30,74 @@ interface CartItem {
   quantity: number;
 }
 
+const professionalProducts: Product[] = [
+  {
+    id: "1",
+    name: "Cortisol Manager",
+    brand: "Integrative Therapeutics",
+    image: "https://assets.fullscript.io/Product/IT0020/400_front.png",
+    size: "30 tablets",
+    wholesalePrice: 13.50,
+    msrp: 25.99,
+    badges: ["tested"],
+    category: "supplements"
+  },
+  {
+    id: "2", 
+    name: "Vitamin D3 5000 + K",
+    brand: "Metagenics",
+    image: "https://assets.fullscript.io/Product/MI0318/400_front.png",
+    size: "60 Softgels",
+    wholesalePrice: 15.00,
+    msrp: 28.99,
+    badges: [],
+    category: "vitamins"
+  },
+  {
+    id: "3",
+    name: "Berberine",
+    brand: "Thorne",
+    image: "https://assets.fullscript.io/Product/TH0363/400_front.png",
+    size: "60 capsules",
+    wholesalePrice: 21.53,
+    msrp: 42.99,
+    badges: ["top-pick", "tested"],
+    category: "supplements"
+  },
+  {
+    id: "4",
+    name: "Berberine 500mg",
+    brand: "Integrative Therapeutics", 
+    image: "https://assets.fullscript.io/Product/VL0078/400_front.png",
+    size: "120 capsules",
+    wholesalePrice: 30.00,
+    msrp: 60.99,
+    badges: ["tested"],
+    category: "supplements"
+  }
+];
+
+const categories = [
+  { id: "featured", name: "Featured Products" },
+  { id: "supplements", name: "All Supplements" },
+  { id: "probiotics", name: "Probiotics & Gut Health" },
+  { id: "test-kits", name: "Test Kits & Panels" },
+  { id: "vitamins", name: "Vitamins & Minerals" },
+  { id: "specialty", name: "Specialty Formulas" },
+  { id: "professional", name: "Professional Catalog" }
+];
+
 const Supplements = () => {
   const [activeCategory, setActiveCategory] = useState("featured");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState(professionalProducts);
+  const [quantities, setQuantities] = useState<{[key: string]: number}>({});
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [showCart, setShowCart] = useState(false);
-  const { addItem } = useCart();
+  
+  const { addItem, updateQuantity: updateCartQuantity, state, openCart, closeCart, getTotalItems } = useCart();
   const { user } = useAuth();
+  const { toast } = useToast();
 
   useEffect(() => {
     // Google Analytics
@@ -44,6 +120,32 @@ const Supplements = () => {
       document.head.removeChild(script2);
     };
   }, []);
+
+  useEffect(() => {
+    let filtered = professionalProducts;
+
+    // Filter by search term
+    if (searchTerm) {
+      filtered = filtered.filter(product =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.brand.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    // Filter by category for professional catalog
+    if (activeCategory === "professional") {
+      setFilteredProducts(filtered);
+    }
+  }, [searchTerm, activeCategory]);
+
+  const updateQuantity = (productId: string, quantity: number) => {
+    setQuantities(prev => ({
+      ...prev,
+      [productId]: Math.max(1, Math.min(999, quantity))
+    }));
+  };
+
+  const getQuantity = (productId: string) => quantities[productId] || 1;
 
   const addToCart = (product: { sku: string; name: string; brand: string; price: string }) => {
     const newItem: CartItem = {
@@ -82,7 +184,62 @@ const Supplements = () => {
     setShowCart(true);
   };
 
-  const updateQuantity = (id: string, quantity: number) => {
+  const handleAddToCart = async (product: Product) => {
+    if (!user) {
+      toast({
+        title: "Sign in required",
+        description: "Please sign in to add items to your cart.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const quantity = getQuantity(product.id);
+    const cartProduct = {
+      id: product.id,
+      name: product.name,
+      description: product.brand,
+      price: product.wholesalePrice,
+      image_url: product.image,
+      category: product.category,
+      stock_quantity: 100
+    };
+    
+    try {
+      const existingItem = state.items.find(item => item.product.id === product.id);
+      
+      if (existingItem) {
+        updateCartQuantity(product.id, existingItem.quantity + quantity);
+      } else {
+        await addItem(cartProduct);
+        if (quantity > 1) {
+          setTimeout(() => {
+            updateCartQuantity(product.id, quantity);
+          }, 100);
+        }
+      }
+
+      toast({
+        title: "Added to cart",
+        description: `${quantity} x ${product.name} added to your cart.`,
+      });
+
+      setQuantities(prev => ({
+        ...prev,
+        [product.id]: 1
+      }));
+
+    } catch (error) {
+      console.error('Error adding to cart:', error);
+      toast({
+        title: "Error",
+        description: "Failed to add item to cart. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const updateLocalCartQuantity = (id: string, quantity: number) => {
     if (quantity <= 0) {
       setCartItems(prev => prev.filter(item => item.id !== id));
     } else {
@@ -96,6 +253,10 @@ const Supplements = () => {
 
   const getCartTotal = () => {
     return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+  };
+
+  const toggleFavorite = (productId: string) => {
+    console.log(`Toggle favorite for product ${productId}`);
   };
 
   return (
@@ -159,42 +320,15 @@ const Supplements = () => {
 
         {/* Category Navigation */}
         <div className="category-nav">
-          <button 
-            className={`category-btn ${activeCategory === 'featured' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('featured')}
-          >
-            Featured Products
-          </button>
-          <button 
-            className={`category-btn ${activeCategory === 'supplements' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('supplements')}
-          >
-            All Supplements
-          </button>
-          <button 
-            className={`category-btn ${activeCategory === 'probiotics' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('probiotics')}
-          >
-            Probiotics & Gut Health
-          </button>
-          <button 
-            className={`category-btn ${activeCategory === 'test-kits' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('test-kits')}
-          >
-            Test Kits & Panels
-          </button>
-          <button 
-            className={`category-btn ${activeCategory === 'vitamins' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('vitamins')}
-          >
-            Vitamins & Minerals
-          </button>
-          <button 
-            className={`category-btn ${activeCategory === 'specialty' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('specialty')}
-          >
-            Specialty Formulas
-          </button>
+          {categories.map((category) => (
+            <button 
+              key={category.id}
+              className={`category-btn ${activeCategory === category.id ? 'active' : ''}`}
+              onClick={() => setActiveCategory(category.id)}
+            >
+              {category.name}
+            </button>
+          ))}
         </div>
 
         {/* Featured Products Section */}
@@ -458,6 +592,161 @@ const Supplements = () => {
           </div>
         </section>
 
+        {/* Professional Catalog Section */}
+        <section className={`category-section ${activeCategory === 'professional' ? 'active' : ''}`}>
+          <div className="section-header">
+            <div className="section-subtitle">Professional Grade</div>
+            <h2 className="section-title">Professional Supplement Catalog</h2>
+            <p className="section-description">Browse our professional-grade supplement catalog with wholesale pricing for healthcare providers and partners.</p>
+          </div>
+
+          {/* Search and Controls */}
+          <div className="catalog-controls mb-8">
+            <div className="search-section">
+              <form className="search-form">
+                <div className="search-input-container">
+                  <div className="search-icon">
+                    <Search className="h-4 w-4" />
+                  </div>
+                  <input
+                    type="search"
+                    placeholder="Search products..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="search-input"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+
+          {/* Professional Products Grid */}
+          <div className="products-grid">
+            {filteredProducts.map((product) => (
+              <div key={product.id} className="product-card">
+                {/* Product Badges */}
+                {product.badges.length > 0 && (
+                  <div className="product-badges">
+                    {product.badges.map((badge) => (
+                      <span
+                        key={badge}
+                        className={`badge ${badge === "top-pick" ? "top-pick" : badge}`}
+                      >
+                        {badge === "top-pick" && <Star className="h-3 w-3" fill="currentColor" />}
+                        {badge === "top-pick" ? "Top pick" : badge}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Product Actions */}
+                <div className="product-actions">
+                  <button
+                    className="action-btn"
+                    onClick={() => toggleFavorite(product.id)}
+                    aria-label="Add to favorites"
+                  >
+                    <Heart className="h-4 w-4" />
+                  </button>
+                  <button
+                    className="action-btn"
+                    aria-label="More options"
+                  >
+                    <MoreVertical className="h-4 w-4" />
+                  </button>
+                </div>
+
+                {/* Product Image */}
+                <div className="product-image">
+                  <img
+                    src={product.image}
+                    alt={`${product.name} ${product.size}`}
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Product Info */}
+                <div className="product-info">
+                  <h3 className="product-name">{product.name}</h3>
+                  <p className="product-brand">{product.brand}</p>
+                  <div className="product-size">
+                    <div className="size-selector">
+                      <span>{product.size}</span>
+                      <ChevronDown className="h-4 w-4" />
+                    </div>
+                  </div>
+
+                  {/* Pricing */}
+                  <div className="product-pricing">
+                    <span className="supplement-price">
+                      ${product.wholesalePrice.toFixed(2)}
+                    </span>
+                    <span className="msrp">
+                      Wholesale | MSRP ${product.msrp.toFixed(2)}
+                    </span>
+                  </div>
+
+                  {/* Purchase Controls */}
+                  <div className="product-purchase">
+                    {/* Quantity Selector */}
+                    <div className="quantity-selector">
+                      <button
+                        className="quantity-btn"
+                        disabled={getQuantity(product.id) <= 1}
+                        onClick={() => updateQuantity(product.id, getQuantity(product.id) - 1)}
+                        aria-label="Decrease quantity"
+                      >
+                        <Minus className="h-3 w-3" />
+                      </button>
+                      <input
+                        type="number"
+                        value={getQuantity(product.id)}
+                        onChange={(e) => updateQuantity(product.id, parseInt(e.target.value) || 1)}
+                        className="quantity-input"
+                        min="1"
+                        max="999"
+                      />
+                      <button
+                        className="quantity-btn"
+                        disabled={getQuantity(product.id) >= 999}
+                        onClick={() => updateQuantity(product.id, getQuantity(product.id) + 1)}
+                        aria-label="Increase quantity"
+                      >
+                        <Plus className="h-3 w-3" />
+                      </button>
+                    </div>
+
+                    {/* Add to Cart */}
+                    <button
+                      onClick={() => handleAddToCart(product)}
+                      className="add-to-cart-btn"
+                      disabled={!user}
+                    >
+                      <ShoppingCart className="h-4 w-4 mr-2" />
+                      Add to cart
+                    </button>
+                  </div>
+
+                  {!user && (
+                    <p className="text-xs text-muted-foreground text-center mt-2">
+                      Sign in to add items to cart
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {filteredProducts.length === 0 && (
+            <div className="text-center py-12">
+              <div className="text-muted-foreground text-lg mb-2">No products found</div>
+              <p className="text-sm text-muted-foreground">
+                Try adjusting your search criteria
+              </p>
+            </div>
+          )}
+        </section>
+
         {/* Cart Widget */}
         {showCart && cartItems.length > 0 && (
           <div className="cart-widget">
@@ -477,19 +766,19 @@ const Supplements = () => {
                   <div className="quantity-controls">
                     <button 
                       className="qty-btn"
-                      onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                      onClick={() => updateLocalCartQuantity(item.id, item.quantity - 1)}
                     >
                       <Minus className="h-3 w-3" />
                     </button>
                     <input 
                       type="number" 
                       value={item.quantity} 
-                      onChange={(e) => updateQuantity(item.id, parseInt(e.target.value) || 0)}
+                      onChange={(e) => updateLocalCartQuantity(item.id, parseInt(e.target.value) || 0)}
                       className="qty-input"
                     />
                     <button 
                       className="qty-btn"
-                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                      onClick={() => updateLocalCartQuantity(item.id, item.quantity + 1)}
                     >
                       <Plus className="h-3 w-3" />
                     </button>

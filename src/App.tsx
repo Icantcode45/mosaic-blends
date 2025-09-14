@@ -28,7 +28,6 @@ import EnhancedMembership from "./pages/EnhancedMembership";
 import SpecialtyTreatments from "./pages/SpecialtyTreatments";
 import AboutUs from "./pages/AboutUs";
 import MedicalCompliance from "./pages/MedicalCompliance";
-import SupplementCatalogPage from "./pages/SupplementCatalogPage";
 import TermsOfService from "./pages/TermsOfService";
 
 const queryClient = new QueryClient();
@@ -52,7 +51,6 @@ const App = () => (
                 <Route path="/telehealth" element={<Telehealth />} />
                 <Route path="/mobile-testing-kits" element={<MobileTestingKits />} />
                 <Route path="/supplements" element={<Supplements />} />
-                <Route path="/supplement-catalog" element={<SupplementCatalogPage />} />
                 <Route path="/first-time-patients" element={<FirstTimePatients />} />
                 <Route path="/events" element={<Events />} />
                 <Route path="/event-inquiry" element={<EventInquiry />} />
