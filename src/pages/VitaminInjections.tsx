@@ -184,7 +184,7 @@ const VitaminInjections = () => {
 
   const membershipPlans = [
     {
-      name: "Basic Plan",
+      name: "Basic Package",
       price: "$199/year",
       description: "Perfect for occasional wellness support with significant savings on vitamin injections.",
       features: [
@@ -297,7 +297,7 @@ const VitaminInjections = () => {
       ]
     },
     {
-      name: "Premium Plan",
+      name: "Premium Package",
       price: "$399/year",
       description: "Regular wellness support with monthly vitamin injections and additional perks.",
       features: [
@@ -309,7 +309,7 @@ const VitaminInjections = () => {
       ]
     },
     {
-      name: "Elite Plan",
+      name: "Elite Package",
       price: "$899/year",
       description: "Ultimate wellness membership with maximum benefits and exclusive VIP treatment.",
       features: [
@@ -423,11 +423,11 @@ const VitaminInjections = () => {
           </div>
         </section>
 
-        {/* Membership Section */}
+        {/* Packages Section */}
         <section className="bg-muted py-20">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center text-foreground mb-12">
-              Vitamin Injection Memberships
+              Vitamin Injection Packages
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {membershipPlans.map((plan, index) => (

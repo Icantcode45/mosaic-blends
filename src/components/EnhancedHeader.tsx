@@ -36,8 +36,7 @@ const EnhancedHeader = () => {
     {
       category: "Advanced Treatments", 
       items: [
-        { name: "NAD+ & Peptides", href: "/nad-peptides", description: "Cellular support and recovery" },
-        { name: "Weight Management", href: "/iv-therapy", description: "Comprehensive weight programs" }
+        { name: "NAD+ & Peptides", href: "/nad-peptides", description: "Cellular support and recovery" }
       ]
     },
     {
@@ -155,9 +154,11 @@ const EnhancedHeader = () => {
 
       {/* Main Header */}
       <header 
-        className={`sticky top-0 z-50 transition-all border-b border-gray-100 ${
-          scrolled ? 'glass' : 'bg-white/80 glass'
-        }`}
+      className={`sticky top-0 z-50 transition-all duration-300 backdrop-blur-md border-b ${
+        scrolled 
+          ? 'bg-white/95 border-gray-200/50 shadow-lg' 
+          : 'bg-white/80 border-gray-100/50'
+      }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="h-16 flex items-center justify-between">
@@ -192,31 +193,37 @@ const EnhancedHeader = () => {
                   </svg>
                 </button>
                 
-                {/* Services Mega Menu */}
+                 {/* Services Mega Menu */}
                 {servicesOpen && (
-                  <div id="services-menu" className="absolute left-0 mt-3 w-[800px] bg-white rounded-2xl shadow-10xl p-8 grid grid-cols-4 gap-6 z-50 border border-gray-100">
+                  <div 
+                    id="services-menu" 
+                    className="absolute left-0 mt-3 w-[900px] bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-8 grid grid-cols-4 gap-8 z-50 animate-fade-in"
+                  >
                     {servicesMegaItems.map((category) => (
                       <div key={category.category} className="space-y-4">
-                        <h4 className="font-semibold text-primary text-sm uppercase tracking-wide">{category.category}</h4>
-                        <div className="space-y-3">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="h-1 w-8 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                          <h4 className="font-bold text-primary text-sm uppercase tracking-wider">{category.category}</h4>
+                        </div>
+                        <div className="space-y-2">
                           {category.items.map((item) => (
                             item.href.startsWith('/') ? (
                               <Link
                                 key={item.name}
                                 to={item.href}
-                                className="block p-3 rounded-xl hover:bg-gray-50 transition group"
+                                className="block p-4 rounded-2xl hover:bg-primary/5 hover:border-primary/20 border border-transparent transition-all duration-200 group hover:shadow-md"
                               >
-                                <div className="font-semibold mb-1 text-foreground group-hover:text-primary transition">{item.name}</div>
-                                <p className="text-xs text-muted-foreground">{item.description}</p>
+                                <div className="font-bold mb-2 text-foreground group-hover:text-primary transition-colors text-base">{item.name}</div>
+                                <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                               </Link>
                             ) : (
                               <a
                                 key={item.name}
                                 href={item.href}
-                                className="block p-3 rounded-xl hover:bg-gray-50 transition group"
+                                className="block p-4 rounded-2xl hover:bg-primary/5 hover:border-primary/20 border border-transparent transition-all duration-200 group hover:shadow-md"
                               >
-                                <div className="font-semibold mb-1 text-foreground group-hover:text-primary transition">{item.name}</div>
-                                <p className="text-xs text-muted-foreground">{item.description}</p>
+                                <div className="font-bold mb-2 text-foreground group-hover:text-primary transition-colors text-base">{item.name}</div>
+                                <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                               </a>
                             )
                           ))}
@@ -248,7 +255,10 @@ const EnhancedHeader = () => {
                 
                 {/* Products Mega Menu */}
                 {productsOpen && (
-                  <div id="products-menu" className="absolute left-0 mt-3 w-[400px] bg-white rounded-2xl shadow-10xl p-6 grid grid-cols-2 gap-6 z-50 border border-gray-100">
+                  <div 
+                    id="products-menu" 
+                    className="absolute left-0 mt-3 w-[500px] bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-8 grid grid-cols-2 gap-8 z-50 animate-fade-in"
+                  >
                     {productsMegaItems.map((category) => (
                       <div key={category.category} className="space-y-4">
                         <h4 className="font-semibold text-primary text-sm uppercase tracking-wide">{category.category}</h4>
@@ -303,12 +313,12 @@ const EnhancedHeader = () => {
             </nav>
 
             {/* Actions */}
-            <div className="hidden lg:flex items-center space-x-3">
+            <div className="hidden lg:flex items-center space-x-4">
               <CartDrawer />
-              <Button variant="ghost" className="btn-ghost-enhanced" asChild>
+              <Button variant="ghost" className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium" asChild>
                 <Link to="/#newsletter">Newsletter</Link>
               </Button>
-              <Button className="btn-primary-enhanced" asChild>
+              <Button className="bg-gradient-to-r from-primary to-primary-dark text-white font-bold px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-200" asChild>
                 <Link to="/first-time-patients">Book Now</Link>
               </Button>
             </div>
