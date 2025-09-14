@@ -15,6 +15,7 @@ const EnhancedHeader = () => {
 
   const navItems = [
     { name: 'Telehealth', href: '/telehealth' },
+    { name: 'Test Kits & Panels', href: '/test-kits' },
     { name: 'Products & Supplements', href: '/supplements' },
     { name: 'Membership', href: '/membership' },
     { name: 'Event Inquiry', href: '/event-inquiry' },
@@ -48,10 +49,10 @@ const EnhancedHeader = () => {
 
   const productsMegaItems = [
     {
-      category: "Health Products & Supplements",
+      category: "Health Testing & Products",
       items: [
+        { name: "Test Kits & Panels", href: "/test-kits", description: "At-home lab testing" },
         { name: "Professional Supplements", href: "/supplements", description: "Medical-grade formulations" },
-        { name: "Mobile Testing Kits", href: "/supplements", description: "At-home lab testing" },
         { name: "Probiotics & Gut Health", href: "/supplements", description: "Digestive wellness support" },
         { name: "Specialty Health Products", href: "/supplements", description: "Targeted wellness solutions" }
       ]

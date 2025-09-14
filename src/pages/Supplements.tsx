@@ -81,8 +81,6 @@ const categories = [
   { id: "featured", name: "Featured Products" },
   { id: "supplements", name: "All Supplements" },
   { id: "probiotics", name: "Probiotics & Gut Health" },
-  { id: "test-kits", name: "Test Kits & Panels" },
-  { id: "mobile-testing", name: "Mobile Testing Kits" },
   { id: "vitamins", name: "Vitamins & Minerals" },
   { id: "specialty", name: "Specialty Formulas" },
   { id: "professional", name: "Professional Catalog" }
@@ -264,13 +262,13 @@ const Supplements = () => {
     <>
       <Helmet>
         <title>Products & Supplements | Stay Dripped IV & Wellness Co.</title>
-        <meta name="description" content="Premium supplements, probiotics, mobile test kits, and comprehensive health products for optimal wellness. Professional-grade products curated by our medical team." />
+        <meta name="description" content="Premium supplements, probiotics, and health products for optimal wellness. Professional-grade products curated by our medical team." />
         <link rel="canonical" href="https://staydrippediv.com/supplements" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Products & Supplements | Stay Dripped IV & Wellness Co." />
-        <meta property="og:description" content="Premium supplements, probiotics, mobile test kits, and comprehensive health products for optimal wellness. Professional-grade products curated by our medical team." />
+        <meta property="og:description" content="Premium supplements, probiotics, and health products for optimal wellness. Professional-grade products curated by our medical team." />
         <meta property="og:url" content="https://staydrippediv.com/supplements" />
         
         {/* Structured Data */}
@@ -307,7 +305,7 @@ const Supplements = () => {
             <h1 className="hero-title fade-in delay-1">Complete Products & Supplements</h1>
             <p className="company-subtitle fade-in delay-2">Stay Dripped IV & Wellness Co.</p>
             <p className="hero-description fade-in delay-3">
-              Comprehensive collection of physician-trusted supplements, probiotics, gut health solutions, mobile testing kits, and professional health products. Everything you need to optimize your health journey with medical-grade quality and practitioner guidance.
+              Comprehensive collection of physician-trusted supplements, probiotics, gut health solutions, and professional health products. Everything you need to optimize your health journey with medical-grade quality and practitioner guidance.
             </p>
             
             <div className="badges">
@@ -337,7 +335,7 @@ const Supplements = () => {
           <div className="section-header">
             <div className="section-subtitle">Physician-Trusted</div>
             <h2 className="section-title">Featured Products</h2>
-            <p className="section-description">Our most popular supplements and testing kits, hand-selected by our medical team for exceptional quality and results.</p>
+            <p className="section-description">Our most popular supplements and health products, hand-selected by our medical team for exceptional quality and results.</p>
           </div>
 
           <div className="products-grid">
@@ -428,52 +426,6 @@ const Supplements = () => {
                 </div>
               </div>
             </article>
-
-            {/* Comprehensive Health Panel */}
-            <div className="product-card">
-              <div className="product-content">
-                <div className="product-image">
-                  <div className="product-badge">Best Value</div>
-                </div>
-                <div className="product-info">
-                  <div>
-                    <p className="product-brand">Health Screening</p>
-                    <h3 className="product-title">Comprehensive Health Panel</h3>
-                    <div className="product-price">$299.99</div>
-                    
-                    <div className="test-kit-features">
-                      <h4>What's Included:</h4>
-                      <div className="feature-grid">
-                        <div className="feature-item">
-                          <div className="feature-icon">✓</div>
-                          <span>Complete Blood Count</span>
-                        </div>
-                        <div className="feature-item">
-                          <div className="feature-icon">✓</div>
-                          <span>Metabolic Panel</span>
-                        </div>
-                        <div className="feature-item">
-                          <div className="feature-icon">✓</div>
-                          <span>Lipid Profile</span>
-                        </div>
-                        <div className="feature-item">
-                          <div className="feature-icon">✓</div>
-                          <span>Vitamin D & B12</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="product-actions">
-                      <a className="btn" href="/first-time-patients">Order Test Kit</a>
-                      <button className="btn btn-secondary">Learn More</button>
-                    </div>
-                    <p className="product-note">At-home collection kit with detailed analysis and recommendations.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -530,62 +482,6 @@ const Supplements = () => {
                       <button className="btn btn-secondary">Learn More</button>
                     </div>
                     <p className="product-note">Professional IV probiotic therapy for optimal gut health restoration.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Test Kits Section */}
-        <section className={`category-section ${activeCategory === 'test-kits' ? 'active' : ''}`}>
-          <div className="section-header">
-            <div className="section-subtitle">Comprehensive Testing</div>
-            <h2 className="section-title">Test Kits & Health Panels</h2>
-            <p className="section-description">Professional-grade testing kits for comprehensive health monitoring and optimization from the comfort of your home.</p>
-          </div>
-
-          <div className="products-grid">
-            <div className="product-card">
-              <div className="product-content">
-                <div className="product-image">
-                  <div className="product-badge">Comprehensive</div>
-                </div>
-                <div className="product-info">
-                  <div>
-                    <p className="product-brand">Hormone Health</p>
-                    <h3 className="product-title">Complete Hormone Panel</h3>
-                    <div className="product-price">$249.99</div>
-                    
-                    <div className="test-kit-features">
-                      <h4>What's Included:</h4>
-                      <div className="feature-grid">
-                        <div className="feature-item">
-                          <div className="feature-icon">✓</div>
-                          <span>Testosterone</span>
-                        </div>
-                        <div className="feature-item">
-                          <div className="feature-icon">✓</div>
-                          <span>Estrogen & Progesterone</span>
-                        </div>
-                        <div className="feature-item">
-                          <div className="feature-icon">✓</div>
-                          <span>Thyroid (TSH, T3, T4)</span>
-                        </div>
-                        <div className="feature-item">
-                          <div className="feature-icon">✓</div>
-                          <span>Cortisol & DHEA-S</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="product-actions">
-                      <a className="btn" href="/first-time-patients">Order Test</a>
-                      <button className="btn btn-secondary">Learn More</button>
-                    </div>
-                    <p className="product-note">Saliva & blood collection with comprehensive analysis.</p>
                   </div>
                 </div>
               </div>

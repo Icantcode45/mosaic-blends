@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound";
 import EnhancedHeader from "./components/EnhancedHeader";
 import EnhancedFooter from "./components/EnhancedFooter";
 import Telehealth from "./pages/Telehealth";
+import TestKits from "./pages/TestKits";
 import Supplements from "./pages/Supplements";
 import FirstTimePatients from "./pages/FirstTimePatients";
 import Events from "./pages/Events";
@@ -48,6 +49,7 @@ const App = () => (
                 <Route path="/" element={<EnhancedIndex />} />
                 <Route path="/auth" element={<Auth />} />
                 <Route path="/telehealth" element={<Telehealth />} />
+                <Route path="/test-kits" element={<TestKits />} />
                 <Route path="/supplements" element={<Supplements />} />
                 <Route path="/first-time-patients" element={<FirstTimePatients />} />
                 <Route path="/events" element={<Events />} />
