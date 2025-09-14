@@ -137,17 +137,17 @@ const EnhancedPartnersSection = () => {
           {/* Call to Action */}
           <div className="text-center bg-gradient-to-r from-primary/10 to-secondary/10 rounded-3xl p-12 border border-primary/20">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Ready to Join Our Elite Partners?
+              Partner With Stay Dripped
             </h3>
             <p className="text-muted-foreground mb-8 text-lg">
-              Experience the premium mobile IV therapy trusted by Arizona's top athletes and brands
+              Join Arizona's leading mobile IV therapy network and expand your business offerings
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/25">
-                Book Your Session
+                Partnership Inquiry
               </button>
               <button className="px-8 py-4 border border-primary text-primary rounded-xl font-semibold hover:bg-primary/5 transition-all duration-300">
-                Learn More
+                View Partnership Benefits
               </button>
             </div>
           </div>
