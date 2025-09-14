@@ -6,9 +6,7 @@ import fightReadyLogo from "@/assets/partners/fight-ready-logo.png";
 import arizonaCombatSportsLogo from "@/assets/partners/arizona-combat-sports-logo.png";
 import sleLogo from "@/assets/partners/sle-logo.png";
 import bulldogLogo from "@/assets/partners/bulldog-logo.png";
-import betterHospitalityLogo from "@/assets/partners/better-hospitality-logo.jpeg";
 import socialScottsdaleLogo from "@/assets/partners/social-scottsdale-logo.jpeg";
-import scottsdaleBusLogo from "@/assets/partners/scottsdale-party-bus-logo.jpeg";
 import curaTurfLogo from "@/assets/partners/curaturf-logo.jpeg";
 import augmentWellnessLogo from "@/assets/partners/augment-wellness-logo.jpeg";
 
@@ -67,18 +65,6 @@ const EnhancedPartnersSection = () => {
       category: "Artificial Grass", 
       description: "#1 Artificial grass cleaning services",
       logo: curaTurfLogo
-    },
-    { 
-      name: "Better. Hospitality", 
-      category: "Hospitality Group", 
-      description: "Premium hospitality and event services",
-      logo: betterHospitalityLogo
-    },
-    { 
-      name: "Scottsdale Party Bus & Limo", 
-      category: "Transportation", 
-      description: "Luxury transportation and wellness experiences",
-      logo: scottsdaleBusLogo
     }
   ];
 
