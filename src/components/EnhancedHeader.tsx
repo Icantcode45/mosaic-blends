@@ -60,6 +60,7 @@ const EnhancedHeader = () => {
       category: "Supplements",
       items: [
         { name: "Professional Supplements", href: "/supplements", description: "High-quality formulations" },
+        { name: "Supplement Catalog", href: "/supplement-catalog", description: "Browse our full catalog" },
         { name: "Probiotics & Gut Health", href: "/supplements", description: "Digestive wellness" }
       ]
     },
