@@ -19,12 +19,12 @@ const EnhancedFooter = () => {
     {
       title: "Advanced Care",
       links: [
-        { name: "Sexual Wellness", href: "/#sexual-wellness" },
-        { name: "Hormone Therapy", href: "/#hormones" },
         { name: "Peptide Treatments", href: "/nad-peptides" },
-        { name: "Telehealth Services", href: "/telehealth" },
-        { name: "Mobile Testing", href: "/mobile-testing-kits" },
-        { name: "Lab Services", href: "/#labs" },
+        { name: "Hormone Therapy", href: "/#hormones" },
+        { name: "Telehealth Virtual Care", href: "/telehealth" },
+        { name: "Test Kits & Panels", href: "/test-kits" },
+        { name: "Products & Supplements", href: "/supplements" },
+        { name: "Specialty Treatments", href: "/specialty-treatments" },
         { name: "Nutrition Counseling", href: "/#nutrition" },
         { name: "Wellness Coaching", href: "/#coaching" }
       ]

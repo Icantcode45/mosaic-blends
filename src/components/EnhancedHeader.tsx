@@ -26,7 +26,7 @@ const EnhancedHeader = () => {
 
   const servicesMegaItems = [
     {
-      category: "IV Therapy",
+      category: "IV Therapy & Injections",
       items: [
         { name: "IV Therapy Services", href: "/iv-therapy", description: "Hydration and nutrient therapy" },
         { name: "Vitamin Injections", href: "/vitamin-injections", description: "Quick nutrient boost" }
@@ -35,26 +35,27 @@ const EnhancedHeader = () => {
     {
       category: "Advanced Treatments", 
       items: [
-        { name: "Peptide Therapy", href: "/nad-peptides", description: "Cellular support and recovery" }
+        { name: "Peptide Therapy", href: "/nad-peptides", description: "Cellular support and recovery" },
+        { name: "Specialty Treatments", href: "/specialty-treatments", description: "Advanced wellness therapies" }
       ]
     },
     {
-      category: "Wellness & Health",
+      category: "Virtual & Remote Care",
       items: [
-        { name: "Telehealth", href: "/telehealth", description: "Virtual consultations" },
-        { name: "Specialty Treatments", href: "/specialty-treatments", description: "Advanced wellness therapies" }
+        { name: "Telehealth Consultations", href: "/telehealth", description: "Virtual medical consultations" },
+        { name: "At-Home Test Kits", href: "/test-kits", description: "Comprehensive lab testing" }
       ]
     }
   ];
 
   const productsMegaItems = [
     {
-      category: "Health Testing & Products",
+      category: "Products & Health Testing",
       items: [
-        { name: "Test Kits & Panels", href: "/test-kits", description: "At-home lab testing" },
         { name: "Professional Supplements", href: "/supplements", description: "Medical-grade formulations" },
         { name: "Probiotics & Gut Health", href: "/supplements", description: "Digestive wellness support" },
-        { name: "Specialty Health Products", href: "/supplements", description: "Targeted wellness solutions" }
+        { name: "Vitamins & Minerals", href: "/supplements", description: "Essential nutrients" },
+        { name: "Test Kits & Lab Panels", href: "/test-kits", description: "At-home health testing" }
       ]
     }
   ];
