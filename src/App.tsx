@@ -4,9 +4,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "@/contexts/CartContext";
+import { AuthProvider } from "@/contexts/AuthContext";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import ScrollToTop from "@/components/ScrollToTop";
 import EnhancedIndex from "./pages/EnhancedIndex";
+import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 import EnhancedHeader from "./components/EnhancedHeader";
 import EnhancedFooter from "./components/EnhancedFooter";
@@ -33,7 +35,8 @@ const queryClient = new QueryClient();
 const App = () => (
   <ErrorBoundary>
     <QueryClientProvider client={queryClient}>
-      <CartProvider>
+      <AuthProvider>
+        <CartProvider>
         <TooltipProvider>
           <Toaster />
           <Sonner />
@@ -44,6 +47,7 @@ const App = () => (
             <main className="flex-1">
               <Routes>
                 <Route path="/" element={<EnhancedIndex />} />
+                <Route path="/auth" element={<Auth />} />
                 <Route path="/telehealth" element={<Telehealth />} />
                 <Route path="/mobile-testing-kits" element={<MobileTestingKits />} />
                 <Route path="/supplements" element={<Supplements />} />
@@ -68,8 +72,9 @@ const App = () => (
           </div>
         </BrowserRouter>
       </TooltipProvider>
-    </CartProvider>
-  </QueryClientProvider>
+        </CartProvider>
+      </AuthProvider>
+    </QueryClientProvider>
   </ErrorBoundary>
 );
 

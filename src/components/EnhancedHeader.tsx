@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import CartDrawer from "./CartDrawer";
 import SearchSystem from "./SearchSystem";
-import { ChevronDown, Menu, Search, Phone, Calendar } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
+import { ChevronDown, Menu, Search, Phone, Calendar, User, LogOut } from "lucide-react";
 import stayDrippedLogo from "@/assets/stay-dripped-main-logo.jpeg";
 
 const EnhancedHeader = () => {
@@ -13,6 +14,7 @@ const EnhancedHeader = () => {
   const [productsOpen, setProductsOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
   const [searchOpen, setSearchOpen] = useState(false);
+  const { user, signOut, loading } = useAuth();
 
   const navItems = [
     { name: 'Telehealth', href: '/telehealth' },
@@ -318,6 +320,27 @@ const EnhancedHeader = () => {
               <Button variant="ghost" className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium" asChild>
                 <Link to="/#newsletter">Newsletter</Link>
               </Button>
+              
+              {!loading && (
+                <>
+                  {user ? (
+                    <div className="flex items-center space-x-2">
+                      <Button variant="ghost" className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors duration-200">
+                        <User className="h-4 w-4" />
+                        <span className="text-sm">{user.email?.split('@')[0]}</span>
+                      </Button>
+                      <Button variant="ghost" size="sm" onClick={signOut} className="text-muted-foreground hover:text-destructive transition-colors duration-200">
+                        <LogOut className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  ) : (
+                    <Button variant="outline" asChild>
+                      <Link to="/auth">Sign In</Link>
+                    </Button>
+                  )}
+                </>
+              )}
+              
               <Button className="bg-gradient-to-r from-primary to-primary-dark text-white font-bold px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-200" asChild>
                 <Link to="/first-time-patients">Book Now</Link>
               </Button>

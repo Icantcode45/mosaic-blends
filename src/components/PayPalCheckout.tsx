@@ -1,12 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { useCart } from '@/contexts/CartContext';
+import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2 } from 'lucide-react';
+import { Loader2, ShieldAlert } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function PayPalCheckout() {
   const { state, clearCart, getTotalPrice } = useCart();
+  const { user, session } = useAuth();
   const { toast } = useToast();
   const paypalRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -62,13 +65,14 @@ export default function PayPalCheckout() {
         try {
           const details = await actions.order.capture();
           
-          // Create order in database without selecting it (RLS-secure)
+          // Create order in database (now requires authentication)
           const orderId = crypto.randomUUID();
           const { error: orderError } = await supabase
             .from('orders')
             .insert({
               id: orderId,
-              email: details.payer?.email_address || 'guest@example.com',
+              user_id: user?.id,
+              email: user?.email || details.payer?.email_address || 'guest@example.com',
               total_amount: getTotalPrice(),
               status: 'paid',
               paypal_payment_id: details.id,
@@ -130,6 +134,26 @@ export default function PayPalCheckout() {
         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
         Loading PayPal...
       </Button>
+    );
+  }
+
+  // Require authentication for checkout
+  if (!user || !session) {
+    return (
+      <div className="w-full p-4 border border-warning/20 rounded-lg bg-warning/5">
+        <div className="flex items-center gap-2 mb-2">
+          <ShieldAlert className="h-5 w-5 text-warning" />
+          <h3 className="font-semibold text-warning">Authentication Required</h3>
+        </div>
+        <p className="text-sm text-muted-foreground mb-3">
+          Please sign in to complete your purchase securely.
+        </p>
+        <Link to="/auth">
+          <Button variant="outline" className="w-full">
+            Sign In to Continue
+          </Button>
+        </Link>
+      </div>
     );
   }
 

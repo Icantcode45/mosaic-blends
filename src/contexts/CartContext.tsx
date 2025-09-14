@@ -1,4 +1,6 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 export interface Product {
   id: string;
@@ -109,27 +111,118 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(cartReducer, initialState);
+  const { toast } = useToast();
 
-  // Load cart from localStorage on mount
+  // Load cart from localStorage on mount and sync with database
   useEffect(() => {
     const savedCart = localStorage.getItem('cart');
     if (savedCart) {
       try {
-        const cartItems = JSON.parse(savedCart);
-        dispatch({ type: 'LOAD_CART', payload: cartItems });
+        const parsedCart = JSON.parse(savedCart);
+        dispatch({ type: 'LOAD_CART', payload: parsedCart });
       } catch (error) {
         console.error('Error loading cart from localStorage:', error);
       }
     }
+    
+    // Load cart from database if user is authenticated
+    loadCartFromDatabase();
   }, []);
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(state.items));
+    // Sync to database if user is authenticated
+    syncCartToDatabase();
   }, [state.items]);
 
-  const addItem = (product: Product) => {
+  const loadCartFromDatabase = async () => {
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) return;
+
+      const { data: cartItems, error } = await supabase
+        .from('cart_items')
+        .select(`
+          id,
+          quantity,
+          products (
+            id,
+            name,
+            description,
+            price,
+            image_url,
+            category,
+            stock_quantity
+          )
+        `)
+        .eq('user_id', session.user.id);
+
+      if (error) {
+        console.error('Error loading cart from database:', error);
+        return;
+      }
+
+      if (cartItems && cartItems.length > 0) {
+        const items = cartItems.map(item => ({
+          id: item.id,
+          product: item.products as any,
+          quantity: item.quantity,
+        }));
+        dispatch({ type: 'LOAD_CART', payload: items });
+      }
+    } catch (error) {
+      console.error('Error loading cart from database:', error);
+    }
+  };
+
+  const syncCartToDatabase = async () => {
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session || state.items.length === 0) return;
+
+      // Clear existing cart items for user
+      await supabase
+        .from('cart_items')
+        .delete()
+        .eq('user_id', session.user.id);
+
+      // Insert current cart items
+      const cartItems = state.items.map(item => ({
+        user_id: session.user.id,
+        product_id: item.product.id,
+        quantity: item.quantity,
+      }));
+
+      const { error } = await supabase
+        .from('cart_items')
+        .insert(cartItems);
+
+      if (error) {
+        console.error('Error syncing cart to database:', error);
+      }
+    } catch (error) {
+      console.error('Error syncing cart to database:', error);
+    }
+  };
+
+  const addItem = async (product: Product) => {
     dispatch({ type: 'ADD_ITEM', payload: product });
+    
+    // Sync to database if user is authenticated
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session) {
+        await syncCartToDatabase();
+      }
+    } catch (error) {
+      console.error('Error adding item to database:', error);
+      toast({
+        title: "Warning",
+        description: "Item added to cart but failed to sync. Please refresh if you experience issues.",
+        variant: "default",
+      });
+    }
   };
 
   const removeItem = (id: string) => {
