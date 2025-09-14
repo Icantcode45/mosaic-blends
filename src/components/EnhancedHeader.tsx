@@ -1,20 +1,17 @@
-import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import CartDrawer from "./CartDrawer";
+import { Menu, X } from "lucide-react";
 import SearchSystem from "./SearchSystem";
-import { useAuth } from "@/contexts/AuthContext";
-import { ChevronDown, Menu, Search, Phone, Calendar, User, LogOut } from "lucide-react";
 import stayDrippedLogo from "@/assets/stay-dripped-main-logo.jpeg";
+import TopBar from "./navigation/TopBar";
+import DesktopNav from "./navigation/DesktopNav";
+import HeaderActions from "./navigation/HeaderActions";
+import MobileMenu from "./navigation/MobileMenu";
 
 const EnhancedHeader = () => {
-  const [open, setOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(0);
   const [searchOpen, setSearchOpen] = useState(false);
-  const { user, signOut, loading } = useAuth();
 
   const navItems = [
     { name: 'Telehealth', href: '/telehealth' },
@@ -80,7 +77,7 @@ const EnhancedHeader = () => {
     const handleScroll = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          setScrolled(window.scrollY > 10);
+          setScrolled(window.scrollY > 20);
           ticking = false;
         });
         ticking = true;
@@ -94,385 +91,91 @@ const EnhancedHeader = () => {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        setOpen(false);
-        setServicesOpen(false);
-        setProductsOpen(false);
+        setMobileMenuOpen(false);
+        setSearchOpen(false);
       }
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
-        document.getElementById('topbar-search')?.focus();
+        setSearchOpen(true);
       }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-gray-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-10 text-sm">
-            <button className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-              </svg>
-              <span>Service Areas: Scottsdale, Paradise Valley, Phoenix Metro</span>
-            </button>
-            
-            <div className="flex items-center gap-4">
-              <div className="relative">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => setSearchOpen(true)}
-                  className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors"
-                >
-                  <Search className="h-4 w-4" />
-                  <span className="hidden sm:inline">Search</span>
-                  <kbd className="hidden lg:inline-flex items-center gap-1 rounded border bg-gray-100 px-1.5 py-0.5 text-xs text-gray-500">
-                    ⌘K
-                  </kbd>
-                </Button>
-              </div>
-              
-              <div className="flex items-center gap-3">
-                <a href="tel:+1-602-688-9825" className="text-gray-600 hover:text-primary transition-colors" aria-label="Call us">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                  </svg>
-                </a>
-                <Link to="/first-time-patients" className="text-gray-600 hover:text-primary transition-colors" aria-label="Book appointment">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
-                  </svg>
-                </Link>
-                <CartDrawer />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <TopBar onSearchOpen={() => setSearchOpen(true)} />
 
       {/* Main Header */}
       <header 
-      className={`sticky top-0 z-50 transition-all duration-300 backdrop-blur-md border-b ${
-        scrolled 
-          ? 'bg-white/95 border-gray-200/50 shadow-lg' 
-          : 'bg-white/80 border-gray-100/50'
-      }`}
+        className={`sticky top-0 z-50 transition-all duration-500 backdrop-blur-xl border-b ${
+          scrolled 
+            ? 'bg-white/98 border-border/60 shadow-xl' 
+            : 'bg-white/90 border-border/30'
+        }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="h-16 flex items-center justify-between">
+          <div className="h-16 lg:h-20 flex items-center justify-between">
             {/* Brand */}
-            <Link to="/" className="flex items-center space-x-3">
+            <Link to="/" className="flex items-center space-x-3 z-50">
               <img 
                 src={stayDrippedLogo} 
                 alt="Stay Dripped IV & Wellness Co. - Premier IV Therapy" 
-                className="h-10 w-auto"
+                className="h-10 lg:h-12 w-auto transition-all duration-300"
                 loading="eager"
               />
             </Link>
 
-            {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center space-x-6 overflow-x-auto whitespace-nowrap flex-1 min-w-0">
-              {/* Services Dropdown */}
-              <div 
-                className="relative"
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
-                onFocus={() => setServicesOpen(true)}
-                onBlur={() => setServicesOpen(false)}
-              >
-                <button className="nav-link inline-flex items-center space-x-1" aria-haspopup="menu" aria-expanded={servicesOpen} aria-controls="services-menu">
-                  <span>Services</span>
-                  <svg 
-                    className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} 
-                    viewBox="0 0 20 20" 
-                    fill="currentColor"
-                  >
-                    <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clipRule="evenodd"/>
-                  </svg>
-                </button>
-                
-                 {/* Services Mega Menu */}
-                {servicesOpen && (
-                  <div 
-                    id="services-menu" 
-                    className="absolute left-0 mt-3 w-[900px] bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-8 grid grid-cols-4 gap-8 z-50 animate-fade-in"
-                  >
-                    {servicesMegaItems.map((category) => (
-                      <div key={category.category} className="space-y-4">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="h-1 w-8 bg-gradient-to-r from-primary to-accent rounded-full"></div>
-                          <h4 className="font-bold text-primary text-sm uppercase tracking-wider">{category.category}</h4>
-                        </div>
-                        <div className="space-y-2">
-                          {category.items.map((item) => (
-                            item.href.startsWith('/') ? (
-                              <Link
-                                key={item.name}
-                                to={item.href}
-                                className="block p-4 rounded-2xl hover:bg-primary/5 hover:border-primary/20 border border-transparent transition-all duration-200 group hover:shadow-md"
-                              >
-                                <div className="font-bold mb-2 text-foreground group-hover:text-primary transition-colors text-base">{item.name}</div>
-                                <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                              </Link>
-                            ) : (
-                              <a
-                                key={item.name}
-                                href={item.href}
-                                className="block p-4 rounded-2xl hover:bg-primary/5 hover:border-primary/20 border border-transparent transition-all duration-200 group hover:shadow-md"
-                              >
-                                <div className="font-bold mb-2 text-foreground group-hover:text-primary transition-colors text-base">{item.name}</div>
-                                <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                              </a>
-                            )
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+            {/* Desktop Navigation */}
+            <DesktopNav 
+              servicesMegaItems={servicesMegaItems}
+              productsMegaItems={productsMegaItems}
+              navItems={navItems}
+            />
 
-              {/* Products Dropdown */}
-              <div 
-                className="relative"
-                onMouseEnter={() => setProductsOpen(true)}
-                onMouseLeave={() => setProductsOpen(false)}
-                onFocus={() => setProductsOpen(true)}
-                onBlur={() => setProductsOpen(false)}
-              >
-                <button className="nav-link inline-flex items-center space-x-1" aria-haspopup="menu" aria-expanded={productsOpen} aria-controls="products-menu">
-                  <span>Products</span>
-                  <svg 
-                    className={`w-4 h-4 transition-transform ${productsOpen ? 'rotate-180' : ''}`} 
-                    viewBox="0 0 20 20" 
-                    fill="currentColor"
-                  >
-                    <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clipRule="evenodd"/>
-                  </svg>
-                </button>
-                
-                {/* Products Mega Menu */}
-                {productsOpen && (
-                  <div 
-                    id="products-menu" 
-                    className="absolute left-0 mt-3 w-[500px] bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-8 grid grid-cols-2 gap-8 z-50 animate-fade-in"
-                  >
-                    {productsMegaItems.map((category) => (
-                      <div key={category.category} className="space-y-4">
-                        <h4 className="font-semibold text-primary text-sm uppercase tracking-wide">{category.category}</h4>
-                        <div className="space-y-3">
-                          {category.items.map((item) => (
-                            item.href.startsWith('/') ? (
-                              <Link
-                                key={item.name}
-                                to={item.href}
-                                className="block p-3 rounded-xl hover:bg-gray-50 transition group"
-                              >
-                                <div className="font-semibold mb-1 text-foreground group-hover:text-primary transition">{item.name}</div>
-                                <p className="text-xs text-muted-foreground">{item.description}</p>
-                              </Link>
-                            ) : (
-                              <a
-                                key={item.name}
-                                href={item.href}
-                                className="block p-3 rounded-xl hover:bg-gray-50 transition group"
-                              >
-                                <div className="font-semibold mb-1 text-foreground group-hover:text-primary transition">{item.name}</div>
-                                <p className="text-xs text-muted-foreground">{item.description}</p>
-                              </a>
-                            )
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-              
-              {navItems.map((item) => (
-                item.href.startsWith('/') ? (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="nav-link"
-                  >
-                    {item.name}
-                  </Link>
-                ) : (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="nav-link"
-                  >
-                    {item.name}
-                  </a>
-                )
-              ))}
-            </nav>
+            {/* Desktop Actions */}
+            <HeaderActions />
 
-            {/* Actions */}
-            <div className="hidden lg:flex items-center space-x-4">
-              <CartDrawer />
-              <Button variant="ghost" className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium" asChild>
-                <Link to="/#newsletter">Newsletter</Link>
-              </Button>
-              
-              {!loading && (
-                <>
-                  {user ? (
-                    <div className="flex items-center space-x-2">
-                      <Button variant="ghost" className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors duration-200">
-                        <User className="h-4 w-4" />
-                        <span className="text-sm">{user.email?.split('@')[0]}</span>
-                      </Button>
-                      <Button variant="ghost" size="sm" onClick={signOut} className="text-muted-foreground hover:text-destructive transition-colors duration-200">
-                        <LogOut className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  ) : (
-                    <Button variant="outline" asChild>
-                      <Link to="/auth">Sign In</Link>
-                    </Button>
-                  )}
-                </>
-              )}
-              
-              <Button className="bg-gradient-to-r from-primary to-primary-dark text-white font-bold px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-200" asChild>
-                <Link to="/first-time-patients">Book Now</Link>
-              </Button>
-            </div>
-
-            {/* Mobile toggle */}
+            {/* Mobile Menu Toggle */}
             <button 
-              onClick={() => setOpen(!open)} 
-              className="lg:hidden p-2 rounded-md border border-gray-300 hover:border-gray-400 transition-colors"
-              aria-expanded={open}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+              className="lg:hidden p-2 rounded-xl border border-border/30 hover:border-border/60 hover:bg-muted/50 transition-all duration-200 z-50"
+              aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
               aria-label="Toggle navigation menu"
             >
-              {!open ? (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
+              {!mobileMenuOpen ? (
+                <Menu className="w-6 h-6 text-foreground" />
               ) : (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
+                <X className="w-6 h-6 text-foreground" />
               )}
             </button>
           </div>
-
-          {/* Mobile panel */}
-          {open && (
-            <div id="mobile-menu" className="lg:hidden pb-4 max-h-[70vh] overflow-y-auto">
-              <div className="grid gap-2">
-                <Link 
-                  onClick={() => setOpen(false)} 
-                  to="/" 
-                  className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
-                >
-                  Home
-                </Link>
-                
-                {/* Mobile Services */}
-                <div className="px-3 py-2">
-                  <div className="font-semibold text-sm text-gray-500 uppercase tracking-wide mb-2">Services</div>
-                  {servicesMegaItems.map((category) => (
-                    <div key={category.category} className="mb-3">
-                      <div className="font-medium text-xs text-primary mb-1">{category.category}</div>
-                      {category.items.map((item) => (
-                        item.href.startsWith('/') ? (
-                          <Link
-                            key={item.name}
-                            onClick={() => setOpen(false)}
-                            to={item.href}
-                            className="block px-2 py-1 text-sm rounded hover:bg-gray-100 transition-colors"
-                          >
-                            {item.name}
-                          </Link>
-                        ) : (
-                          <a
-                            key={item.name}
-                            onClick={() => setOpen(false)}
-                            href={item.href}
-                            className="block px-2 py-1 text-sm rounded hover:bg-gray-100 transition-colors"
-                          >
-                            {item.name}
-                          </a>
-                        )
-                      ))}
-                    </div>
-                  ))}
-                </div>
-
-                {/* Mobile Products */}
-                <div className="px-3 py-2">
-                  <div className="font-semibold text-sm text-gray-500 uppercase tracking-wide mb-2">Products</div>
-                  {productsMegaItems.map((category) => (
-                    <div key={category.category} className="mb-3">
-                      <div className="font-medium text-xs text-primary mb-1">{category.category}</div>
-                      {category.items.map((item) => (
-                        item.href.startsWith('/') ? (
-                          <Link
-                            key={item.name}
-                            onClick={() => setOpen(false)}
-                            to={item.href}
-                            className="block px-2 py-1 text-sm rounded hover:bg-gray-100 transition-colors"
-                          >
-                            {item.name}
-                          </Link>
-                        ) : (
-                          <a
-                            key={item.name}
-                            onClick={() => setOpen(false)}
-                            href={item.href}
-                            className="block px-2 py-1 text-sm rounded hover:bg-gray-100 transition-colors"
-                          >
-                            {item.name}
-                          </a>
-                        )
-                      ))}
-                    </div>
-                  ))}
-                </div>
-
-                {navItems.map((item) => (
-                  item.href.startsWith('/') ? (
-                    <Link
-                      key={item.name}
-                      onClick={() => setOpen(false)}
-                      to={item.href}
-                      className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
-                    >
-                      {item.name}
-                    </Link>
-                  ) : (
-                    <a
-                      key={item.name}
-                      onClick={() => setOpen(false)}
-                      href={item.href}
-                      className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
-                    >
-                      {item.name}
-                    </a>
-                  )
-                ))}
-                <Button 
-                  onClick={() => setOpen(false)} 
-                  className="btn-primary-enhanced text-center mt-2"
-                  asChild
-                >
-                  <Link to="/first-time-patients">Book Now</Link>
-                </Button>
-              </div>
-            </div>
-          )}
         </div>
       </header>
+
+      {/* Mobile Menu */}
+      <MobileMenu 
+        isOpen={mobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)}
+        servicesMegaItems={servicesMegaItems}
+        productsMegaItems={productsMegaItems}
+        navItems={navItems}
+      />
 
       {/* Search System */}
       <SearchSystem 
