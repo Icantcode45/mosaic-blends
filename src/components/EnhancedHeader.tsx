@@ -15,8 +15,7 @@ const EnhancedHeader = () => {
 
   const navItems = [
     { name: 'Telehealth', href: '/telehealth' },
-    { name: 'Mobile Testing Kits', href: '/mobile-testing-kits' },
-    { name: 'Supplements', href: '/supplements' },
+    { name: 'Products & Supplements', href: '/supplements' },
     { name: 'Membership', href: '/membership' },
     { name: 'Event Inquiry', href: '/event-inquiry' },
     { name: 'Specialty Treatments', href: '/specialty-treatments' },
@@ -41,19 +40,20 @@ const EnhancedHeader = () => {
     {
       category: "Wellness & Health",
       items: [
-        { name: "Mobile Testing", href: "/mobile-testing-kits", description: "At-home lab services" },
-        { name: "Telehealth", href: "/telehealth", description: "Virtual consultations" }
+        { name: "Telehealth", href: "/telehealth", description: "Virtual consultations" },
+        { name: "Specialty Treatments", href: "/specialty-treatments", description: "Advanced wellness therapies" }
       ]
     }
   ];
 
   const productsMegaItems = [
     {
-      category: "Supplements & Products",
+      category: "Health Products & Supplements",
       items: [
-        { name: "Professional Supplements", href: "/supplements", description: "High-quality formulations" },
-        { name: "Probiotics & Gut Health", href: "/supplements", description: "Digestive wellness" },
-        { name: "Test Kits & Panels", href: "/supplements", description: "Comprehensive health testing" }
+        { name: "Professional Supplements", href: "/supplements", description: "Medical-grade formulations" },
+        { name: "Mobile Testing Kits", href: "/supplements", description: "At-home lab testing" },
+        { name: "Probiotics & Gut Health", href: "/supplements", description: "Digestive wellness support" },
+        { name: "Specialty Health Products", href: "/supplements", description: "Targeted wellness solutions" }
       ]
     }
   ];

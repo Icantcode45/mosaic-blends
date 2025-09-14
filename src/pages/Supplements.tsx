@@ -82,6 +82,7 @@ const categories = [
   { id: "supplements", name: "All Supplements" },
   { id: "probiotics", name: "Probiotics & Gut Health" },
   { id: "test-kits", name: "Test Kits & Panels" },
+  { id: "mobile-testing", name: "Mobile Testing Kits" },
   { id: "vitamins", name: "Vitamins & Minerals" },
   { id: "specialty", name: "Specialty Formulas" },
   { id: "professional", name: "Professional Catalog" }
@@ -262,14 +263,14 @@ const Supplements = () => {
   return (
     <>
       <Helmet>
-        <title>Supplements & Test Kits | Stay Dripped IV & Wellness Co.</title>
-        <meta name="description" content="Premium supplements, probiotics, and comprehensive test kits for optimal health. Professional-grade products curated by our medical team." />
+        <title>Products & Supplements | Stay Dripped IV & Wellness Co.</title>
+        <meta name="description" content="Premium supplements, probiotics, mobile test kits, and comprehensive health products for optimal wellness. Professional-grade products curated by our medical team." />
         <link rel="canonical" href="https://staydrippediv.com/supplements" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Supplements & Test Kits | Stay Dripped IV & Wellness Co." />
-        <meta property="og:description" content="Premium supplements, probiotics, and comprehensive test kits for optimal health. Professional-grade products curated by our medical team." />
+        <meta property="og:title" content="Products & Supplements | Stay Dripped IV & Wellness Co." />
+        <meta property="og:description" content="Premium supplements, probiotics, mobile test kits, and comprehensive health products for optimal wellness. Professional-grade products curated by our medical team." />
         <meta property="og:url" content="https://staydrippediv.com/supplements" />
         
         {/* Structured Data */}
@@ -303,10 +304,10 @@ const Supplements = () => {
         <section className="supplements-hero">
           <div className="hero-content">
             <div className="tagline-highlight fade-in">Professional Grade</div>
-            <h1 className="hero-title fade-in delay-1">Complete Health Solutions</h1>
+            <h1 className="hero-title fade-in delay-1">Complete Products & Supplements</h1>
             <p className="company-subtitle fade-in delay-2">Stay Dripped IV & Wellness Co.</p>
             <p className="hero-description fade-in delay-3">
-              Comprehensive collection of physician-trusted supplements, probiotics, gut health solutions, and professional testing kits. Everything you need to optimize your health journey with medical-grade quality and practitioner guidance.
+              Comprehensive collection of physician-trusted supplements, probiotics, gut health solutions, mobile testing kits, and professional health products. Everything you need to optimize your health journey with medical-grade quality and practitioner guidance.
             </p>
             
             <div className="badges">
@@ -585,6 +586,148 @@ const Supplements = () => {
                       <button className="btn btn-secondary">Learn More</button>
                     </div>
                     <p className="product-note">Saliva & blood collection with comprehensive analysis.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Vitamins & Minerals Section */}
+        <section className={`category-section ${activeCategory === 'vitamins' ? 'active' : ''}`}>
+          <div className="section-header">
+            <div className="section-subtitle">Essential Nutrients</div>
+            <h2 className="section-title">Vitamins & Minerals</h2>
+            <p className="section-description">High-quality vitamin and mineral supplements to support optimal health and fill nutritional gaps.</p>
+          </div>
+
+          <div className="products-grid">
+            <div className="product-card">
+              <div className="product-content">
+                <div className="product-image">
+                  <div className="product-badge">High Potency</div>
+                </div>
+                <div className="product-info">
+                  <div>
+                    <p className="product-brand">Essential Vitamins</p>
+                    <h3 className="product-title">Vitamin D3 + K2</h3>
+                    <div className="product-price">$45</div>
+                    
+                    <ul className="product-benefits">
+                      <li>5000 IU Vitamin D3 for immune support</li>
+                      <li>100mcg Vitamin K2 for bone health</li>
+                      <li>Enhanced calcium absorption</li>
+                      <li>Cardiovascular support</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <div className="product-actions">
+                      <a className="btn" href="https://staydrippediv.com/fullscript" target="_blank" rel="noopener">Order via Fullscript</a>
+                      <button className="btn btn-secondary">Learn More</button>
+                    </div>
+                    <p className="product-note">Professional-grade vitamin D3 with synergistic K2.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="product-card">
+              <div className="product-content">
+                <div className="product-image">
+                  <div className="product-badge">Methylated</div>
+                </div>
+                <div className="product-info">
+                  <div>
+                    <p className="product-brand">B-Complex</p>
+                    <h3 className="product-title">Active B-Complex</h3>
+                    <div className="product-price">$38</div>
+                    
+                    <ul className="product-benefits">
+                      <li>Methylated B vitamins for better absorption</li>
+                      <li>Energy metabolism support</li>
+                      <li>Nervous system health</li>
+                      <li>Cognitive function support</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <div className="product-actions">
+                      <a className="btn" href="https://staydrippediv.com/fullscript" target="_blank" rel="noopener">Order via Fullscript</a>
+                      <button className="btn btn-secondary">Learn More</button>
+                    </div>
+                    <p className="product-note">Bioactive forms of B vitamins for optimal utilization.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Specialty Formulas Section */}
+        <section className={`category-section ${activeCategory === 'specialty' ? 'active' : ''}`}>
+          <div className="section-header">
+            <div className="section-subtitle">Targeted Solutions</div>
+            <h2 className="section-title">Specialty Formulas</h2>
+            <p className="section-description">Advanced formulations targeting specific health concerns and wellness goals with precision nutrition.</p>
+          </div>
+
+          <div className="products-grid">
+            <div className="product-card">
+              <div className="product-content">
+                <div className="product-image">
+                  <div className="product-badge">Advanced</div>
+                </div>
+                <div className="product-info">
+                  <div>
+                    <p className="product-brand">Cognitive Health</p>
+                    <h3 className="product-title">Brain Support Complex</h3>
+                    <div className="product-price">$89</div>
+                    
+                    <ul className="product-benefits">
+                      <li>Nootropic compounds for cognitive enhancement</li>
+                      <li>Memory and focus support</li>
+                      <li>Neuroprotective antioxidants</li>
+                      <li>Mental clarity optimization</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <div className="product-actions">
+                      <a className="btn" href="https://staydrippediv.com/fullscript" target="_blank" rel="noopener">Order via Fullscript</a>
+                      <button className="btn btn-secondary">Learn More</button>
+                    </div>
+                    <p className="product-note">Advanced cognitive support with clinically studied ingredients.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="product-card">
+              <div className="product-content">
+                <div className="product-image">
+                  <div className="product-badge">Hormone Support</div>
+                </div>
+                <div className="product-info">
+                  <div>
+                    <p className="product-brand">Endocrine Health</p>
+                    <h3 className="product-title">Hormone Balance Formula</h3>
+                    <div className="product-price">$76</div>
+                    
+                    <ul className="product-benefits">
+                      <li>Natural hormone balance support</li>
+                      <li>Adaptogenic herbs for stress resilience</li>
+                      <li>Reproductive health optimization</li>
+                      <li>Energy and mood stabilization</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <div className="product-actions">
+                      <a className="btn" href="https://staydrippediv.com/fullscript" target="_blank" rel="noopener">Order via Fullscript</a>
+                      <button className="btn btn-secondary">Learn More</button>
+                    </div>
+                    <p className="product-note">Comprehensive hormone support with botanical extracts.</p>
                   </div>
                 </div>
               </div>
