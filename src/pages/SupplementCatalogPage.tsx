@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/contexts/AuthContext";
 import { useCart } from "@/contexts/CartContext";
+import { useToast } from "@/hooks/use-toast";
 import { Search, MapPin, ShoppingCart, Star, Heart, MoreVertical, ChevronDown, Plus, Minus, ChevronLeft, ChevronRight } from "lucide-react";
 import "../styles/supplement-catalog.css";
 
@@ -84,7 +85,8 @@ const SupplementCatalogPage = () => {
   const [filteredProducts, setFilteredProducts] = useState(mockProducts);
   const [quantities, setQuantities] = useState<{[key: string]: number}>({});
   const { user } = useAuth();
-  const { addItem } = useCart();
+  const { addItem, updateQuantity: updateCartQuantity, state, openCart, closeCart, getTotalItems } = useCart();
+  const { toast } = useToast();
 
   useEffect(() => {
     document.title = "Supplement Catalog - Stay Dripped IV & Wellness";
@@ -118,7 +120,16 @@ const SupplementCatalogPage = () => {
 
   const getQuantity = (productId: string) => quantities[productId] || 1;
 
-  const handleAddToCart = (product: Product) => {
+  const handleAddToCart = async (product: Product) => {
+    if (!user) {
+      toast({
+        title: "Sign in required",
+        description: "Please sign in to add items to your cart.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     const quantity = getQuantity(product.id);
     const cartProduct = {
       id: product.id,
@@ -130,9 +141,42 @@ const SupplementCatalogPage = () => {
       stock_quantity: 100 // Mock stock quantity
     };
     
-    // Add the item the specified number of times to match quantity
-    for (let i = 0; i < quantity; i++) {
-      addItem(cartProduct);
+    try {
+      // Check if item already exists in cart
+      const existingItem = state.items.find(item => item.product.id === product.id);
+      
+      if (existingItem) {
+        // Update quantity if item exists
+        updateCartQuantity(product.id, existingItem.quantity + quantity);
+      } else {
+        // Add item first, then update quantity if needed
+        await addItem(cartProduct);
+        if (quantity > 1) {
+          // Wait a bit for the item to be added, then update quantity
+          setTimeout(() => {
+            updateCartQuantity(product.id, quantity);
+          }, 100);
+        }
+      }
+
+      toast({
+        title: "Added to cart",
+        description: `${quantity} x ${product.name} added to your cart.`,
+      });
+
+      // Reset quantity for this product
+      setQuantities(prev => ({
+        ...prev,
+        [product.id]: 1
+      }));
+
+    } catch (error) {
+      console.error('Error adding to cart:', error);
+      toast({
+        title: "Error",
+        description: "Failed to add item to cart. Please try again.",
+        variant: "destructive",
+      });
     }
   };
 
@@ -154,6 +198,16 @@ const SupplementCatalogPage = () => {
               <button className="location-selector-btn">
                 <MapPin className="h-4 w-4" />
                 <span className="hidden sm:inline">Ship to: Arizona</span>
+              </button>
+              <button 
+                className="cart-toggle-btn"
+                onClick={() => state.isOpen ? closeCart() : openCart()}
+                aria-label="Toggle cart"
+              >
+                <ShoppingCart className="h-4 w-4" />
+                {getTotalItems() > 0 && (
+                  <span className="cart-count">{getTotalItems()}</span>
+                )}
               </button>
             </div>
           </div>
@@ -312,6 +366,7 @@ const SupplementCatalogPage = () => {
                       className="add-to-cart-btn"
                       disabled={!user}
                     >
+                      <ShoppingCart className="h-4 w-4 mr-2" />
                       Add to cart
                     </button>
                   </div>
