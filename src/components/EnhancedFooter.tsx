@@ -60,12 +60,12 @@ const EnhancedFooter = () => {
       links: [
         { name: "Privacy Practices", href: "/privacy" },
         { name: "Terms of Service", href: "/terms" },
+        { name: "Compliance Center", href: "/compliance" },
+        { name: "Good Faith Estimate", href: "/good-faith-estimate" },
         { name: "Medical Compliance", href: "/medical-compliance" },
         { name: "HIPAA Notice", href: "/#hipaa" },
         { name: "Telehealth Consent", href: "/#telehealth-consent" },
-        { name: "Patient Rights", href: "/#rights" },
-        { name: "Accessibility", href: "/#accessibility" },
-        { name: "State Licenses", href: "/#licenses" }
+        { name: "Patient Rights", href: "/#rights" }
       ]
     }
   ];
