@@ -26,7 +26,13 @@ const PeptideBookingButton = ({ peptideName, peptideCategory }: PeptideBookingBu
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button>Schedule Consultation</Button>
+        <Button 
+          variant="medical"
+          size="sm"
+          className="font-semibold transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
+        >
+          📅 Schedule
+        </Button>
       </DialogTrigger>
       <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>

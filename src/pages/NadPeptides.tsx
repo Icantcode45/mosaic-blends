@@ -424,14 +424,20 @@ const NadPeptides = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             <Button 
-              size="lg" 
-              className="px-8 py-4 text-lg font-semibold uppercase tracking-wide"
+              size="xl" 
+              variant="medical"
+              className="px-10 py-5 text-lg font-bold uppercase tracking-wide shadow-2xl hover:shadow-primary/25 transform hover:scale-105 transition-all duration-300"
               onClick={handleBookingAttempt}
             >
-              Consultation (18+ Only)
+              🩺 Book Consultation (18+)
             </Button>
-            <Button variant="outline" size="lg" className="px-8 py-4 text-lg font-semibold uppercase tracking-wide border-white text-white hover:bg-white hover:text-slate-800" asChild>
-              <Link to="/telehealth">Consult Provider</Link>
+            <Button 
+              variant="medical-outline" 
+              size="xl" 
+              className="px-10 py-5 text-lg font-bold uppercase tracking-wide border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/60 backdrop-blur-sm transform hover:scale-105 transition-all duration-300" 
+              asChild
+            >
+              <Link to="/telehealth">📞 Consult Provider</Link>
             </Button>
           </div>
           <div className="mt-8 text-sm opacity-75">
@@ -502,15 +508,17 @@ const NadPeptides = () => {
           </div>
 
           {/* Category Navigation */}
-          <div className="mb-12 flex flex-wrap justify-center gap-3">
+          <div className="mb-12 flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
               <Button
                 key={category}
-                variant={selectedCategory === category ? "default" : "outline"}
+                variant={selectedCategory === category ? "medical" : "medical-outline"}
+                size="lg"
                 onClick={() => setSelectedCategory(category)}
-                className="capitalize hover:scale-105 transition-transform duration-200"
+                className="capitalize px-6 py-3 font-semibold transform hover:scale-110 hover:shadow-lg transition-all duration-300 border-2"
               >
-                {category.replace('-', ' ').replace('&', '&')}
+                {category === 'all' ? '🔬 All Therapies' : 
+                 category.replace('-', ' ').replace('&', '&')}
               </Button>
             ))}
           </div>
@@ -571,10 +579,11 @@ const NadPeptides = () => {
                     </ul>
                   </div>
                   
-                  <div className="flex gap-2">
+                  <div className="flex gap-3">
                     <Button 
+                      variant="medical-outline"
                       size="sm" 
-                      className="flex-1 group-hover:shadow-lg transition-shadow"
+                      className="flex-1 font-semibold transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
                       onClick={() => openQuickView(key)}
                     >
                       🔍 Learn More
@@ -674,13 +683,18 @@ const NadPeptides = () => {
                   <p className="text-red-700 text-sm">{selectedPeptide.sideEffects}</p>
                 </div>
 
-                <div className="flex gap-4 pt-4">
+                <div className="flex gap-4 pt-6">
                   <PeptideBookingButton 
                     peptideName={selectedPeptide.name}
                     peptideCategory={selectedPeptide.category}
                   />
-                  <Button size="lg" variant="outline" className="flex-1" asChild>
-                    <Link to="/telehealth">Ask Questions</Link>
+                  <Button 
+                    size="lg" 
+                    variant="medical-outline" 
+                    className="flex-1 font-semibold transform hover:scale-105 transition-all duration-300" 
+                    asChild
+                  >
+                    <Link to="/telehealth">💬 Ask Provider</Link>
                   </Button>
                 </div>
               </div>
