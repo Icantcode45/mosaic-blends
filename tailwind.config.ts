@@ -23,8 +23,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        heading: ["DM Sans", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+      sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+      heading: ["Manrope", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -72,10 +72,10 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         brand: {
-          teal: "hsl(var(--brand-teal))",
-          emerald: "hsl(var(--brand-emerald))",
-          violet: "hsl(var(--brand-violet))",
-          rose: "hsl(var(--brand-rose))",
+          peach: "hsl(var(--brand-peach))",
+          sage: "hsl(var(--brand-sage))",
+          sky: "hsl(var(--brand-sky))",
+          lavender: "hsl(var(--brand-lavender))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

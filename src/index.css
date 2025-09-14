@@ -1,46 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Hims-Inspired Clean Design System */
+/* Hims/Hers-Inspired Clean Medical Design System */
 
 @layer base {
   :root {
-    /* Ultra-Clean Color Palette */
+    /* Clean Medical Color Palette - Inspired by Hims/Hers */
     --background: 0 0% 100%;
-    --foreground: 222 84% 11%;
+    --foreground: 0 0% 9%;
     
     --card: 0 0% 100%;
-    --card-foreground: 222 84% 11%;
+    --card-foreground: 0 0% 9%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 222 84% 11%;
+    --popover-foreground: 0 0% 9%;
     
-    /* Primary Brand - Sophisticated Blue */
-    --primary: 217 91% 60%;
+    /* Primary - Soft Medical Blue */
+    --primary: 220 13% 18%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 217 91% 54%;
-    --primary-light: 214 95% 93%;
-    --primary-dark: 217 91% 48%;
+    --primary-hover: 220 13% 25%;
+    --primary-light: 215 25% 97%;
+    --primary-dark: 220 13% 12%;
     
-    /* Secondary - Ultra Light */
-    --secondary: 210 40% 98%;
-    --secondary-foreground: 215 25% 27%;
+    /* Secondary - Ultra Clean Off-White */
+    --secondary: 210 20% 98%;
+    --secondary-foreground: 220 9% 46%;
     
-    /* Accent - Minimal Gray */
-    --accent: 210 40% 98%;
-    --accent-foreground: 215 25% 27%;
+    /* Accent - Warm Medical Peach */
+    --accent: 25 95% 95%;
+    --accent-foreground: 24 100% 23%;
     
-    /* Neutral System - Cleaner */
+    /* Neutral System - Medical Clean */
     --muted: 210 40% 98%;
     --muted-foreground: 215 16% 47%;
     --border: 214 32% 91%;
-    --input: 210 40% 98%;
-    --ring: 217 91% 60%;
+    --input: 0 0% 100%;
+    --ring: 220 13% 18%;
     
-    /* Status Colors */
+    /* Status Colors - Medical Safe */
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
     --warning: 38 92% 50%;
@@ -48,79 +48,81 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    /* Minimal Brand Accents */
-    --brand-teal: 173 80% 40%;
-    --brand-emerald: 160 84% 39%;
-    --brand-violet: 262 83% 58%;
-    --brand-rose: 330 81% 60%;
+    /* Medical Brand Accents */
+    --brand-peach: 25 95% 53%;
+    --brand-sage: 142 20% 85%;
+    --brand-sky: 199 89% 85%;
+    --brand-lavender: 250 30% 85%;
     
-    /* Clean Radius System */
-    --radius: 12px;
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 16px;
-    --radius-xl: 24px;
+    /* Medical Radius System */
+    --radius: 16px;
+    --radius-sm: 12px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
     
-    /* Ultra-Subtle Shadows */
-    --shadow-subtle: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -1px rgb(0 0 0 / 0.03);
-    --shadow-large: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -2px rgb(0 0 0 / 0.03);
-    --shadow-extra: 0 25px 50px -12px rgb(0 0 0 / 0.12);
+    /* Ultra-Clean Medical Shadows */
+    --shadow-subtle: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -1px rgb(0 0 0 / 0.02);
+    --shadow-large: 0 10px 15px -3px rgb(0 0 0 / 0.06), 0 4px 6px -2px rgb(0 0 0 / 0.02);
+    --shadow-extra: 0 25px 50px -12px rgb(0 0 0 / 0.08);
     
-    /* Clean Gradients */
+    /* Medical Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-hover)) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--primary-light)) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--accent)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--accent)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--secondary)) 100%);
+    --gradient-peach: linear-gradient(135deg, hsl(var(--brand-peach) / 0.1) 0%, hsl(var(--brand-peach) / 0.05) 100%);
     
     /* Sidebar */
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 215 25% 27%;
-    --sidebar-primary: 217 91% 54%;
+    --sidebar-foreground: 220 9% 46%;
+    --sidebar-primary: 220 13% 18%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 210 40% 98%;
-    --sidebar-accent-foreground: 215 25% 27%;
+    --sidebar-accent-foreground: 220 9% 46%;
     --sidebar-border: 214 32% 91%;
-    --sidebar-ring: 217 91% 54%;
+    --sidebar-ring: 220 13% 18%;
   }
 
   .dark {
-    --background: 222 84% 5%;
+    --background: 220 13% 6%;
     --foreground: 210 40% 98%;
     
-    --card: 217 33% 17%;
+    --card: 220 13% 9%;
     --card-foreground: 210 40% 98%;
     
-    --popover: 217 33% 17%;
+    --popover: 220 13% 9%;
     --popover-foreground: 210 40% 98%;
     
-    --primary: 217 91% 70%;
-    --primary-foreground: 222 84% 5%;
-    --primary-hover: 217 91% 60%;
-    --primary-light: 217 54% 24%;
+    --primary: 220 13% 91%;
+    --primary-foreground: 220 13% 9%;
+    --primary-hover: 220 13% 85%;
+    --primary-light: 220 13% 15%;
     
-    --secondary: 217 33% 24%;
-    --secondary-foreground: 214 32% 91%;
+    --secondary: 220 13% 12%;
+    --secondary-foreground: 210 40% 98%;
     
-    --accent: 217 33% 24%;
-    --accent-foreground: 214 32% 91%;
+    --accent: 220 13% 12%;
+    --accent-foreground: 210 40% 98%;
     
-    --muted: 217 33% 24%;
+    --muted: 220 13% 12%;
     --muted-foreground: 215 20% 65%;
-    --border: 215 28% 17%;
-    --input: 217 33% 24%;
-    --ring: 217 91% 70%;
+    --border: 220 13% 15%;
+    --input: 220 13% 12%;
+    --ring: 220 13% 91%;
     
     /* Dark mode shadows */
     --shadow-subtle: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
     --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
     
-    --sidebar-background: 217 33% 17%;
-    --sidebar-foreground: 214 32% 91%;
-    --sidebar-primary: 217 91% 70%;
-    --sidebar-primary-foreground: 222 84% 5%;
-    --sidebar-accent: 217 33% 24%;
-    --sidebar-accent-foreground: 214 32% 91%;
-    --sidebar-border: 217 33% 24%;
+    --sidebar-background: 220 13% 9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 220 13% 91%;
+    --sidebar-primary-foreground: 220 13% 9%;
+    --sidebar-accent: 220 13% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 13% 15%;
+  }
   }
 }
 
@@ -142,30 +144,32 @@
   /* Hims-Inspired Typography */
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-bold tracking-tight;
-    line-height: 1.1;
+    line-height: 1.2;
   }
   
   h1 { 
-    @apply text-5xl md:text-6xl lg:text-7xl; 
-    letter-spacing: -0.03em;
+    @apply text-4xl md:text-5xl lg:text-6xl; 
+    letter-spacing: -0.025em;
     font-weight: 800;
   }
   h2 { 
-    @apply text-4xl md:text-5xl lg:text-6xl; 
-    letter-spacing: -0.025em;
+    @apply text-3xl md:text-4xl lg:text-5xl; 
+    letter-spacing: -0.02em;
     font-weight: 700;
   }
   h3 { 
-    @apply text-3xl md:text-4xl; 
-    letter-spacing: -0.02em;
+    @apply text-2xl md:text-3xl lg:text-4xl; 
+    letter-spacing: -0.015em;
     font-weight: 600;
   }
-  h4 { @apply text-2xl md:text-3xl font-semibold; }
-  h5 { @apply text-xl md:text-2xl font-medium; }
-  h6 { @apply text-lg md:text-xl font-medium; }
+  h4 { @apply text-xl md:text-2xl font-semibold; }
+  h5 { @apply text-lg md:text-xl font-medium; }
+  h6 { @apply text-base md:text-lg font-medium; }
   
   p {
     @apply text-muted-foreground leading-relaxed;
+    font-size: 1rem;
+    line-height: 1.6;
   }
   
   /* Focus Styles */
@@ -182,136 +186,114 @@
 }
 
 @layer components {
-  /* Hims-Style Button System */
-  .btn-hims {
-    @apply inline-flex items-center justify-center gap-2 rounded-full;
-    @apply px-8 py-4 text-sm font-semibold transition-all duration-200;
+  /* Hims-Style Medical Button System */
+  .btn-medical {
+    @apply inline-flex items-center justify-center gap-3 rounded-full;
+    @apply px-8 py-4 text-base font-semibold transition-all duration-300;
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
-    @apply hover:scale-105 active:scale-95;
+    @apply hover:scale-[1.02] active:scale-[0.98];
+    @apply shadow-subtle hover:shadow-medium;
   }
   
-  .btn-primary-hims {
-    @apply btn-hims bg-primary text-primary-foreground;
-    @apply hover:bg-primary-hover hover:shadow-medium;
+  .btn-primary-medical {
+    @apply btn-medical bg-primary text-primary-foreground;
+    @apply hover:bg-primary-hover;
     @apply focus-visible:ring-primary/30;
-    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 0.06);
   }
   
-  .btn-secondary-hims {
-    @apply btn-hims bg-white text-foreground border-2 border-border;
-    @apply hover:bg-accent hover:border-primary/20;
+  .btn-secondary-medical {
+    @apply btn-medical bg-white text-foreground border-2 border-gray-200;
+    @apply hover:bg-gray-50 hover:border-gray-300;
+    @apply hover:shadow-medium;
   }
   
-  .btn-outline-hims {
-    @apply btn-hims bg-transparent text-foreground;
-    @apply border-2 border-border hover:bg-white hover:border-primary/20;
+  .btn-outline-medical {
+    @apply btn-medical bg-transparent text-foreground;
+    @apply border-2 border-gray-200 hover:bg-white hover:border-primary/30;
     @apply hover:shadow-subtle;
   }
   
-  .btn-ghost-hims {
-    @apply btn-hims bg-transparent text-muted-foreground;
-    @apply hover:bg-accent hover:text-foreground;
+  .btn-ghost-medical {
+    @apply btn-medical bg-transparent text-muted-foreground;
+    @apply hover:bg-gray-50 hover:text-foreground;
   }
   
-  /* Hims-Style Card System */
-  .card-hims {
-    @apply bg-white text-card-foreground rounded-2xl;
+  /* Hims-Style Medical Card System */
+  .card-medical {
+    @apply bg-white text-card-foreground rounded-3xl;
     @apply border border-gray-100 shadow-subtle;
     @apply transition-all duration-300;
   }
   
-  .card-hover-hims {
-    @apply card-hims hover:shadow-medium hover:-translate-y-1;
+  .card-hover-medical {
+    @apply card-medical hover:shadow-large hover:-translate-y-1;
     @apply hover:border-gray-200;
   }
   
-  .card-interactive-hims {
-    @apply card-hover-hims hover:shadow-large hover:-translate-y-2;
-    @apply cursor-pointer active:scale-[0.98];
+  .card-interactive-medical {
+    @apply card-hover-medical hover:shadow-extra hover:-translate-y-2;
+    @apply cursor-pointer active:scale-[0.99];
   }
   
-  /* Hims-Style Input System */
-  .input-hims {
-    @apply w-full rounded-xl border-2 border-gray-200;
-    @apply bg-white px-4 py-4 text-sm;
+  /* Hims-Style Medical Input System */
+  .input-medical {
+    @apply w-full rounded-2xl border-2 border-gray-200;
+    @apply bg-white px-6 py-4 text-base;
     @apply placeholder:text-gray-400;
     @apply focus:border-primary focus:ring-0 focus:outline-none;
-    @apply transition-all duration-200;
+    @apply transition-all duration-300;
+    @apply shadow-subtle focus:shadow-medium;
   }
   
-  /* Section Layouts */
-  .section-padding {
-    @apply py-16 md:py-20 lg:py-24;
+  /* Medical Section Layouts */
+  .section-padding-medical {
+    @apply py-20 md:py-28 lg:py-32;
   }
   
-  .section-hero {
-    @apply py-20 md:py-28 lg:py-36;
+  .section-hero-medical {
+    @apply py-24 md:py-32 lg:py-40;
   }
   
-  /* Modern Badge */
-  .badge-modern {
+  /* Medical Badge */
+  .badge-medical {
     @apply inline-flex items-center rounded-full;
-    @apply px-3 py-1 text-xs font-medium;
-    @apply bg-primary-light text-primary-dark;
-    @apply border border-primary/20;
+    @apply px-4 py-2 text-sm font-medium;
+    @apply bg-brand-peach/10 text-accent-foreground;
+    @apply border border-brand-peach/20;
   }
   
-  /* Glass Effects */
-  .glass-light {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  
-  .glass-card {
+  /* Medical Glass Effects */
+  .glass-medical {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid hsl(var(--border) / 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
   
-  /* Animation Utilities */
-  .animate-fade-up {
-    animation: fade-up 0.6s ease-out;
+  /* Medical Hover Effects */
+  .hover-lift-medical {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-large;
   }
   
-  .animate-stagger-1 {
-    animation-delay: 0.1s;
-  }
-  
-  .animate-stagger-2 {
-    animation-delay: 0.2s;
-  }
-  
-  .animate-stagger-3 {
-    animation-delay: 0.3s;
-  }
-  
-  /* Hover Effects */
-  .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-large;
-  }
-  
-  .hover-glow {
+  .hover-glow-medical {
     @apply transition-all duration-300;
   }
   
-  .hover-glow:hover {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.15);
+  .hover-glow-medical:hover {
+    box-shadow: 0 0 30px hsl(var(--brand-peach) / 0.15);
     transform: translateY(-2px);
   }
   
-  /* Text Gradients */
-  .text-gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--brand-teal)));
+  /* Medical Text Gradients */
+  .text-gradient-medical {
+    background: linear-gradient(135deg, hsl(var(--foreground)), hsl(var(--brand-peach)));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   
-  .text-gradient-subtle {
-    background: linear-gradient(135deg, hsl(var(--foreground)), hsl(var(--muted-foreground)));
+  .text-gradient-peach {
+    background: linear-gradient(135deg, hsl(var(--brand-peach)), hsl(var(--accent-foreground)));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
