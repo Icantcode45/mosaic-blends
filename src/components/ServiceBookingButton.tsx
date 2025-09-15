@@ -27,8 +27,10 @@ const ServiceBookingButton = ({ serviceId, serviceName, serviceCategory }: Servi
   const specificServiceMapping: Record<string, string> = {
     'rehydrate': 'da14f4b6-22eb-4028-b9f0-d47872251a3c',
     'rehydrate-plus': '25e7732c-dab1-430c-82f6-590de5a532a2',
+    'rehydrate-deluxe': '2917c0e0-b99b-4ec1-ad28-971615c1be81',
     'd-book': '217ec4ad-46d4-43d8-97ea-8c2646187e68',
     'myers': '3c9eff1b-b933-4dfd-93c4-d7188bd9ba76',
+    'jr-myers': 'b753e0a1-13ce-4d99-88e4-027f8a35b58d',
     'arizona-detox': 'defb6545-6922-482b-8976-c1f4ef39f07a',
     'scottsdale-beauty': 'd36397a3-07ef-4e15-8468-7b54ebadf06a',
     'diamondback': '3b1b7aac-67dd-4c38-9070-7dc3bee2853b',
