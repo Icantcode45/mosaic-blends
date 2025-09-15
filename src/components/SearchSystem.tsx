@@ -20,7 +20,6 @@ const searchData: SearchResult[] = [
   { id: "vitamin-injections", title: "Vitamin Injections", type: "service", url: "/vitamin-injections", description: "Quick vitamin boosts", category: "Injections" },
   { id: "telehealth", title: "Telehealth", type: "service", url: "/telehealth", description: "Virtual consultations", category: "Digital Health" },
   { id: "products", title: "Products", type: "service", url: "/products", description: "Health supplements and products", category: "Products" },
-  { id: "interactive", title: "Interactive Showcase", type: "page", url: "/interactive", description: "Interactive wellness treatment showcase", category: "Experience" },
   
   // Pages
   { id: "first-time", title: "First-Time Patients", type: "page", url: "/first-time-patients", description: "New patient information" },

@@ -7,7 +7,6 @@ import { CartProvider } from "@/contexts/CartContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import ScrollToTop from "@/components/ScrollToTop";
-import InteractiveShowcase from "./pages/InteractiveShowcase";
 import EnhancedIndex from "./pages/EnhancedIndex";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
@@ -53,7 +52,6 @@ const App = () => (
             <main className="flex-1">
               <Routes>
                 <Route path="/" element={<EnhancedIndex />} />
-                <Route path="/interactive" element={<InteractiveShowcase />} />
                 <Route path="/auth" element={<Auth />} />
                 <Route path="/telehealth" element={<Telehealth />} />
                 <Route path="/test-kits" element={<TestKits />} />
