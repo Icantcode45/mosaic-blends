@@ -8,7 +8,7 @@
 
 @layer base {
   :root {
-    /* Clean Hims-Style Color Palette */
+    /* Clean Medical Color Palette - Inspired by Hims/Hers */
     --background: 0 0% 100%;
     --foreground: 0 0% 9%;
     
@@ -18,59 +18,60 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 9%;
     
-    /* Hims Blue Primary */
-    --primary: 220 100% 50%;
+    /* Primary - Soft Medical Blue */
+    --primary: 220 13% 18%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 220 100% 45%;
-    --primary-light: 220 100% 95%;
-    --primary-dark: 220 100% 40%;
+    --primary-hover: 220 13% 25%;
+    --primary-light: 215 25% 97%;
+    --primary-dark: 220 13% 12%;
     
-    /* Clean Gray Secondary */
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 45%;
+    /* Secondary - Ultra Clean Off-White */
+    --secondary: 210 20% 98%;
+    --secondary-foreground: 220 9% 46%;
     
-    /* Hims Orange Accent */
-    --accent: 25 95% 53%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Warm Medical Peach */
+    --accent: 25 95% 95%;
+    --accent-foreground: 24 100% 23%;
     
-    /* Neutral Clean System */
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-    --border: 0 0% 90%;
+    /* Neutral System - Medical Clean */
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 47%;
+    --border: 214 32% 91%;
     --input: 0 0% 100%;
-    --ring: 220 100% 50%;
+    --ring: 220 13% 18%;
     
-    /* Status Colors - Simple */
+    /* Status Colors - Medical Safe */
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
-    --warning: 25 95% 53%;
+    --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    /* Hims Brand Colors */
-    --brand-blue: 220 100% 50%;
-    --brand-orange: 25 95% 53%;
-    --brand-gray: 0 0% 96%;
-    --brand-border: 0 0% 90%;
+    /* Medical Brand Accents */
+    --brand-peach: 25 95% 53%;
+    --brand-sage: 142 20% 85%;
+    --brand-sky: 199 89% 85%;
+    --brand-lavender: 250 30% 85%;
     
-    /* Simple Radius */
-    --radius: 12px;
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 16px;
-    --radius-xl: 24px;
+    /* Medical Radius System */
+    --radius: 16px;
+    --radius-sm: 12px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
     
-    /* Minimal Shadows */
-    --shadow-subtle: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-    --shadow-large: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-    --shadow-extra: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    /* Ultra-Clean Medical Shadows */
+    --shadow-subtle: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -1px rgb(0 0 0 / 0.02);
+    --shadow-large: 0 10px 15px -3px rgb(0 0 0 / 0.06), 0 4px 6px -2px rgb(0 0 0 / 0.02);
+    --shadow-extra: 0 25px 50px -12px rgb(0 0 0 / 0.08);
     
-    /* Simple Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(220 100% 50%) 0%, hsl(220 100% 45%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 0% 99%) 100%);
+    /* Medical Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-hover)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--accent)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--secondary)) 100%);
+    --gradient-peach: linear-gradient(135deg, hsl(var(--brand-peach) / 0.1) 0%, hsl(var(--brand-peach) / 0.05) 100%);
     
     /* Sidebar */
     --sidebar-background: 0 0% 100%;
@@ -183,74 +184,133 @@
   }
 }
 
-  /* Hims-Style Components */
-  .hims-card {
-    @apply bg-white rounded-2xl border border-gray-100 shadow-sm p-6;
-    @apply transition-all duration-300 hover:shadow-md hover:-translate-y-1;
+@layer components {
+  /* Hims-Style Medical Button System */
+  .btn-medical {
+    @apply inline-flex items-center justify-center gap-3 rounded-full;
+    @apply px-8 py-4 text-base font-semibold transition-all duration-300;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+    @apply hover:scale-[1.02] active:scale-[0.98];
+    @apply shadow-subtle hover:shadow-medium;
   }
   
-  .hims-button {
-    @apply inline-flex items-center justify-center rounded-full font-semibold;
-    @apply px-6 py-3 text-sm transition-all duration-200;
-    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  .btn-primary-medical {
+    @apply btn-medical bg-primary text-primary-foreground;
+    @apply hover:bg-primary-hover;
+    @apply focus-visible:ring-primary/30;
   }
   
-  .hims-button-primary {
-    @apply hims-button bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500;
+  .btn-secondary-medical {
+    @apply btn-medical bg-white text-foreground border-2 border-gray-200;
+    @apply hover:bg-gray-50 hover:border-gray-300;
+    @apply hover:shadow-medium;
   }
   
-  .hims-button-secondary {
-    @apply hims-button bg-white text-gray-900 border border-gray-200;
-    @apply hover:bg-gray-50 focus:ring-gray-500;
+  .btn-outline-medical {
+    @apply btn-medical bg-transparent text-foreground;
+    @apply border-2 border-gray-200 hover:bg-white hover:border-primary/30;
+    @apply hover:shadow-subtle;
   }
   
-  .hims-input {
-    @apply w-full rounded-xl border border-gray-200 bg-white px-4 py-3;
-    @apply text-sm placeholder:text-gray-500;
-    @apply focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none;
-    @apply transition-all duration-200;
+  .btn-ghost-medical {
+    @apply btn-medical bg-transparent text-muted-foreground;
+    @apply hover:bg-gray-50 hover:text-foreground;
   }
   
-  .hims-badge {
-    @apply inline-flex items-center rounded-full px-3 py-1;
-    @apply text-xs font-medium bg-orange-100 text-orange-800;
+  /* Hims-Style Medical Card System */
+  .card-medical {
+    @apply bg-white text-card-foreground rounded-3xl;
+    @apply border border-gray-100 shadow-subtle;
+    @apply transition-all duration-300;
   }
   
-  /* Clean Product Cards */
-  .hims-product-card {
-    @apply bg-white rounded-2xl border border-gray-100 p-6;
-    @apply transition-all duration-300 hover:shadow-md hover:border-gray-200;
+  .card-hover-medical {
+    @apply card-medical hover:shadow-large hover:-translate-y-1;
+    @apply hover:border-gray-200;
   }
   
-  /* Typography */
-  .hims-h1 {
-    @apply text-4xl md:text-5xl font-bold tracking-tight text-gray-900;
+  .card-interactive-medical {
+    @apply card-hover-medical hover:shadow-extra hover:-translate-y-2;
+    @apply cursor-pointer active:scale-[0.99];
   }
   
-  .hims-h2 {
-    @apply text-3xl md:text-4xl font-bold tracking-tight text-gray-900;
+  /* Hims-Style Medical Input System */
+  .input-medical {
+    @apply w-full rounded-2xl border-2 border-gray-200;
+    @apply bg-white px-6 py-4 text-base;
+    @apply placeholder:text-gray-400;
+    @apply focus:border-primary focus:ring-0 focus:outline-none;
+    @apply transition-all duration-300;
+    @apply shadow-subtle focus:shadow-medium;
   }
   
-  .hims-h3 {
-    @apply text-xl md:text-2xl font-semibold text-gray-900;
+  /* Medical Section Layouts */
+  .section-padding-medical {
+    @apply py-20 md:py-28 lg:py-32;
   }
   
-  .hims-body {
-    @apply text-base text-gray-600 leading-relaxed;
+  .section-hero-medical {
+    @apply py-24 md:py-32 lg:py-40;
   }
   
-  .hims-caption {
-    @apply text-sm text-gray-500;
+  /* Medical Badge */
+  .badge-medical {
+    @apply inline-flex items-center rounded-full;
+    @apply px-4 py-2 text-sm font-medium;
+    @apply bg-brand-peach/10 text-accent-foreground;
+    @apply border border-brand-peach/20;
   }
   
-  /* Layout */
-  .hims-container {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  /* Medical Glass Effects */
+  .glass-medical {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
   
-  .hims-section {
-    @apply py-12 md:py-16 lg:py-20;
+  /* Medical Hover Effects */
+  .hover-lift-medical {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-large;
   }
+  
+  .hover-glow-medical {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-glow-medical:hover {
+    box-shadow: 0 0 30px hsl(var(--brand-peach) / 0.15);
+    transform: translateY(-2px);
+  }
+  
+  /* Medical Text Gradients */
+  .text-gradient-medical {
+    background: linear-gradient(135deg, hsl(var(--foreground)), hsl(var(--brand-peach)));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+  
+  .text-gradient-peach {
+    background: linear-gradient(135deg, hsl(var(--brand-peach)), hsl(var(--accent-foreground)));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+
+  .text-gradient-animated {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+}
 
 @keyframes fade-up {
   from {

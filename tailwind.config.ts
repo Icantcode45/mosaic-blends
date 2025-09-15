@@ -23,8 +23,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
-        heading: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+      sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+      heading: ["Manrope", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -33,15 +33,15 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(220 100% 50%)",
+          DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          hover: "hsl(220 100% 45%)",
-          light: "hsl(220 100% 95%)",
-          dark: "hsl(220 100% 40%)",
+          hover: "hsl(var(--primary-hover))",
+          light: "hsl(var(--primary-light))",
+          dark: "hsl(var(--primary-dark))",
         },
         secondary: {
-          DEFAULT: "hsl(0 0% 96%)",
-          foreground: "hsl(0 0% 45%)",
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -52,16 +52,16 @@ export default {
           foreground: "hsl(var(--success-foreground))",
         },
         warning: {
-          DEFAULT: "hsl(25 95% 53%)",
-          foreground: "hsl(0 0% 100%)",
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
         },
         muted: {
-          DEFAULT: "hsl(0 0% 96%)",
-          foreground: "hsl(0 0% 45%)",
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(25 95% 53%)",
-          foreground: "hsl(0 0% 100%)",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -71,12 +71,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        hims: {
-          blue: "hsl(220 100% 50%)",
-          orange: "hsl(25 95% 53%)",
-          gray: "hsl(0 0% 45%)",
-          "light-gray": "hsl(0 0% 98%)",
-          border: "hsl(0 0% 90%)",
+        brand: {
+          peach: "hsl(var(--brand-peach))",
+          sage: "hsl(var(--brand-sage))",
+          sky: "hsl(var(--brand-sky))",
+          lavender: "hsl(var(--brand-lavender))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -90,16 +89,16 @@ export default {
         },
       },
       borderRadius: {
-        xl: "24px",
-        lg: "16px", 
-        md: "12px",
-        sm: "8px",
+        xl: "var(--radius-xl)",
+        lg: "var(--radius-lg)", 
+        md: "var(--radius-md)",
+        sm: "var(--radius-sm)",
       },
       boxShadow: {
-        subtle: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
-        medium: "0 4px 6px -1px rgb(0 0 0 / 0.1)",
-        large: "0 10px 15px -3px rgb(0 0 0 / 0.1)",
-        extra: "0 20px 25px -5px rgb(0 0 0 / 0.1)",
+        subtle: "var(--shadow-subtle)",
+        medium: "var(--shadow-medium)",
+        large: "var(--shadow-large)",
+        extra: "var(--shadow-extra)",
       },
       backgroundImage: {
         "gradient-primary": "var(--gradient-primary)",

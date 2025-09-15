@@ -358,7 +358,8 @@ const Supplements = () => {
             {/* MegaSporeBiotic */}
             <article className="product-card fade-in" id="megasporebiotic">
               <div className="product-content">
-                <div className="product-header">
+                <div className="product-image">
+                  <img src="https://i.imgur.com/Nm2H0uP.png" alt="Microbiome Labs MegaSporeBiotic 60 capsules bottle" width="320" height="320" loading="lazy" />
                   <div className="product-badge">Clinically Studied</div>
                 </div>
                 <div className="product-info">
@@ -373,13 +374,13 @@ const Supplements = () => {
                       <span className="pill">Spore-based</span>
                     </div>
 
-                       <ul className="product-benefits">
-                         <li>All-spore, antioxidant-producing probiotic</li>
-                         <li>Designed to survive stomach acid</li>
-                         <li>Supports digestive and immune health</li>
-                         <li>Well-tolerated with gradual dosing</li>
-                       </ul>
-                     </div>
+                    <ul className="product-benefits">
+                      <li>Clinically studied spore-forming strains designed to survive stomach acid</li>
+                      <li>Supports digestion, microbiome diversity, and immune health</li>
+                      <li>Well-tolerated with gradual dosing protocol</li>
+                      <li>Antioxidant-producing beneficial bacteria</li>
+                    </ul>
+                  </div>
 
                   <div>
                     <div className="product-actions">
@@ -401,7 +402,8 @@ const Supplements = () => {
             {/* O.N.E. Multivitamin */}
             <article className="product-card fade-in delay-1" id="one-multivitamin">
               <div className="product-content">
-                <div className="product-header">
+                <div className="product-image">
+                  <img src="https://i.imgur.com/BmZq3b0.png" alt="Pure Encapsulations O.N.E. Multivitamin 60 capsules bottle" width="320" height="320" loading="lazy" />
                   <div className="product-badge">Once Daily</div>
                 </div>
                 <div className="product-info">
@@ -416,13 +418,13 @@ const Supplements = () => {
                       <span className="pill">With CoQ10 & methyl-B</span>
                     </div>
 
-                     <ul className="product-benefits">
-                       <li>Once-daily comprehensive multivitamin</li>
-                       <li>Methylated B-vitamins for enhanced absorption</li>
-                       <li>Zinc and selenium for immune support</li>
-                       <li>Hypoallergenic, gluten-free formula</li>
-                     </ul>
-                   </div>
+                    <ul className="product-benefits">
+                      <li>Once-daily comprehensive micronutrient formula</li>
+                      <li>Methylated B-vitamins for enhanced bioavailability</li>
+                      <li>Zinc and selenium for immune support</li>
+                      <li>Hypoallergenic, gluten-free, non-GMO formula</li>
+                    </ul>
+                  </div>
 
                   <div>
                     <div className="product-actions">
@@ -455,27 +457,22 @@ const Supplements = () => {
             {professionalProducts.filter(p => p.category === 'supplements').map((product) => (
               <div key={product.id} className="product-card">
                 <div className="product-content">
-                  <div className="product-header">
+                  <div className="product-image">
+                    <img src={product.image} alt={`${product.name} ${product.size}`} width="320" height="320" loading="lazy" />
                     {product.badges.includes("top-pick") && <div className="product-badge">Top Pick</div>}
                     {product.badges.includes("tested") && <div className="product-badge">Tested</div>}
                   </div>
                   <div className="product-info">
-                     <div>
-                       <p className="product-brand">{product.brand}</p>
-                       <h3 className="product-title">{product.name}</h3>
-                       <div className="product-price">${product.wholesalePrice.toFixed(2)}</div>
-                       
-                       <div className="product-pills">
-                         <span className="pill">{product.size}</span>
-                         <span className="pill">Professional Grade</span>
-                       </div>
-
-                       <ul className="product-benefits">
-                         <li>Professional-grade supplement</li>
-                         <li>Third-party tested for purity</li>
-                         <li>Physician-approved formulation</li>
-                       </ul>
-                     </div>
+                    <div>
+                      <p className="product-brand">{product.brand}</p>
+                      <h3 className="product-title">{product.name}</h3>
+                      <div className="product-price">${product.wholesalePrice.toFixed(2)}</div>
+                      
+                      <div className="product-pills">
+                        <span className="pill">{product.size}</span>
+                        <span className="pill">Professional Grade</span>
+                      </div>
+                    </div>
 
                     <div>
                       <div className="product-actions">
