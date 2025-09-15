@@ -40,7 +40,7 @@ const NadPeptides = () => {
       category: 'Cellular Wellness',
       duration: 'Varies by protocol',
       administration: 'Injectable peptides',
-      image_url: '/src/assets/peptides/nad-vial.png',
+      image_url: '/src/assets/peptides/nad-vial-new.png',
       benefits: [
         'May support cellular wellness pathways*',
         'Associated with recovery research*',
@@ -63,7 +63,7 @@ const NadPeptides = () => {
       category: 'Research & Recovery',
       duration: 'Brief administration (5-10 minutes)',
       administration: 'Subcutaneous administration',
-      image_url: '/src/assets/peptides/bpc157-vial.png',
+      image_url: '/src/assets/peptides/bpc157-vial-new.png',
       benefits: [
         'Research compound of interest*',
         'Studies in cellular processes*',
@@ -241,7 +241,7 @@ const NadPeptides = () => {
       category: 'Wellness Research',
       duration: 'Brief administration (5-10 minutes)',
       administration: 'Subcutaneous administration',
-      image_url: '/src/assets/peptides/pt141-vial.png',
+      image_url: '/src/assets/peptides/pt141-vial-new.png',
       benefits: [
         'Sexual wellness research*',
         'Libido enhancement studies*',
@@ -355,7 +355,7 @@ const NadPeptides = () => {
       category: 'Metabolic Research',
       duration: 'Brief administration (5-10 minutes)',
       administration: 'Subcutaneous administration',
-      image_url: '/src/assets/peptides/setmelanotide-vial.png',
+      image_url: '/src/assets/peptides/setmelanotide-vial-new.png',
       benefits: [
         'Weight management research*',
         'Appetite regulation studies*',
@@ -372,6 +372,29 @@ const NadPeptides = () => {
       frequency: 'Healthcare provider consultation required for research protocols',
       sideEffects: 'FDA-approved compound - consult healthcare provider for complete safety profile.',
       researchStatus: 'FDA-approved for specific rare conditions with ongoing research'
+    },
+    'samidorphan': {
+      name: 'Samidorphan Research',
+      category: 'Neuroscience Research',
+      duration: 'Brief administration (5-10 minutes)',
+      administration: 'Subcutaneous administration',
+      image_url: '/src/assets/peptides/samidorphan-vial-new.png',
+      benefits: [
+        'Opioid modulation research*',
+        'Addiction research studies*',
+        'Neuroplasticity research*',
+        'Reward pathway studies*',
+        'Mood regulation research*',
+        'Cognitive enhancement studies*',
+        'FDA-approved applications*',
+        'Dependency research*'
+      ],
+      description: 'Samidorphan is an FDA-approved opioid antagonist used in combination therapies for mood disorders. Research purposes only.*',
+      howItWorks: 'Research suggests interaction with opioid receptors to modulate reward pathways and enhance therapeutic outcomes.*',
+      idealFor: 'Adults interested in neuroscience research and mood disorder studies.',
+      frequency: 'Healthcare provider consultation required for research protocols',
+      sideEffects: 'FDA-approved compound - consult healthcare provider for complete safety profile.',
+      researchStatus: 'FDA-approved for specific indications with ongoing research'
     }
   };
 
