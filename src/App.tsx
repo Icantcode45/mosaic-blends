@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { CartProvider } from "@/contexts/CartContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -56,7 +56,7 @@ const App = () => (
                 <Route path="/telehealth" element={<Telehealth />} />
                 <Route path="/test-kits" element={<TestKits />} />
                 <Route path="/products" element={<Products />} />
-                <Route path="/supplements" element={<Products />} />
+                <Route path="/supplements" element={<Navigate to="/products" replace />} />
                 <Route path="/compliance" element={<Compliance />} />
                 <Route path="/good-faith-estimate" element={<GoodFaithEstimate />} />
                 <Route path="/first-time-patients" element={<FirstTimePatients />} />

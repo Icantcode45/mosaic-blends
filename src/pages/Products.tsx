@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { useCart } from "@/contexts/CartContext";
-import { useAuth } from "@/contexts/AuthContext";
+
 import { useToast } from "@/hooks/use-toast";
 import { Search, Star, Heart, ShoppingCart, Minus, Plus, X, MapPin, MoreVertical, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { Helmet } from "react-helmet";
@@ -117,7 +117,7 @@ const Supplements = () => {
   const [showCart, setShowCart] = useState(false);
   
   const { addItem, updateQuantity: updateCartQuantity, state, openCart, closeCart, getTotalItems } = useCart();
-  const { user } = useAuth();
+  
   const { toast } = useToast();
 
   useEffect(() => {
@@ -189,32 +189,20 @@ const Supplements = () => {
       return [...prev, newItem];
     });
 
-    // Also add to main cart context
-    if (user) {
-      addItem({
-        id: product.sku,
-        name: product.name,
-        description: product.brand,
-        price: parseFloat(product.price),
-        image_url: "",
-        category: "supplement",
-        stock_quantity: 100
-      });
-    }
+    addItem({
+      id: product.sku,
+      name: product.name,
+      description: product.brand,
+      price: parseFloat(product.price),
+      image_url: "",
+      category: "supplement",
+      stock_quantity: 100
+    });
 
     setShowCart(true);
   };
 
   const handleAddToCart = async (product: Product) => {
-    if (!user) {
-      toast({
-        title: "Sign in required",
-        description: "Please sign in to add items to your cart.",
-        variant: "destructive",
-      });
-      return;
-    }
-
     const quantity = getQuantity(product.id);
     const cartProduct = {
       id: product.id,
@@ -841,18 +829,13 @@ const Supplements = () => {
                     <button
                       onClick={() => handleAddToCart(product)}
                       className="add-to-cart-btn"
-                      disabled={!user}
+                      
                     >
                       <ShoppingCart className="h-4 w-4 mr-2" />
                       Add to cart
                     </button>
                   </div>
 
-                  {!user && (
-                    <p className="text-xs text-muted-foreground text-center mt-2">
-                      Sign in to add items to cart
-                    </p>
-                  )}
                 </div>
               </div>
             ))}
