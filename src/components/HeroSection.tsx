@@ -17,15 +17,15 @@ const HeroSection = () => {
                 {/* Trust Badge */}
                 <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-success rounded-full"></div>
                     <span>Licensed Providers</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-success rounded-full"></div>
                     <span>Mobile Service</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-success rounded-full"></div>
                     <span>Same Day Booking</span>
                   </div>
                 </div>
@@ -62,7 +62,7 @@ const HeroSection = () => {
               {/* Right Column - Visual */}
               <div className="relative lg:h-[500px] flex items-center justify-center">
                 <div className="relative w-full max-w-md">
-                  <div className="bg-white rounded-lg p-6 shadow-medium border border-border">
+                  <div className="bg-card rounded-lg p-6 shadow-medium border border-border">
                     <img 
                       src={heroImage} 
                       alt="Stay Dripped - Professional IV Therapy Services" 

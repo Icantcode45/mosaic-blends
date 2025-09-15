@@ -4,7 +4,7 @@ const TrustBarSection = () => {
   ];
 
   return (
-    <section className="py-10 border-y border-gray-100 bg-white">
+    <section className="py-10 border-y border-border bg-background">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center">
           {companies.map((company, index) => (

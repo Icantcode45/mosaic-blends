@@ -70,6 +70,17 @@
     --sidebar-accent-foreground: 220 9% 46%;
     --sidebar-border: 214 32% 91%;
     --sidebar-ring: 220 13% 18%;
+    
+    /* Brand Colors - Professional */
+    --brand-peach: 25 85% 75%;
+    --brand-sage: 95 25% 65%;
+    --brand-sky: 200 75% 75%;
+    --brand-lavender: 260 45% 75%;
+    
+    /* Gradients - Subtle Professional */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted) / 0.3));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted) / 0.2));
   }
 
   .dark {

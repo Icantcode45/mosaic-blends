@@ -119,8 +119,8 @@ const SearchSystem = ({ isOpen, onClose, onOpen }: SearchSystemProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/50 flex items-start justify-center pt-[10vh] animate-fade-in">
-      <div className="bg-white rounded-xl shadow-2xl w-full max-w-2xl mx-4 animate-scale-in">
+    <div className="fixed inset-0 z-50 bg-primary/50 flex items-start justify-center pt-[10vh] animate-fade-in">
+      <div className="bg-card rounded-xl shadow-2xl w-full max-w-2xl mx-4 animate-scale-in">
         {/* Search Input */}
         <div className="flex items-center gap-3 p-4 border-b">
           <Search className="h-5 w-5 text-muted-foreground" />
@@ -189,16 +189,16 @@ const SearchSystem = ({ isOpen, onClose, onOpen }: SearchSystemProps) => {
         <div className="flex items-center justify-between p-3 border-t bg-muted/30 text-xs text-muted-foreground">
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 bg-white border rounded">↑↓</kbd>
+              <kbd className="px-1.5 py-0.5 bg-muted border rounded">↑↓</kbd>
               Navigate
             </span>
             <span className="flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 bg-white border rounded">⏎</kbd>
+              <kbd className="px-1.5 py-0.5 bg-muted border rounded">⏎</kbd>
               Select
             </span>
           </div>
           <span className="flex items-center gap-1">
-            Press <kbd className="px-1.5 py-0.5 bg-white border rounded">⌘K</kbd> to search
+            Press <kbd className="px-1.5 py-0.5 bg-muted border rounded">⌘K</kbd> to search
           </span>
         </div>
       </div>

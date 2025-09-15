@@ -4,7 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-muted/20">
       <div id="book" className="hidden" aria-hidden="true"></div>
       <div className="max-w-6xl mx-auto px-4 lg:px-6">
         <div className="grid md:grid-cols-2 gap-10 items-start">
@@ -28,28 +28,28 @@ const ContactSection = () => {
           </div>
           
           {/* Right Column - Contact Form */}
-          <form className="bg-white rounded-3xl border border-gray-100 p-6 shadow-elev-1">
+          <form className="bg-card rounded-3xl border border-border p-6 shadow-medium">
             <div className="grid sm:grid-cols-2 gap-4">
               <Input 
                 placeholder="First name" 
-                className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring focus:ring-primary/20"
+                className="px-4 py-3 rounded-lg border border-border"
               />
               <Input 
                 placeholder="Last name" 
-                className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring focus:ring-primary/20"
+                className="px-4 py-3 rounded-lg border border-border"
               />
               <Input 
                 type="email" 
                 placeholder="Email" 
-                className="sm:col-span-2 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring focus:ring-primary/20"
+                className="sm:col-span-2 px-4 py-3 rounded-lg border border-border"
               />
               <Textarea 
                 rows={4} 
                 placeholder="How can we help?" 
-                className="sm:col-span-2 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring focus:ring-primary/20"
+                className="sm:col-span-2 px-4 py-3 rounded-lg border border-border"
               />
             </div>
-            <Button className="mt-4 w-full py-3.5 rounded-xl bg-black text-white hover:bg-primary transition">
+            <Button className="mt-4 w-full py-3.5 rounded-xl">
               Send
             </Button>
           </form>

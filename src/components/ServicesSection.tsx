@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="section-padding-medical bg-white">
+    <section id="services" className="section-padding-medical bg-background">
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
         <div className="space-y-8">
           <div className="space-y-4">
