@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import IntakeQWidget from "@/components/IntakeQWidget";
-import ServiceBookingButton from "@/components/ServiceBookingButton";
+import EmbeddedServiceBooking from "@/components/EmbeddedServiceBooking";
 import NADIVBagCard from "@/components/NADIVBagCard";
 
 const IVTherapy = () => {
@@ -225,6 +225,36 @@ const IVTherapy = () => {
           'Zinc',
           'Glutathione',
           'Biotin'
+        ]
+      },
+      {
+        id: 'myers',
+        name: 'Myers Cocktail IV Drip',
+        category: 'Specialty Treatments',
+        price: '$275',
+        badge: 'Classic Formula',
+        description: 'The classic Myers Cocktail formula with essential vitamins and minerals for overall wellness.',
+        features: [
+          'Vitamin B-Complex',
+          'Vitamin B12',
+          'Vitamin C',
+          'Zinc',
+          'Glutathione',
+          'Magnesium'
+        ]
+      },
+      {
+        id: 'jr-myers',
+        name: 'Jr Myers Cocktail IV Drip',
+        category: 'Specialty Treatments',
+        price: '$225',
+        badge: 'Jr Formula',
+        description: 'A lighter version of the classic Myers Cocktail, perfect for first-time patients.',
+        features: [
+          'Vitamin B-Complex',
+          'Vitamin B12',
+          'Vitamin C',
+          'Glutathione'
         ]
       }
     ],
@@ -530,7 +560,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-sky-500',
                       title: 'REHYDRATE',
                       subtitle: '',
-                      bagImage: '/lovable-uploads/e81e5847-0fe3-48b2-bee5-10a1d7b6665f.png'
+                      bagImage: '/src/assets/iv-bags/rehydrate-bag.png'
                     };
                   case 'rehydrate-plus':
                     return {
@@ -539,7 +569,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-cyan-500',
                       title: 'REHYDRATE PLUS',
                       subtitle: '',
-                      bagImage: '/lovable-uploads/63791b25-36b1-4a68-8b2b-4de6ec40c35f.png'
+                      bagImage: '/src/assets/iv-bags/rehydrate-plus-bag.png'
                     };
                   case 'jr-myers':
                     return {
@@ -548,7 +578,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-green-500',
                       title: 'JR MYERS',
                       subtitle: 'COCKTAIL',
-                      bagImage: '/lovable-uploads/535cce13-e549-426e-9562-da1e83740c9e.png'
+                      bagImage: '/src/assets/iv-bags/jr-myers-bag.png'
                     };
                   case 'myers':
                     return {
@@ -557,7 +587,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-pink-500',
                       title: 'MYERS',
                       subtitle: 'COCKTAIL',
-                      bagImage: '/lovable-uploads/5e166b5e-d73a-4a58-8f6c-b653d9ebb5b1.png'
+                      bagImage: '/src/assets/iv-bags/myers-cocktail-bag.png'
                     };
                   case 'hangover':
                     return {
@@ -566,7 +596,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-yellow-500',
                       title: 'THE DAY-AFTER',
                       subtitle: '"HANGOVER BAG"',
-                      bagImage: '/lovable-uploads/0ab0b2fc-eb5e-4c68-bc62-48374b5a46f6.png'
+                      bagImage: '/src/assets/iv-bags/hangover-bag.png'
                     };
                   case 'sun-devil':
                     return {
@@ -575,7 +605,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-red-500',
                       title: 'THE SUN DEVIL',
                       subtitle: 'ENERGY BOOST',
-                      bagImage: '/lovable-uploads/7551a773-d7e4-4584-a6e9-e6c5fdd49f50.png'
+                      bagImage: '/src/assets/iv-bags/sun-devil-bag.png'
                     };
                   case 'd-book':
                     return {
@@ -584,7 +614,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-purple-500',
                       title: 'THE D-BOOK',
                       subtitle: 'PERFORMANCE BAG',
-                      bagImage: '/lovable-uploads/a5d1ca6c-d9ad-4fe6-861d-dc838db70801.png'
+                      bagImage: '/src/assets/iv-bags/d-book-bag.png'
                     };
                   case 'scottsdale-beauty':
                     return {
@@ -593,7 +623,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-pink-500',
                       title: 'THE SCOTTSDALE',
                       subtitle: 'BEAUTY BAG',
-                      bagImage: '/src/assets/iv-bags/scottsdale-beauty-bag.jpeg'
+                      bagImage: '/src/assets/iv-bags/scottsdale-beauty-bag.png'
                     };
                   case 'arizona-detox':
                     return {
@@ -602,7 +632,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-cyan-500',
                       title: 'THE ARIZONA',
                       subtitle: 'DETOX & CLEANSE',
-                      bagImage: '/lovable-uploads/bcef40ff-face-4462-965d-5f9d26ee8403.png'
+                      bagImage: '/src/assets/iv-bags/arizona-detox-bag.png'
                      };
                    case 'nad-plain':
                      return {
@@ -721,7 +751,7 @@ const IVTherapy = () => {
                     
                     <div className="flex items-center justify-between">
                       <div className="text-2xl font-bold text-primary">{service.price}</div>
-                      <ServiceBookingButton 
+                      <EmbeddedServiceBooking 
                         serviceId={service.id} 
                         serviceName={service.name} 
                         serviceCategory={service.category}

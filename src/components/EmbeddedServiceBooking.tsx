@@ -1,0 +1,93 @@
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import IntakeQWidget from './IntakeQWidget';
+
+interface EmbeddedServiceBookingProps {
+  serviceId: string;
+  serviceName: string;
+  serviceCategory?: string;
+}
+
+const EmbeddedServiceBooking = ({ serviceId, serviceName, serviceCategory }: EmbeddedServiceBookingProps) => {
+  const [showBooking, setShowBooking] = useState(false);
+
+  // Map service categories to IntakeQ category IDs
+  const categoryMapping: Record<string, string> = {
+    'Basic Hydration': '76b7e0a3-c252-479f-982a-a841edbfdda5',
+    'Enhanced Hydration': '76b7e0a3-c252-479f-982a-a841edbfdda5', 
+    'Standard Wellness': '19872648-7926-447a-97cd-24e1e44f8579',
+    'Specialty Treatments': '314c20c9-4f5c-47f5-b58d-9e7f557598b4',
+    'Premium Therapies': '0fd23879-ea54-45f3-9b7e-204d87b3fd2c',
+    'NAD+ Therapy': 'dc59af69-156c-4431-a8a1-f9af17b4e286',
+    'Vitamin Injections': 'b9ea469d-409b-4a81-96ca-e6cc44197891'
+  };
+
+  // Map individual service IDs for specific services that have dedicated booking
+  const specificServiceMapping: Record<string, string> = {
+    'rehydrate': 'da14f4b6-22eb-4028-b9f0-d47872251a3c',
+    'rehydrate-plus': '25e7732c-dab1-430c-82f6-590de5a532a2',
+    'rehydrate-deluxe': '2917c0e0-b99b-4ec1-ad28-971615c1be81',
+    'd-book': '217ec4ad-46d4-43d8-97ea-8c2646187e68',
+    'myers': '3c9eff1b-b933-4dfd-93c4-d7188bd9ba76',
+    'jr-myers': 'b753e0a1-13ce-4d99-88e4-027f8a35b58d',
+    'arizona-detox': 'defb6545-6922-482b-8976-c1f4ef39f07a',
+    'scottsdale-beauty': 'd36397a3-07ef-4e15-8468-7b54ebadf06a',
+    'diamondback': '3b1b7aac-67dd-4c38-9070-7dc3bee2853b',
+    'sun-devil': '3eb7cfbc-d816-44d2-8b7b-f2a29860f45d',
+    'elite-nad': 'a5a2fb30-ec2a-47a4-bae9-2a8cfd603419',
+    'gold': '7b648ec1-fd96-466c-ac9e-cf1654196471',
+    'platinum': '03946263-6ef8-49ff-9953-ec3802b3d9b5',
+    'diamond-nad': 'eed73f2b-4fed-403b-88ed-4eea0cf82018'
+  };
+
+  // Use specific service ID if available, otherwise use category
+  const intakeqServiceId = specificServiceMapping[serviceId];
+  const intakeqCategoryId = serviceCategory ? categoryMapping[serviceCategory] : null;
+
+  if (showBooking) {
+    return (
+      <div className="mt-4 border-t pt-4">
+        <div className="flex items-center justify-between mb-4">
+          <h4 className="font-semibold text-foreground">Book {serviceName}</h4>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setShowBooking(false)}
+            className="text-muted-foreground hover:text-foreground"
+          >
+            ✕
+          </Button>
+        </div>
+        
+        {intakeqServiceId ? (
+          <IntakeQWidget serviceId={intakeqServiceId} />
+        ) : intakeqCategoryId ? (
+          <IntakeQWidget categoryId={intakeqCategoryId} />
+        ) : (
+          <div className="text-center py-8 bg-muted/50 rounded-lg">
+            <p className="text-muted-foreground mb-4">
+              Online booking for this service is coming soon.
+            </p>
+            <p className="text-sm text-muted-foreground mb-4">
+              Please call us to schedule your appointment:
+            </p>
+            <Button asChild>
+              <a href="tel:+1-602-688-9825">Call (602) 688-9825</a>
+            </Button>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <Button 
+      onClick={() => setShowBooking(true)}
+      className="w-full"
+    >
+      Book Now
+    </Button>
+  );
+};
+
+export default EmbeddedServiceBooking;
