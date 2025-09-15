@@ -34,7 +34,11 @@ const ServiceBookingButton = ({ serviceId, serviceName, serviceCategory }: Servi
     'arizona-detox': 'defb6545-6922-482b-8976-c1f4ef39f07a',
     'scottsdale-beauty': 'd36397a3-07ef-4e15-8468-7b54ebadf06a',
     'diamondback': '3b1b7aac-67dd-4c38-9070-7dc3bee2853b',
-    'sun-devil': '3eb7cfbc-d816-44d2-8b7b-f2a29860f45d'
+    'sun-devil': '3eb7cfbc-d816-44d2-8b7b-f2a29860f45d',
+    'elite-nad': 'a5a2fb30-ec2a-47a4-bae9-2a8cfd603419',
+    'gold-hydration': '7b648ec1-fd96-466c-ac9e-cf1654196471',
+    'platinum-hydration': '03946263-6ef8-49ff-9953-ec3802b3d9b5',
+    'diamond-nad': 'eed73f2b-4fed-403b-88ed-4eea0cf82018'
   };
 
   // Use specific service ID if available, otherwise use category
