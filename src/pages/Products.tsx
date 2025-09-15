@@ -752,14 +752,7 @@ const Supplements = () => {
                   </button>
                 </div>
 
-                {/* Product Image */}
-                <div className="product-image">
-                  <img
-                    src={product.image}
-                    alt={`${product.name} ${product.size}`}
-                    loading="lazy"
-                  />
-                </div>
+                {/* Product Image removed per request */}
 
                 {/* Product Info */}
                 <div className="product-info">

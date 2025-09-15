@@ -548,6 +548,23 @@ const NadPeptides = () => {
         </div>
       </section>
 
+      {/* Program Visuals */}
+      <section className="bg-background py-12">
+        <div className="container mx-auto px-4">
+          <h3 className="text-center text-2xl font-semibold text-foreground mb-6">Program visuals</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 items-center">
+            <img src="/src/assets/peptides/custom/graphic-1.png" alt="Peptide therapy graphic 1" loading="lazy" className="w-full h-24 object-contain" />
+            <img src="/src/assets/peptides/custom/graphic-2.png" alt="Peptide therapy graphic 2" loading="lazy" className="w-full h-24 object-contain" />
+            <img src="/src/assets/peptides/custom/graphic-3.png" alt="Peptide therapy graphic 3" loading="lazy" className="w-full h-24 object-contain" />
+            <img src="/src/assets/peptides/custom/graphic-4.png" alt="Peptide therapy graphic 4" loading="lazy" className="w-full h-24 object-contain" />
+            <img src="/src/assets/peptides/custom/graphic-5.png" alt="Peptide therapy graphic 5" loading="lazy" className="w-full h-24 object-contain" />
+            <img src="/src/assets/peptides/custom/graphic-6.png" alt="Peptide therapy graphic 6" loading="lazy" className="w-full h-24 object-contain" />
+            <img src="/src/assets/peptides/custom/graphic-7.png" alt="Peptide therapy graphic 7" loading="lazy" className="w-full h-24 object-contain" />
+            <img src="/src/assets/peptides/custom/graphic-8.png" alt="Peptide therapy graphic 8" loading="lazy" className="w-full h-24 object-contain" />
+          </div>
+        </div>
+      </section>
+
       {/* Products Section */}
       <section className="bg-muted/50 py-20">
         <div className="container mx-auto px-4">
@@ -610,6 +627,9 @@ const NadPeptides = () => {
                     <div className="absolute bottom-4 left-4 z-10 rounded-full bg-secondary/90 backdrop-blur-sm px-2 py-1 text-xs text-secondary-foreground">
                       {peptide.researchStatus.includes('FDA') ? '🔬 FDA Research' : '📊 Active Research'}
                     </div>
+                  )}
+                  {'image_url' in peptide && (peptide as any).image_url && (
+                    <img src={(peptide as any).image_url} alt={`${peptide.name} vial`} loading="lazy" className="absolute bottom-2 right-3 h-24 w-auto object-contain drop-shadow" />
                   )}
                 </div>
                 
