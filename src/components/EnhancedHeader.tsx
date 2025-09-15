@@ -14,6 +14,7 @@ const EnhancedHeader = () => {
   const [searchOpen, setSearchOpen] = useState(false);
 
   const navItems = [
+    { name: 'Client Portal', href: '/client-portal' },
     { name: 'Telehealth', href: '/telehealth' },
     { name: 'Test Kits & Panels', href: '/test-kits' },
     { name: 'Products', href: '/products' },

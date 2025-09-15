@@ -34,6 +34,7 @@ import TermsOfService from "./pages/TermsOfService";
 import Sponsorship from "@/pages/Sponsorship";
 import Newsletter from "@/pages/Newsletter";
 import Contact from "@/pages/Contact";
+import ClientPortal from "@/pages/ClientPortal";
 
 const queryClient = new QueryClient();
 
@@ -75,6 +76,7 @@ const App = () => (
                 <Route path="/sponsorship" element={<Sponsorship />} />
                 <Route path="/newsletter" element={<Newsletter />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/client-portal" element={<ClientPortal />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
