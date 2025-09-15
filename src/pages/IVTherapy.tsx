@@ -166,17 +166,18 @@ const IVTherapy = () => {
       },
       {
         id: 'diamondback',
-        name: 'The "Diamondback" Immune Booster IV Drip',
+        name: 'The "Diamondback" Immunity Boost IV Drip',
         category: 'Specialty Treatments',
         price: '$200',
         badge: 'Immunity',
         description: 'Powerful immune system support with high-dose vitamins and antioxidants.',
         features: [
-          'High-Dose Vitamin C',
-          'Zinc + Selenium',
-          'Immune Boosters',
-          'Antioxidant Protection',
-          'Cold & Flu Defense'
+          'Vitamin B-Complex',
+          'Vitamin D3',
+          'Vitamin C',
+          'Vitamin B12',
+          'Zinc',
+          'Immune System Support'
         ]
       },
       {
@@ -615,6 +616,15 @@ const IVTherapy = () => {
                       title: 'THE D-BOOK',
                       subtitle: 'PERFORMANCE BAG',
                       bagImage: '/src/assets/iv-bags/d-book-bag.png'
+                    };
+                  case 'diamondback':
+                    return {
+                      bgGradient: 'from-white to-white',
+                      titleColor: 'text-pink-900',
+                      badgeColor: 'bg-pink-500',
+                      title: 'THE DIAMONDBACK',
+                      subtitle: 'IMMUNITY BOOST',
+                      bagImage: '/src/assets/iv-bags/diamondback-bag.png'
                     };
                   case 'scottsdale-beauty':
                     return {
