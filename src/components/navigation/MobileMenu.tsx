@@ -13,7 +13,7 @@ interface MobileMenuProps {
 
 const MobileMenu = ({ isOpen, onClose, servicesMegaItems, productsMegaItems, navItems }: MobileMenuProps) => {
   const [servicesExpanded, setServicesExpanded] = useState(false);
-  const [productsExpanded, setProductsExpanded] = useState(false);
+  
 
   if (!isOpen) return null;
 
@@ -72,47 +72,6 @@ const MobileMenu = ({ isOpen, onClose, servicesMegaItems, productsMegaItems, nav
             )}
           </div>
 
-          {/* Products Expandable */}
-          <div className="space-y-2">
-            <button
-              onClick={() => setProductsExpanded(!productsExpanded)}
-              className="flex items-center justify-between w-full px-4 py-3 text-lg font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-xl transition-all"
-            >
-              <span>Products</span>
-              {productsExpanded ? (
-                <ChevronDown className="h-5 w-5" />
-              ) : (
-                <ChevronRight className="h-5 w-5" />
-              )}
-            </button>
-            
-            {productsExpanded && (
-              <div className="ml-4 space-y-2 animate-fade-in">
-                {productsMegaItems.map((category) => (
-                  <div key={category.category} className="space-y-2">
-                    <div className="px-4 py-2">
-                      <h4 className="text-sm font-semibold text-primary uppercase tracking-wide">
-                        {category.category}
-                      </h4>
-                    </div>
-                    {category.items.map((item: any) => (
-                      <Link
-                        key={item.name}
-                        to={item.href}
-                        onClick={onClose}
-                        className="block px-6 py-3 text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all"
-                      >
-                        <div className="font-medium">{item.name}</div>
-                        <div className="text-sm text-muted-foreground mt-1">
-                          {item.description}
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
 
           {/* Other Nav Items */}
           {navItems.map((item: any) => (
