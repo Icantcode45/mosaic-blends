@@ -16,7 +16,7 @@ const EnhancedHeader = () => {
   const navItems = [
     { name: 'Telehealth', href: '/telehealth' },
     { name: 'Test Kits & Panels', href: '/test-kits' },
-    { name: 'Products & Supplements', href: '/supplements' },
+    { name: 'Products', href: '/products' },
     { name: 'Membership', href: '/membership' },
     { name: 'Event Inquiry', href: '/event-inquiry' },
     { name: 'Specialty Treatments', href: '/specialty-treatments' },
@@ -53,9 +53,9 @@ const EnhancedHeader = () => {
     {
       category: "Products & Health Testing",
       items: [
-        { name: "Professional Supplements", href: "/supplements", description: "Medical-grade formulations" },
-        { name: "Probiotics & Gut Health", href: "/supplements", description: "Digestive wellness support" },
-        { name: "Vitamins & Minerals", href: "/supplements", description: "Essential nutrients" },
+        { name: "Professional Supplements", href: "/products", description: "Medical-grade formulations" },
+        { name: "Probiotics & Gut Health", href: "/products", description: "Digestive wellness support" },
+        { name: "Vitamins & Minerals", href: "/products", description: "Essential nutrients" },
         { name: "Test Kits & Lab Panels", href: "/test-kits", description: "At-home health testing" }
       ]
     }

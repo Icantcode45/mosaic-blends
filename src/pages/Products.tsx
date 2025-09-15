@@ -288,22 +288,22 @@ const Supplements = () => {
   return (
     <>
       <Helmet>
-        <title>Products & Supplements | Stay Dripped IV & Wellness Co.</title>
+        <title>Products | Stay Dripped IV & Wellness Co.</title>
         <meta name="description" content="Complete collection of professional supplements, probiotics, vitamins, specialty formulas, and health products. Medical-grade quality with practitioner guidance." />
-        <link rel="canonical" href="https://staydrippediv.com/supplements" />
+        <link rel="canonical" href="https://staydrippediv.com/products" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Products & Supplements | Stay Dripped IV & Wellness Co." />
+        <meta property="og:title" content="Products | Stay Dripped IV & Wellness Co." />
         <meta property="og:description" content="Complete collection of professional supplements, probiotics, vitamins, specialty formulas, and health products. Medical-grade quality with practitioner guidance." />
-        <meta property="og:url" content="https://staydrippediv.com/supplements" />
+        <meta property="og:url" content="https://staydrippediv.com/products" />
         
         {/* Structured Data */}
         <script type="application/ld+json">
           {`{
             "@context": "https://schema.org",
             "@type": "ItemList",
-            "url": "https://staydrippediv.com/supplements",
+            "url": "https://staydrippediv.com/products",
             "itemListElement": [
               {
                 "@type": "Product",
@@ -329,7 +329,7 @@ const Supplements = () => {
         <section className="supplements-hero">
           <div className="hero-content">
             <div className="tagline-highlight fade-in">Professional Grade</div>
-            <h1 className="hero-title fade-in delay-1">Products & Supplements Store</h1>
+            <h1 className="hero-title fade-in delay-1">Products Store</h1>
             <p className="company-subtitle fade-in delay-2">Stay Dripped IV & Wellness Co.</p>
             <p className="hero-description fade-in delay-3">
               Complete collection of physician-trusted supplements, probiotics, vitamins, specialty formulas, and professional health products. Everything you need to optimize your health journey with medical-grade quality and expert guidance.

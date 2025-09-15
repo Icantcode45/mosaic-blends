@@ -19,7 +19,7 @@ const searchData: SearchResult[] = [
   { id: "nad-peptides", title: "NAD+ & Peptides", type: "service", url: "/nad-peptides", description: "Anti-aging and cellular repair", category: "Advanced Treatments" },
   { id: "vitamin-injections", title: "Vitamin Injections", type: "service", url: "/vitamin-injections", description: "Quick vitamin boosts", category: "Injections" },
   { id: "telehealth", title: "Telehealth", type: "service", url: "/telehealth", description: "Virtual consultations", category: "Digital Health" },
-  { id: "supplements", title: "Supplements", type: "service", url: "/supplements", description: "Health supplements and products", category: "Products" },
+  { id: "products", title: "Products", type: "service", url: "/products", description: "Health supplements and products", category: "Products" },
   
   // Pages
   { id: "first-time", title: "First-Time Patients", type: "page", url: "/first-time-patients", description: "New patient information" },

@@ -14,7 +14,7 @@ import EnhancedHeader from "./components/EnhancedHeader";
 import EnhancedFooter from "./components/EnhancedFooter";
 import Telehealth from "./pages/Telehealth";
 import TestKits from "./pages/TestKits";
-import Supplements from "./pages/Supplements";
+import Products from "./pages/Products";
 import Compliance from "./pages/Compliance";
 import GoodFaithEstimate from "./pages/GoodFaithEstimate";
 import FirstTimePatients from "./pages/FirstTimePatients";
@@ -55,7 +55,8 @@ const App = () => (
                 <Route path="/auth" element={<Auth />} />
                 <Route path="/telehealth" element={<Telehealth />} />
                 <Route path="/test-kits" element={<TestKits />} />
-                <Route path="/supplements" element={<Supplements />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/supplements" element={<Products />} />
                 <Route path="/compliance" element={<Compliance />} />
                 <Route path="/good-faith-estimate" element={<GoodFaithEstimate />} />
                 <Route path="/first-time-patients" element={<FirstTimePatients />} />
