@@ -60,7 +60,7 @@ const ServicesSection = () => {
           </div>
 
           <div className="pt-8">
-            <Button asChild size="lg" variant="medical-outline">
+            <Button asChild size="lg" variant="outline">
               <Link to="/first-time-patients">View all treatments</Link>
             </Button>
           </div>

@@ -5,13 +5,10 @@ import heroImage from "@/assets/stay-dripped-hero-logo.png";
 
 const HeroSection = () => {
   return (
-    <section id="hero" className="relative overflow-hidden">
-      {/* Subtle background gradients like Hims */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50/30 to-brand-peach/10"></div>
-      
+    <section id="hero" className="relative overflow-hidden bg-background">
       <div className="relative">
-        <div className="section-hero-medical">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="section-hero-professional">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               
               {/* Left Column - Content */}
@@ -34,44 +31,42 @@ const HeroSection = () => {
                 </div>
                 
                 {/* Hero Headlines */}
-                <div className="space-y-6">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight">
-                    IV therapy
+                <div className="space-y-4">
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground tracking-tight">
+                    Professional IV therapy
                     <br />
-                    <span className="text-gradient-peach">personalized to you</span>
+                    delivered to your location
                   </h1>
-                  <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
-                    Licensed medical professionals deliver personalized IV treatments to your door. 
-                    Customized care starts here.
+                  <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
+                    Licensed medical professionals provide personalized IV treatments. 
+                    Safe, effective, and convenient healthcare.
                   </p>
                 </div>
                 
                 {/* CTAs */}
-                <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Button asChild size="lg" variant="medical" className="text-white font-bold shadow-large">
+                <div className="flex flex-col sm:flex-row gap-3 pt-4">
+                  <Button asChild size="lg" className="shadow-sm">
                     <Link to="/iv-therapy">Start consultation</Link>
                   </Button>
                   <Button 
-                    variant="medical-outline" 
-                    size="lg" 
-                    className="font-bold"
+                    variant="outline" 
+                    size="lg"
                     onClick={() => scrollToSection('services')}
                   >
-                    Explore treatments
+                    View services
                   </Button>
                 </div>
                 
               </div>
 
               {/* Right Column - Visual */}
-              <div className="relative lg:h-[600px] flex items-center justify-center animate-fade-up animate-stagger-2">
+              <div className="relative lg:h-[500px] flex items-center justify-center">
                 <div className="relative w-full max-w-md">
-                  <div className="absolute inset-0 bg-gradient-peach rounded-3xl transform rotate-3"></div>
-                  <div className="relative bg-white rounded-3xl p-8 shadow-extra">
+                  <div className="bg-white rounded-lg p-6 shadow-medium border border-border">
                     <img 
                       src={heroImage} 
-                      alt="Stay Dripped - Premier IV Therapy & Wellness Company" 
-                      className="w-full h-auto rounded-2xl"
+                      alt="Stay Dripped - Professional IV Therapy Services" 
+                      className="w-full h-auto rounded-md"
                       loading="eager"
                     />
                   </div>

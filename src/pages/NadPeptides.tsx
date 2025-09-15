@@ -425,16 +425,16 @@ const NadPeptides = () => {
           <div className="flex flex-wrap justify-center gap-6">
             <Button 
               size="xl" 
-              variant="medical"
-              className="px-10 py-5 text-lg font-bold uppercase tracking-wide shadow-2xl hover:shadow-primary/25 transform hover:scale-105 transition-all duration-300"
+              variant="default"
+              className="px-10 py-5 text-lg font-semibold"
               onClick={handleBookingAttempt}
             >
               🩺 Book Consultation (18+)
             </Button>
             <Button 
-              variant="medical-outline" 
+              variant="outline" 
               size="xl" 
-              className="px-10 py-5 text-lg font-bold uppercase tracking-wide border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/60 backdrop-blur-sm transform hover:scale-105 transition-all duration-300" 
+              className="px-10 py-5 text-lg font-semibold" 
               asChild
             >
               <Link to="/telehealth">📞 Consult Provider</Link>
@@ -512,10 +512,10 @@ const NadPeptides = () => {
             {categories.map((category) => (
               <Button
                 key={category}
-                variant={selectedCategory === category ? "medical" : "medical-outline"}
+                variant={selectedCategory === category ? "default" : "outline"}
                 size="lg"
                 onClick={() => setSelectedCategory(category)}
-                className="capitalize px-6 py-3 font-semibold transform hover:scale-110 hover:shadow-lg transition-all duration-300 border-2"
+                className="capitalize px-6 py-3 font-semibold"
               >
                 {category === 'all' ? '🔬 All Therapies' : 
                  category.replace('-', ' ').replace('&', '&')}
@@ -581,9 +581,9 @@ const NadPeptides = () => {
                   
                   <div className="flex gap-3">
                     <Button 
-                      variant="medical-outline"
+                      variant="outline"
                       size="sm" 
-                      className="flex-1 font-semibold transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
+                      className="flex-1 font-semibold"
                       onClick={() => openQuickView(key)}
                     >
                       🔍 Learn More
@@ -690,8 +690,8 @@ const NadPeptides = () => {
                   />
                   <Button 
                     size="lg" 
-                    variant="medical-outline" 
-                    className="flex-1 font-semibold transform hover:scale-105 transition-all duration-300" 
+                    variant="outline" 
+                    className="flex-1 font-semibold" 
                     asChild
                   >
                     <Link to="/telehealth">💬 Ask Provider</Link>
