@@ -326,6 +326,23 @@ const IVTherapy = () => {
           'Elite Anti-Aging Support',
           '4-6 hour treatment'
         ]
+      },
+      {
+        id: 'diamond-nad',
+        name: 'The "Diamond" NAD+ IV Drip',
+        category: 'NAD+ Therapy',
+        price: '$999',
+        badge: 'Diamond Elite',
+        description: 'Our most exclusive NAD+ therapy with premium hydration and maximum anti-aging support.',
+        features: [
+          'Diamond Premium Hydration',
+          'Maximum NAD+ Dosage',
+          'Complete Vitamin Complex',
+          'Advanced Amino Complex',
+          'Elite Antioxidant Blend',
+          'Ultimate Anti-Aging',
+          '6-8 hour treatment'
+        ]
       }
     ]
   };
@@ -608,20 +625,29 @@ const IVTherapy = () => {
                    case 'diamond-nad':
                      return {
                        bgGradient: 'from-white to-white',
-                       titleColor: 'text-indigo-900',
-                       badgeColor: 'bg-indigo-500',
+                       titleColor: 'text-teal-900',
+                       badgeColor: 'bg-teal-500',
                        title: 'THE DIAMOND',
-                       subtitle: 'NAD+',
-                       bagImage: '/src/assets/vials/nad-injection.webp'
+                       subtitle: 'NAD+ THERAPY BAG',
+                       bagImage: '/src/assets/iv-bags/diamond-nad-bag.png'
                      };
                    case 'elite-nad':
                      return {
                        bgGradient: 'from-white to-white',
+                       titleColor: 'text-slate-900',
+                       badgeColor: 'bg-slate-500',
+                       title: 'THE ELITE',
+                       subtitle: 'NAD+ THERAPY BAG',
+                       bagImage: '/src/assets/iv-bags/elite-nad-bag.png'
+                     };
+                   case 'gold':
+                     return {
+                       bgGradient: 'from-white to-white',
                        titleColor: 'text-amber-900',
                        badgeColor: 'bg-amber-500',
-                       title: 'THE ELITE',
-                       subtitle: 'NAD+ IV DRIP',
-                       bagImage: '/src/assets/vials/nad-injection.webp'
+                       title: 'THE GOLD',
+                       subtitle: 'HYDRATION & RECOVERY',
+                       bagImage: '/src/assets/iv-bags/gold-hydration-bag.png'
                      };
                    default:
                      return {
