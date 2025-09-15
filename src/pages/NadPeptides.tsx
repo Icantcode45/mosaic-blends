@@ -571,22 +571,6 @@ const NadPeptides = () => {
         </div>
       </section>
 
-      {/* Program Visuals */}
-      <section className="bg-background py-12">
-        <div className="container mx-auto px-4">
-          <h3 className="text-center text-2xl font-semibold text-foreground mb-6">Program visuals</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 items-center">
-            <img src="/src/assets/peptides/custom/graphic-1.png" alt="Peptide therapy graphic 1" loading="lazy" className="w-full h-24 object-contain" />
-            <img src="/src/assets/peptides/custom/graphic-2.png" alt="Peptide therapy graphic 2" loading="lazy" className="w-full h-24 object-contain" />
-            <img src="/src/assets/peptides/custom/graphic-3.png" alt="Peptide therapy graphic 3" loading="lazy" className="w-full h-24 object-contain" />
-            <img src="/src/assets/peptides/custom/graphic-4.png" alt="Peptide therapy graphic 4" loading="lazy" className="w-full h-24 object-contain" />
-            <img src="/src/assets/peptides/custom/graphic-5.png" alt="Peptide therapy graphic 5" loading="lazy" className="w-full h-24 object-contain" />
-            <img src="/src/assets/peptides/custom/graphic-6.png" alt="Peptide therapy graphic 6" loading="lazy" className="w-full h-24 object-contain" />
-            <img src="/src/assets/peptides/custom/graphic-7.png" alt="Peptide therapy graphic 7" loading="lazy" className="w-full h-24 object-contain" />
-            <img src="/src/assets/peptides/custom/graphic-8.png" alt="Peptide therapy graphic 8" loading="lazy" className="w-full h-24 object-contain" />
-          </div>
-        </div>
-      </section>
 
       {/* Products Section */}
       <section className="bg-muted/50 py-20">
@@ -640,19 +624,38 @@ const NadPeptides = () => {
               <div key={key} className="group relative overflow-hidden rounded-2xl bg-card shadow-lg border transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                 
-                <div className="h-48 bg-gradient-to-br from-slate-700 to-slate-800 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center opacity-30 group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                {/* Enhanced peptide vial display */}
+                <div className="h-64 bg-gradient-to-br from-slate-50 to-slate-100 relative overflow-hidden flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
+                  
+                  {/* Category badge */}
                   <div className="absolute top-4 right-4 z-10 rounded-full bg-primary/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary-foreground">
                     {peptide.category}
                   </div>
+                  
+                  {/* Research status badge */}
                   {peptide.researchStatus && (
-                    <div className="absolute bottom-4 left-4 z-10 rounded-full bg-secondary/90 backdrop-blur-sm px-2 py-1 text-xs text-secondary-foreground">
+                    <div className="absolute top-4 left-4 z-10 rounded-full bg-secondary/90 backdrop-blur-sm px-2 py-1 text-xs text-secondary-foreground">
                       {peptide.researchStatus.includes('FDA') ? '🔬 FDA Research' : '📊 Active Research'}
                     </div>
                   )}
-                  {'image_url' in peptide && (peptide as any).image_url && (
-                    <img src={(peptide as any).image_url} alt={`${peptide.name} vial`} loading="lazy" className="absolute bottom-2 right-3 h-24 w-auto object-contain drop-shadow" />
+                  
+                  {/* Centered vial image */}
+                  {'image_url' in peptide && (peptide as any).image_url ? (
+                    <div className="flex items-center justify-center w-full h-full p-8">
+                      <img 
+                        src={(peptide as any).image_url} 
+                        alt={`${peptide.name} vial`} 
+                        loading="lazy" 
+                        className="h-full max-h-48 w-auto object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-300" 
+                      />
+                    </div>
+                  ) : (
+                    <div className="flex items-center justify-center w-full h-full">
+                      <div className="w-24 h-32 bg-gradient-to-b from-slate-300 to-slate-400 rounded-lg shadow-lg flex items-center justify-center">
+                        <span className="text-3xl">🧪</span>
+                      </div>
+                    </div>
                   )}
                 </div>
                 
