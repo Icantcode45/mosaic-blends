@@ -56,7 +56,7 @@ const Newsletter = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl"><img src="/lovable-uploads/bcef40ff-face-4462-965d-5f9d26ee8403.png" alt="" className="w-8 h-8" /></span>
+                <span className="text-2xl">📧</span>
               </div>
               <h3 className="text-xl font-semibold mb-2 text-foreground">Weekly Wellness Tips</h3>
               <p className="text-muted-foreground">Expert advice on nutrition, wellness, and healthy living delivered weekly.</p>
@@ -64,7 +64,7 @@ const Newsletter = () => {
             
             <div className="text-center">
               <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl"><img src="/lovable-uploads/2bf8cace-459c-4234-809a-23f96c9ffbcb.png" alt="" className="w-8 h-8" /></span>
+                <span className="text-2xl">🎯</span>
               </div>
               <h3 className="text-xl font-semibold mb-2 text-foreground">Exclusive Offers</h3>
               <p className="text-muted-foreground">Be the first to know about special promotions and member-only discounts.</p>
@@ -72,7 +72,7 @@ const Newsletter = () => {
             
             <div className="text-center">
               <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl"><img src="/lovable-uploads/e81e5847-0fe3-48b2-bee5-10a1d7b6665f.png" alt="" className="w-8 h-8" /></span>
+                <span className="text-2xl">🚀</span>
               </div>
               <h3 className="text-xl font-semibold mb-2 text-foreground">New Treatment Updates</h3>
               <p className="text-muted-foreground">Stay informed about the latest IV therapy and wellness treatments we offer.</p>

@@ -31,7 +31,7 @@ const PeptideBookingButton = ({ peptideName, peptideCategory }: PeptideBookingBu
           size="sm"
           className="font-semibold transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
         >
-          <img src="/lovable-uploads/1fac1b4b-2289-4274-b058-98ac68b44e03.png" alt="" className="w-5 h-5 inline mr-2" />Schedule
+          📅 Schedule
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">

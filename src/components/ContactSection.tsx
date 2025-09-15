@@ -19,11 +19,11 @@ const ContactSection = () => {
             </p>
             
             <div className="space-y-2 text-foreground">
-              <p><img src="/lovable-uploads/700619f7-edd4-438b-bb29-f64a257fbd87.png" alt="" className="w-5 h-5 inline mr-2" />Scottsdale, AZ</p>
+              <p>📍 Scottsdale, AZ</p>
               <p>
-                <img src="/lovable-uploads/bcef40ff-face-4462-965d-5f9d26ee8403.png" alt="" className="w-5 h-5 inline mr-2" /> <a className="underline hover:text-primary transition-colors" href="mailto:help@staydripped.co">help@staydripped.co</a>
+                ✉️ <a className="underline hover:text-primary transition-colors" href="mailto:help@staydripped.co">help@staydripped.co</a>
               </p>
-              <p><img src="/lovable-uploads/7b84226a-c816-411c-9f4e-373be221089d.png" alt="" className="w-5 h-5 inline mr-2" />(888) 555-0199</p>
+              <p>📞 (888) 555-0199</p>
             </div>
           </div>
           

@@ -8,7 +8,7 @@ const EnhancedServicesSection = () => {
     {
       title: "IV Therapy Treatments",
       description: "Physician-supervised intravenous nutrient therapy and hydration treatments",
-      icon: "/lovable-uploads/5e166b5e-d73a-4a58-8f6c-b653d9ebb5b1.png",
+      icon: "💧",
       bgColor: "bg-blue-50",
       iconBg: "bg-blue-100",
       services: [
@@ -38,7 +38,7 @@ const EnhancedServicesSection = () => {
     {
       title: "Injectable Vitamin Therapies",
       description: "Targeted vitamin and nutrient injections administered by healthcare professionals",
-      icon: "/lovable-uploads/ab3d275e-f410-4e17-a882-c49f89b1c4d2.png",
+      icon: "💉",
       bgColor: "bg-green-50",
       iconBg: "bg-green-100",
       services: [
@@ -68,7 +68,7 @@ const EnhancedServicesSection = () => {
     {
       title: "Physician-Supervised Peptide Programs",
       description: "Prescription-based peptide programs available after telehealth evaluation and medical approval",
-      icon: "/lovable-uploads/a0611a04-5ce8-48f5-af4b-e3dd5916fcf5.png",
+      icon: "🧬",
       bgColor: "bg-purple-50",
       iconBg: "bg-purple-100",
       compliance: "All peptide programs require physician prescription and are not for unsupervised use",
@@ -99,7 +99,7 @@ const EnhancedServicesSection = () => {
     {
       title: "Membership Plans",
       description: "Comprehensive wellness programs with ongoing medical supervision and support",
-      icon: "/lovable-uploads/335fb85f-581d-43bb-9dab-00583c6b2e9e.png",
+      icon: "⭐",
       bgColor: "bg-amber-50",
       iconBg: "bg-amber-100",
       services: [
@@ -129,7 +129,7 @@ const EnhancedServicesSection = () => {
     {
       title: "Telehealth Services",
       description: "Virtual consultations with board-certified healthcare providers",
-      icon: "/lovable-uploads/7b84226a-c816-411c-9f4e-373be221089d.png",
+      icon: "📱",
       bgColor: "bg-teal-50",
       iconBg: "bg-teal-100",
       services: [
@@ -159,7 +159,7 @@ const EnhancedServicesSection = () => {
     {
       title: "Mobile Testing & Labs",
       description: "Convenient at-home collection and comprehensive health assessments",
-      icon: "/lovable-uploads/6ffc838e-d9fd-4897-bac2-cfcdc2fb1373.png",
+      icon: "🔬",
       bgColor: "bg-rose-50",
       iconBg: "bg-rose-100", 
       services: [
@@ -207,8 +207,8 @@ const EnhancedServicesSection = () => {
           {serviceCategories.map((category, index) => (
             <Card key={index} className={`${category.bgColor} border-0 p-8 hover:shadow-xl transition-all duration-300`}>
               <div className="flex items-start gap-4 mb-6">
-                <div className={`w-16 h-16 rounded-2xl ${category.iconBg} flex items-center justify-center flex-shrink-0`}>
-                  <img src={category.icon} alt="" className="w-10 h-10 object-contain" />
+                <div className={`w-16 h-16 rounded-2xl ${category.iconBg} flex items-center justify-center text-2xl flex-shrink-0`}>
+                  {category.icon}
                 </div>
                 <div>
                   <h3 className="font-heading text-2xl font-bold mb-2">{category.title}</h3>

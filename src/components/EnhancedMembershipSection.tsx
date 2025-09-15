@@ -80,12 +80,12 @@ const EnhancedMembershipSection = () => {
 
   const additionalBenefits = [
     {
-      icon: "/lovable-uploads/2bf8cace-459c-4234-809a-23f96c9ffbcb.png",
+      icon: "🎯",
       title: "Personalized Care Plans",
       description: "Customized wellness protocols based on your health goals and lifestyle"
     },
     {
-      icon: "/lovable-uploads/7b84226a-c816-411c-9f4e-373be221089d.png",
+      icon: "📱",
       title: "Mobile App Access",
       description: "Track treatments, book appointments, and monitor your wellness journey"
     },
@@ -95,7 +95,7 @@ const EnhancedMembershipSection = () => {
       description: "Premium members enjoy white-glove service and priority scheduling"
     },
     {
-      icon: "/lovable-uploads/f9b4e15f-3ba4-492d-9673-b9dd33979fbd.png",
+      icon: "💊",
       title: "Supplement Protocols",
       description: "Physician-designed supplement plans delivered to your door"
     }

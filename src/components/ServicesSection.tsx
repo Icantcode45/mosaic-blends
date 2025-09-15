@@ -21,25 +21,25 @@ const ServicesSection = () => {
               {
                 title: "IV Hydration",
                 description: "Rapid hydration and recovery",
-                icon: "/lovable-uploads/5e166b5e-d73a-4a58-8f6c-b653d9ebb5b1.png",
+                icon: "💧",
                 href: "/iv-therapy"
               },
               {
                 title: "Vitamin Injections", 
                 description: "Quick nutrient boost",
-                icon: "/lovable-uploads/ab3d275e-f410-4e17-a882-c49f89b1c4d2.png",
+                icon: "💉",
                 href: "/vitamin-injections"
               },
               {
                 title: "NAD+ Therapy",
                 description: "Cellular support and longevity",
-                icon: "/lovable-uploads/a0611a04-5ce8-48f5-af4b-e3dd5916fcf5.png",
+                icon: "🧬",
                 href: "/nad-peptides"
               },
               {
                 title: "Mobile Testing",
                 description: "Lab work at your location",
-                icon: "/lovable-uploads/6ffc838e-d9fd-4897-bac2-cfcdc2fb1373.png",
+                icon: "🔬",
                 href: "/mobile-testing-kits"
               }
             ].map((service, index) => (
@@ -48,9 +48,7 @@ const ServicesSection = () => {
                 to={service.href}
                 className="card-medical p-8 text-center hover-lift-medical group"
               >
-                <div className="mb-4">
-                  <img src={service.icon} alt="" className="w-12 h-12 mx-auto object-contain" />
-                </div>
+                <div className="text-4xl mb-4">{service.icon}</div>
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                   {service.title}
                 </h3>
