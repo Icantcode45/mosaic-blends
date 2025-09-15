@@ -18,12 +18,12 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 11%;
     
-    /* Primary - Professional Dark */
-    --primary: 0 0% 11%;
+    /* Primary - Stay Dripped Brand Blue */
+    --primary: 210 100% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 0 0% 20%;
-    --primary-light: 0 0% 96%;
-    --primary-dark: 0 0% 6%;
+    --primary-hover: 210 100% 40%;
+    --primary-light: 210 100% 96%;
+    --primary-dark: 210 100% 35%;
     
     /* Secondary - Clean Gray */
     --secondary: 0 0% 96%;
@@ -71,16 +71,20 @@
     --sidebar-border: 214 32% 91%;
     --sidebar-ring: 220 13% 18%;
     
-    /* Brand Colors - Professional */
-    --brand-peach: 25 85% 75%;
-    --brand-sage: 95 25% 65%;
-    --brand-sky: 200 75% 75%;
-    --brand-lavender: 260 45% 75%;
+    /* Stay Dripped Brand Colors */
+    --brand-orange: 25 100% 60%;
+    --brand-blue: 210 100% 45%;
+    --brand-teal: 185 84% 44%;
+    --brand-purple: 260 60% 65%;
+    --brand-success: 142 76% 45%;
+    --brand-warning: 38 92% 55%;
     
-    /* Gradients - Subtle Professional */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted) / 0.3));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted) / 0.2));
+    /* Premium Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--brand-teal)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.05), hsl(var(--brand-teal) / 0.05));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--primary) / 0.02));
+    --gradient-orange: linear-gradient(135deg, hsl(var(--brand-orange)), hsl(25 100% 70%));
+    --gradient-success: linear-gradient(135deg, hsl(var(--brand-success)), hsl(142 76% 50%));
   }
 
   .dark {
