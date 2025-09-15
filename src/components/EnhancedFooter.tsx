@@ -109,7 +109,7 @@ const EnhancedFooter = () => {
             {/* Contact Info */}
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-3">
-                <span>📞</span>
+                <img src="/lovable-uploads/7b84226a-c816-411c-9f4e-373be221089d.png" alt="" className="w-5 h-5" />
                 <div>
                   <a href="tel:+1-602-688-9825" className="hover:opacity-100 transition-opacity">
                     (602) 688-9825
@@ -118,7 +118,7 @@ const EnhancedFooter = () => {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <span>📧</span>
+                <img src="/lovable-uploads/bcef40ff-face-4462-965d-5f9d26ee8403.png" alt="" className="w-5 h-5" />
                 <div>
                   <a href="mailto:info@staydrippediv.com" className="hover:opacity-100 transition-opacity">
                     info@staydrippediv.com
@@ -270,7 +270,7 @@ const EnhancedFooter = () => {
                 className="bg-primary text-primary-foreground hover:bg-primary/90"
                 asChild
               >
-                <Link to="/first-time-patients">Book Now 📧</Link>
+                <Link to="/first-time-patients">Book Now <img src="/lovable-uploads/bcef40ff-face-4462-965d-5f9d26ee8403.png" alt="" className="w-4 h-4 inline ml-1" /></Link>
               </Button>
             </div>
           </div>

@@ -78,7 +78,7 @@ const ComplianceDisclaimers = () => {
             {/* Payment Processing */}
             <div className="bg-white rounded-lg p-6 border border-yellow-300 shadow-sm">
               <div className="flex items-start gap-3">
-                <span className="text-2xl">💳</span>
+                <span className="text-2xl"><img src="/lovable-uploads/ed8aafa4-26e1-49c7-b39e-ba28edd0824c.png" alt="" className="w-8 h-8" /></span>
                 <div>
                   <h4 className="font-semibold text-gray-800 mb-2">High-Risk Processing</h4>
                   <p className="text-sm text-gray-700 leading-relaxed">
@@ -92,7 +92,7 @@ const ComplianceDisclaimers = () => {
             {/* Research Status */}
             <div className="bg-white rounded-lg p-6 border border-yellow-300 shadow-sm">
               <div className="flex items-start gap-3">
-                <span className="text-2xl">🔬</span>
+                <span className="text-2xl"><img src="/lovable-uploads/6ffc838e-d9fd-4897-bac2-cfcdc2fb1373.png" alt="" className="w-8 h-8" /></span>
                 <div>
                   <h4 className="font-semibold text-gray-800 mb-2">Research Status</h4>
                   <p className="text-sm text-gray-700 leading-relaxed">

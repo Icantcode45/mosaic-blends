@@ -18,21 +18,21 @@ const TeamSection = () => {
         role: "Lead RN", 
         name: "Alex Johnson, RN",
         description: "Mobile IV specialist",
-        avatar: "💉",
+        avatar: "/lovable-uploads/ab3d275e-f410-4e17-a882-c49f89b1c4d2.png",
         gradient: "from-green-400 to-blue-500"
       },
       {
         role: "Nutritionist",
         name: "Sarah Chen, RDN", 
         description: "Personalized plans",
-        avatar: "🥗",
+        avatar: "/lovable-uploads/ffa52aa5-4204-44f6-9e66-1c8e6618f6f8.png",
         gradient: "from-pink-400 to-red-500"
       },
       {
         role: "Concierge",
         name: "Maya Patel",
         description: "Scheduling & support",
-        avatar: "📅",
+        avatar: "/lovable-uploads/1fac1b4b-2289-4274-b058-98ac68b44e03.png",
         gradient: "from-yellow-400 to-orange-500"
       }
     ],
@@ -42,7 +42,7 @@ const TeamSection = () => {
         role: "Customer Support",
         name: "Emma Wilson",
         description: "Always here to help",
-        avatar: "🎧",
+        avatar: "/lovable-uploads/7b84226a-c816-411c-9f4e-373be221089d.png",
         gradient: "from-teal-400 to-cyan-500"
       },
       {
@@ -80,7 +80,7 @@ const TeamSection = () => {
         role: "Research Specialist",
         name: "Anna Taylor, PhD",
         description: "Exploring new frontiers",
-        avatar: "🔬",
+        avatar: "/lovable-uploads/6ffc838e-d9fd-4897-bac2-cfcdc2fb1373.png",
         gradient: "from-violet-400 to-indigo-500"
       },
       {
@@ -139,7 +139,11 @@ const TeamSection = () => {
                       {/* Content */}
                       <div className="py-8 px-6 text-center">
                         <div className={`w-24 h-24 bg-gradient-to-br ${member.gradient} rounded-full mx-auto mb-4 flex items-center justify-center text-3xl shadow-lg`}>
-                          {member.avatar}
+                          {member.avatar.startsWith('/') ? (
+                            <img src={member.avatar} alt="" className="w-12 h-12 object-contain" />
+                          ) : (
+                            member.avatar
+                          )}
                         </div>
                         <p className="text-neutral-800 font-semibold text-lg mb-1">{member.name}</p>
                         <p className="text-neutral-600 text-sm">{member.description}</p>

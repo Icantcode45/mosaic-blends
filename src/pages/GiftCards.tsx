@@ -36,19 +36,19 @@ const GiftCards = () => {
       title: "Starter Package",
       amount: "$150",
       description: "Perfect for a single IV therapy session or vitamin injection treatment.",
-      icon: "🎁"
+      icon: "/lovable-uploads/8c4a3599-d5d5-4493-83f7-d4058876e25d.png"
     },
     {
       title: "Wellness Package", 
       amount: "$300",
       description: "Ideal for multiple treatments or premium IV therapy packages.",
-      icon: "💎"
+      icon: "/lovable-uploads/de47d2cc-68dc-4581-a47c-598a75979cbe.png"
     },
     {
       title: "Ultimate Experience",
       amount: "$500", 
       description: "The complete wellness experience with advanced treatments and NAD+ therapy.",
-      icon: "✨"
+      icon: "/lovable-uploads/335fb85f-581d-43bb-9dab-00583c6b2e9e.png"
     }
   ];
 
@@ -107,7 +107,7 @@ const GiftCards = () => {
           </p>
           <Button size="lg" className="bg-accent hover:bg-accent/90 px-8 py-4 text-lg font-semibold" 
             onClick={() => document.getElementById('gift-cards')?.scrollIntoView({ behavior: 'smooth' })}>
-              🎁 Shop Gift Cards
+              <img src="/lovable-uploads/8c4a3599-d5d5-4493-83f7-d4058876e25d.png" alt="" className="w-5 h-5 inline mr-2" />Shop Gift Cards
             </Button>
         </div>
       </section>
@@ -281,7 +281,7 @@ const GiftCards = () => {
                     size="lg" 
                     className="w-full bg-accent hover:bg-accent/90 py-4 text-lg font-semibold"
                   >
-                    🎁 Create Custom Gift Card
+                    <img src="/lovable-uploads/8c4a3599-d5d5-4493-83f7-d4058876e25d.png" alt="" className="w-5 h-5 inline mr-2" />Create Custom Gift Card
                   </Button>
                 </form>
               </CardContent>

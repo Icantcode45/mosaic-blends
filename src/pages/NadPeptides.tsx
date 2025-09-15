@@ -320,7 +320,7 @@ const NadPeptides = () => {
       description: "Research compounds selected based on published scientific literature and ongoing clinical research studies.*"
     },
     {
-      icon: "🎯",
+      icon: "/lovable-uploads/2bf8cace-459c-4234-809a-23f96c9ffbcb.png",
       title: "Personalized Research",
       description: "Individual consultation to determine appropriate research compounds based on health goals and medical history.*"
     }
@@ -429,7 +429,7 @@ const NadPeptides = () => {
               className="px-10 py-5 text-lg font-bold uppercase tracking-wide shadow-2xl hover:shadow-primary/25 transform hover:scale-105 transition-all duration-300"
               onClick={handleBookingAttempt}
             >
-              🩺 Book Consultation (18+)
+              <img src="/lovable-uploads/6ffc838e-d9fd-4897-bac2-cfcdc2fb1373.png" alt="" className="w-5 h-5 inline mr-2" />Book Consultation (18+)
             </Button>
             <Button 
               variant="medical-outline" 
@@ -437,7 +437,7 @@ const NadPeptides = () => {
               className="px-10 py-5 text-lg font-bold uppercase tracking-wide border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/60 backdrop-blur-sm transform hover:scale-105 transition-all duration-300" 
               asChild
             >
-              <Link to="/telehealth">📞 Consult Provider</Link>
+              <Link to="/telehealth"><img src="/lovable-uploads/7b84226a-c816-411c-9f4e-373be221089d.png" alt="" className="w-5 h-5 inline mr-2" />Consult Provider</Link>
             </Button>
           </div>
           <div className="mt-8 text-sm opacity-75">
@@ -517,7 +517,12 @@ const NadPeptides = () => {
                 onClick={() => setSelectedCategory(category)}
                 className="capitalize px-6 py-3 font-semibold transform hover:scale-110 hover:shadow-lg transition-all duration-300 border-2"
               >
-                {category === 'all' ? '🔬 All Therapies' : 
+                {category === 'all' ? (
+                  <span className="flex items-center gap-2">
+                    <img src="/lovable-uploads/6ffc838e-d9fd-4897-bac2-cfcdc2fb1373.png" alt="" className="w-5 h-5" />
+                    All Therapies
+                  </span>
+                ) : 
                  category.replace('-', ' ').replace('&', '&')}
               </Button>
             ))}
@@ -551,18 +556,25 @@ const NadPeptides = () => {
                   
                   <div className="mb-4 space-y-2">
                     <div className="flex items-center gap-2 text-sm">
-                      <span className="font-semibold text-primary">⏱️ Duration:</span>
+                      <span className="font-semibold text-primary flex items-center gap-2">
+                        <img src="/lovable-uploads/1fac1b4b-2289-4274-b058-98ac68b44e03.png" alt="" className="w-4 h-4" />
+                        Duration:
+                      </span>
                       <span className="text-muted-foreground">{peptide.duration}</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm">
-                      <span className="font-semibold text-primary">💉 Method:</span>
+                      <span className="font-semibold text-primary flex items-center gap-2">
+                        <img src="/lovable-uploads/ab3d275e-f410-4e17-a882-c49f89b1c4d2.png" alt="" className="w-4 h-4" />
+                        Method:
+                      </span>
                       <span className="text-muted-foreground">{peptide.administration}</span>
                     </div>
                   </div>
                   
                   <div className="mb-6">
                     <span className="font-semibold text-primary text-sm flex items-center gap-1 mb-2">
-                      🔬 Research Applications*:
+                      <img src="/lovable-uploads/6ffc838e-d9fd-4897-bac2-cfcdc2fb1373.png" alt="" className="w-4 h-4" />
+                      Research Applications*:
                     </span>
                     <ul className="space-y-1">
                       {peptide.benefits.slice(0, 4).map((benefit, index) => (

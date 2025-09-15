@@ -52,19 +52,19 @@ const PaymentCompliance = ({ onProceedToPayment, showFullDisclosure = true }: Pa
             <h4 className="font-semibold text-gray-800 mb-3">Accepted Payment Methods</h4>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               <div className="text-center p-3 bg-gray-50 rounded">
-                <span className="text-2xl block mb-1">💳</span>
+                <span className="text-2xl block mb-1"><img src="/lovable-uploads/ed8aafa4-26e1-49c7-b39e-ba28edd0824c.png" alt="" className="w-8 h-8 mx-auto" /></span>
                 <span className="text-xs text-gray-600">Credit Cards</span>
               </div>
               <div className="text-center p-3 bg-gray-50 rounded">
-                <span className="text-2xl block mb-1">🏦</span>
+                <span className="text-2xl block mb-1"><img src="/lovable-uploads/63791b25-36b1-4a68-8b2b-4de6ec40c35f.png" alt="" className="w-8 h-8 mx-auto" /></span>
                 <span className="text-xs text-gray-600">ACH Transfer</span>
               </div>
               <div className="text-center p-3 bg-gray-50 rounded">
-                <span className="text-2xl block mb-1">💰</span>
+                <span className="text-2xl block mb-1"><img src="/lovable-uploads/f118b4cb-2d58-44d5-b19a-4aae6422477b.png" alt="" className="w-8 h-8 mx-auto" /></span>
                 <span className="text-xs text-gray-600">HSA/FSA</span>
               </div>
               <div className="text-center p-3 bg-gray-50 rounded">
-                <span className="text-2xl block mb-1">💵</span>
+                <span className="text-2xl block mb-1"><img src="/lovable-uploads/f118b4cb-2d58-44d5-b19a-4aae6422477b.png" alt="" className="w-8 h-8 mx-auto" /></span>
                 <span className="text-xs text-gray-600">Cash/Check</span>
               </div>
             </div>

@@ -114,7 +114,7 @@ const GoodFaithEstimate = () => {
           <div className="bg-white rounded-2xl p-8 mb-8 shadow-lg border">
             <h2 className="flex items-center gap-3 text-2xl font-bold text-foreground mb-6">
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white text-sm">
-                💰
+                <img src="/lovable-uploads/f118b4cb-2d58-44d5-b19a-4aae6422477b.png" alt="" className="w-6 h-6" />
               </div>
               Your Right to a Good Faith Estimate
             </h2>
@@ -125,7 +125,7 @@ const GoodFaithEstimate = () => {
 
             <div className="bg-yellow-50 border-2 border-yellow-400 rounded-xl p-5 mb-6">
               <h3 className="text-yellow-800 font-semibold mb-2 flex items-center gap-2">
-                ⚡ Important Information
+                <img src="/lovable-uploads/a2316986-ad33-4422-b338-f02dcd158a69.png" alt="" className="w-5 h-5 inline mr-1" /> Important Information
               </h3>
               <p className="text-yellow-700">
                 A Good Faith Estimate shows the costs of items and services that are reasonably expected for your healthcare needs. The estimate is based on information known at the time the estimate was created.
