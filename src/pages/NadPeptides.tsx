@@ -40,6 +40,7 @@ const NadPeptides = () => {
       category: 'Cellular Wellness',
       duration: 'Varies by protocol',
       administration: 'Injectable peptides',
+      image_url: '/src/assets/peptides/nad-vial.png',
       benefits: [
         'May support cellular wellness pathways*',
         'Associated with recovery research*',
@@ -62,6 +63,7 @@ const NadPeptides = () => {
       category: 'Research & Recovery',
       duration: 'Brief administration (5-10 minutes)',
       administration: 'Subcutaneous administration',
+      image_url: '/src/assets/peptides/bpc157-vial.png',
       benefits: [
         'Research compound of interest*',
         'Studies in cellular processes*',
@@ -239,6 +241,7 @@ const NadPeptides = () => {
       category: 'Wellness Research',
       duration: 'Brief administration (5-10 minutes)',
       administration: 'Subcutaneous administration',
+      image_url: '/src/assets/peptides/pt141-vial.png',
       benefits: [
         'Sexual wellness research*',
         'Libido enhancement studies*',
@@ -300,6 +303,75 @@ const NadPeptides = () => {
       frequency: 'Daily administration - healthcare provider supervision required',
       sideEffects: 'FDA-approved with established profile - possible nausea, gastrointestinal effects, consult healthcare provider.',
       researchStatus: 'FDA-approved for weight management with extensive clinical data'
+    },
+    'ghk-cu': {
+      name: 'GHK-Cu (Copper Tripeptide)',
+      category: 'Cosmetic Research',
+      duration: 'Brief administration (5-10 minutes)',
+      administration: 'Subcutaneous administration',
+      image_url: '/src/assets/peptides/ghk-cu-vial.png',
+      benefits: [
+        'Skin wellness research*',
+        'Collagen production studies*',
+        'Wound healing research*',
+        'Anti-aging studies*',
+        'Hair growth research*',
+        'Tissue repair studies*',
+        'Copper peptide research*',
+        'Cosmetic applications*'
+      ],
+      description: 'GHK-Cu is a copper tripeptide studied for skin wellness and anti-aging applications. Research purposes only.*',
+      howItWorks: 'Research suggests potential interaction with copper metabolism and collagen synthesis pathways.*',
+      idealFor: 'Adults interested in cosmetic research and skin wellness education.',
+      frequency: 'Healthcare provider consultation required for research protocols',
+      sideEffects: 'Research compound - possible skin irritation, consult healthcare provider.',
+      researchStatus: 'Ongoing research in cosmetic and dermatological applications'
+    },
+    'epitalon': {
+      name: 'Epitalon Peptide',
+      category: 'Longevity Research',
+      duration: 'Brief administration (5-10 minutes)',
+      administration: 'Subcutaneous administration',
+      image_url: '/src/assets/peptides/epitalon-vial.png',
+      benefits: [
+        'Longevity research*',
+        'Telomerase studies*',
+        'Sleep quality research*',
+        'Circadian rhythm studies*',
+        'Anti-aging research*',
+        'Cellular health studies*',
+        'Melatonin production research*',
+        'Pineal gland studies*'
+      ],
+      description: 'Epitalon is a research peptide studied for longevity and anti-aging applications. Research purposes only.*',
+      howItWorks: 'Research suggests potential interaction with telomerase activity and pineal gland function.*',
+      idealFor: 'Adults interested in longevity research and anti-aging studies.',
+      frequency: 'Healthcare provider consultation required for research protocols',
+      sideEffects: 'Research compound - generally well-tolerated in studies, consult healthcare provider.',
+      researchStatus: 'Ongoing research in longevity and anti-aging applications'
+    },
+    'setmelanotide': {
+      name: 'Setmelanotide Research',
+      category: 'Metabolic Research',
+      duration: 'Brief administration (5-10 minutes)',
+      administration: 'Subcutaneous administration',
+      image_url: '/src/assets/peptides/setmelanotide-vial.png',
+      benefits: [
+        'Weight management research*',
+        'Appetite regulation studies*',
+        'Metabolic pathway research*',
+        'Melanocortin receptor studies*',
+        'Obesity research*',
+        'Hunger signaling studies*',
+        'FDA-approved applications*',
+        'Rare disease research*'
+      ],
+      description: 'Setmelanotide is an FDA-approved peptide for rare genetic disorders affecting weight regulation. Research purposes only.*',
+      howItWorks: 'Research suggests interaction with melanocortin-4 receptors in appetite and weight regulation pathways.*',
+      idealFor: 'Adults interested in metabolic research and weight regulation studies.',
+      frequency: 'Healthcare provider consultation required for research protocols',
+      sideEffects: 'FDA-approved compound - consult healthcare provider for complete safety profile.',
+      researchStatus: 'FDA-approved for specific rare conditions with ongoing research'
     }
   };
 

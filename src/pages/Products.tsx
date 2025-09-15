@@ -358,10 +358,6 @@ const Supplements = () => {
             {/* MegaSporeBiotic */}
             <article className="product-card fade-in" id="megasporebiotic">
               <div className="product-content">
-                <div className="product-image">
-                  <img src="https://i.imgur.com/Nm2H0uP.png" alt="Microbiome Labs MegaSporeBiotic 60 capsules bottle" width="320" height="320" loading="lazy" />
-                  <div className="product-badge">Clinically Studied</div>
-                </div>
                 <div className="product-info">
                   <div>
                     <p className="product-brand">Microbiome Labs</p>
@@ -402,10 +398,6 @@ const Supplements = () => {
             {/* O.N.E. Multivitamin */}
             <article className="product-card fade-in delay-1" id="one-multivitamin">
               <div className="product-content">
-                <div className="product-image">
-                  <img src="https://i.imgur.com/BmZq3b0.png" alt="Pure Encapsulations O.N.E. Multivitamin 60 capsules bottle" width="320" height="320" loading="lazy" />
-                  <div className="product-badge">Once Daily</div>
-                </div>
                 <div className="product-info">
                   <div>
                     <p className="product-brand">Pure Encapsulations</p>
@@ -457,11 +449,6 @@ const Supplements = () => {
             {professionalProducts.filter(p => p.category === 'supplements').map((product) => (
               <div key={product.id} className="product-card">
                 <div className="product-content">
-                  <div className="product-image">
-                    <img src={product.image} alt={`${product.name} ${product.size}`} width="320" height="320" loading="lazy" />
-                    {product.badges.includes("top-pick") && <div className="product-badge">Top Pick</div>}
-                    {product.badges.includes("tested") && <div className="product-badge">Tested</div>}
-                  </div>
                   <div className="product-info">
                     <div>
                       <p className="product-brand">{product.brand}</p>
