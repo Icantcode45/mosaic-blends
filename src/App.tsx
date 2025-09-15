@@ -56,7 +56,7 @@ const App = () => (
                 <Route path="/telehealth" element={<Telehealth />} />
                 <Route path="/test-kits" element={<TestKits />} />
                 <Route path="/products" element={<Products />} />
-                <Route path="/supplements" element={<Navigate to="/products" replace />} />
+                
                 <Route path="/compliance" element={<Compliance />} />
                 <Route path="/good-faith-estimate" element={<GoodFaithEstimate />} />
                 <Route path="/first-time-patients" element={<FirstTimePatients />} />
