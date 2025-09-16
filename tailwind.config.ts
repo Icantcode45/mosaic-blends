@@ -76,6 +76,12 @@ export default {
           sage: "hsl(var(--brand-sage))",
           sky: "hsl(var(--brand-sky))",
           lavender: "hsl(var(--brand-lavender))",
+          orange: "hsl(var(--brand-orange))",
+          blue: "hsl(var(--brand-blue))",
+          teal: "hsl(var(--brand-teal))",
+          purple: "hsl(var(--brand-purple))",
+          success: "hsl(var(--brand-success))",
+          warning: "hsl(var(--brand-warning))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -137,6 +143,10 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-4px)" },
         },
+        "scroll": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -148,6 +158,7 @@ export default {
         "slide-in-right": "slide-in-right 0.5s ease-out",
         "bounce-soft": "bounce-soft 2s ease-in-out infinite",
         "pulse-soft": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "scroll": "scroll 30s linear infinite",
       },
       spacing: {
         "18": "4.5rem",

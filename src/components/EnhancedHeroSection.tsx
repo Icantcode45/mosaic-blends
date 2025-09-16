@@ -7,11 +7,17 @@ import heroImage from "@/assets/stay-dripped-hero-logo.png";
 
 const EnhancedHeroSection = () => {
   const trustIndicators = [
-    { icon: Users, text: "5,000+ Happy Clients", color: "text-blue-600" },
-    { icon: Star, text: "5.0 Star Rating", color: "text-yellow-500" },
-    { icon: Shield, text: "Licensed Medical Team", color: "text-green-600" },
+    { icon: Users, text: "10,000+ Treatments", color: "text-blue-600" },
+    { icon: Star, text: "4.9★ Rating", color: "text-yellow-500" },
+    { icon: Shield, text: "Licensed Nurses", color: "text-green-600" },
     { icon: Clock, text: "Same-Day Service", color: "text-purple-600" }
   ];
+
+  const testimonial = {
+    text: "The convenience of having this service come to my home is unmatched. I've felt more energized and healthier than ever.",
+    name: "Sarah M.",
+    rating: "4.9"
+  };
 
   const services = [
     { 
@@ -66,15 +72,30 @@ const EnhancedHeroSection = () => {
               {/* Hero Headlines */}
               <div className="space-y-6">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-tight">
-                  IV therapy{" "}
+                  IV Therapy{" "}
                   <span className="bg-gradient-to-r from-primary to-brand-teal bg-clip-text text-transparent">
-                    personalized to you
+                    Directly to Your Door
                   </span>
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-xl leading-relaxed">
-                  Licensed medical professionals deliver personalized IV treatments to your door. 
-                  Customized care starts here.
+                  Licensed medical professionals deliver personalized IV treatments, peptides, and vitamin injections to your location. Professional care, proven results.
                 </p>
+
+                {/* Customer Testimonial */}
+                <div className="bg-card/50 border border-border/50 rounded-2xl p-6 max-w-lg">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-1">
+                      <p className="text-muted-foreground italic mb-3">"{testimonial.text}"</p>
+                      <div className="flex items-center justify-between">
+                        <span className="font-semibold text-foreground">{testimonial.name}</span>
+                        <div className="flex items-center space-x-1">
+                          <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                          <span className="font-semibold text-foreground">{testimonial.rating}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Trust Indicators */}
