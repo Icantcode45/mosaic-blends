@@ -121,25 +121,23 @@ const Supplements = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    // Google Analytics
-    const script1 = document.createElement('script');
-    script1.async = true;
-    script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-44WEBDZB6F';
-    document.head.appendChild(script1);
-
-    const script2 = document.createElement('script');
-    script2.innerHTML = `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+    // Initialize Google Analytics safely
+    if (typeof window !== 'undefined') {
+      // Initialize dataLayer
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      
+      // Define gtag function safely
+      const gtag = function(...args: any[]) {
+        (window as any).dataLayer.push(args);
+      };
+      
+      // Make gtag globally available
+      (window as any).gtag = gtag;
+      
+      // Initialize with current date and config
       gtag('js', new Date());
       gtag('config', 'G-44WEBDZB6F');
-    `;
-    document.head.appendChild(script2);
-
-    return () => {
-      document.head.removeChild(script1);
-      document.head.removeChild(script2);
-    };
+    }
   }, []);
 
   useEffect(() => {
@@ -279,6 +277,9 @@ const Supplements = () => {
         <title>Products | Stay Dripped IV & Wellness Co.</title>
         <meta name="description" content="Complete collection of professional supplements, probiotics, vitamins, specialty formulas, and health products. Medical-grade quality with practitioner guidance." />
         <link rel="canonical" href="https://staydrippediv.com/products" />
+        
+        {/* Google Analytics - Secure Implementation */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-44WEBDZB6F"></script>
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />

@@ -37,8 +37,10 @@ export default function PayPalCheckout() {
   const renderPayPalButton = () => {
     if (!paypalRef.current || !window.paypal || state.items.length === 0) return;
 
-    // Clear any existing PayPal buttons
-    paypalRef.current.innerHTML = '';
+    // Safely clear any existing PayPal buttons
+    while (paypalRef.current.firstChild) {
+      paypalRef.current.removeChild(paypalRef.current.firstChild);
+    }
 
     window.paypal.Buttons({
       createOrder: (data: any, actions: any) => {
