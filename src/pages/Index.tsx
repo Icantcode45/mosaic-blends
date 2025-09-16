@@ -1,70 +1,54 @@
-import TrustBar from "@/components/navigation/TrustBar";
-import EnhancedHeroSection from "@/components/EnhancedHeroSection";
-import EnhancedBookingSection from "@/components/EnhancedBookingSection";
-import ComprehensiveServicesSection from "@/components/ComprehensiveServicesSection";
-import EnhancedTrustSection from "@/components/EnhancedTrustSection";
-import ProcessVisualization from "@/components/ProcessVisualization";
-import MedicalTeamShowcase from "@/components/MedicalTeamShowcase";
-import ClientPortalLoginButton from "@/components/ClientPortalLoginButton";
-import LifestyleShowcase from "@/components/LifestyleShowcase";
+import ModernHeroSection from "@/components/ModernHeroSection";
+import ProfessionalTrustSection from "@/components/ProfessionalTrustSection";
+import ModernServicesShowcase from "@/components/ModernServicesShowcase";
+import ProcessStepsSection from "@/components/ProcessStepsSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import EnhancedStatsSection from "@/components/EnhancedStatsSection";
 import TelehealthSection from "@/components/TelehealthSection";
 import EnhancedMembershipSection from "@/components/EnhancedMembershipSection";
-import SupplementsSection from "@/components/SupplementsSection";
-import PartnersSection from "@/components/PartnersSection";
-import FAQSection from "@/components/FAQSection";
+import EnhancedPartnersSection from "@/components/EnhancedPartnersSection";
 import NewsletterSection from "@/components/NewsletterSection";
-import ContactSection from "@/components/ContactSection";
+import BBBAccreditation from "@/components/BBBAccreditation";
+import TrustBar from "@/components/navigation/TrustBar";
 
 const Index = () => {
   return (
     <div>
-      {/* Trust Metrics Bar */}
+      {/* Trust Bar at the top */}
       <TrustBar />
       
-      {/* 1. Enhanced Hero with Testimonial */}
-      <EnhancedHeroSection />
+      {/* 1. Modern Hero Section - Primary value proposition with trust indicators */}
+      <ModernHeroSection />
       
-      {/* 2. Enhanced Booking Section */}
-      <EnhancedBookingSection />
+      {/* 2. Professional Trust Section - Credibility and certifications */}
+      <ProfessionalTrustSection />
       
-      {/* 3. Comprehensive Services */}
-      <ComprehensiveServicesSection />
+      {/* 3. Modern Services Showcase - Treatment options with modern design */}
+      <ModernServicesShowcase />
       
-      {/* 4. Trust & Social Proof Section */}
-      <EnhancedTrustSection />
+      {/* 4. Process Steps - How it works professionally */}
+      <ProcessStepsSection />
       
-      {/* 5. Process Visualization - How It Works */}
-      <ProcessVisualization />
+      {/* 5. Client Testimonials - Social proof and reviews */}
+      <TestimonialsSection />
       
-      {/* 6. Medical Team Showcase - Credibility */}
-      <MedicalTeamShowcase />
+      {/* 6. Results & Stats - Prove effectiveness with data */}
+      <EnhancedStatsSection />
       
-      {/* 7. Client Portal Login Section */}
-      <ClientPortalLoginButton />
-      
-      {/* 8. Enhanced Membership Plans */}
-      <EnhancedMembershipSection />
-      
-      {/* 9. Lifestyle Experience */}
-      <LifestyleShowcase />
-      
-      {/* 10. Telehealth Services */}
+      {/* 7. Telehealth Services - Additional service offering */}
       <TelehealthSection />
       
-      {/* 11. Products & Supplements */}
-      <SupplementsSection />
+      {/* 8. Membership Plans - Convert visitors with pricing */}
+      <EnhancedMembershipSection />
       
-      {/* 12. Partners & Certifications */}
-      <PartnersSection />
+      {/* 9. Partners & Certifications - Additional credibility */}
+      <EnhancedPartnersSection />
       
-      {/* 13. FAQ Section */}
-      <FAQSection />
-      
-      {/* 14. Newsletter Signup */}
+      {/* 10. Newsletter - Capture leads */}
       <NewsletterSection />
       
-      {/* 15. Contact Information */}
-      <ContactSection />
+      {/* 11. BBB Accreditation - Trust and credibility */}
+      <BBBAccreditation />
     </div>
   );
 };

@@ -61,30 +61,33 @@
     --shadow-large: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
     --shadow-extra: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
     
-    /* Sidebar */
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 9% 46%;
-    --sidebar-primary: 220 13% 18%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 40% 98%;
-    --sidebar-accent-foreground: 220 9% 46%;
-    --sidebar-border: 214 32% 91%;
-    --sidebar-ring: 220 13% 18%;
-    
-    /* Stay Dripped Brand Colors */
-    --brand-orange: 25 100% 60%;
-    --brand-blue: 210 100% 45%;
-    --brand-teal: 185 84% 44%;
-    --brand-purple: 260 60% 65%;
-    --brand-success: 142 76% 45%;
-    --brand-warning: 38 92% 55%;
-    
-    /* Premium Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--brand-teal)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.05), hsl(var(--brand-teal) / 0.05));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--primary) / 0.02));
-    --gradient-orange: linear-gradient(135deg, hsl(var(--brand-orange)), hsl(25 100% 70%));
-    --gradient-success: linear-gradient(135deg, hsl(var(--brand-success)), hsl(142 76% 50%));
+  --chart-1: 12 76% 61%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
+
+  /* Advanced Gradients */
+  --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.8));
+  --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary) / 0.8));
+  --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.05), hsl(var(--secondary) / 0.05));
+  --gradient-card: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted) / 0.3));
+  --gradient-trust: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.1), transparent);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 hsl(var(--primary) / 0.05);
+  --shadow-md: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -1px hsl(var(--primary) / 0.06);
+  --shadow-lg: 0 10px 15px -3px hsl(var(--primary) / 0.1), 0 4px 6px -2px hsl(var(--primary) / 0.05);
+  --shadow-xl: 0 20px 25px -5px hsl(var(--primary) / 0.1), 0 10px 10px -5px hsl(var(--primary) / 0.04);
+  --shadow-glow: 0 0 20px hsl(var(--primary) / 0.15);
+
+  /* Professional Medical Colors */
+  --medical-primary: 219 14% 28%;
+  --medical-secondary: 199 89% 48%;
+  --medical-accent: 142 76% 36%;
+  --medical-success: 142 71% 45%;
+  --medical-warning: 43 96% 56%;
+  --medical-error: 0 84% 60%;
   }
 
   .dark {
@@ -143,11 +146,118 @@
     line-height: 1.6;
   }
   
-  /* Professional Typography */
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-semibold tracking-tight;
-    line-height: 1.3;
-  }
+/* Typography */
+.font-heading {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.font-medical {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+}
+
+/* Professional Medical Styles */
+.medical-card {
+  background: var(--gradient-card);
+  border: 1px solid hsl(var(--border));
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.medical-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
+}
+
+.trust-indicator {
+  background: var(--gradient-trust);
+  border: 1px solid hsl(var(--border) / 0.5);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(var(--foreground) / 0.8);
+}
+
+.service-tile {
+  background: var(--gradient-card);
+  border: 2px solid hsl(var(--border));
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.service-tile:hover {
+  border-color: hsl(var(--primary));
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
+}
+
+.professional-cta {
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  color: white;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.professional-cta:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-1px);
+}
+
+.text-gradient-animated {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--medical-secondary)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-shift 3s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.animate-fade-in {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+/* Sidebar */
+--sidebar-background: 0 0% 100%;
+--sidebar-foreground: 220 9% 46%;
+--sidebar-primary: 220 13% 18%;
+--sidebar-primary-foreground: 0 0% 100%;
+--sidebar-accent: 210 40% 98%;
+--sidebar-accent-foreground: 220 9% 46%;
+--sidebar-border: 214 32% 91%;
+--sidebar-ring: 220 13% 18%;
+
+/* Stay Dripped Brand Colors */
+--brand-orange: 25 100% 60%;
+--brand-blue: 210 100% 45%;
+--brand-teal: 185 84% 44%;
+--brand-purple: 260 60% 65%;
+--brand-success: 142 76% 45%;
+--brand-warning: 38 92% 55%;
+
+/* Premium Gradients */
+--gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--brand-teal)));
+--gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.05), hsl(var(--brand-teal) / 0.05));
+--gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--primary) / 0.02));
+--gradient-orange: linear-gradient(135deg, hsl(var(--brand-orange)), hsl(25 100% 70%));
+--gradient-success: linear-gradient(135deg, hsl(var(--brand-success)), hsl(142 76% 50%));
   
   h1 { 
     @apply text-3xl md:text-4xl lg:text-5xl; 
