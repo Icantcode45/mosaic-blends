@@ -9,8 +9,8 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import ScrollToTop from "@/components/ScrollToTop";
 import EnhancedIndex from "./pages/EnhancedIndex";
 import NotFound from "./pages/NotFound";
-import EnhancedHeader from "./components/EnhancedHeader";
-import EnhancedFooter from "./components/EnhancedFooter";
+import ModernHeader from "./components/ModernHeader";
+import ModernFooter from "./components/ModernFooter";
 import Telehealth from "./pages/Telehealth";
 import TestKits from "./pages/TestKits";
 import Products from "./pages/Products";
@@ -48,7 +48,7 @@ const App = () => (
           <BrowserRouter>
           <ScrollToTop />
           <div className="min-h-screen flex flex-col">
-            <EnhancedHeader />
+            <ModernHeader />
             <main className="flex-1">
               <Routes>
                 <Route path="/" element={<EnhancedIndex />} />
@@ -79,7 +79,7 @@ const App = () => (
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
-            <EnhancedFooter />
+            <ModernFooter />
           </div>
         </BrowserRouter>
       </TooltipProvider>

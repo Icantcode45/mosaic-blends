@@ -7,26 +7,75 @@
 
 @layer base {
   :root {
-    /* Ultra-Modern Medical Color System */
-    --background: 255 255 255;
-    --foreground: 17 24 39;
-    --primary: 59 130 246; /* Modern medical blue */
-    --primary-foreground: 255 255 255;
-    --secondary: 16 185 129; /* Accent green */
-    --secondary-foreground: 255 255 255;
-    --muted: 248 250 252;
-    --muted-foreground: 100 116 139;
-    --border: 229 231 235;
-    --ring: 59 130 246;
-    --radius: 1rem;
+    /* Ultra-Modern Medical Colors - Professional & Cutting Edge */
+    --medical-dark: 220 40% 10%;
+    --medical-primary: 210 95% 40%;
+    --medical-secondary: 195 85% 50%;
+    --medical-accent: 165 75% 55%;
+    --medical-light: 210 40% 97%;
+    --medical-muted: 215 25% 88%;
+    --medical-success: 142 76% 36%;
+    --medical-warning: 38 92% 50%;
     
-    /* Premium Medical Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(217 91% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.03), hsl(var(--secondary) / 0.03));
+    /* Enhanced Color Palette */
+    --primary: var(--medical-primary);
+    --primary-foreground: 0 0% 98%;
+    --secondary: var(--medical-secondary);
+    --secondary-foreground: 0 0% 9%;
+    --accent: var(--medical-accent);
+    --accent-foreground: 0 0% 9%;
     
-    /* Typography */
-    --font-heading: 'DM Sans', 'Inter', system-ui, sans-serif;
-    --font-body: 'Inter', system-ui, sans-serif;
+    /* Background & Surface Colors */
+    --background: 0 0% 100%;
+    --foreground: 220 40% 5%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 40% 5%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 40% 5%;
+    
+    /* Border & Input Colors */
+    --border: 214 31% 91%;
+    --input: 214 31% 91%;
+    --ring: var(--medical-primary);
+    
+    /* State Colors */
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 47%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    /* Ultra-Modern Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--medical-primary)), hsl(var(--medical-secondary)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--medical-secondary)), hsl(var(--medical-accent)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--medical-accent)), hsl(var(--medical-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--medical-dark)), hsl(var(--medical-primary)), hsl(var(--medical-secondary)));
+    --gradient-trust: linear-gradient(180deg, hsl(var(--medical-light)), hsl(var(--background)));
+    --gradient-radial: radial-gradient(circle at center, hsl(var(--medical-primary) / 0.1), transparent);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    
+    /* Professional Shadows */
+    --shadow-medical: 0 20px 60px -10px hsl(var(--medical-primary) / 0.4);
+    --shadow-soft: 0 8px 30px -6px hsl(var(--medical-primary) / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(var(--medical-primary) / 0.15);
+    --shadow-glow: 0 0 60px hsl(var(--medical-primary) / 0.3);
+    --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --shadow-floating: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    
+    /* Modern Typography */
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', Consolas, monospace;
+    
+    /* Ultra-Smooth Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-medical: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-elastic: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-glass: all 0.2s cubic-bezier(0.4, 0, 0.6, 1);
+    
+    /* Modern Backdrop Effects */
+    --backdrop-blur: blur(20px);
+    --backdrop-glass: blur(16px) saturate(180%);
   }
 }
 
