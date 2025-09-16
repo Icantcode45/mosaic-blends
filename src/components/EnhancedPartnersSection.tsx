@@ -55,12 +55,6 @@ const EnhancedPartnersSection = () => {
       logo: augmentWellnessLogo
     },
     { 
-      name: "Social Scottsdale", 
-      category: "Social Club", 
-      description: "Premium social and lifestyle experiences",
-      logo: socialScottsdaleLogo
-    },
-    { 
       name: "CuraTurf", 
       category: "Artificial Grass", 
       description: "#1 Artificial grass cleaning services",
