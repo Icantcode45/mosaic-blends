@@ -14,12 +14,12 @@ const EnhancedHeader = () => {
   const [searchOpen, setSearchOpen] = useState(false);
 
   const navItems = [
-    { name: 'Client Portal', href: '/client-portal' },
+    { name: 'Events', href: '/events' },
+    { name: 'Compliance', href: '/compliance' },
     { name: 'Telehealth', href: '/telehealth' },
     { name: 'Test Kits & Panels', href: '/test-kits' },
     { name: 'Products', href: '/products' },
     { name: 'Membership', href: '/membership' },
-    { name: 'Event Inquiry', href: '/event-inquiry' },
     { name: 'Specialty Treatments', href: '/specialty-treatments' },
     { name: 'First-Time Patients', href: '/first-time-patients' },
     { name: 'Gift Cards', href: '/gift-cards' },

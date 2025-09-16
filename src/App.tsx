@@ -8,7 +8,6 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import ScrollToTop from "@/components/ScrollToTop";
 import EnhancedIndex from "./pages/EnhancedIndex";
-import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 import EnhancedHeader from "./components/EnhancedHeader";
 import EnhancedFooter from "./components/EnhancedFooter";
@@ -53,7 +52,6 @@ const App = () => (
             <main className="flex-1">
               <Routes>
                 <Route path="/" element={<EnhancedIndex />} />
-                <Route path="/auth" element={<Auth />} />
                 <Route path="/telehealth" element={<Telehealth />} />
                 <Route path="/test-kits" element={<TestKits />} />
                 <Route path="/products" element={<Products />} />

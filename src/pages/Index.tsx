@@ -5,6 +5,7 @@ import ComprehensiveServicesSection from "@/components/ComprehensiveServicesSect
 import EnhancedTrustSection from "@/components/EnhancedTrustSection";
 import ProcessVisualization from "@/components/ProcessVisualization";
 import MedicalTeamShowcase from "@/components/MedicalTeamShowcase";
+import ClientPortalLoginButton from "@/components/ClientPortalLoginButton";
 import LifestyleShowcase from "@/components/LifestyleShowcase";
 import TelehealthSection from "@/components/TelehealthSection";
 import EnhancedMembershipSection from "@/components/EnhancedMembershipSection";
@@ -38,28 +39,31 @@ const Index = () => {
       {/* 6. Medical Team Showcase - Credibility */}
       <MedicalTeamShowcase />
       
-      {/* 7. Enhanced Membership Plans */}
+      {/* 7. Client Portal Login Section */}
+      <ClientPortalLoginButton />
+      
+      {/* 8. Enhanced Membership Plans */}
       <EnhancedMembershipSection />
       
-      {/* 8. Lifestyle Experience */}
+      {/* 9. Lifestyle Experience */}
       <LifestyleShowcase />
       
-      {/* 9. Telehealth Services */}
+      {/* 10. Telehealth Services */}
       <TelehealthSection />
       
-      {/* 10. Products & Supplements */}
+      {/* 11. Products & Supplements */}
       <SupplementsSection />
       
-      {/* 11. Partners & Certifications */}
+      {/* 12. Partners & Certifications */}
       <PartnersSection />
       
-      {/* 12. FAQ Section */}
+      {/* 13. FAQ Section */}
       <FAQSection />
       
-      {/* 13. Newsletter Signup */}
+      {/* 14. Newsletter Signup */}
       <NewsletterSection />
       
-      {/* 14. Contact Information */}
+      {/* 15. Contact Information */}
       <ContactSection />
     </div>
   );
