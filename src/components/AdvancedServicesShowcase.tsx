@@ -16,6 +16,15 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
+// Image assets for production-safe URLs
+import myersCocktailBag from "@/assets/iv-bags/myers-cocktail-bag.png";
+import diamondbackBag from "@/assets/iv-bags/diamondback-bag.png";
+import hangoverBag from "@/assets/iv-bags/hangover-bag.png";
+import eliteNadBag from "@/assets/iv-bags/elite-nad-bag.png";
+import diamondNadBag from "@/assets/iv-bags/diamond-nad-bag.png";
+import b12Injection from "@/assets/vials/b12-injection.jpeg";
+import glutathioneInjection from "@/assets/vials/glutathione-injection.jpeg";
+
 const serviceCategories = [
   {
     id: "iv-therapy",
@@ -26,7 +35,7 @@ const serviceCategories = [
     services: [
       {
         name: "Myers' Cocktail",
-        image: "/src/assets/iv-bags/myers-cocktail-bag.png",
+        image: myersCocktailBag,
         price: "$149",
         duration: "45min",
         benefits: ["Energy boost", "Immune support", "Hydration"],
@@ -34,7 +43,7 @@ const serviceCategories = [
       },
       {
         name: "Immune Boost",
-        image: "/src/assets/iv-bags/diamondback-bag.png",
+        image: diamondbackBag,
         price: "$179",
         duration: "45min",
         benefits: ["Vitamin C", "Zinc", "Immune system"],
@@ -42,7 +51,7 @@ const serviceCategories = [
       },
       {
         name: "Hangover Relief",
-        image: "/src/assets/iv-bags/hangover-bag.png",
+        image: hangoverBag,
         price: "$159",
         duration: "30min",
         benefits: ["Rapid recovery", "Hydration", "Nausea relief"],
@@ -59,7 +68,7 @@ const serviceCategories = [
     services: [
       {
         name: "NAD+ Elite",
-        image: "/src/assets/iv-bags/elite-nad-bag.png",
+        image: eliteNadBag,
         price: "$299",
         duration: "90min",
         benefits: ["Anti-aging", "Mental clarity", "Energy"],
@@ -67,7 +76,7 @@ const serviceCategories = [
       },
       {
         name: "NAD+ Diamond",
-        image: "/src/assets/iv-bags/diamond-nad-bag.png",
+        image: diamondNadBag,
         price: "$399",
         duration: "120min",
         benefits: ["Premium formula", "Longevity", "Cellular repair"],
@@ -84,7 +93,7 @@ const serviceCategories = [
     services: [
       {
         name: "B12 Energy",
-        image: "/src/assets/vials/b12-injection.jpeg",
+        image: b12Injection,
         price: "$29",
         duration: "5min",
         benefits: ["Energy boost", "Metabolism", "Quick treatment"],
@@ -92,7 +101,7 @@ const serviceCategories = [
       },
       {
         name: "Glutathione",
-        image: "/src/assets/vials/glutathione-injection.jpeg",
+        image: glutathioneInjection,
         price: "$39",
         duration: "5min",
         benefits: ["Antioxidant", "Skin health", "Detox"],

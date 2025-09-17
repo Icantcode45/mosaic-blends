@@ -7,6 +7,24 @@ import IntakeQWidget from "@/components/IntakeQWidget";
 import EmbeddedServiceBooking from "@/components/EmbeddedServiceBooking";
 import NADIVBagCard from "@/components/NADIVBagCard";
 
+// Image assets (use imports so they work in production builds)
+import heroBg from "@/assets/iv-therapy-hero-new.jpg";
+import rehydrateBag from "@/assets/iv-bags/rehydrate-bag.png";
+import rehydratePlusBag from "@/assets/iv-bags/rehydrate-plus-bag.png";
+import jrMyersBag from "@/assets/iv-bags/jr-myers-bag.png";
+import myersCocktailBag from "@/assets/iv-bags/myers-cocktail-bag.png";
+import hangoverBag from "@/assets/iv-bags/hangover-bag.png";
+import sunDevilBag from "@/assets/iv-bags/sun-devil-bag.png";
+import dBookBag from "@/assets/iv-bags/d-book-bag.png";
+import diamondbackBag from "@/assets/iv-bags/diamondback-bag.png";
+import scottsdaleBeautyBagPng from "@/assets/iv-bags/scottsdale-beauty-bag.png";
+import scottsdaleBeautyBagJpeg from "@/assets/iv-bags/scottsdale-beauty-bag.jpeg";
+import arizonaDetoxBag from "@/assets/iv-bags/arizona-detox-bag.png";
+import diamondNadBag from "@/assets/iv-bags/diamond-nad-bag.png";
+import eliteNadBag from "@/assets/iv-bags/elite-nad-bag.png";
+import goldHydrationBag from "@/assets/iv-bags/gold-hydration-bag.png";
+import nadInjection from "@/assets/vials/nad-injection.webp";
+
 const IVTherapy = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [priceFilter, setPriceFilter] = useState('any');
@@ -218,7 +236,7 @@ const IVTherapy = () => {
         price: '$250',
         badge: 'Beauty',
         description: 'Beauty and anti-aging formula for radiant skin and enhanced vitality.',
-        image_url: '/src/assets/iv-bags/scottsdale-beauty-bag.jpeg',
+        image_url: scottsdaleBeautyBagJpeg,
         features: [
           'Vitamin B-Complex',
           'Vitamin B12',
@@ -314,7 +332,7 @@ const IVTherapy = () => {
         price: '$299',
         badge: 'Basic NAD+',
         description: 'Pure NAD+ therapy with plain saline for cellular repair and energy restoration.',
-        image_url: '/src/assets/vials/nad-injection.webp',
+        image_url: nadInjection,
         features: [
           'Plain Saline 500ml',
           'NAD+ 50mg',
@@ -420,7 +438,7 @@ const IVTherapy = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-800 via-slate-700 to-slate-600 text-white">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-secondary/20" />
-        <div className="absolute inset-0 bg-[url('/lovable-uploads/ed8aafa4-26e1-49c7-b39e-ba28edd0824c.png')] bg-cover bg-center opacity-30" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: `url(${heroBg})` }} />
         
         <div className="container relative z-10 mx-auto px-4 py-32 text-center">
           <h1 className="mb-6 text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
@@ -561,7 +579,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-sky-500',
                       title: 'REHYDRATE',
                       subtitle: '',
-                      bagImage: '/src/assets/iv-bags/rehydrate-bag.png'
+                      bagImage: rehydrateBag
                     };
                   case 'rehydrate-plus':
                     return {
@@ -570,7 +588,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-cyan-500',
                       title: 'REHYDRATE PLUS',
                       subtitle: '',
-                      bagImage: '/src/assets/iv-bags/rehydrate-plus-bag.png'
+                      bagImage: rehydratePlusBag
                     };
                   case 'jr-myers':
                     return {
@@ -579,7 +597,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-green-500',
                       title: 'JR MYERS',
                       subtitle: 'COCKTAIL',
-                      bagImage: '/src/assets/iv-bags/jr-myers-bag.png'
+                      bagImage: jrMyersBag
                     };
                   case 'myers':
                     return {
@@ -588,7 +606,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-pink-500',
                       title: 'MYERS',
                       subtitle: 'COCKTAIL',
-                      bagImage: '/src/assets/iv-bags/myers-cocktail-bag.png'
+                      bagImage: myersCocktailBag
                     };
                   case 'hangover':
                     return {
@@ -597,7 +615,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-yellow-500',
                       title: 'THE DAY-AFTER',
                       subtitle: '"HANGOVER BAG"',
-                      bagImage: '/src/assets/iv-bags/hangover-bag.png'
+                      bagImage: hangoverBag
                     };
                   case 'sun-devil':
                     return {
@@ -606,7 +624,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-red-500',
                       title: 'THE SUN DEVIL',
                       subtitle: 'ENERGY BOOST',
-                      bagImage: '/src/assets/iv-bags/sun-devil-bag.png'
+                      bagImage: sunDevilBag
                     };
                   case 'd-book':
                     return {
@@ -615,7 +633,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-purple-500',
                       title: 'THE D-BOOK',
                       subtitle: 'PERFORMANCE BAG',
-                      bagImage: '/src/assets/iv-bags/d-book-bag.png'
+                      bagImage: dBookBag
                     };
                   case 'diamondback':
                     return {
@@ -624,7 +642,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-pink-500',
                       title: 'THE DIAMONDBACK',
                       subtitle: 'IMMUNITY BOOST',
-                      bagImage: '/src/assets/iv-bags/diamondback-bag.png'
+                      bagImage: diamondbackBag
                     };
                   case 'scottsdale-beauty':
                     return {
@@ -633,7 +651,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-pink-500',
                       title: 'THE SCOTTSDALE',
                       subtitle: 'BEAUTY BAG',
-                      bagImage: '/src/assets/iv-bags/scottsdale-beauty-bag.png'
+                      bagImage: scottsdaleBeautyBagPng
                     };
                   case 'arizona-detox':
                     return {
@@ -642,7 +660,7 @@ const IVTherapy = () => {
                       badgeColor: 'bg-cyan-500',
                       title: 'THE ARIZONA',
                       subtitle: 'DETOX & CLEANSE',
-                      bagImage: '/src/assets/iv-bags/arizona-detox-bag.png'
+                      bagImage: arizonaDetoxBag
                      };
                    case 'nad-plain':
                      return {
@@ -651,7 +669,7 @@ const IVTherapy = () => {
                        badgeColor: 'bg-purple-500',
                        title: 'NAD+ IV DRIP',
                        subtitle: 'PLAIN SALINE',
-                       bagImage: '/src/assets/vials/nad-injection.webp'
+                      bagImage: nadInjection
                      };
                    case 'fountain-youth':
                      return {
@@ -660,7 +678,7 @@ const IVTherapy = () => {
                        badgeColor: 'bg-rose-500',
                        title: 'FOUNTAIN OF YOUTH',
                        subtitle: 'NAD+ BEAUTY',
-                       bagImage: '/src/assets/vials/nad-injection.webp'
+                       bagImage: nadInjection
                      };
                    case 'diamond-nad':
                      return {
@@ -669,7 +687,7 @@ const IVTherapy = () => {
                        badgeColor: 'bg-teal-500',
                        title: 'THE DIAMOND',
                        subtitle: 'NAD+ THERAPY BAG',
-                       bagImage: '/src/assets/iv-bags/diamond-nad-bag.png'
+                       bagImage: diamondNadBag
                      };
                    case 'elite-nad':
                      return {
@@ -678,7 +696,7 @@ const IVTherapy = () => {
                        badgeColor: 'bg-slate-500',
                        title: 'THE ELITE',
                        subtitle: 'NAD+ THERAPY BAG',
-                       bagImage: '/src/assets/iv-bags/elite-nad-bag.png'
+                       bagImage: eliteNadBag
                      };
                    case 'gold':
                      return {
@@ -687,7 +705,7 @@ const IVTherapy = () => {
                        badgeColor: 'bg-amber-500',
                        title: 'THE GOLD',
                        subtitle: 'HYDRATION & RECOVERY',
-                       bagImage: '/src/assets/iv-bags/gold-hydration-bag.png'
+                       bagImage: goldHydrationBag
                      };
                    default:
                      return {
