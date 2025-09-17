@@ -1,161 +1,188 @@
-import { ArrowRight, Zap, Heart, Shield, Brain, Droplets, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
+import { 
+  Droplets, 
+  Zap, 
+  Shield, 
+  Heart, 
+  Brain, 
+  Dumbbell, 
+  Sparkles, 
+  Target,
+  Clock,
+  ArrowRight,
+  CheckCircle
+} from "lucide-react";
 
 const ComprehensiveServicesSection = () => {
   const serviceCategories = [
     {
       icon: Droplets,
       title: "IV Hydration Therapy",
-      description: "Premium IV treatments delivered by licensed medical professionals",
-      services: ["Myers' Cocktail", "Hydration Plus", "Athletic Recovery", "Immune Boost"],
-      color: "from-medical-blue to-medical-teal",
-      textColor: "text-white",
+      description: "Rapid nutrient delivery for optimal wellness",
+      services: ["Myers Cocktail", "Immunity Boost", "Energy Enhancement", "Hangover Relief", "Athletic Recovery", "Beauty Glow"],
+      color: "text-blue-600",
+      gradient: "from-blue-500 to-teal-500",
       link: "/iv-therapy"
     },
     {
-      icon: Brain,
-      title: "NAD+ & Peptide Therapy", 
-      description: "Advanced anti-aging and cognitive enhancement treatments",
-      services: ["NAD+ Infusions", "BPC-157", "Sermorelin", "PT-141"],
-      color: "from-medical-purple to-medical-pink",
-      textColor: "text-white",
-      link: "/nad-peptides"
-    },
-    {
       icon: Zap,
-      title: "Vitamin Injections",
-      description: "Quick and effective vitamin delivery for optimal wellness",
-      services: ["B12 Energy", "Vitamin D3", "Biotin", "L-Glutathione"],
-      color: "from-medical-accent to-medical-secondary",
-      textColor: "text-white",
+      title: "Vitamin Injections", 
+      description: "Quick-acting nutrient shots for immediate benefits",
+      services: ["B12 Energy", "Glutathione Antioxidant", "Vitamin D3", "Biotin Beauty", "B-Complex", "Taurine Focus"],
+      color: "text-orange-600",
+      gradient: "from-orange-500 to-red-500", 
       link: "/vitamin-injections"
     },
     {
-      icon: Heart,
-      title: "Specialty Treatments",
-      description: "Comprehensive wellness solutions for specific health goals",
-      services: ["Weight Management", "Sexual Wellness", "Detox Programs", "Beauty Treatments"],
-      color: "from-medical-gradient-start to-medical-gradient-end",
-      textColor: "text-white",
+      icon: Target,
+      title: "Peptide Therapy",
+      description: "Advanced cellular optimization treatments",
+      services: ["NAD+ Anti-Aging", "BPC-157 Healing", "PT-141 Wellness", "Setmelanotide", "Custom Protocols", "Longevity Support"],
+      color: "text-purple-600",
+      gradient: "from-purple-500 to-indigo-500",
+      link: "/nad-peptides"
+    },
+    {
+      icon: Dumbbell,
+      title: "Athletic Performance",
+      description: "Optimize recovery and enhance performance",
+      services: ["Pre-Workout IV", "Post-Workout Recovery", "Endurance Support", "Muscle Recovery", "Hydration Therapy", "Performance Optimization"],
+      color: "text-green-600",
+      gradient: "from-green-500 to-emerald-500",
       link: "/specialty-treatments"
+    },
+    {
+      icon: Sparkles,
+      title: "Beauty & Wellness",
+      description: "Look and feel your absolute best",
+      services: ["Beauty Glow IV", "Hair & Nail Support", "Skin Brightening", "Anti-Aging Therapy", "Collagen Boost", "Detox Cleanse"],
+      color: "text-pink-600",
+      gradient: "from-pink-500 to-rose-500",
+      link: "/specialty-treatments"
+    },
+    {
+      icon: Shield,
+      title: "Immune Support",
+      description: "Strengthen your natural defenses",
+      services: ["Immune Boost IV", "Cold & Flu Prevention", "High-Dose Vitamin C", "Zinc Support", "Seasonal Protection", "Travel Immunity"],
+      color: "text-indigo-600", 
+      gradient: "from-indigo-500 to-blue-500",
+      link: "/iv-therapy"
     }
   ];
 
   const conditions = [
-    "Dehydration", "Fatigue", "Hangover Recovery", "Athletic Performance", "Immune Support",
-    "Anti-aging", "Cognitive Enhancement", "Weight Management", "Sexual Wellness", "Detoxification",
-    "Beauty & Skin Health", "Stress Relief", "Sleep Optimization", "Nutrient Deficiency"
+    "Fatigue", "Dehydration", "Hangovers", "Immune Support", "Athletic Recovery", 
+    "Jet Lag", "Stress", "Low Energy", "Seasonal Allergies", "Chronic Fatigue",
+    "Poor Sleep", "Brain Fog", "Muscle Soreness", "Vitamin Deficiency", "Skin Issues",
+    "Hair Loss", "Weight Management", "Anti-Aging", "Performance Enhancement"
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-medical-background to-medical-background/50 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--medical-blue))_0%,transparent_50%)] opacity-5" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,hsl(var(--medical-purple))_0%,transparent_50%)] opacity-5" />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Header */}
+    <section className="py-20 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 px-4 py-2 text-medical-blue border-medical-blue/20 bg-medical-blue/5">
-            <Sparkles className="w-4 h-4 mr-2" />
-            Comprehensive Wellness Solutions
+          <Badge variant="secondary" className="px-4 py-2 text-sm font-medium mb-6">
+            Comprehensive Care
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-medical-blue via-medical-purple to-medical-teal bg-clip-text text-transparent">
-            Advanced Medical Treatments
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            Get care today for 
+            <span className="block mt-2">
+              <span className="animate-pulse">optimal wellness</span>
+            </span>
           </h2>
-          <p className="text-xl text-medical-muted max-w-3xl mx-auto leading-relaxed">
-            Evidence-based treatments designed to optimize your health and enhance your quality of life
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+            Our licensed medical professionals provide personalized treatments for a wide range of health and wellness needs.
           </p>
-        </div>
 
-        {/* Conditions Ticker */}
-        <div className="mb-16 overflow-hidden bg-medical-card border border-medical-border rounded-2xl">
-          <div className="px-6 py-4 bg-gradient-to-r from-medical-blue/10 to-medical-purple/10 border-b border-medical-border">
-            <p className="text-sm font-semibold text-medical-blue text-center">
-              Conditions We Treat
-            </p>
-          </div>
-          <div className="py-4">
-            <div className="flex animate-scroll">
-              {[...conditions, ...conditions].map((condition, index) => (
-                <div key={index} className="flex-shrink-0 mx-6">
-                  <span className="text-sm text-medical-muted font-medium whitespace-nowrap">
-                    {condition}
-                  </span>
-                </div>
+          {/* Conditions Ticker */}
+          <div className="bg-muted/30 rounded-2xl p-6 mb-12">
+            <h3 className="font-semibold text-foreground mb-4">Conditions We Treat:</h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {conditions.map((condition, index) => (
+                <Badge key={index} variant="outline" className="text-sm">
+                  {condition}
+                </Badge>
               ))}
             </div>
           </div>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 mb-16">
           {serviceCategories.map((category, index) => (
-            <div
-              key={index}
-              className="group relative bg-medical-card border border-medical-border rounded-3xl overflow-hidden hover:border-medical-blue/50 transition-all duration-500 hover:shadow-[0_20px_40px_-12px_hsl(var(--medical-blue))_/_0.25] hover:-translate-y-2"
-            >
-              {/* Gradient Background */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-              
-              {/* Content */}
-              <div className="relative p-8">
-                <div className="flex items-start justify-between mb-6">
-                  <div className={`p-4 rounded-2xl bg-gradient-to-br ${category.color} shadow-lg`}>
-                    <category.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <ArrowRight className="w-6 h-6 text-medical-muted group-hover:text-white transition-colors duration-300 group-hover:translate-x-1 transform" />
-                </div>
-                
-                <h3 className="text-2xl font-bold mb-3 text-medical-text group-hover:text-white transition-colors duration-300">
-                  {category.title}
-                </h3>
-                
-                <p className="text-medical-muted group-hover:text-white/90 transition-colors duration-300 mb-6 leading-relaxed">
-                  {category.description}
-                </p>
-                
-                <div className="space-y-2 mb-8">
-                  {category.services.map((service, serviceIndex) => (
-                    <div key={serviceIndex} className="flex items-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-medical-blue group-hover:bg-white transition-colors duration-300 mr-3" />
-                      <span className="text-sm text-medical-muted group-hover:text-white/90 transition-colors duration-300">
-                        {service}
-                      </span>
+            <Card key={index} className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+              <div className="relative">
+                {/* Gradient Header */}
+                <div className={`h-24 bg-gradient-to-r ${category.gradient} relative`}>
+                  <div className="absolute inset-0 bg-black/10"></div>
+                  <div className="absolute bottom-4 left-6">
+                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                      <category.icon className="w-6 h-6 text-white" />
                     </div>
-                  ))}
+                  </div>
                 </div>
-                
-                <Button
-                  variant="outline"
-                  className="w-full border-medical-border group-hover:border-white/20 group-hover:bg-white/10 group-hover:text-white transition-all duration-300"
-                >
-                  Learn More
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                </Button>
+
+                {/* Card Content */}
+                <div className="p-6 space-y-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">{category.title}</h3>
+                    <p className="text-muted-foreground text-sm mb-4">{category.description}</p>
+                  </div>
+
+                  {/* Services List */}
+                  <div className="space-y-2">
+                    {category.services.slice(0, 4).map((service, serviceIndex) => (
+                      <div key={serviceIndex} className="flex items-center text-sm">
+                        <CheckCircle className="w-3 h-3 text-green-600 mr-2 flex-shrink-0" />
+                        <span className="text-muted-foreground">{service}</span>
+                      </div>
+                    ))}
+                    {category.services.length > 4 && (
+                      <div className="text-sm text-muted-foreground">
+                        +{category.services.length - 4} more treatments
+                      </div>
+                    )}
+                  </div>
+
+                  {/* CTA */}
+                  <div className="pt-4 border-t border-border">
+                    <Button asChild variant="outline" className="w-full group-hover:bg-primary group-hover:text-white transition-colors">
+                      <Link to={category.link} className="flex items-center justify-center">
+                        Learn More 
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center bg-gradient-to-r from-medical-blue to-medical-purple rounded-3xl p-12">
-          <h3 className="text-3xl font-bold text-white mb-4">
-            Ready to Start Your Wellness Journey?
-          </h3>
-          <p className="text-white/90 mb-8 text-lg max-w-2xl mx-auto">
-            Schedule a free consultation with our medical team to create your personalized treatment plan
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="outline" className="bg-white text-medical-blue hover:bg-white/90 border-0">
-              <Shield className="w-5 h-5 mr-2" />
-              Free Consultation
-            </Button>
-            <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10">
-              View All Services
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+        {/* Bottom CTA */}
+        <div className="text-center">
+          <div className="bg-gradient-to-r from-primary/10 to-brand-teal/10 rounded-3xl p-8 border border-primary/20">
+            <h3 className="text-2xl font-bold text-foreground mb-4">
+              Ready to optimize your health?
+            </h3>
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              Our licensed medical team is ready to provide personalized care at your location. 
+              Same-day appointments available.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" asChild className="bg-gradient-to-r from-primary to-brand-teal hover:from-primary-hover hover:to-brand-teal/90 text-white">
+                <Link to="/iv-therapy">Book Consultation</Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link to="/contact">Contact Us</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
