@@ -1,57 +1,45 @@
-import ModernInteractiveHero from "@/components/ModernInteractiveHero";
-import PremiumTrustSection from "@/components/PremiumTrustSection";
-import AdvancedServicesShowcase from "@/components/AdvancedServicesShowcase";
-import InnovativeProcessSection from "@/components/InnovativeProcessSection";
-import ModernTestimonials from "@/components/ModernTestimonials";
+import HeroSection from "@/components/HeroSection";
+import ServicesSection from "@/components/ServicesSection";
+import LifestyleShowcase from "@/components/LifestyleShowcase";
 import EnhancedStatsSection from "@/components/EnhancedStatsSection";
+import GoogleReviewsSection from "@/components/GoogleReviewsSection";
 import TelehealthSection from "@/components/TelehealthSection";
 import EnhancedMembershipSection from "@/components/EnhancedMembershipSection";
 import EnhancedPartnersSection from "@/components/EnhancedPartnersSection";
 import NewsletterSection from "@/components/NewsletterSection";
 import BBBAccreditation from "@/components/BBBAccreditation";
-import ComprehensiveServicesSection from "@/components/ComprehensiveServicesSection";
-import EnhancedBookingSection from "@/components/EnhancedBookingSection";
 
 const EnhancedIndex = () => {
   return (
     <div>
-      {/* 1. Modern Interactive Hero Section */}
-      <ModernInteractiveHero />
+      {/* 1. Hero Section - Primary value proposition */}
+      <HeroSection />
       
-      {/* 2. Premium Trust Section */}
-      <PremiumTrustSection />
+      {/* 2. Services - Treatment options */}
+      <ServicesSection />
       
-      {/* 3. Advanced Services Showcase */}
-      <AdvancedServicesShowcase />
+      {/* 3. Lifestyle Experience - Show the premium mobile experience */}
+      <LifestyleShowcase />
       
-      {/* 4. Comprehensive Services */}
-      <ComprehensiveServicesSection />
-      
-      {/* 5. Enhanced Booking Section */}
-      <EnhancedBookingSection />
-      
-      {/* 6. Innovative Process Section */}
-      <InnovativeProcessSection />
-      
-      {/* 7. Modern Testimonials */}
-      <ModernTestimonials />
-      
-      {/* 8. Results & Stats - Prove effectiveness with data */}
+      {/* 4. Results & Stats - Prove effectiveness with data */}
       <EnhancedStatsSection />
       
-      {/* 9. Telehealth Services - Additional service offering */}
+      {/* 5. Telehealth Services - Additional service offering */}
       <TelehealthSection />
       
-      {/* 10. Membership Plans - Convert visitors with pricing */}
+      {/* 6. Membership Plans - Convert visitors with pricing */}
       <EnhancedMembershipSection />
       
-      {/* 11. Partners & Certifications - Additional credibility */}
+      {/* 7. Partners & Certifications - Additional credibility */}
       <EnhancedPartnersSection />
       
-      {/* 12. Newsletter - Capture leads */}
+      {/* 8. Client Reviews - Showcase perfect 5.0 rating */}
+      <GoogleReviewsSection />
+      
+      {/* 9. Newsletter - Capture leads */}
       <NewsletterSection />
       
-      {/* 13. BBB Accreditation - Trust and credibility */}
+      {/* 10. BBB Accreditation - Trust and credibility */}
       <BBBAccreditation />
     </div>
   );

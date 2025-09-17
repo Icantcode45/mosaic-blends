@@ -1,7 +1,7 @@
-import UltraModernHero from "@/components/UltraModernHero";
-import PremiumTrustSection from "@/components/PremiumTrustSection";
-import AdvancedServicesShowcase from "@/components/AdvancedServicesShowcase";
-import InnovativeProcessSection from "@/components/InnovativeProcessSection";
+import ModernHeroSection from "@/components/ModernHeroSection";
+import ProfessionalTrustSection from "@/components/ProfessionalTrustSection";
+import ModernServicesShowcase from "@/components/ModernServicesShowcase";
+import ProcessStepsSection from "@/components/ProcessStepsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import EnhancedStatsSection from "@/components/EnhancedStatsSection";
 import TelehealthSection from "@/components/TelehealthSection";
@@ -17,19 +17,19 @@ const Index = () => {
       {/* Trust Bar at the top */}
       <TrustBar />
       
-      {/* 1. Ultra-Modern Hero Section */}
-      <UltraModernHero />
+      {/* 1. Modern Hero Section - Primary value proposition with trust indicators */}
+      <ModernHeroSection />
       
-      {/* 2. Premium Trust Section */}
-      <PremiumTrustSection />
+      {/* 2. Professional Trust Section - Credibility and certifications */}
+      <ProfessionalTrustSection />
       
-      {/* 3. Advanced Services Showcase */}
-      <AdvancedServicesShowcase />
+      {/* 3. Modern Services Showcase - Treatment options with modern design */}
+      <ModernServicesShowcase />
       
-      {/* 4. Innovative Process Section */}
-      <InnovativeProcessSection />
+      {/* 4. Process Steps - How it works professionally */}
+      <ProcessStepsSection />
       
-      {/* 5. Client Testimonials */}
+      {/* 5. Client Testimonials - Social proof and reviews */}
       <TestimonialsSection />
       
       {/* 6. Results & Stats - Prove effectiveness with data */}
