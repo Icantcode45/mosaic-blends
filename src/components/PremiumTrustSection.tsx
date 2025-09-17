@@ -1,5 +1,9 @@
 import { Badge } from "@/components/ui/badge";
 import { Shield, Award, Users, Clock, Heart, Star, CheckCircle, Zap } from "lucide-react";
+import arizonaCombatSportsLogo from "@/assets/partners/arizona-combat-sports-logo.png";
+import fightReadyLogo from "@/assets/partners/fight-ready-logo.png";
+import fullSendLogo from "@/assets/partners/full-send-logo.png";
+import nelkboysLogo from "@/assets/partners/nelkboys-logo.png";
 
 const trustMetrics = [
   {
@@ -56,10 +60,10 @@ const certifications = [
 ];
 
 const partnerLogos = [
-  { name: "Arizona Combat Sports", src: "/src/assets/partners/arizona-combat-sports-logo.png" },
-  { name: "Fight Ready", src: "/src/assets/partners/fight-ready-logo.png" },
-  { name: "Full Send", src: "/src/assets/partners/full-send-logo.png" },
-  { name: "Nelk Boys", src: "/src/assets/partners/nelkboys-logo.png" }
+  { name: "Arizona Combat Sports", src: arizonaCombatSportsLogo },
+  { name: "Fight Ready", src: fightReadyLogo },
+  { name: "Full Send", src: fullSendLogo },
+  { name: "Nelk Boys", src: nelkboysLogo }
 ];
 
 export default function PremiumTrustSection() {
