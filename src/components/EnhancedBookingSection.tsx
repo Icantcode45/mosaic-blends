@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import chatIcon from "@/assets/icons/chat-icon.png";
+import nadVialIcon from "@/assets/peptides/nad-vial.png";
+import vitaCombinedIcon from "@/assets/vials/vita-complex-injection.webp";
 import { Link } from "react-router-dom";
 import { Clock, MapPin, Calendar, Users, Star, Shield, CheckCircle } from "lucide-react";
 
@@ -10,7 +13,7 @@ const EnhancedBookingSection = () => {
       type: "IV Therapy",
       title: "Hydration & Recovery",
       description: "Custom IV drips for optimal wellness",
-      image: "/lovable-uploads/19ac5dfe-66b0-4e2f-be16-ed814d9cc475.png",
+      image: chatIcon,
       features: ["Myers Cocktail", "Immunity Boost", "Energy Boost", "Hangover Relief"],
       price: "Starting at $149",
       link: "/iv-therapy",
@@ -20,7 +23,7 @@ const EnhancedBookingSection = () => {
       type: "Peptide Therapy", 
       title: "Advanced Wellness",
       description: "Cutting-edge peptide treatments",
-      image: "/lovable-uploads/335fb85f-581d-43bb-9dab-00583c6b2e9e.png",
+      image: nadVialIcon,
       features: ["NAD+ Therapy", "BPC-157", "PT-141", "Custom Protocols"],
       price: "Starting at $299",
       link: "/nad-peptides",
@@ -30,7 +33,7 @@ const EnhancedBookingSection = () => {
       type: "Vitamin Injections",
       title: "Quick Nutrient Boost", 
       description: "Fast-acting vitamin shots",
-      image: "/lovable-uploads/1fac1b4b-2289-4274-b058-98ac68b44e03.png",
+      image: vitaCombinedIcon,
       features: ["B12 Energy", "Glutathione", "Vitamin D3", "Biotin"],
       price: "Starting at $49",
       link: "/vitamin-injections",

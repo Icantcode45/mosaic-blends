@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import bbbBadgeImg from "@/assets/bbb-badge.png";
 import { Link } from "react-router-dom";
 
 const EnhancedFooter = () => {
@@ -96,7 +97,7 @@ const EnhancedFooter = () => {
           <div className="md:col-span-2 space-y-6">
             <div className="flex items-center space-x-3">
               <img 
-                src="/lovable-uploads/ed8aafa4-26e1-49c7-b39e-ba28edd0824c.png" 
+                src={bbbBadgeImg} 
                 alt="Stay Dripped IV & Wellness Co." 
                 className="h-10 w-auto brightness-0 invert"
               />

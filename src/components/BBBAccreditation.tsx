@@ -1,4 +1,5 @@
 import bbbAccreditationImg from "@/assets/bbb-accreditation-small.jpeg";
+import bbbBadgeImg from "@/assets/bbb-badge.png";
 
 const BBBAccreditation = () => {
   return (
@@ -19,7 +20,7 @@ const BBBAccreditation = () => {
             {/* Original BBB Badge */}
             <div className="animate-fade-in hover-scale">
               <img
-                src="/lovable-uploads/ed8aafa4-26e1-49c7-b39e-ba28edd0824c.png"
+                src={bbbBadgeImg}
                 alt="BBB Accredited Business badge"
                 className="h-32 w-auto rounded-md shadow-lg border border-gray-100"
                 loading="lazy"

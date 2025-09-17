@@ -1,4 +1,5 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import placeholderImg from "@/assets/placeholder.jpg";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Plus } from "lucide-react";
@@ -32,7 +33,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     <Card className="h-full flex flex-col">
       <div className="aspect-square overflow-hidden rounded-t-lg">
         <img
-          src={product.image_url || '/placeholder.jpg'}
+          src={product.image_url || placeholderImg}
           alt={product.name}
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
         />

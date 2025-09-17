@@ -1,15 +1,18 @@
 import { Card } from "@/components/ui/card";
+import premiumQualityImg from "@/assets/premium-quality-icon.png";
+import luxuryOutdoorImg from "@/assets/lifestyle/luxury-outdoor-setting.png";
+import professionalCareImg from "@/assets/lifestyle/professional-care-service.png";
 
 const LifestyleShowcase = () => {
   const lifestyleImages = [
     {
-      src: "/lovable-uploads/34c99661-1ae3-4de4-a24f-48d93504109b.png",
+      src: luxuryOutdoorImg,
       alt: "Premium IV therapy in luxury outdoor setting",
       title: "Luxury Experience",
       description: "Unwind in your preferred setting"
     },
     {
-      src: "/lovable-uploads/a2316986-ad33-4422-b338-f02dcd158a69.png",
+      src: professionalCareImg,
       alt: "Professional IV therapy service with medical supervision",
       title: "Professional Care",
       description: "Expert treatment wherever you are"
@@ -22,7 +25,7 @@ const LifestyleShowcase = () => {
         <div className="text-center mb-12">
           <div className="flex justify-center mb-4">
             <img 
-              src="/lovable-uploads/16b76d74-4b9e-45db-9b78-f5bc16c51634.png" 
+              src={premiumQualityImg} 
               alt="Premium Quality" 
               className="w-12 h-12" 
               width="48" 

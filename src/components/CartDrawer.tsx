@@ -1,4 +1,5 @@
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import placeholderImg from "@/assets/placeholder.jpg";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Plus, Minus, Trash2 } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
@@ -47,7 +48,7 @@ export default function CartDrawer() {
                   <div key={item.id} className="flex items-center space-x-4">
                     <div className="flex-shrink-0">
                       <img
-                        src={item.product.image_url || '/placeholder.jpg'}
+                        src={item.product.image_url || placeholderImg}
                         alt={item.product.name}
                         className="w-16 h-16 object-cover rounded-md"
                       />

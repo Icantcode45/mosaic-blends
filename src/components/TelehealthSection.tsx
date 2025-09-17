@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import verifiedCheckImg from "@/assets/verified-check.png";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import QualiphyWidget from "@/components/QualiphyWidget";
@@ -23,15 +24,15 @@ const TelehealthSection = () => {
             </p>
             <ul className="mt-6 space-y-3 text-foreground">
               <li className="flex items-center gap-3">
-                <img src="/lovable-uploads/de47d2cc-68dc-4581-a47c-598a75979cbe.png" alt="Verified" className="w-6 h-6" />
+                <img src={verifiedCheckImg} alt="Verified" className="w-6 h-6" />
                 Licensed AZ providers
               </li>
               <li className="flex items-center gap-3">
-                <img src="/lovable-uploads/de47d2cc-68dc-4581-a47c-598a75979cbe.png" alt="Verified" className="w-6 h-6" />
+                <img src={verifiedCheckImg} alt="Verified" className="w-6 h-6" />
                 Evidence‑based protocols
               </li>
               <li className="flex items-center gap-3">
-                <img src="/lovable-uploads/de47d2cc-68dc-4581-a47c-598a75979cbe.png" alt="Verified" className="w-6 h-6" />
+                <img src={verifiedCheckImg} alt="Verified" className="w-6 h-6" />
                 Transparent pricing
               </li>
             </ul>

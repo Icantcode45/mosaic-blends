@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ivBagImmuneBoostImg from "@/assets/iv-bag-immune-boost.png";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, Shield, Award, Clock, Users, CheckCircle } from "lucide-react";
@@ -143,7 +144,7 @@ export default function UltraModernHero() {
               <div className="text-center">
                 <div className="relative mx-auto w-64 h-80 mb-6">
                   <img
-                    src="/lovable-uploads/2bf8cace-459c-4234-809a-23f96c9ffbcb.png"
+                    src={ivBagImmuneBoostImg}
                     alt="IV Bag - Immune Boost"
                     className="w-full h-full object-contain hover-lift"
                   />
