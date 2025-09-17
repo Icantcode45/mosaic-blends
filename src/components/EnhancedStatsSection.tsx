@@ -6,14 +6,14 @@ const EnhancedStatsSection = () => {
   const stats = [
     {
       icon: Users,
-      number: useCountUp(12500, 2000),
+      number: useCountUp({ end: 12500, duration: 2000 }),
       label: "Happy Clients",
       description: "Satisfied customers nationwide",
       color: "from-medical-blue to-medical-teal"
     },
     {
       icon: Award,
-      number: useCountUp(98, 1500),
+      number: useCountUp({ end: 98, duration: 1500 }),
       suffix: "%",
       label: "Success Rate",
       description: "Client satisfaction guarantee",
@@ -21,7 +21,7 @@ const EnhancedStatsSection = () => {
     },
     {
       icon: Clock,
-      number: useCountUp(24, 1000),
+      number: useCountUp({ end: 24, duration: 1000 }),
       suffix: "/7",
       label: "Available",
       description: "Round-the-clock service",
@@ -29,7 +29,7 @@ const EnhancedStatsSection = () => {
     },
     {
       icon: TrendingUp,
-      number: useCountUp(89, 2200),
+      number: useCountUp({ end: 89, duration: 2200 }),
       suffix: "%",
       label: "Repeat Clients",
       description: "Customer loyalty rate",
@@ -86,6 +86,7 @@ const EnhancedStatsSection = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
+              ref={stat.number.ref}
               className="group relative bg-medical-card border border-medical-border rounded-3xl p-8 text-center hover:border-medical-blue/50 transition-all duration-500 hover:shadow-[0_20px_40px_-12px_hsl(var(--medical-blue))_/_0.25] hover:-translate-y-2"
             >
               {/* Background Gradient */}
@@ -101,7 +102,7 @@ const EnhancedStatsSection = () => {
               {/* Number */}
               <div className="relative mb-4">
                 <span className={`text-4xl md:text-5xl font-bold bg-gradient-to-br ${stat.color} bg-clip-text text-transparent`}>
-                  {stat.number}
+                  {stat.number.count}
                   {stat.suffix}
                 </span>
               </div>
