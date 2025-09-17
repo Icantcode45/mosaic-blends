@@ -36,25 +36,25 @@ const serviceCategories = [
       {
         name: "Myers' Cocktail",
         image: myersCocktailBag,
-        price: "$149",
+        price: "$349",
         duration: "45min",
-        benefits: ["Energy boost", "Immune support", "Hydration"],
+        benefits: ["B-Complex vitamins", "Vitamin C", "Magnesium", "Zinc", "Glutathione"],
         popular: true
       },
       {
-        name: "Immune Boost",
+        name: "Diamondback Immune Boost",
         image: diamondbackBag,
-        price: "$179",
+        price: "$225",
         duration: "45min",
-        benefits: ["Vitamin C", "Zinc", "Immune system"],
+        benefits: ["High-dose Vitamin C", "Zinc", "B-Complex", "Immune support"],
         popular: false
       },
       {
-        name: "Hangover Relief",
+        name: '"Day After The Dale" Hangover Relief',
         image: hangoverBag,
-        price: "$159",
+        price: "$189",
         duration: "30min",
-        benefits: ["Rapid recovery", "Hydration", "Nausea relief"],
+        benefits: ["B-Complex", "Anti-nausea", "Rapid rehydration", "Detox support"],
         popular: false
       }
     ]
@@ -67,19 +67,19 @@ const serviceCategories = [
     gradient: "from-purple-500 to-pink-500",
     services: [
       {
-        name: "NAD+ Elite",
+        name: "NAD+ Elite Therapy",
         image: eliteNadBag,
-        price: "$299",
-        duration: "90min",
-        benefits: ["Anti-aging", "Mental clarity", "Energy"],
+        price: "$500",
+        duration: "2-3hrs",
+        benefits: ["250mg NAD+", "Anti-aging", "Mental clarity", "Cellular repair"],
         popular: true
       },
       {
-        name: "NAD+ Diamond",
+        name: "NAD+ Diamond Therapy",
         image: diamondNadBag,
-        price: "$399",
-        duration: "120min",
-        benefits: ["Premium formula", "Longevity", "Cellular repair"],
+        price: "$525",
+        duration: "3-4hrs",
+        benefits: ["Premium NAD+ dose", "Enhanced longevity", "Maximum cellular repair"],
         popular: false
       }
     ]
