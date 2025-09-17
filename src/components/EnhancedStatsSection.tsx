@@ -9,7 +9,7 @@ const EnhancedStatsSection = () => {
       number: useCountUp({ end: 12500, duration: 2000 }),
       label: "Happy Clients",
       description: "Satisfied customers nationwide",
-      color: "from-medical-blue to-medical-teal"
+      color: "from-brand-blue to-brand-teal"
     },
     {
       icon: Award,
@@ -17,7 +17,7 @@ const EnhancedStatsSection = () => {
       suffix: "%",
       label: "Success Rate",
       description: "Client satisfaction guarantee",
-      color: "from-medical-purple to-medical-pink"
+      color: "from-primary to-brand-teal"
     },
     {
       icon: Clock,
@@ -25,7 +25,7 @@ const EnhancedStatsSection = () => {
       suffix: "/7",
       label: "Available",
       description: "Round-the-clock service",
-      color: "from-medical-accent to-medical-secondary"
+      color: "from-brand-teal to-brand-success"
     },
     {
       icon: TrendingUp,
@@ -33,7 +33,7 @@ const EnhancedStatsSection = () => {
       suffix: "%",
       label: "Repeat Clients",
       description: "Customer loyalty rate",
-      color: "from-medical-gradient-start to-medical-gradient-end"
+      color: "from-brand-success to-primary"
     }
   ];
 
@@ -61,22 +61,22 @@ const EnhancedStatsSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-medical-card to-medical-background relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-b from-muted to-background relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,hsl(var(--medical-blue))_0%,transparent_50%)] opacity-5" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(var(--medical-purple))_0%,transparent_50%)] opacity-5" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,hsl(var(--primary))_0%,transparent_50%)] opacity-5" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(var(--brand-teal))_0%,transparent_50%)] opacity-5" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 px-4 py-2 text-medical-blue border-medical-blue/20 bg-medical-blue/5">
+          <Badge variant="outline" className="mb-4 px-4 py-2 text-primary border-primary/20 bg-primary/5">
             <TrendingUp className="w-4 h-4 mr-2" />
             Proven Results
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-medical-blue via-medical-purple to-medical-teal bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-brand-teal to-brand-blue bg-clip-text text-transparent">
             Trust the Numbers
           </h2>
-          <p className="text-xl text-medical-muted max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Real results from real clients who trust us with their wellness journey
           </p>
         </div>
@@ -87,7 +87,7 @@ const EnhancedStatsSection = () => {
             <div
               key={index}
               ref={stat.number.ref}
-              className="group relative bg-medical-card border border-medical-border rounded-3xl p-8 text-center hover:border-medical-blue/50 transition-all duration-500 hover:shadow-[0_20px_40px_-12px_hsl(var(--medical-blue))_/_0.25] hover:-translate-y-2"
+              className="group relative bg-card border border-border rounded-3xl p-8 text-center hover:border-primary/50 transition-all duration-500 hover:shadow-[0_20px_40px_-12px_hsl(var(--primary))_/_0.25] hover:-translate-y-2"
             >
               {/* Background Gradient */}
               <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`} />
@@ -108,12 +108,12 @@ const EnhancedStatsSection = () => {
               </div>
               
               {/* Label */}
-              <h3 className="text-xl font-semibold mb-2 text-medical-text">
+              <h3 className="text-xl font-semibold mb-2 text-foreground">
                 {stat.label}
               </h3>
               
               {/* Description */}
-              <p className="text-medical-muted text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 {stat.description}
               </p>
             </div>
@@ -121,12 +121,12 @@ const EnhancedStatsSection = () => {
         </div>
 
         {/* Achievements Section */}
-        <div className="bg-medical-card border border-medical-border rounded-3xl p-8 md:p-12">
+        <div className="bg-card border border-border rounded-3xl p-8 md:p-12">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-medical-blue to-medical-purple bg-clip-text text-transparent">
+            <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-brand-teal bg-clip-text text-transparent">
               Our Credentials & Achievements
             </h3>
-            <p className="text-medical-muted text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Recognized for excellence in medical wellness and patient care
             </p>
           </div>
@@ -138,14 +138,14 @@ const EnhancedStatsSection = () => {
                 className="text-center group hover:scale-105 transition-all duration-300"
               >
                 <div className="mb-4 flex justify-center">
-                  <div className="p-4 rounded-2xl bg-medical-background border border-medical-border group-hover:border-medical-blue/50 transition-colors duration-300">
-                    <achievement.icon className="w-8 h-8 text-medical-blue transition-colors duration-300" />
+                  <div className="p-4 rounded-2xl bg-background border border-border group-hover:border-primary/50 transition-colors duration-300">
+                    <achievement.icon className="w-8 h-8 text-primary transition-colors duration-300" />
                   </div>
                 </div>
-                <h4 className="text-lg font-semibold mb-2 text-medical-text">
+                <h4 className="text-lg font-semibold mb-2 text-foreground">
                   {achievement.title}
                 </h4>
-                <p className="text-medical-muted text-sm leading-relaxed">
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   {achievement.description}
                 </p>
               </div>
@@ -155,7 +155,7 @@ const EnhancedStatsSection = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-medical-blue to-medical-purple rounded-3xl p-12">
+          <div className="bg-gradient-to-r from-primary to-brand-teal rounded-3xl p-12">
             <div className="max-w-3xl mx-auto">
               <h3 className="text-3xl font-bold text-white mb-4">
                 Join Our Community of Wellness
