@@ -6,6 +6,20 @@ import { toast } from "sonner";
 import IntakeQWidget from "@/components/IntakeQWidget";
 import ServiceBookingButton from "@/components/ServiceBookingButton";
 
+// Service images (resolved via Vite imports for production)
+import b12Img from "@/assets/vials/b12-injection.jpeg";
+import d3Img from "@/assets/vials/vitamin-d3-injection.webp";
+import mgChlorideImg from "@/assets/vials/magnesium-chloride-injection.jpeg";
+import glutathioneImg from "@/assets/vials/glutathione-injection.jpeg";
+import lGlutamineImg from "@/assets/vials/l-glutamine-injection.jpeg";
+import biotinImg from "@/assets/vials/biotin-injection.webp";
+import pyridoxineImg from "@/assets/vials/pyridoxine-injection.webp";
+import bComplexImg from "@/assets/vials/vita-complex-injection.webp";
+import mineralBlendImg from "@/assets/vials/mineral-blend-injection.jpeg";
+import lProlineImg from "@/assets/vials/l-proline-injection.jpeg";
+import taurineImg from "@/assets/vials/taurine-injection.jpeg";
+import nacImg from "@/assets/vials/acetylcysteine-injection.jpeg";
+
 const VitaminInjections = () => {
   const { addItem } = useCart();
 
@@ -284,6 +298,30 @@ const VitaminInjections = () => {
     }
   ];
 
+  // Resolve image URLs defined as "/src/assets/..." into production-safe URLs via imports
+  const injectionImageMap: Record<string, string> = {
+    "/src/assets/vials/b12-injection.jpeg": b12Img,
+    "/src/assets/vials/vitamin-d3-injection.webp": d3Img,
+    "/src/assets/vials/magnesium-chloride-injection.jpeg": mgChlorideImg,
+    "/src/assets/vials/glutathione-injection.jpeg": glutathioneImg,
+    "/src/assets/vials/l-glutamine-injection.jpeg": lGlutamineImg,
+    "/src/assets/vials/biotin-injection.webp": biotinImg,
+    "/src/assets/vials/pyridoxine-injection.webp": pyridoxineImg,
+    "/src/assets/vials/vita-complex-injection.webp": bComplexImg,
+    "/src/assets/vials/mineral-blend-injection.jpeg": mineralBlendImg,
+    "/src/assets/vials/l-proline-injection.jpeg": lProlineImg,
+    "/src/assets/vials/taurine-injection.jpeg": taurineImg,
+    "/src/assets/vials/acetylcysteine-injection.jpeg": nacImg,
+  };
+
+  const injectionsWithImages = vitaminInjections.map((item) => ({
+    ...item,
+    image_url:
+      typeof item.image_url === "string" && injectionImageMap[item.image_url]
+        ? injectionImageMap[item.image_url]
+        : item.image_url,
+  }));
+
   const membershipPlans = [
     {
       name: "Shot Pass Membership",
@@ -376,7 +414,7 @@ const VitaminInjections = () => {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {vitaminInjections.map((injection) => (
+              {injectionsWithImages.map((injection) => (
                 <Card key={injection.id} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   {injection.image_url && (
                     <div className="relative overflow-hidden rounded-t-lg">

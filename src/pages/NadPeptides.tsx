@@ -10,6 +10,17 @@ import { useToast } from "@/components/ui/use-toast";
 import PeptideBookingButton from "@/components/PeptideBookingButton";
 import QualiphyWidget from "@/components/QualiphyWidget";
 
+// Images (resolved via Vite imports for production builds)
+import nadVial from "@/assets/peptides/nad-vial-new.png";
+import bpc157Vial from "@/assets/peptides/bpc157-vial-new.png";
+import sermorelinImg from "@/assets/vials/sermorelin-injection.webp";
+import pt141Vial from "@/assets/peptides/pt141-vial-new.png";
+import liraglutideImg from "@/assets/vials/liraglutide-injection-dual.jpeg";
+import ghkCuVial from "@/assets/peptides/ghk-cu-vial.png";
+import epitalonVial from "@/assets/peptides/epitalon-vial.png";
+import setmelanotideVial from "@/assets/peptides/setmelanotide-vial-new.png";
+import samidorphanVial from "@/assets/peptides/samidorphan-vial-new.png";
+
 const NadPeptides = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [showQuickView, setShowQuickView] = useState(false);
@@ -397,6 +408,25 @@ const NadPeptides = () => {
       researchStatus: 'FDA-approved for specific indications with ongoing research'
     }
   };
+
+  // Map string asset paths to imported URLs so images work in production
+  const peptideImageMap: Record<string, string> = {
+    "/src/assets/peptides/nad-vial-new.png": nadVial,
+    "/src/assets/peptides/bpc157-vial-new.png": bpc157Vial,
+    "/src/assets/vials/sermorelin-injection.webp": sermorelinImg,
+    "/src/assets/peptides/pt141-vial-new.png": pt141Vial,
+    "/src/assets/vials/liraglutide-injection-dual.jpeg": liraglutideImg,
+    "/src/assets/peptides/ghk-cu-vial.png": ghkCuVial,
+    "/src/assets/peptides/epitalon-vial.png": epitalonVial,
+    "/src/assets/peptides/setmelanotide-vial-new.png": setmelanotideVial,
+    "/src/assets/peptides/samidorphan-vial-new.png": samidorphanVial,
+  };
+  Object.keys(peptideDatabase).forEach((key) => {
+    const item: any = (peptideDatabase as any)[key];
+    if (item && typeof item.image_url === "string" && peptideImageMap[item.image_url]) {
+      item.image_url = peptideImageMap[item.image_url];
+    }
+  });
 
   const benefitsInfo = [
     {
