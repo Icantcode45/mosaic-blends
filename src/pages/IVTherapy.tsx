@@ -47,34 +47,51 @@ const IVTherapy = () => {
   const ivTherapyServices = {
     basic: [
       {
-        id: 'gold-hydration',
-        name: 'The "Gold" Hydration IV',
+        id: 'hangover',
+        name: 'The "Day After The Dale" Hangover Relief IV',
         category: 'Basic Hydration',
-        price: '$319',
-        badge: 'Premium',
-        description: 'Premium hydration therapy with essential vitamins and minerals for superior wellness.',
+        price: '$189',
+        badge: 'Hangover Relief',
+        description: 'Rapid recovery from hangovers with targeted hydration and detoxification support.',
         features: [
           'Normal Saline 1000ml',
-          'B-Complex Vitamins',
-          'Vitamin C',
+          'Vitamin B-Complex',
+          'Vitamin B12',
+          'Ketorolac (Anti-nausea)',
           'Magnesium Chloride',
-          'Premium Recovery'
+          'Ondansetron (Anti-nausea)'
         ]
       },
       {
-        id: 'platinum-hydration',
-        name: 'The "Platinum" Hydration IV',
+        id: 'jr-myers',
+        name: 'Jr Myers Cocktail IV',
         category: 'Basic Hydration',
-        price: '$395',
-        badge: 'Ultra Premium',
-        description: 'Our most comprehensive hydration therapy with advanced nutrient blend.',
+        price: '$189',
+        badge: 'Jr Formula',
+        description: 'A lighter version of the classic Myers Cocktail, perfect for first-time patients.',
+        features: [
+          'Normal Saline 500ml',
+          'Vitamin B-Complex',
+          'Vitamin B12',
+          'Vitamin C (250mg)',
+          'Glutathione'
+        ]
+      },
+      {
+        id: 'myers',
+        name: 'Myers Cocktail IV',
+        category: 'Basic Hydration',
+        price: '$184.99',
+        badge: 'Classic Formula',
+        description: 'The classic Myers Cocktail formula with essential vitamins and minerals for overall wellness.',
         features: [
           'Normal Saline 1000ml',
-          'Advanced B-Complex',
-          'High-Dose Vitamin C',
-          'Magnesium + Calcium',
-          'Premium Electrolyte Blend',
-          'Ultimate Recovery'
+          'Vitamin B-Complex',
+          'Vitamin B12',
+          'Vitamin C (500mg)',
+          'Zinc Sulfate',
+          'Glutathione',
+          'Magnesium Chloride'
         ]
       }
     ],
@@ -94,35 +111,6 @@ const IVTherapy = () => {
         ]
       },
       {
-        id: 'weight-management',
-        name: 'Weight Management Support IV',
-        category: 'Standard Wellness',
-        price: '$269',
-        badge: 'Metabolism',
-        description: 'Metabolic support formula designed to enhance weight management and energy.',
-        features: [
-          'L-Carnitine blend',
-          'B-Complex Vitamins',
-          'Amino acid complex',
-          'Metabolism enhancement',
-          'Energy optimization'
-        ]
-      },
-      {
-        id: 'stress-relief',
-        name: 'Stress Relief IV',
-        category: 'Standard Wellness',
-        price: '$319',
-        description: 'Calming formula to reduce stress and promote relaxation and mental clarity.',
-        features: [
-          'Magnesium Chloride',
-          'B-Complex vitamins',
-          'Taurine',
-          'Stress reduction',
-          'Mental clarity enhancement'
-        ]
-      },
-      {
         id: 'mental-clarity',
         name: 'Mental Clarity IV',
         category: 'Standard Wellness',
@@ -135,29 +123,42 @@ const IVTherapy = () => {
           'Enhanced focus',
           'Memory support'
         ]
-      }
-    ],
-    specialty: [
+      },
       {
-        id: 'hangover',
-        name: 'The "Day After The Dale" Hangover Relief IV',
-        category: 'Specialty Treatments',
-        price: '$189',
-        badge: 'Hangover Relief',
-        description: 'Rapid recovery from hangovers with targeted hydration and detoxification support.',
+        id: 'd-book',
+        name: 'The "D-Book" Athletic Performance Booster IV',
+        category: 'Standard Wellness',
+        price: '$225',
+        description: 'Elite athletic performance formula for professional-level optimization.',
+        features: [
+          'Normal Saline 1000ml',
+          'Vitamin B6',
+          'Vitamin B12',
+          'Vitamin C',
+          'Glutathione',
+          'Magnesium Chloride'
+        ]
+      },
+      {
+        id: 'diamondback',
+        name: 'The "Diamondback" Immune System Booster IV',
+        category: 'Standard Wellness',
+        price: '$225',
+        badge: 'Immunity',
+        description: 'Powerful immune system support with high-dose vitamins and antioxidants.',
         features: [
           'Normal Saline 1000ml',
           'Vitamin B-Complex',
+          'High-dose Vitamin C',
           'Vitamin B12',
-          'Ketorolac (Anti-nausea)',
-          'Magnesium Chloride',
-          'Ondansetron (Anti-nausea)'
+          'Zinc Sulfate',
+          'Glutathione'
         ]
       },
       {
         id: 'sun-devil',
         name: 'The "Sun Devil" Energy Boost IV',
-        category: 'Specialty Treatments',
+        category: 'Standard Wellness',
         price: '$245',
         badge: 'Performance',
         description: 'High-energy formula designed for peak performance and endurance.',
@@ -169,21 +170,22 @@ const IVTherapy = () => {
           'Magnesium Chloride',
           'Energy optimization'
         ]
-      },
+      }
+    ],
+    specialty: [
       {
-        id: 'diamondback',
-        name: 'The "Diamondback" Immune System Booster IV',
+        id: 'weight-management',
+        name: 'Weight Management Support IV',
         category: 'Specialty Treatments',
-        price: '$225',
-        badge: 'Immunity',
-        description: 'Powerful immune system support with high-dose vitamins and antioxidants.',
+        price: '$269',
+        badge: 'Metabolism',
+        description: 'Metabolic support formula designed to enhance weight management and energy.',
         features: [
-          'Normal Saline 1000ml',
-          'Vitamin B-Complex',
-          'High-dose Vitamin C',
-          'Vitamin B12',
-          'Zinc Sulfate',
-          'Glutathione'
+          'L-Carnitine blend',
+          'B-Complex Vitamins',
+          'Amino acid complex',
+          'Metabolism enhancement',
+          'Energy optimization'
         ]
       },
       {
@@ -200,21 +202,6 @@ const IVTherapy = () => {
           'Vitamin C',
           'Zinc Sulfate',
           'Glutathione'
-        ]
-      },
-      {
-        id: 'd-book',
-        name: 'The "D-Book" Athletic Performance Booster IV',
-        category: 'Specialty Treatments',
-        price: '$225',
-        description: 'Elite athletic performance formula for professional-level optimization.',
-        features: [
-          'Normal Saline 1000ml',
-          'Vitamin B6',
-          'Vitamin B12',
-          'Vitamin C',
-          'Glutathione',
-          'Magnesium Chloride'
         ]
       },
       {
@@ -235,75 +222,38 @@ const IVTherapy = () => {
         ]
       },
       {
-        id: 'myers',
-        name: 'Myers Cocktail IV',
+        id: 'stress-relief',
+        name: 'Stress Relief IV',
         category: 'Specialty Treatments',
-        price: '$184.99',
-        badge: 'Classic Formula',
-        description: 'The classic Myers Cocktail formula with essential vitamins and minerals for overall wellness.',
+        price: '$319',
+        description: 'Calming formula to reduce stress and promote relaxation and mental clarity.',
         features: [
-          'Normal Saline 1000ml',
-          'Vitamin B-Complex',
-          'Vitamin B12',
-          'Vitamin C (500mg)',
-          'Zinc Sulfate',
-          'Glutathione',
-          'Magnesium Chloride'
+          'Magnesium Chloride',
+          'B-Complex vitamins',
+          'Taurine',
+          'Stress reduction',
+          'Mental clarity enhancement'
         ]
       },
       {
-        id: 'jr-myers',
-        name: 'Jr Myers Cocktail IV',
-        category: 'Specialty Treatments',
-        price: '$189',
-        badge: 'Jr Formula',
-        description: 'A lighter version of the classic Myers Cocktail, perfect for first-time patients.',
-        features: [
-          'Normal Saline 500ml',
-          'Vitamin B-Complex',
-          'Vitamin B12',
-          'Vitamin C (250mg)',
-          'Glutathione'
-        ]
-      }
-    ],
-    premium: [
-      {
-        id: 'gold',
+        id: 'gold-hydration',
         name: 'The "Gold" Hydration IV',
-        category: 'Premium Therapies',
+        category: 'Specialty Treatments',
         price: '$319',
         badge: 'Premium',
-        description: 'Premium hydration and recovery formula with advanced nutrient blend.',
+        description: 'Premium hydration therapy with essential vitamins and minerals for superior wellness.',
         features: [
           'Normal Saline 1000ml',
-          'B-Complex vitamins',
-          'Vitamin B12',
+          'B-Complex Vitamins',
           'Vitamin C',
           'Magnesium Chloride',
-          'Premium recovery support'
-        ]
-      },
-      {
-        id: 'platinum',
-        name: 'The "Platinum" Hydration IV',
-        category: 'Premium Therapies',
-        price: '$395',
-        badge: 'Ultra Premium',
-        description: 'Our most comprehensive hydration and wellness formula with premium nutrients.',
-        features: [
-          'Normal Saline 1000ml',
-          'Advanced B-Complex',
-          'High-dose Vitamin C',
-          'Magnesium + additional minerals',
-          'Premium antioxidant blend',
-          'Elite recovery support'
+          'Premium Recovery'
         ]
       },
       {
         id: 'stay-dripped',
         name: 'The "Stay Dripped" Special IV',
-        category: 'Premium Therapies',
+        category: 'Specialty Treatments',
         price: '$345',
         badge: 'Signature',
         description: 'Our signature blend combining the best of all our treatments for ultimate wellness.',
@@ -314,6 +264,41 @@ const IVTherapy = () => {
           'Antioxidant complex',
           'Complete wellness formula',
           'Signature therapeutic blend'
+        ]
+      }
+    ],
+    premium: [
+      {
+        id: 'platinum-hydration',
+        name: 'The "Platinum" Hydration IV',
+        category: 'Premium Therapies',
+        price: '$395',
+        badge: 'Ultra Premium',
+        description: 'Our most comprehensive hydration therapy with advanced nutrient blend.',
+        features: [
+          'Normal Saline 1000ml',
+          'Advanced B-Complex',
+          'High-Dose Vitamin C',
+          'Magnesium + Calcium',
+          'Premium Electrolyte Blend',
+          'Ultimate Recovery'
+        ]
+      },
+      {
+        id: 'fountain-youth',
+        name: 'The "Fountain Of Youth" IV',
+        category: 'Premium Therapies',
+        price: '$400',
+        badge: 'Beauty + NAD+',
+        description: 'Enhanced beauty and anti-aging formula with premium nutrients for youthful vitality.',
+        features: [
+          'Normal Saline 1000ml',
+          'Vitamin B-Complex',
+          'Vitamin C (500mg)',
+          'Glutathione',
+          'Zinc Sulfate',
+          'Biotin',
+          'Advanced anti-aging complex'
         ]
       }
     ],
@@ -335,20 +320,20 @@ const IVTherapy = () => {
         ]
       },
       {
-        id: 'fountain-youth',
-        name: 'The "Fountain Of Youth" IV',
+        id: 'diamond-nad',
+        name: 'The "Diamond" NAD+ Therapy IV',
         category: 'NAD+ Therapy',
-        price: '$400',
-        badge: 'Beauty + NAD+',
-        description: 'Enhanced beauty and anti-aging formula with premium nutrients for youthful vitality.',
+        price: '$525',
+        badge: 'Diamond Elite',
+        description: 'Our exclusive Diamond NAD+ therapy with comprehensive wellness support.',
         features: [
-          'Normal Saline 1000ml',
-          'Vitamin B-Complex',
-          'Vitamin C (500mg)',
-          'Glutathione',
-          'Zinc Sulfate',
-          'Biotin',
-          'Advanced anti-aging complex'
+          'Normal Saline 500ml',
+          'Premium NAD+ dose',
+          'Complete vitamin complex',
+          'Advanced amino blend',
+          'Maximum glutathione',
+          'Elite anti-aging support',
+          '3-4 hour treatment'
         ]
       },
       {
@@ -365,23 +350,6 @@ const IVTherapy = () => {
           'Vitamin C',
           'Glutathione',
           'Premium anti-aging blend',
-          '3-4 hour treatment'
-        ]
-      },
-      {
-        id: 'diamond-nad',
-        name: 'The "Diamond" NAD+ Therapy IV',
-        category: 'NAD+ Therapy',
-        price: '$525',
-        badge: 'Diamond Elite',
-        description: 'Our exclusive Diamond NAD+ therapy with comprehensive wellness support.',
-        features: [
-          'Normal Saline 500ml',
-          'Premium NAD+ dose',
-          'Complete vitamin complex',
-          'Advanced amino blend',
-          'Maximum glutathione',
-          'Elite anti-aging support',
           '3-4 hour treatment'
         ]
       }
