@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/contexts/CartContext";
@@ -387,15 +388,83 @@ const VitaminInjections = () => {
   };
 
   useEffect(() => {
-    document.title = "Vitamin Injections | Stay Dripped IV & Wellness Co.";
+    document.title = "Vitamin Injections Scottsdale | B12 Shots Phoenix | Vitamin D Arizona | Mobile Service";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Quick and efficient vitamin injections in Scottsdale, AZ. Targeted wellness support and energy enhancement with B12, Vitamin D, and more.');
+      metaDescription.setAttribute('content', 'Quick vitamin injections in Scottsdale, AZ. B12 energy shots, Vitamin D, glutathione, biotin injections delivered. Licensed nurses, affordable pricing, same-day service.');
     }
   }, []);
 
   return (
     <>
+      <Helmet>
+        <title>Vitamin Injections Scottsdale | B12 Shots Phoenix | Vitamin D Arizona | Mobile Service</title>
+        <meta name="description" content="Quick vitamin injections in Scottsdale, AZ. B12 energy shots, Vitamin D, glutathione, biotin injections delivered. Licensed nurses, affordable pricing, same-day service." />
+        <meta name="keywords" content="vitamin injections Scottsdale, B12 shots Phoenix, vitamin D injections Arizona, glutathione shots Scottsdale, biotin injections Phoenix, mobile vitamin shots Arizona, energy injections Scottsdale, vitamin therapy Phoenix, B12 energy boost Arizona" />
+        <link rel="canonical" href="https://staydrippediv.com/vitamin-injections" />
+        
+        {/* Local SEO */}
+        <meta name="geo.region" content="US-AZ" />
+        <meta name="geo.placename" content="Scottsdale, Phoenix" />
+        
+        {/* Enhanced Open Graph */}
+        <meta property="og:title" content="Vitamin Injections Scottsdale | B12 Shots Phoenix | Mobile Service" />
+        <meta property="og:description" content="Quick vitamin injections in Scottsdale, AZ. B12 energy shots, Vitamin D, glutathione, biotin injections delivered. Licensed nurses, affordable pricing." />
+        <meta property="og:url" content="https://staydrippediv.com/vitamin-injections" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Vitamin Injections Scottsdale | B12 Shots Phoenix | Mobile Service" />
+        <meta name="twitter:description" content="Quick vitamin injections delivered to your location in Scottsdale. B12, Vitamin D, glutathione shots and more." />
+        
+        {/* Structured Data for Vitamin Injections */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalBusiness",
+            "name": "Stay Dripped IV & Wellness Co. - Vitamin Injections",
+            "serviceType": "Mobile Vitamin Injection Services",
+            "areaServed": ["Scottsdale, AZ", "Phoenix, AZ", "Paradise Valley, AZ"],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Vitamin Injection Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Vitamin B12 Injection",
+                    "description": "Energy-boosting B12 methylcobalamin injection"
+                  },
+                  "price": "$13",
+                  "priceCurrency": "USD"
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Vitamin D3 Injection",
+                    "description": "High-dose vitamin D3 for immune support"
+                  },
+                  "price": "$28",
+                  "priceCurrency": "USD"
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Glutathione Injection",
+                    "description": "Master antioxidant for detox and skin health"
+                  },
+                  "price": "$48",
+                  "priceCurrency": "USD"
+                }
+              ]
+            }
+          })}
+        </script>
+      </Helmet>
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}

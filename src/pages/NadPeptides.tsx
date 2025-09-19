@@ -34,7 +34,7 @@ const NadPeptides = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    document.title = "Peptide Therapy | Stay Dripped IV & Wellness Co.";
+    document.title = "Peptide Therapy Scottsdale | NAD+ Therapy Phoenix | BPC-157 Arizona | Anti-Aging";
     
     // Show chat widget after 5 seconds
     const timer = setTimeout(() => {

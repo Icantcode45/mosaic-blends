@@ -138,15 +138,69 @@ const Telehealth = () => {
   return (
     <>
       <Helmet>
-        <title>Telehealth Virtual Consultations | Stay Dripped IV & Wellness Co.</title>
-        <meta name="description" content="Professional telehealth consultations with licensed providers. Virtual care for IV therapy, peptides, hormones, weight management, and wellness optimization in Arizona." />
+        <title>Telehealth Scottsdale | Virtual Medical Consultations | Peptide Hormone Therapy Arizona</title>
+        <meta name="description" content="Professional telehealth consultations in Scottsdale, AZ. Virtual medical care for IV therapy, peptide therapy, hormone optimization, weight management. Licensed providers available." />
+        <meta name="keywords" content="telehealth Scottsdale, virtual consultations Arizona, online medical appointments Phoenix, telemedicine Scottsdale, virtual doctor Arizona, peptide consultation online, hormone therapy telehealth, weight management virtual care" />
         <link rel="canonical" href="https://staydrippediv.com/telehealth" />
         
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Telehealth Virtual Consultations | Stay Dripped IV & Wellness Co." />
-        <meta property="og:description" content="Professional telehealth consultations with licensed providers. Virtual care for IV therapy, peptides, hormones, weight management, and wellness optimization in Arizona." />
+        {/* Enhanced Open Graph */}
+        <meta property="og:title" content="Telehealth Scottsdale | Virtual Medical Consultations | Peptide Hormone Therapy" />
+        <meta property="og:description" content="Professional telehealth consultations in Scottsdale, AZ. Virtual medical care for IV therapy, peptide therapy, hormone optimization, weight management." />
         <meta property="og:url" content="https://staydrippediv.com/telehealth" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Telehealth Scottsdale | Virtual Medical Consultations Arizona" />
+        <meta name="twitter:description" content="Professional telehealth consultations with licensed providers. Virtual care for IV therapy, peptides, hormones delivered." />
+        
+        {/* Structured Data for Telehealth Services */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalBusiness",
+            "name": "Stay Dripped IV & Wellness Co. - Telehealth Services",
+            "serviceType": "Telehealth Virtual Consultations",
+            "medicalSpecialty": ["Telemedicine", "Virtual Care", "Wellness Medicine"],
+            "areaServed": ["Arizona", "Scottsdale, AZ", "Phoenix, AZ"],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Virtual Healthcare Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Initial Virtual Consultation",
+                    "description": "Comprehensive 60-minute health assessment and treatment planning"
+                  },
+                  "price": "$150",
+                  "priceCurrency": "USD"
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Follow-Up Virtual Consultation",
+                    "description": "30-minute progress monitoring and treatment adjustments"
+                  },
+                  "price": "$75",
+                  "priceCurrency": "USD"
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Specialty Virtual Consultation",
+                    "description": "45-minute specialized care for peptides, hormones, and advanced therapies"
+                  },
+                  "price": "$200",
+                  "priceCurrency": "USD"
+                }
+              ]
+            }
+          })}
+        </script>
       </Helmet>
 
       <div>

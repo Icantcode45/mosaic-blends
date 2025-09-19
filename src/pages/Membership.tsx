@@ -112,11 +112,13 @@ const Membership = () => {
   return (
     <div className="membership-page">
       <Helmet>
-        <title>VIP Membership Plans | Stay Dripped IV & Wellness Co.</title>
+        <title>VIP Membership Plans Scottsdale | IV Therapy Memberships Phoenix | Unlimited Wellness Arizona</title>
         <meta 
           name="description" 
-          content="Join our exclusive VIP membership program and save on premium IV therapy treatments in Phoenix Metro Area. Unlimited access to wellness services with special member pricing and priority booking." 
+          content="Join our exclusive VIP wellness membership in Scottsdale. Unlimited IV therapy, vitamin injections, priority booking, 40% savings. Shot Pass, Explorer, Elite & Platinum plans available." 
         />
+        <meta name="keywords" content="IV therapy membership Scottsdale, wellness membership Phoenix, VIP health plans Arizona, unlimited IV drips Scottsdale, vitamin injection membership Phoenix, wellness club Arizona, health memberships Scottsdale" />
+        <link rel="canonical" href="https://staydrippediv.com/membership" />
       </Helmet>
       
       {/* Page Header */}

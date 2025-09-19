@@ -378,21 +378,88 @@ const IVTherapy = () => {
   return (
     <>
       <Helmet>
-        <title>IV Therapy Services | Stay Dripped IV & Wellness Co.</title>
-        <meta name="description" content="Premium mobile IV therapy treatments in Scottsdale, AZ. Hydration, energy, immunity, detox, and custom vitamin infusions delivered to your location." />
+        <title>IV Therapy Scottsdale | Mobile IV Drips Phoenix | Hangover IV Arizona | Myers Cocktail</title>
+        <meta name="description" content="Premium mobile IV therapy in Scottsdale, AZ. Hangover relief, Myers cocktail, immune boost, NAD+ therapy, hydration drips delivered. Licensed nurses, same-day service available." />
+        <meta name="keywords" content="IV therapy Scottsdale, mobile IV drips Phoenix, hangover IV Arizona, Myers cocktail Scottsdale, hydration therapy Phoenix, immune boost IV Arizona, NAD+ therapy Scottsdale, vitamin IV drips Phoenix, mobile IV service Arizona, IV hydration Scottsdale" />
         <meta name="robots" content="max-image-preview:large" />
         <link rel="canonical" href="https://staydrippediv.com/iv-therapy" />
         
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="IV Therapy Services | Stay Dripped IV & Wellness Co." />
-        <meta property="og:description" content="Premium mobile IV therapy treatments in Scottsdale, AZ. Hydration, energy, immunity, detox, and custom vitamin infusions delivered to your location." />
-        <meta property="og:url" content="https://staydrippediv.com/iv-therapy" />
+        {/* Local Business SEO */}
+        <meta name="geo.region" content="US-AZ" />
+        <meta name="geo.placename" content="Scottsdale, Phoenix" />
+        <meta name="geo.position" content="33.4942;-111.9261" />
+        <meta name="ICBM" content="33.4942, -111.9261" />
         
-        {/* Twitter */}
+        {/* Enhanced Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="IV Therapy Scottsdale | Mobile IV Drips Phoenix | Hangover IV Arizona" />
+        <meta property="og:description" content="Premium mobile IV therapy in Scottsdale, AZ. Hangover relief, Myers cocktail, immune boost, NAD+ therapy, hydration drips delivered. Licensed nurses, same-day service available." />
+        <meta property="og:url" content="https://staydrippediv.com/iv-therapy" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content="Stay Dripped IV & Wellness Co." />
+        
+        {/* Enhanced Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="IV Therapy Services | Stay Dripped IV & Wellness Co." />
-        <meta name="twitter:description" content="Premium mobile IV therapy treatments in Scottsdale, AZ. Hydration, energy, immunity, detox, and custom vitamin infusions delivered to your location." />
+        <meta name="twitter:site" content="@staydrippediv" />
+        <meta name="twitter:title" content="IV Therapy Scottsdale | Mobile IV Drips Phoenix | Hangover IV Arizona" />
+        <meta name="twitter:description" content="Premium mobile IV therapy in Scottsdale, AZ. Hangover relief, Myers cocktail, immune boost, NAD+ therapy, hydration drips delivered. Licensed nurses, same-day service available." />
+        
+        {/* Service-specific structured data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalBusiness",
+            "name": "Stay Dripped IV & Wellness Co. - IV Therapy",
+            "image": "https://staydrippediv.com/assets/iv-therapy-hero-new.jpg",
+            "telephone": "+1-602-688-9825",
+            "url": "https://staydrippediv.com/iv-therapy",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Scottsdale",
+              "addressRegion": "AZ",
+              "addressCountry": "US"
+            },
+            "areaServed": ["Scottsdale, AZ", "Phoenix, AZ", "Paradise Valley, AZ", "Tempe, AZ"],
+            "serviceType": "Mobile IV Therapy",
+            "medicalSpecialty": "IV Therapy",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "IV Therapy Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Hangover Relief IV",
+                    "description": "Rapid hangover recovery with targeted hydration"
+                  },
+                  "price": "$189",
+                  "priceCurrency": "USD"
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Myers Cocktail IV",
+                    "description": "Classic vitamin and mineral wellness blend"
+                  },
+                  "price": "$184.99",
+                  "priceCurrency": "USD"
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "NAD+ Therapy IV",
+                    "description": "Cellular energy restoration and anti-aging"
+                  },
+                  "price": "$500",
+                  "priceCurrency": "USD"
+                }
+              ]
+            }
+          })}
+        </script>
       </Helmet>
 
       {/* Hero Section */}
