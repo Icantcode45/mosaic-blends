@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import SearchSystem from "./SearchSystem";
-import stayDrippedLogo from "@/assets/stay-dripped-main-logo.jpeg";
+import stayDrippedLogo from "@/assets/stay-dripped-main-logo.webp";
 import TopBar from "./navigation/TopBar";
 import DesktopNav from "./navigation/DesktopNav";
 import HeaderActions from "./navigation/HeaderActions";

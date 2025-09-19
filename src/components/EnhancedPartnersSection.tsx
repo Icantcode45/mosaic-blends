@@ -7,8 +7,8 @@ import arizonaCombatSportsLogo from "@/assets/partners/arizona-combat-sports-log
 import sleLogo from "@/assets/partners/sle-logo.png";
 import bulldogLogo from "@/assets/partners/bulldog-logo.png";
 import socialScottsdaleLogo from "@/assets/partners/social-scottsdale-logo.jpeg";
-import curaTurfLogo from "@/assets/partners/curaturf-logo.jpeg";
-import augmentWellnessLogo from "@/assets/partners/augment-wellness-logo.jpeg";
+import curaTurfLogo from "@/assets/partners/curaturf-logo.webp";
+import augmentWellnessLogo from "@/assets/partners/augment-wellness-logo.webp";
 
 const EnhancedPartnersSection = () => {
   const partners = [
