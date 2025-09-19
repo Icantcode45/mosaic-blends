@@ -73,7 +73,7 @@ const AuthDropdown = () => {
             <ChevronDown className="h-4 w-4" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="w-56 bg-white z-50">
+        <DropdownMenuContent align="end" className="w-56 bg-background border border-border z-[100]">
           <DropdownMenuItem className="font-medium">
             Signed in as {user.email}
           </DropdownMenuItem>
@@ -102,7 +102,7 @@ const AuthDropdown = () => {
           <ChevronDown className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-80 p-0 bg-white z-50">
+      <DropdownMenuContent align="end" className="w-80 p-0 bg-background border border-border z-[100]">
         <div className="p-4">
           <div className="text-center mb-4">
             <div className="mx-auto w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
