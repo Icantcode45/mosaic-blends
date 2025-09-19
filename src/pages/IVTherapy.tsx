@@ -238,7 +238,7 @@ const IVTherapy = () => {
         id: 'myers',
         name: 'Myers Cocktail IV',
         category: 'Specialty Treatments',
-        price: '$349',
+        price: '$184.99',
         badge: 'Classic Formula',
         description: 'The classic Myers Cocktail formula with essential vitamins and minerals for overall wellness.',
         features: [
