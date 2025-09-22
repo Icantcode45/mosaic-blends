@@ -22,6 +22,8 @@ import diamondbackBag from "@/assets/iv-bags/diamondback-bag.png";
 import hangoverBag from "@/assets/iv-bags/hangover-bag.png";
 import eliteNadBag from "@/assets/iv-bags/elite-nad-bag.png";
 import diamondNadBag from "@/assets/iv-bags/diamond-nad-bag.png";
+import goldHydrationRecoveryBag from "@/assets/iv-bags/gold-hydration-recovery-bag.png";
+import eliteNadTherapyBag from "@/assets/iv-bags/elite-nad-therapy-bag.png";
 import b12Injection from "@/assets/vials/b12-injection.jpeg";
 import glutathioneInjection from "@/assets/vials/glutathione-injection.jpeg";
 
@@ -56,6 +58,14 @@ const serviceCategories = [
         duration: "30min",
         benefits: ["B-Complex", "Anti-nausea", "Rapid rehydration", "Detox support"],
         popular: false
+      },
+      {
+        name: "Gold Hydration & Recovery",
+        image: goldHydrationRecoveryBag,
+        price: "$249",
+        duration: "45min",
+        benefits: ["B-Complex vitamins", "Vitamin C", "Glutathione", "Anti-nausea", "Recovery"],
+        popular: false
       }
     ]
   },
@@ -67,12 +77,20 @@ const serviceCategories = [
     gradient: "from-purple-500 to-pink-500",
     services: [
       {
+        name: "Elite NAD+ Therapy Bag",
+        image: eliteNadTherapyBag,
+        price: "$600",
+        duration: "3-4hrs",
+        benefits: ["Premium NAD+", "IV Fluids", "B-Complex", "Vitamin C", "Elite formula"],
+        popular: true
+      },
+      {
         name: "NAD+ Elite Therapy",
         image: eliteNadBag,
         price: "$500",
         duration: "2-3hrs",
         benefits: ["250mg NAD+", "Anti-aging", "Mental clarity", "Cellular repair"],
-        popular: true
+        popular: false
       },
       {
         name: "NAD+ Diamond Therapy",

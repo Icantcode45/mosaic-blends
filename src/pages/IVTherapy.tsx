@@ -23,6 +23,8 @@ import arizonaDetoxBag from "@/assets/iv-bags/arizona-detox-bag.png";
 import diamondNadBag from "@/assets/iv-bags/diamond-nad-bag.png";
 import eliteNadBag from "@/assets/iv-bags/elite-nad-bag.png";
 import goldHydrationBag from "@/assets/iv-bags/gold-hydration-bag.png";
+import goldHydrationRecoveryBag from "@/assets/iv-bags/gold-hydration-recovery-bag.png";
+import eliteNadTherapyBag from "@/assets/iv-bags/elite-nad-therapy-bag.png";
 import nadInjection from "@/assets/vials/nad-injection.webp";
 
 const IVTherapy = () => {
@@ -169,6 +171,23 @@ const IVTherapy = () => {
           'Amino acid complex',
           'Magnesium Chloride',
           'Energy optimization'
+        ]
+      },
+      {
+        id: 'gold-hydration-recovery',
+        name: 'The Gold Hydration & Recovery IV',
+        category: 'Standard Wellness',
+        price: '$249',
+        badge: 'Recovery',
+        description: 'Premium hydration and recovery formula with essential vitamins and minerals.',
+        features: [
+          'Normal Saline 1000ml',
+          'B-Complex Vitamins',
+          'Vitamin B12',
+          'Vitamin C',
+          'Anti Nausea',
+          'Glutathione',
+          'Magnesium'
         ]
       }
     ],
@@ -350,6 +369,23 @@ const IVTherapy = () => {
           'Vitamin C',
           'Glutathione',
           'Premium anti-aging blend',
+          '3-4 hour treatment'
+        ]
+      },
+      {
+        id: 'elite-nad-therapy',
+        name: 'The Elite NAD+ Therapy Bag',
+        category: 'NAD+ Therapy',
+        price: '$600',
+        badge: 'Elite NAD+',
+        description: 'Elite NAD+ therapy with comprehensive vitamin support for optimal cellular function.',
+        features: [
+          'Normal Saline 1000ml',
+          'Premium NAD+ dose',
+          'Vitamin B-Complex',
+          'Vitamin C',
+          'Advanced cellular repair',
+          'Elite recovery formula',
           '3-4 hour treatment'
         ]
       }
