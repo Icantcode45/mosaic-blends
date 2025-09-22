@@ -42,7 +42,7 @@ const serviceCategories = [
         popular: true
       },
       {
-        name: "Diamondback Immune Boost",
+        name: "Immune Booster IV Bag",
         image: diamondbackBag,
         price: "$225",
         duration: "45min",
@@ -50,7 +50,7 @@ const serviceCategories = [
         popular: false
       },
       {
-        name: '"Day After The Dale" Hangover Relief',
+        name: '"Day After" Hangover Relief IV Drip',
         image: hangoverBag,
         price: "$189",
         duration: "30min",

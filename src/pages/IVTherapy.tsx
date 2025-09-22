@@ -48,7 +48,7 @@ const IVTherapy = () => {
     basic: [
       {
         id: 'hangover',
-        name: 'The "Day After The Dale" Hangover Relief IV',
+        name: 'The "Day After" Hangover Relief IV Drip',
         category: 'Basic Hydration',
         price: '$189',
         badge: 'Hangover Relief',
@@ -126,7 +126,7 @@ const IVTherapy = () => {
       },
       {
         id: 'd-book',
-        name: 'The "D-Book" Athletic Performance Booster IV',
+        name: 'The Performance Booster IV Bag',
         category: 'Standard Wellness',
         price: '$225',
         description: 'Elite athletic performance formula for professional-level optimization.',
@@ -141,7 +141,7 @@ const IVTherapy = () => {
       },
       {
         id: 'diamondback',
-        name: 'The "Diamondback" Immune System Booster IV',
+        name: 'The Immune Booster IV Bag',
         category: 'Standard Wellness',
         price: '$225',
         badge: 'Immunity',
@@ -206,7 +206,7 @@ const IVTherapy = () => {
       },
       {
         id: 'scottsdale-beauty',
-        name: 'The "Scottsdale IV Beauty" Bag',
+        name: 'The Beauty Bag',
         category: 'Specialty Treatments',
         price: '$269',
         badge: 'Beauty',
@@ -658,7 +658,7 @@ const IVTherapy = () => {
                       bgGradient: 'from-white to-white',
                       titleColor: 'text-purple-900',
                       badgeColor: 'bg-purple-500',
-                      title: 'THE D-BOOK',
+                      title: 'THE PERFORMANCE BOOSTER',
                       subtitle: 'PERFORMANCE BAG',
                       bagImage: dBookBag
                     };
@@ -667,7 +667,7 @@ const IVTherapy = () => {
                       bgGradient: 'from-white to-white',
                       titleColor: 'text-pink-900',
                       badgeColor: 'bg-pink-500',
-                      title: 'THE DIAMONDBACK',
+                      title: 'THE IMMUNE BOOSTER',
                       subtitle: 'IMMUNITY BOOST',
                       bagImage: diamondbackBag
                     };
@@ -676,8 +676,8 @@ const IVTherapy = () => {
                       bgGradient: 'from-white to-white',
                       titleColor: 'text-pink-900', 
                       badgeColor: 'bg-pink-500',
-                      title: 'THE SCOTTSDALE',
-                      subtitle: 'BEAUTY BAG',
+                      title: 'THE BEAUTY',
+                      subtitle: 'BAG',
                       bagImage: scottsdaleBeautyBagPng
                     };
                   case 'arizona-detox':
