@@ -22,8 +22,8 @@ import diamondbackBag from "@/assets/iv-bags/diamondback-bag.png";
 import hangoverBag from "@/assets/iv-bags/hangover-bag.png";
 import eliteNadBag from "@/assets/iv-bags/elite-nad-bag.png";
 import diamondNadBag from "@/assets/iv-bags/diamond-nad-bag.png";
-import goldHydrationRecoveryBag from "@/assets/iv-bags/gold-hydration-recovery-bag-new.png";
-import eliteNadTherapyBag from "@/assets/iv-bags/elite-nad-therapy-bag-new.png";
+import goldHydrationRecoveryBag from "@/assets/iv-bags/gold-hydration-recovery-bag-final.png";
+import eliteNadTherapyBag from "@/assets/iv-bags/elite-nad-therapy-bag-final.png";
 import b12Injection from "@/assets/vials/b12-injection.jpeg";
 import glutathioneInjection from "@/assets/vials/glutathione-injection.jpeg";
 

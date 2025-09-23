@@ -134,42 +134,64 @@ const Index = () => {
         </script>
       </Helmet>
       
-      <div>
+      <div className="animate-fade-up">
         {/* Trust Bar at the top */}
         <TrustBar />
         
         {/* 1. Ultra-Modern Hero Section */}
-        <UltraModernHero />
+        <div className="animate-fade-up" style={{ animationDelay: '0.1s' }}>
+          <UltraModernHero />
+        </div>
         
         {/* 2. Premium Trust Section */}
-        <PremiumTrustSection />
+        <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
+          <PremiumTrustSection />
+        </div>
         
         {/* 3. Advanced Services Showcase */}
-        <AdvancedServicesShowcase />
+        <div className="animate-fade-up" style={{ animationDelay: '0.3s' }}>
+          <AdvancedServicesShowcase />
+        </div>
         
         {/* 4. Innovative Process Section */}
-        <InnovativeProcessSection />
+        <div className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
+          <InnovativeProcessSection />
+        </div>
         
         {/* 5. Client Testimonials */}
-        <TestimonialsSection />
+        <div className="animate-fade-up" style={{ animationDelay: '0.5s' }}>
+          <TestimonialsSection />
+        </div>
         
         {/* 6. Results & Stats - Prove effectiveness with data */}
-        <EnhancedStatsSection />
+        <div className="animate-fade-up" style={{ animationDelay: '0.6s' }}>
+          <EnhancedStatsSection />
+        </div>
         
         {/* 7. Telehealth Services - Additional service offering */}
-        <TelehealthSection />
+        <div className="animate-fade-up" style={{ animationDelay: '0.7s' }}>
+          <TelehealthSection />
+        </div>
         
         {/* 8. Membership Plans - Convert visitors with pricing */}
-        <EnhancedMembershipSection />
+        <div className="animate-fade-up" style={{ animationDelay: '0.8s' }}>
+          <EnhancedMembershipSection />
+        </div>
         
         {/* 9. Partners & Certifications - Additional credibility */}
-        <EnhancedPartnersSection />
+        <div className="animate-fade-up" style={{ animationDelay: '0.9s' }}>
+          <EnhancedPartnersSection />
+        </div>
         
         {/* 10. Newsletter - Capture leads */}
-        <NewsletterSection />
+        <div className="animate-fade-up" style={{ animationDelay: '1.0s' }}>
+          <NewsletterSection />
+        </div>
         
         {/* 11. BBB Accreditation - Trust and credibility */}
-        <BBBAccreditation />
+        <div className="animate-fade-up" style={{ animationDelay: '1.1s' }}>
+          <BBBAccreditation />
+        </div>
       </div>
     </>
   );

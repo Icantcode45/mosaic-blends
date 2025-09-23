@@ -8,7 +8,7 @@ import EmbeddedServiceBooking from "@/components/EmbeddedServiceBooking";
 import NADIVBagCard from "@/components/NADIVBagCard";
 
 // Image assets (use imports so they work in production builds)
-import heroBg from "@/assets/iv-therapy-hero-new.jpg";
+import heroBg from "@/assets/iv-therapy-hero-professional.jpg";
 import rehydrateBag from "@/assets/iv-bags/rehydrate-bag.png";
 import rehydratePlusBag from "@/assets/iv-bags/rehydrate-plus-bag.png";
 import jrMyersBag from "@/assets/iv-bags/jr-myers-bag.png";
@@ -23,8 +23,8 @@ import arizonaDetoxBag from "@/assets/iv-bags/arizona-detox-bag.png";
 import diamondNadBag from "@/assets/iv-bags/diamond-nad-bag.png";
 import eliteNadBag from "@/assets/iv-bags/elite-nad-bag.png";
 import goldHydrationBag from "@/assets/iv-bags/gold-hydration-bag.png";
-import goldHydrationRecoveryBag from "@/assets/iv-bags/gold-hydration-recovery-bag-new.png";
-import eliteNadTherapyBag from "@/assets/iv-bags/elite-nad-therapy-bag-new.png";
+import goldHydrationRecoveryBag from "@/assets/iv-bags/gold-hydration-recovery-bag-final.png";
+import eliteNadTherapyBag from "@/assets/iv-bags/elite-nad-therapy-bag-final.png";
 import nadInjection from "@/assets/vials/nad-injection.webp";
 
 const IVTherapy = () => {
@@ -793,15 +793,33 @@ const IVTherapy = () => {
                        subtitle: 'NAD+ THERAPY BAG',
                        bagImage: eliteNadBag
                      };
-                   case 'gold':
-                     return {
-                       bgGradient: 'from-white to-white',
-                       titleColor: 'text-amber-900',
-                       badgeColor: 'bg-amber-500',
-                       title: 'THE GOLD',
-                       subtitle: 'HYDRATION & RECOVERY',
-                       bagImage: goldHydrationBag
-                     };
+                    case 'elite-nad-therapy':
+                      return {
+                        bgGradient: 'from-white to-white',
+                        titleColor: 'text-slate-900',
+                        badgeColor: 'bg-slate-500',
+                        title: 'THE ELITE',
+                        subtitle: 'NAD+ THERAPY BAG',
+                        bagImage: eliteNadTherapyBag
+                      };
+                    case 'gold-hydration-recovery':
+                      return {
+                        bgGradient: 'from-white to-white',
+                        titleColor: 'text-amber-900',
+                        badgeColor: 'bg-amber-500',
+                        title: 'THE GOLD',
+                        subtitle: 'HYDRATION & RECOVERY',
+                        bagImage: goldHydrationRecoveryBag
+                      };
+                    case 'gold':
+                      return {
+                        bgGradient: 'from-white to-white',
+                        titleColor: 'text-amber-900',
+                        badgeColor: 'bg-amber-500',
+                        title: 'THE GOLD',
+                        subtitle: 'HYDRATION & RECOVERY',
+                        bagImage: goldHydrationBag
+                      };
                    default:
                      return {
                        bgGradient: 'from-white to-white',
@@ -817,7 +835,7 @@ const IVTherapy = () => {
               const style = getServiceStyle(service.id);
 
               // Use NAD+ component for specific NAD+ services with dosage options
-              if (service.id === 'diamond-nad' || service.id === 'elite-nad') {
+              if (service.id === 'diamond-nad' || service.id === 'elite-nad' || service.id === 'elite-nad-therapy') {
                 return (
                   <NADIVBagCard
                     key={service.id}
@@ -828,9 +846,10 @@ const IVTherapy = () => {
                 );
               }
 
-              return (
-                <div key={service.id} className="group relative overflow-hidden rounded-2xl bg-card shadow-lg border transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
-                  <div className={`h-48 bg-gradient-to-br ${style.bgGradient} relative overflow-hidden`}>
+               return (
+                 <div key={service.id} className="group relative overflow-hidden rounded-2xl bg-card shadow-lg border transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl animate-fade-up"
+                      style={{ animationDelay: `${Math.random() * 0.3}s` }}>
+                   <div className={`h-48 bg-gradient-to-br ${style.bgGradient} relative overflow-hidden`}>
                     {/* IV Bag image */}
                     {style.bagImage ? (
                       <div className="absolute inset-0 flex items-center justify-center p-4">
