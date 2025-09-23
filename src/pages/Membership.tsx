@@ -110,7 +110,7 @@ const Membership = () => {
   ];
 
   return (
-    <div className="membership-page">
+    <div className="min-h-screen bg-background">
       <Helmet>
         <title>VIP Membership Plans Scottsdale | IV Therapy Memberships Phoenix | Unlimited Wellness Arizona</title>
         <meta 
@@ -122,10 +122,12 @@ const Membership = () => {
       </Helmet>
       
       {/* Page Header */}
-      <section className="membership-hero">
-        <div className="container mx-auto px-6">
-          <h1 className="membership-title">VIP Membership Plans</h1>
-          <p className="membership-subtitle">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-primary-light via-white to-accent/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
+            VIP Membership Plans
+          </h1>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in-up">
             Join our exclusive membership program and save on premium IV therapy treatments. 
             Enjoy priority booking, special pricing, and unlimited access to wellness services.
           </p>
@@ -133,19 +135,23 @@ const Membership = () => {
       </section>
 
       {/* Membership Benefits */}
-      <section className="membership-benefits">
-        <div className="container mx-auto px-6">
-          <h2 className="section-title">Why Choose Membership?</h2>
-          <p className="section-description">
-            Experience the ultimate in convenience and savings with our VIP membership benefits designed for your wellness journey.
-          </p>
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 animate-fade-in">
+              Why Choose Membership?
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in-up">
+              Experience the ultimate in convenience and savings with our VIP membership benefits designed for your wellness journey.
+            </p>
+          </div>
           
-          <div className="benefits-grid">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="benefit-card">
-                <div className="benefit-icon">{benefit.icon}</div>
-                <h3>{benefit.title}</h3>
-                <p>{benefit.description}</p>
+              <div key={index} className="text-center p-6 rounded-2xl bg-card border border-border hover:shadow-lg transition-all duration-300 animate-fade-in-up" style={{animationDelay: `${index * 100}ms`}}>
+                <div className="text-3xl text-primary mb-4">{benefit.icon}</div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{benefit.title}</h3>
+                <p className="text-sm text-muted-foreground">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -153,37 +159,65 @@ const Membership = () => {
       </section>
 
       {/* Membership Plans */}
-      <section className="membership-plans">
-        <div className="container mx-auto px-6">
-          <h2 className="section-title">Choose Your Plan</h2>
-          <p className="section-description">
-            Select the membership plan that best fits your wellness needs and lifestyle.
-          </p>
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 animate-fade-in">
+              Choose Your Plan
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in-up">
+              Select the membership plan that best fits your wellness needs and lifestyle.
+            </p>
+          </div>
           
-          <div className="plans-grid">
-            {membershipPlans.map((plan) => (
-              <div key={plan.id} className={`plan-card ${plan.featured ? 'featured' : ''}`}>
-                {plan.featured && <div className="featured-badge">MOST POPULAR</div>}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {membershipPlans.map((plan, index) => (
+              <div 
+                key={plan.id} 
+                className={`relative bg-white rounded-2xl p-8 border-2 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in-up ${
+                  plan.featured 
+                    ? 'border-primary shadow-lg scale-105' 
+                    : 'border-border hover:border-primary/50'
+                }`}
+                style={{animationDelay: `${index * 150}ms`}}
+              >
+                {plan.featured && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                      MOST POPULAR
+                    </div>
+                  </div>
+                )}
                 
-                <div className="plan-header">
-                  <h3 className="plan-name">{plan.name}</h3>
-                  <div className="plan-price">{plan.price}</div>
-                  <div className="plan-period">{plan.period}</div>
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-bold text-foreground mb-2">{plan.name}</h3>
+                  <div className="text-3xl font-bold text-primary">{plan.price}</div>
+                  <div className="text-sm text-muted-foreground">{plan.period}</div>
                 </div>
                 
-                <div className="plan-content">
-                  <p className="plan-description">{plan.description}</p>
+                <div className="space-y-6">
+                  <p className="text-sm text-muted-foreground text-center">{plan.description}</p>
                   
-                  <ul className="plan-features">
-                    {plan.features.map((feature, index) => (
-                      <li key={index}>{feature}</li>
+                  <ul className="space-y-3">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start gap-3 text-sm">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-muted-foreground">{feature}</span>
+                      </li>
                     ))}
                   </ul>
                   
-                  <MembershipBookingButton 
-                    membershipName={plan.name}
-                    membershipType={plan.id as 'basic' | 'premium' | 'elite' | 'starter'}
-                  />
+                  <div className="pt-4">
+                    <MembershipBookingButton 
+                      membershipName={plan.name}
+                      membershipType={plan.id as 'basic' | 'premium' | 'elite' | 'starter'}
+                      className={`w-full ${
+                        plan.featured 
+                          ? 'bg-primary hover:bg-primary-hover text-white' 
+                          : 'border border-primary text-primary hover:bg-primary hover:text-white'
+                      } transition-all duration-300`}
+                    />
+                  </div>
                 </div>
               </div>
             ))}

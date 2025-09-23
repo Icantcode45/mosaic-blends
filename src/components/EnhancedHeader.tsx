@@ -124,7 +124,7 @@ const EnhancedHeader = () => {
               <img 
                 src={stayDrippedLogo} 
                 alt="Stay Dripped IV & Wellness Co. - Premier IV Therapy" 
-                className="h-10 lg:h-12 w-auto transition-all duration-300"
+                className="h-8 lg:h-10 w-auto object-contain transition-all duration-300"
                 loading="eager"
               />
             </Link>

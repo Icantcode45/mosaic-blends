@@ -11,7 +11,7 @@ interface MembershipBookingButtonProps {
 
 const MembershipBookingButton = ({ membershipName, membershipType, className }: MembershipBookingButtonProps) => {
   return (
-    <Button asChild className={cn("", className)}>
+    <Button asChild className={cn("w-full", className)}>
       <Link to="/membership">Join Now</Link>
     </Button>
   );
