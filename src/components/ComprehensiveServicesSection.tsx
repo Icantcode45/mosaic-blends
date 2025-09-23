@@ -52,7 +52,7 @@ const ComprehensiveServicesSection = () => {
       services: ["Pre-Workout IV", "Post-Workout Recovery", "Endurance Support", "Muscle Recovery", "Hydration Therapy", "Performance Optimization"],
       color: "text-green-600",
       gradient: "from-green-500 to-emerald-500",
-      link: "/specialty-treatments"
+      link: "/nad-peptides"
     },
     {
       icon: Sparkles,
@@ -61,7 +61,7 @@ const ComprehensiveServicesSection = () => {
       services: ["Beauty Glow IV", "Hair & Nail Support", "Skin Brightening", "Anti-Aging Therapy", "Collagen Boost", "Detox Cleanse"],
       color: "text-pink-600",
       gradient: "from-pink-500 to-rose-500",
-      link: "/specialty-treatments"
+      link: "/products"
     },
     {
       icon: Shield,

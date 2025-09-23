@@ -41,7 +41,6 @@ const IVTherapy = () => {
     { id: 'all', name: 'All IV Therapy', label: 'All Therapies' },
     { id: 'basic', name: 'Basic IV Therapy', label: 'Basic Hydration' },
     { id: 'standard', name: 'Standard IV Therapy', label: 'Standard Wellness' },
-    { id: 'specialty', name: 'Specialty IV Therapy', label: 'Specialty Treatments' },
     { id: 'premium', name: 'Premium IV Therapy', label: 'Premium Therapies' },
     { id: 'nad', name: 'NAD+ IV Therapy', label: 'NAD+ Therapy' }
   ];
@@ -213,7 +212,7 @@ const IVTherapy = () => {
       {
         id: 'weight-management',
         name: 'Weight Management Support IV',
-        category: 'Specialty Treatments',
+        category: 'Premium Therapies',
         price: '$245',
         badge: 'Metabolism',
         description: 'Metabolic support formula designed to enhance weight management and energy.',
@@ -228,7 +227,7 @@ const IVTherapy = () => {
       {
         id: 'arizona-detox',
         name: 'The "Arizona" Ultimate Hydration & Recovery IV',
-        category: 'Specialty Treatments',
+        category: 'Premium Therapies',
         price: '$265',
         badge: 'Detox',
         description: 'Comprehensive detoxification and recovery formula for total body wellness.',
@@ -244,7 +243,7 @@ const IVTherapy = () => {
       {
         id: 'scottsdale-beauty',
         name: 'The Beauty Bag',
-        category: 'Specialty Treatments',
+        category: 'Premium Therapies',
         price: '$269',
         badge: 'Beauty',
         description: 'Beauty and anti-aging formula for radiant skin and enhanced vitality.',
@@ -261,7 +260,7 @@ const IVTherapy = () => {
       {
         id: 'stress-relief',
         name: 'Stress Relief IV',
-        category: 'Specialty Treatments',
+        category: 'Premium Therapies',
         price: '$215',
         description: 'Calming formula to reduce stress and promote relaxation and mental clarity.',
         features: [
@@ -275,7 +274,7 @@ const IVTherapy = () => {
       {
         id: 'gold-hydration',
         name: 'The "Gold" Hydration IV',
-        category: 'Specialty Treatments',
+        category: 'Premium Therapies',
         price: '$325',
         badge: 'Premium',
         description: 'Premium hydration therapy with essential vitamins and minerals for superior wellness.',
@@ -290,7 +289,7 @@ const IVTherapy = () => {
       {
         id: 'stay-dripped',
         name: 'The "Stay Dripped" Special IV',
-        category: 'Specialty Treatments',
+        category: 'Premium Therapies',
         price: '$345',
         badge: 'Signature',
         description: 'Our signature blend combining the best of all our treatments for ultimate wellness.',

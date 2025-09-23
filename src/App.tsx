@@ -26,7 +26,6 @@ import IVTherapy from "./pages/IVTherapy";
 import EventInquiry from "./pages/EventInquiry";
 import Membership from "./pages/Membership";
 import EnhancedMembership from "./pages/EnhancedMembership";
-import SpecialtyTreatments from "./pages/SpecialtyTreatments";
 import AboutUs from "./pages/AboutUs";
 import MedicalCompliance from "./pages/MedicalCompliance";
 import TermsOfService from "./pages/TermsOfService";
@@ -66,8 +65,7 @@ const App = () => (
           <Route path="/nad-peptides" element={<NadPeptides />} />
           <Route path="/iv-therapy" element={<IVTherapy />} />
           <Route path="/membership" element={<EnhancedMembership />} />
-           <Route path="/specialty-treatments" element={<SpecialtyTreatments />} />
-                <Route path="/about" element={<AboutUs />} />
+          <Route path="/about" element={<AboutUs />} />
                 <Route path="/medical-compliance" element={<MedicalCompliance />} />
                 <Route path="/terms" element={<TermsOfService />} />
                 <Route path="/privacy" element={<Privacy />} />

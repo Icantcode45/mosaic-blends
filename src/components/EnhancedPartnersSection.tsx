@@ -96,19 +96,19 @@ const EnhancedPartnersSection = () => {
           </div>
 
           {/* Enhanced Logo Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-16">
             {partners.map((partner, index) => (
               <div
                 key={index}
-                className="group relative bg-background/80 backdrop-blur-sm rounded-2xl border border-border/50 p-8 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-2 animate-fade-in hover-scale"
+                className="group relative bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 p-4 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1 animate-fade-in hover-scale"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Hover glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
-                <div className="relative z-10 space-y-6">
-                  {/* Logo container with larger size */}
-                  <div className="flex items-center justify-center h-20 w-full">
+                <div className="relative z-10 space-y-3">
+                  {/* Logo container with smaller size */}
+                  <div className="flex items-center justify-center h-12 w-full">
                     {partner.logo && (
                       <img 
                         src={partner.logo} 
@@ -118,15 +118,15 @@ const EnhancedPartnersSection = () => {
                     )}
                   </div>
                   
-                  {/* Partner info */}
-                  <div className="text-center space-y-3">
+                  {/* Partner info with smaller text */}
+                  <div className="text-center space-y-1">
                     <div className="text-xs font-bold text-primary uppercase tracking-wider">
                       {partner.category}
                     </div>
-                    <div className="font-bold text-lg text-foreground group-hover:text-primary transition-colors duration-300 leading-tight">
+                    <div className="font-bold text-sm text-foreground group-hover:text-primary transition-colors duration-300 leading-tight">
                       {partner.name}
                     </div>
-                    <div className="text-sm text-muted-foreground leading-relaxed">
+                    <div className="text-xs text-muted-foreground leading-relaxed">
                       {partner.description}
                     </div>
                   </div>

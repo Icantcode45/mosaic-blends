@@ -20,7 +20,6 @@ const EnhancedHeader = () => {
     { name: 'Test Kits & Panels', href: '/test-kits' },
     { name: 'Products', href: '/products' },
     { name: 'Membership', href: '/membership' },
-    { name: 'Specialty Treatments', href: '/specialty-treatments' },
     { name: 'First-Time Patients', href: '/first-time-patients' },
     { name: 'Gift Cards', href: '/gift-cards' },
     { name: 'Become Partner', href: '/sponsorship' }
@@ -37,8 +36,7 @@ const EnhancedHeader = () => {
     {
       category: "Advanced Treatments", 
       items: [
-        { name: "Peptide Therapy", href: "/nad-peptides", description: "Cellular support and recovery" },
-        { name: "Specialty Treatments", href: "/specialty-treatments", description: "Advanced wellness therapies" }
+        { name: "Peptide Therapy", href: "/nad-peptides", description: "Cellular support and recovery" }
       ]
     },
     {

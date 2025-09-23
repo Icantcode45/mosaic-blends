@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Stethoscope, Shield, BarChart3, Clock, Users, Award } from "lucide-react";
 import AgeVerificationModal from "@/components/compliance/AgeVerificationModal";
 import ComplianceDisclaimers from "@/components/compliance/ComplianceDisclaimers";
 import RegulatoryUpdates from "@/components/compliance/RegulatoryUpdates";
@@ -16,6 +17,7 @@ import bpc157Vial from "@/assets/peptides/bpc157-vial-branded.png";
 import sermorelinImg from "@/assets/vials/sermorelin-injection.webp";
 import pt141Vial from "@/assets/peptides/pt141-vial-new.png";
 import liraglutideImg from "@/assets/vials/liraglutide-injection-dual.jpeg";
+import semaglutideImg from "@/assets/vials/semaglutide-vials-olympia.jpeg";
 import ghkCuVial from "@/assets/peptides/ghk-cu-vial.png";
 import epitalonVial from "@/assets/peptides/epitalon-vial.png";
 import setmelanotideVial from "@/assets/peptides/setmelanotide-vial-new.png";
@@ -527,6 +529,7 @@ const NadPeptides = () => {
       category: 'Metabolic Support',
       duration: 'Weekly subcutaneous administration',
       administration: 'Subcutaneous injection',
+      image_url: '/src/assets/vials/semaglutide-vials-olympia.jpeg',
       price: 'Consultation required',
       benefits: [
         'Advanced weight management*',
@@ -621,6 +624,7 @@ const NadPeptides = () => {
     "/src/assets/vials/sermorelin-injection.webp": sermorelinImg,
     "/src/assets/peptides/pt141-vial-new.png": pt141Vial,
     "/src/assets/vials/liraglutide-injection-dual.jpeg": liraglutideImg,
+    "/src/assets/vials/semaglutide-vials-olympia.jpeg": semaglutideImg,
     "/src/assets/peptides/ghk-cu-vial.png": ghkCuVial,
     "/src/assets/peptides/epitalon-vial.png": epitalonVial,
     "/src/assets/peptides/setmelanotide-vial-new.png": setmelanotideVial,
@@ -635,22 +639,22 @@ const NadPeptides = () => {
 
   const benefitsInfo = [
     {
-      icon: "🩺",
+      icon: Stethoscope,
       title: "Medical Supervision",
       description: "All peptide research protocols require healthcare provider consultation and ongoing medical supervision for safety.*"
     },
     {
-      icon: "🛡️",
+      icon: Shield,
       title: "Safety First",
       description: "Comprehensive screening, monitoring, and safety protocols ensure responsible research applications and patient safety.*"
     },
     {
-      icon: "📊",
+      icon: BarChart3,
       title: "Evidence-Based",
       description: "Research compounds selected based on published scientific literature and ongoing clinical research studies.*"
     },
     {
-      icon: "🎯",
+      icon: Award,
       title: "Personalized Research",
       description: "Individual consultation to determine appropriate research compounds based on health goals and medical history.*"
     }
@@ -792,7 +796,7 @@ const NadPeptides = () => {
             {benefitsInfo.map((benefit, index) => (
               <div key={index} className="text-center group">
                 <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-3xl text-white group-hover:scale-110 transition-transform duration-300">
-                  {benefit.icon}
+                  <benefit.icon className="h-8 w-8" />
                 </div>
                 <h3 className="mb-4 text-xl font-semibold text-foreground">
                   {benefit.title}

@@ -17,7 +17,6 @@ const ServiceBookingButton = ({ serviceId, serviceName, serviceCategory }: Servi
     'Basic Hydration': '76b7e0a3-c252-479f-982a-a841edbfdda5',
     'Enhanced Hydration': '76b7e0a3-c252-479f-982a-a841edbfdda5', 
     'Standard Wellness': '19872648-7926-447a-97cd-24e1e44f8579',
-    'Specialty Treatments': '314c20c9-4f5c-47f5-b58d-9e7f557598b4',
     'Premium Therapies': '0fd23879-ea54-45f3-9b7e-204d87b3fd2c',
     'NAD+ Therapy': 'dc59af69-156c-4431-a8a1-f9af17b4e286',
     'Vitamin Injections': 'b9ea469d-409b-4a81-96ca-e6cc44197891'

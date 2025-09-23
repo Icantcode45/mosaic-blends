@@ -25,7 +25,6 @@ const EnhancedFooter = () => {
         { name: "Telehealth Virtual Care", href: "/telehealth" },
         { name: "Test Kits & Panels", href: "/test-kits" },
         { name: "Products", href: "/products" },
-        { name: "Specialty Treatments", href: "/specialty-treatments" },
         { name: "Nutrition Counseling", href: "/#nutrition" },
         { name: "Wellness Coaching", href: "/#coaching" }
       ]
