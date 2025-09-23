@@ -23,8 +23,8 @@ import arizonaDetoxBag from "@/assets/iv-bags/arizona-detox-bag.png";
 import diamondNadBag from "@/assets/iv-bags/diamond-nad-bag.png";
 import eliteNadBag from "@/assets/iv-bags/elite-nad-bag.png";
 import goldHydrationBag from "@/assets/iv-bags/gold-hydration-bag.png";
-import goldHydrationRecoveryBag from "@/assets/iv-bags/gold-hydration-recovery-bag.png";
-import eliteNadTherapyBag from "@/assets/iv-bags/elite-nad-therapy-bag.png";
+import goldHydrationRecoveryBag from "@/assets/iv-bags/gold-hydration-recovery-bag-new.png";
+import eliteNadTherapyBag from "@/assets/iv-bags/elite-nad-therapy-bag-new.png";
 import nadInjection from "@/assets/vials/nad-injection.webp";
 
 const IVTherapy = () => {
@@ -50,7 +50,7 @@ const IVTherapy = () => {
     basic: [
       {
         id: 'hangover',
-        name: 'The "Day After" Hangover Relief IV Drip',
+        name: 'The "Day After The Dale\'" Hangover Relief IV Drip',
         category: 'Basic Hydration',
         price: '$195',
         badge: 'Hangover Relief',
@@ -95,6 +95,24 @@ const IVTherapy = () => {
           'Glutathione',
           'Magnesium Chloride'
         ]
+      },
+      {
+        id: 'mega-myers',
+        name: 'Mega Myers\' Cocktail IV',
+        category: 'Basic Hydration',
+        price: '$235',
+        badge: 'Mega Formula',
+        description: 'Enhanced Myers Cocktail with higher doses for maximum wellness benefits.',
+        features: [
+          'Normal Saline 1000ml',
+          'High-dose B-Complex',
+          'Vitamin B12',
+          'High-dose Vitamin C (1000mg)',
+          'Zinc Sulfate',
+          'Glutathione',
+          'Magnesium Chloride',
+          'Enhanced formula'
+        ]
       }
     ],
     standard: [
@@ -128,7 +146,7 @@ const IVTherapy = () => {
       },
       {
         id: 'd-book',
-        name: 'The Performance Booster IV Bag',
+        name: 'The "D-Book" Athletic Performance Booster IV',
         category: 'Standard Wellness',
         price: '$225',
         description: 'Elite athletic performance formula for professional-level optimization.',
@@ -319,6 +337,21 @@ const IVTherapy = () => {
           'Biotin',
           'Advanced anti-aging complex'
         ]
+      },
+      {
+        id: 'build-your-own',
+        name: 'Build Your Own IV',
+        category: 'Premium Therapies',
+        price: '$250',
+        badge: 'Custom Formula',
+        description: 'Customize your IV therapy with saline or lactated ringer base plus 4 add-ins of your choice.',
+        features: [
+          'Saline OR Lactated Ringer Base (+$125)',
+          'Choice of 4 Add-Ins (+$25-$35 each)',
+          'Completely customizable',
+          'Personalized formula',
+          'Flexible options'
+        ]
       }
     ],
     nad: [
@@ -376,7 +409,7 @@ const IVTherapy = () => {
         id: 'elite-nad-therapy',
         name: 'The Elite NAD+ Therapy Bag',
         category: 'NAD+ Therapy',
-        price: '$600',
+        price: '$475',
         badge: 'Elite NAD+',
         description: 'Elite NAD+ therapy with comprehensive vitamin support for optimal cellular function.',
         features: [

@@ -6,6 +6,7 @@ import fightReadyLogo from "@/assets/partners/fight-ready-logo.png";
 import arizonaCombatSportsLogo from "@/assets/partners/arizona-combat-sports-logo.png";
 import sleLogo from "@/assets/partners/sle-logo.png";
 import bulldogLogo from "@/assets/partners/bulldog-logo.png";
+import saguaroHighSchoolLogo from "@/assets/partners/saguaro-high-school-logo.jpeg";
 import socialScottsdaleLogo from "@/assets/partners/social-scottsdale-logo.jpeg";
 import curaTurfLogo from "@/assets/partners/curaturf-logo.webp";
 import augmentWellnessLogo from "@/assets/partners/augment-wellness-logo.webp";
@@ -47,6 +48,12 @@ const EnhancedPartnersSection = () => {
       category: "High School Sports", 
       description: "Supporting student athlete recovery",
       logo: bulldogLogo
+    },
+    { 
+      name: "Saguaro High School Athletics", 
+      category: "High School Sports", 
+      description: "Elite high school athletics wellness support",
+      logo: saguaroHighSchoolLogo
     },
     { 
       name: "Augment Wellness", 

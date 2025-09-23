@@ -12,7 +12,7 @@ import QualiphyWidget from "@/components/QualiphyWidget";
 
 // Images (resolved via Vite imports for production builds)
 import nadVial from "@/assets/peptides/nad-vial-new.png";
-import bpc157Vial from "@/assets/peptides/bpc157-vial-new.png";
+import bpc157Vial from "@/assets/peptides/bpc157-vial-branded.png";
 import sermorelinImg from "@/assets/vials/sermorelin-injection.webp";
 import pt141Vial from "@/assets/peptides/pt141-vial-new.png";
 import liraglutideImg from "@/assets/vials/liraglutide-injection-dual.jpeg";
@@ -74,7 +74,7 @@ const NadPeptides = () => {
       category: 'Research & Recovery',
       duration: 'Brief administration (5-10 minutes)',
       administration: 'Subcutaneous administration',
-      image_url: '/src/assets/peptides/bpc157-vial-new.png',
+      image_url: '/src/assets/peptides/bpc157-vial-branded.png',
       benefits: [
         'Research compound of interest*',
         'Studies in cellular processes*',
@@ -617,7 +617,7 @@ const NadPeptides = () => {
   // Map string asset paths to imported URLs so images work in production
   const peptideImageMap: Record<string, string> = {
     "/src/assets/peptides/nad-vial-new.png": nadVial,
-    "/src/assets/peptides/bpc157-vial-new.png": bpc157Vial,
+    "/src/assets/peptides/bpc157-vial-branded.png": bpc157Vial,
     "/src/assets/vials/sermorelin-injection.webp": sermorelinImg,
     "/src/assets/peptides/pt141-vial-new.png": pt141Vial,
     "/src/assets/vials/liraglutide-injection-dual.jpeg": liraglutideImg,

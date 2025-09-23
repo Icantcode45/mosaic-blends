@@ -22,8 +22,8 @@ import diamondbackBag from "@/assets/iv-bags/diamondback-bag.png";
 import hangoverBag from "@/assets/iv-bags/hangover-bag.png";
 import eliteNadBag from "@/assets/iv-bags/elite-nad-bag.png";
 import diamondNadBag from "@/assets/iv-bags/diamond-nad-bag.png";
-import goldHydrationRecoveryBag from "@/assets/iv-bags/gold-hydration-recovery-bag.png";
-import eliteNadTherapyBag from "@/assets/iv-bags/elite-nad-therapy-bag.png";
+import goldHydrationRecoveryBag from "@/assets/iv-bags/gold-hydration-recovery-bag-new.png";
+import eliteNadTherapyBag from "@/assets/iv-bags/elite-nad-therapy-bag-new.png";
 import b12Injection from "@/assets/vials/b12-injection.jpeg";
 import glutathioneInjection from "@/assets/vials/glutathione-injection.jpeg";
 
@@ -52,7 +52,7 @@ const serviceCategories = [
         popular: false
       },
       {
-        name: '"Day After" Hangover Relief IV Drip',
+        name: '"Day After The Dale\'" Hangover Relief IV Drip',
         image: hangoverBag,
         price: "$195",
         duration: "30min",
@@ -79,7 +79,7 @@ const serviceCategories = [
       {
         name: "Elite NAD+ Therapy Bag",
         image: eliteNadTherapyBag,
-        price: "$600",
+        price: "$475",
         duration: "3-4hrs",
         benefits: ["Premium NAD+", "IV Fluids", "B-Complex", "Vitamin C", "Elite formula"],
         popular: true
