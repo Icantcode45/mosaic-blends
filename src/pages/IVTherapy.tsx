@@ -52,7 +52,7 @@ const IVTherapy = () => {
         id: 'hangover',
         name: 'The "Day After" Hangover Relief IV Drip',
         category: 'Basic Hydration',
-        price: '$189',
+        price: '$195',
         badge: 'Hangover Relief',
         description: 'Rapid recovery from hangovers with targeted hydration and detoxification support.',
         features: [
@@ -68,7 +68,7 @@ const IVTherapy = () => {
         id: 'jr-myers',
         name: 'Jr Myers Cocktail IV',
         category: 'Basic Hydration',
-        price: '$189',
+        price: '$185',
         badge: 'Jr Formula',
         description: 'A lighter version of the classic Myers Cocktail, perfect for first-time patients.',
         features: [
@@ -83,7 +83,7 @@ const IVTherapy = () => {
         id: 'myers',
         name: 'Myers Cocktail IV',
         category: 'Basic Hydration',
-        price: '$184.99',
+        price: '$205',
         badge: 'Classic Formula',
         description: 'The classic Myers Cocktail formula with essential vitamins and minerals for overall wellness.',
         features: [
@@ -102,7 +102,7 @@ const IVTherapy = () => {
         id: 'anti-inflammatory',
         name: 'Anti-Inflammatory IV',
         category: 'Standard Wellness',
-        price: '$225',
+        price: '$235',
         description: 'Powerful anti-inflammatory formula to reduce inflammation and promote healing.',
         features: [
           'Normal Saline 1000ml',
@@ -177,7 +177,7 @@ const IVTherapy = () => {
         id: 'gold-hydration-recovery',
         name: 'The Gold Hydration & Recovery IV',
         category: 'Standard Wellness',
-        price: '$249',
+        price: '$325',
         badge: 'Recovery',
         description: 'Premium hydration and recovery formula with essential vitamins and minerals.',
         features: [
@@ -196,7 +196,7 @@ const IVTherapy = () => {
         id: 'weight-management',
         name: 'Weight Management Support IV',
         category: 'Specialty Treatments',
-        price: '$269',
+        price: '$245',
         badge: 'Metabolism',
         description: 'Metabolic support formula designed to enhance weight management and energy.',
         features: [
@@ -211,7 +211,7 @@ const IVTherapy = () => {
         id: 'arizona-detox',
         name: 'The "Arizona" Ultimate Hydration & Recovery IV',
         category: 'Specialty Treatments',
-        price: '$269',
+        price: '$265',
         badge: 'Detox',
         description: 'Comprehensive detoxification and recovery formula for total body wellness.',
         features: [
@@ -244,7 +244,7 @@ const IVTherapy = () => {
         id: 'stress-relief',
         name: 'Stress Relief IV',
         category: 'Specialty Treatments',
-        price: '$319',
+        price: '$215',
         description: 'Calming formula to reduce stress and promote relaxation and mental clarity.',
         features: [
           'Magnesium Chloride',
@@ -258,7 +258,7 @@ const IVTherapy = () => {
         id: 'gold-hydration',
         name: 'The "Gold" Hydration IV',
         category: 'Specialty Treatments',
-        price: '$319',
+        price: '$325',
         badge: 'Premium',
         description: 'Premium hydration therapy with essential vitamins and minerals for superior wellness.',
         features: [
@@ -291,7 +291,7 @@ const IVTherapy = () => {
         id: 'platinum-hydration',
         name: 'The "Platinum" Hydration IV',
         category: 'Premium Therapies',
-        price: '$395',
+        price: '$355',
         badge: 'Ultra Premium',
         description: 'Our most comprehensive hydration therapy with advanced nutrient blend.',
         features: [
@@ -326,7 +326,7 @@ const IVTherapy = () => {
         id: 'nad-therapy',
         name: 'NAD+ Therapy IV (250mg)',
         category: 'NAD+ Therapy',
-        price: '$500',
+        price: '$425',
         badge: 'Standard NAD+',
         description: 'Standard NAD+ therapy with 250mg dose for cellular repair and energy restoration.',
         image_url: nadInjection,
@@ -359,7 +359,7 @@ const IVTherapy = () => {
         id: 'platinum-nad',
         name: 'The "Platinum" NAD+ Therapy IV',
         category: 'NAD+ Therapy',
-        price: '$700',
+        price: '$475',
         badge: 'Premium NAD+',
         description: 'Premium NAD+ therapy combining hydration with high-dose NAD+ for maximum benefits.',
         features: [
@@ -469,7 +469,7 @@ const IVTherapy = () => {
                     "name": "Hangover Relief IV",
                     "description": "Rapid hangover recovery with targeted hydration"
                   },
-                  "price": "$189",
+                  "price": "$195",
                   "priceCurrency": "USD"
                 },
                 {
@@ -479,7 +479,7 @@ const IVTherapy = () => {
                     "name": "Myers Cocktail IV",
                     "description": "Classic vitamin and mineral wellness blend"
                   },
-                  "price": "$184.99",
+                  "price": "$205",
                   "priceCurrency": "USD"
                 },
                 {
@@ -489,7 +489,7 @@ const IVTherapy = () => {
                     "name": "NAD+ Therapy IV",
                     "description": "Cellular energy restoration and anti-aging"
                   },
-                  "price": "$500",
+                  "price": "$425",
                   "priceCurrency": "USD"
                 }
               ]

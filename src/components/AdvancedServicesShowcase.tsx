@@ -38,7 +38,7 @@ const serviceCategories = [
       {
         name: "Myers' Cocktail",
         image: myersCocktailBag,
-        price: "$349",
+        price: "$205",
         duration: "45min",
         benefits: ["B-Complex vitamins", "Vitamin C", "Magnesium", "Zinc", "Glutathione"],
         popular: true
@@ -54,7 +54,7 @@ const serviceCategories = [
       {
         name: '"Day After" Hangover Relief IV Drip',
         image: hangoverBag,
-        price: "$189",
+        price: "$195",
         duration: "30min",
         benefits: ["B-Complex", "Anti-nausea", "Rapid rehydration", "Detox support"],
         popular: false
@@ -62,7 +62,7 @@ const serviceCategories = [
       {
         name: "Gold Hydration & Recovery",
         image: goldHydrationRecoveryBag,
-        price: "$249",
+        price: "$325",
         duration: "45min",
         benefits: ["B-Complex vitamins", "Vitamin C", "Glutathione", "Anti-nausea", "Recovery"],
         popular: false
@@ -87,7 +87,7 @@ const serviceCategories = [
       {
         name: "NAD+ Elite Therapy",
         image: eliteNadBag,
-        price: "$500",
+        price: "$425",
         duration: "2-3hrs",
         benefits: ["250mg NAD+", "Anti-aging", "Mental clarity", "Cellular repair"],
         popular: false
