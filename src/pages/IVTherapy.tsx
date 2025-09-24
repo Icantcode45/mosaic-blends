@@ -23,7 +23,7 @@ import arizonaDetoxBag from "@/assets/iv-bags/arizona-detox-bag.png";
 import diamondNadBag from "@/assets/iv-bags/diamond-nad-bag.png";
 import eliteNadBag from "@/assets/iv-bags/elite-nad-bag.png";
 import goldHydrationBag from "@/assets/iv-bags/gold-hydration-bag.png";
-import goldHydrationRecoveryBag from "@/assets/iv-bags/gold-hydration-recovery-bag-final.png";
+import goldHydrationRecoveryBag from "@/assets/iv-bags/gold-hydration-recovery-bag-new.png";
 import eliteNadTherapyBag from "@/assets/iv-bags/elite-nad-therapy-bag-final.png";
 import nadInjection from "@/assets/vials/nad-injection.webp";
 
@@ -286,40 +286,8 @@ const IVTherapy = () => {
           'Premium Recovery'
         ]
       },
-      {
-        id: 'stay-dripped',
-        name: 'The "Stay Dripped" Special IV',
-        category: 'Premium Therapies',
-        price: '$345',
-        badge: 'Signature',
-        description: 'Our signature blend combining the best of all our treatments for ultimate wellness.',
-        features: [
-          'Normal Saline 1000ml',
-          'Comprehensive vitamin blend',
-          'Premium amino acids',
-          'Antioxidant complex',
-          'Complete wellness formula',
-          'Signature therapeutic blend'
-        ]
-      }
     ],
     premium: [
-      {
-        id: 'platinum-hydration',
-        name: 'The "Platinum" Hydration IV',
-        category: 'Premium Therapies',
-        price: '$355',
-        badge: 'Ultra Premium',
-        description: 'Our most comprehensive hydration therapy with advanced nutrient blend.',
-        features: [
-          'Normal Saline 1000ml',
-          'Advanced B-Complex',
-          'High-Dose Vitamin C',
-          'Magnesium + Calcium',
-          'Premium Electrolyte Blend',
-          'Ultimate Recovery'
-        ]
-      },
       {
         id: 'fountain-youth',
         name: 'The "Fountain Of Youth" IV',
@@ -335,21 +303,6 @@ const IVTherapy = () => {
           'Zinc Sulfate',
           'Biotin',
           'Advanced anti-aging complex'
-        ]
-      },
-      {
-        id: 'build-your-own',
-        name: 'Build Your Own IV',
-        category: 'Premium Therapies',
-        price: '$250',
-        badge: 'Custom Formula',
-        description: 'Customize your IV therapy with saline or lactated ringer base plus 4 add-ins of your choice.',
-        features: [
-          'Saline OR Lactated Ringer Base (+$125)',
-          'Choice of 4 Add-Ins (+$25-$35 each)',
-          'Completely customizable',
-          'Personalized formula',
-          'Flexible options'
         ]
       }
     ],
@@ -384,23 +337,6 @@ const IVTherapy = () => {
           'Advanced amino blend',
           'Maximum glutathione',
           'Elite anti-aging support',
-          '3-4 hour treatment'
-        ]
-      },
-      {
-        id: 'platinum-nad',
-        name: 'The "Platinum" NAD+ Therapy IV',
-        category: 'NAD+ Therapy',
-        price: '$475',
-        badge: 'Premium NAD+',
-        description: 'Premium NAD+ therapy combining hydration with high-dose NAD+ for maximum benefits.',
-        features: [
-          'Normal Saline 1000ml',
-          'NAD+ (premium dose)',
-          'B-Complex vitamins',
-          'Vitamin C',
-          'Glutathione',
-          'Premium anti-aging blend',
           '3-4 hour treatment'
         ]
       },
