@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import SearchSystem from "./SearchSystem";
-import stayDrippedLogo from "@/assets/stay-dripped-main-logo.webp";
+import BrandLogo from "./navigation/BrandLogo";
 import TopBar from "./navigation/TopBar";
 import DesktopNav from "./navigation/DesktopNav";
 import HeaderActions from "./navigation/HeaderActions";
@@ -121,12 +121,7 @@ const EnhancedHeader = () => {
           <div className="h-16 lg:h-20 flex items-center justify-between">
             {/* Brand */}
             <Link to="/" className="flex items-center space-x-3 z-50">
-              <img 
-                src={stayDrippedLogo} 
-                alt="Stay Dripped IV & Wellness Co. - Premier IV Therapy" 
-                className="h-8 lg:h-10 w-auto object-contain transition-all duration-300"
-                loading="eager"
-              />
+              <BrandLogo className="h-8 lg:h-10" />
             </Link>
 
             {/* Desktop Navigation */}
