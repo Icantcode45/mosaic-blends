@@ -8,7 +8,7 @@ import EmbeddedServiceBooking from "@/components/EmbeddedServiceBooking";
 import NADIVBagCard from "@/components/NADIVBagCard";
 
 // Image assets (use imports so they work in production builds)
-import heroBg from "@/assets/iv-therapy-hero-professional.jpg";
+import heroBg from "@/assets/iv-therapy-hero-custom.jpg";
 import rehydrateBag from "@/assets/iv-bags/rehydrate-bag.png";
 import rehydratePlusBag from "@/assets/iv-bags/rehydrate-plus-bag.png";
 import jrMyersBag from "@/assets/iv-bags/jr-myers-bag.png";
@@ -22,7 +22,7 @@ import scottsdaleBeautyBagJpeg from "@/assets/iv-bags/scottsdale-beauty-bag.jpeg
 import arizonaDetoxBag from "@/assets/iv-bags/arizona-detox-bag.png";
 import diamondNadBag from "@/assets/iv-bags/diamond-nad-bag.png";
 import eliteNadBag from "@/assets/iv-bags/elite-nad-bag.png";
-import goldHydrationBag from "@/assets/iv-bags/gold-hydration-bag.png";
+
 import goldHydrationRecoveryBag from "@/assets/iv-bags/gold-hydration-recovery-bag-new.png";
 import eliteNadTherapyBag from "@/assets/iv-bags/elite-nad-therapy-bag-final.png";
 import nadInjection from "@/assets/vials/nad-injection.webp";
@@ -49,7 +49,7 @@ const IVTherapy = () => {
     basic: [
       {
         id: 'hangover',
-        name: 'The "Day After The Dale\'" Hangover Relief IV Drip',
+        name: 'The Day After The Dale Hangover Relief IV Drip',
         category: 'Basic Hydration',
         price: '$195',
         badge: 'Hangover Relief',
@@ -145,7 +145,7 @@ const IVTherapy = () => {
       },
       {
         id: 'd-book',
-        name: 'The "D-Book" Athletic Performance Booster IV',
+        name: 'The D-Book Athletic Performance Booster IV',
         category: 'Standard Wellness',
         price: '$225',
         description: 'Elite athletic performance formula for professional-level optimization.',
@@ -176,7 +176,7 @@ const IVTherapy = () => {
       },
       {
         id: 'sun-devil',
-        name: 'The "Sun Devil" Energy Boost IV',
+        name: 'The Sun Devil Energy Boost IV',
         category: 'Standard Wellness',
         price: '$245',
         badge: 'Performance',
@@ -226,7 +226,7 @@ const IVTherapy = () => {
       },
       {
         id: 'arizona-detox',
-        name: 'The "Arizona" Ultimate Hydration & Recovery IV',
+        name: 'The Arizona Ultimate Hydration & Recovery IV',
         category: 'Premium Therapies',
         price: '$265',
         badge: 'Detox',
@@ -271,26 +271,11 @@ const IVTherapy = () => {
           'Mental clarity enhancement'
         ]
       },
-      {
-        id: 'gold-hydration',
-        name: 'The "Gold" Hydration IV',
-        category: 'Premium Therapies',
-        price: '$325',
-        badge: 'Premium',
-        description: 'Premium hydration therapy with essential vitamins and minerals for superior wellness.',
-        features: [
-          'Normal Saline 1000ml',
-          'B-Complex Vitamins',
-          'Vitamin C',
-          'Magnesium Chloride',
-          'Premium Recovery'
-        ]
-      },
     ],
     premium: [
       {
         id: 'fountain-youth',
-        name: 'The "Fountain Of Youth" IV',
+        name: 'The Fountain Of Youth IV',
         category: 'Premium Therapies',
         price: '$400',
         badge: 'Beauty + NAD+',
@@ -325,7 +310,7 @@ const IVTherapy = () => {
       },
       {
         id: 'diamond-nad',
-        name: 'The "Diamond" NAD+ Therapy IV',
+        name: 'The Diamond NAD+ Therapy IV',
         category: 'NAD+ Therapy',
         price: '$525',
         badge: 'Diamond Elite',
@@ -469,7 +454,7 @@ const IVTherapy = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-800 via-slate-700 to-slate-600 text-white">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-secondary/20" />
-        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: `url(${heroBg})` }} />
+        <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: `url(${heroBg})` }} />
         
         <div className="container relative z-10 mx-auto px-4 py-32 text-center">
           <h1 className="mb-6 text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
@@ -645,7 +630,7 @@ const IVTherapy = () => {
                       titleColor: 'text-yellow-900',
                       badgeColor: 'bg-yellow-500',
                       title: 'THE DAY-AFTER',
-                      subtitle: '"HANGOVER BAG"',
+                      subtitle: 'HANGOVER BAG',
                       bagImage: hangoverBag
                     };
                   case 'sun-devil':
@@ -746,15 +731,6 @@ const IVTherapy = () => {
                         title: 'THE GOLD',
                         subtitle: 'HYDRATION & RECOVERY',
                         bagImage: goldHydrationRecoveryBag
-                      };
-                    case 'gold':
-                      return {
-                        bgGradient: 'from-white to-white',
-                        titleColor: 'text-amber-900',
-                        badgeColor: 'bg-amber-500',
-                        title: 'THE GOLD',
-                        subtitle: 'HYDRATION & RECOVERY',
-                        bagImage: goldHydrationBag
                       };
                    default:
                      return {
