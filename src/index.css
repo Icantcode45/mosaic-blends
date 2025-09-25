@@ -353,40 +353,89 @@
 }
 
 @layer components {
+  /* Enhanced Hero Section */
+  .hero-section { 
+    @apply min-h-screen bg-gradient-hero relative overflow-hidden;
+  }
+  .hero-content { 
+    @apply relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16;
+  }
+  .hero-title { 
+    @apply text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 font-heading;
+  }
+  .hero-subtitle { 
+    @apply text-xl sm:text-2xl text-muted-foreground mb-8 max-w-2xl leading-relaxed;
+  }
+
+  /* Enhanced Service Cards */
+  .service-card { 
+    @apply relative p-8 bg-gradient-card rounded-3xl border border-border/50 shadow-medium hover:shadow-large transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm;
+  }
+  
+  /* Enhanced CTA Button */
+  .cta-button { 
+    @apply inline-flex items-center justify-center px-8 py-4 bg-gradient-primary text-white font-semibold rounded-2xl shadow-glow-primary hover:shadow-premium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98];
+  }
+  
+  /* Section Components */
+  .section-header { 
+    @apply text-center mb-16;
+  }
+  .section-title { 
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 font-heading tracking-tight;
+  }
+  .section-subtitle { 
+    @apply text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed;
+  }
+  
+  /* Enhanced Stats */
+  .stats-number { 
+    @apply text-4xl sm:text-5xl font-bold text-primary mb-2 font-heading;
+  }
+  
+  /* Enhanced Testimonial Card */
+  .testimonial-card { 
+    @apply bg-gradient-card rounded-3xl p-8 shadow-medium border border-border/50 backdrop-blur-sm hover:shadow-large transition-all duration-300;
+  }
+  
+  /* Enhanced Trust Badge */
+  .trust-badge { 
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-background/80 backdrop-blur-sm rounded-full border border-border/50 text-sm font-medium shadow-subtle hover:shadow-medium transition-all duration-300;
+  }
+
   /* Professional Button System */
   .btn-professional {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg;
-    @apply px-6 py-3 text-sm font-medium transition-all duration-200;
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl;
+    @apply px-6 py-3 text-sm font-medium transition-all duration-300;
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
-    @apply shadow-subtle hover:shadow-medium;
+    @apply shadow-subtle hover:shadow-medium hover:scale-[1.02];
   }
   
   .btn-primary-professional {
-    @apply btn-professional bg-primary text-primary-foreground;
-    @apply hover:bg-primary-hover;
+    @apply btn-professional bg-gradient-primary text-white;
+    @apply hover:shadow-glow-primary;
     @apply focus-visible:ring-primary/20;
   }
   
   .btn-secondary-professional {
-    @apply btn-professional bg-secondary text-secondary-foreground border border-border;
-    @apply hover:bg-muted;
+    @apply btn-professional bg-secondary/80 text-secondary-foreground border border-border/50;
+    @apply hover:bg-secondary backdrop-blur-sm;
   }
   
   .btn-outline-professional {
-    @apply btn-professional bg-transparent text-foreground;
-    @apply border border-border hover:bg-muted;
+    @apply btn-professional bg-background/50 text-foreground backdrop-blur-sm;
+    @apply border border-border/50 hover:bg-muted/50;
   }
   
   .btn-ghost-professional {
     @apply btn-professional bg-transparent text-muted-foreground;
-    @apply hover:bg-muted hover:text-foreground;
+    @apply hover:bg-muted/50 hover:text-foreground backdrop-blur-sm;
   }
-  
+
   /* Enhanced Professional Card System */
   .card-professional {
-    @apply bg-card text-card-foreground rounded-2xl;
-    @apply border border-border/50 shadow-medium;
-    @apply backdrop-blur-sm bg-background/80;
+    @apply bg-gradient-card text-card-foreground rounded-3xl;
+    @apply border border-border/50 shadow-medium backdrop-blur-sm;
     @apply transition-all duration-300;
   }
   
@@ -398,7 +447,7 @@
   
   .card-interactive-professional {
     @apply card-hover-professional cursor-pointer;
-    @apply hover:shadow-glow-primary hover:bg-primary-50/30;
+    @apply hover:shadow-glow-primary hover:bg-primary/5;
   }
   
   .glass-medical {
@@ -407,24 +456,24 @@
     @apply hover:bg-background/90 hover:border-border/50;
     @apply hover:shadow-premium transition-all duration-500;
   }
-  
+
   /* Enhanced Professional Input System */
   .input-professional {
-    @apply w-full rounded-xl border border-border/60;
-    @apply bg-background px-4 py-4 text-sm;
+    @apply w-full rounded-2xl border border-border/60;
+    @apply bg-background/50 backdrop-blur-sm px-4 py-4 text-sm;
     @apply placeholder:text-muted-foreground/70;
     @apply focus:border-primary focus:ring-0 focus:outline-none;
     @apply focus:shadow-glow-primary focus:bg-background;
-    @apply hover:border-border transition-all duration-300;
+    @apply hover:border-border/80 transition-all duration-300;
   }
   
   .input-medical {
     @apply input-professional;
-    @apply border-border/40 bg-background/50 backdrop-blur-sm;
-    @apply focus:bg-background focus:border-primary/80;
-    @apply hover:bg-background/80 hover:border-border/80;
+    @apply border-border/40 bg-background/30 backdrop-blur-sm;
+    @apply focus:bg-background/80 focus:border-primary/80;
+    @apply hover:bg-background/50 hover:border-border/80;
   }
-  
+
   /* Professional Section Layouts */
   .section-padding-professional {
     @apply py-16 md:py-20 lg:py-24;
@@ -433,13 +482,13 @@
   .section-hero-professional {
     @apply py-20 md:py-24 lg:py-28;
   }
-  
+
   /* Professional Badge */
   .badge-professional {
-    @apply inline-flex items-center rounded-md;
+    @apply inline-flex items-center rounded-xl;
     @apply px-3 py-1 text-xs font-medium;
-    @apply bg-muted text-muted-foreground;
-    @apply border border-border;
+    @apply bg-muted/50 text-muted-foreground backdrop-blur-sm;
+    @apply border border-border/50;
   }
 }
 

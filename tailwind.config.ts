@@ -154,6 +154,15 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-4px)" },
         },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+          "33%": { transform: "translateY(-10px) rotate(1deg)" },
+          "66%": { transform: "translateY(5px) rotate(-1deg)" },
+        },
+        "pulse-soft": {
+          "0%, 100%": { opacity: "0.8", transform: "scale(1)" },
+          "50%": { opacity: "1", transform: "scale(1.05)" },
+        },
         "scroll": {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" }
@@ -168,7 +177,8 @@ export default {
         "slide-in-left": "slide-in-left 0.5s ease-out",
         "slide-in-right": "slide-in-right 0.5s ease-out",
         "bounce-soft": "bounce-soft 2s ease-in-out infinite",
-        "pulse-soft": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "pulse-soft": "pulse-soft 3s ease-in-out infinite",
+        "float": "float 6s ease-in-out infinite",
         "scroll": "scroll 30s linear infinite",
       },
       spacing: {
