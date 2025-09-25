@@ -211,11 +211,8 @@ const Membership = () => {
                     <MembershipBookingButton 
                       membershipName={plan.name}
                       membershipType={plan.id as 'basic' | 'premium' | 'elite' | 'starter'}
-                      className={`w-full ${
-                        plan.featured 
-                          ? 'bg-primary hover:bg-primary-hover text-white' 
-                          : 'border border-primary text-primary hover:bg-primary hover:text-white'
-                      } transition-all duration-300`}
+                      variant={plan.featured ? "default" : "outline"}
+                      className="w-full"
                     />
                   </div>
                 </div>

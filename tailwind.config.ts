@@ -88,6 +88,7 @@ export default {
           purple: "hsl(var(--brand-purple))",
           success: "hsl(var(--brand-success))",
           warning: "hsl(var(--brand-warning))",
+          glass: "var(--gradient-glass)",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -118,6 +119,7 @@ export default {
         "gradient-primary": "var(--gradient-primary)",
         "gradient-hero": "var(--gradient-hero)",
         "gradient-card": "var(--gradient-card)",
+        "gradient-glass": "var(--gradient-glass)",
       },
       keyframes: {
         "accordion-down": {

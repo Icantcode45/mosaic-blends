@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet";
 import UltraModernHero from "@/components/UltraModernHero";
 import PremiumTrustSection from "@/components/PremiumTrustSection";
 import AdvancedServicesShowcase from "@/components/AdvancedServicesShowcase";
-import InnovativeProcessSection from "@/components/InnovativeProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import EnhancedStatsSection from "@/components/EnhancedStatsSection";
 import EnhancedMembershipSection from "@/components/EnhancedMembershipSection";
@@ -151,38 +150,33 @@ const Index = () => {
           <AdvancedServicesShowcase />
         </div>
         
-        {/* 4. Innovative Process Section */}
+        {/* 4. Client Testimonials */}
         <div className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
-          <InnovativeProcessSection />
-        </div>
-        
-        {/* 5. Client Testimonials */}
-        <div className="animate-fade-up" style={{ animationDelay: '0.5s' }}>
           <TestimonialsSection />
         </div>
         
-        {/* 6. Results & Stats - Prove effectiveness with data */}
-        <div className="animate-fade-up" style={{ animationDelay: '0.6s' }}>
+        {/* 5. Results & Stats - Prove effectiveness with data */}
+        <div className="animate-fade-up" style={{ animationDelay: '0.5s' }}>
           <EnhancedStatsSection />
         </div>
         
-        {/* 7. Membership Plans - Convert visitors with pricing */}
-        <div className="animate-fade-up" style={{ animationDelay: '0.7s' }}>
+        {/* 6. Membership Plans - Convert visitors with pricing */}
+        <div className="animate-fade-up" style={{ animationDelay: '0.6s' }}>
           <EnhancedMembershipSection />
         </div>
         
-        {/* 8. Partners & Certifications - Additional credibility */}
-        <div className="animate-fade-up" style={{ animationDelay: '0.8s' }}>
+        {/* 7. Partners & Certifications - Additional credibility */}
+        <div className="animate-fade-up" style={{ animationDelay: '0.7s' }}>
           <EnhancedPartnersSection />
         </div>
         
-        {/* 9. Newsletter - Capture leads */}
-        <div className="animate-fade-up" style={{ animationDelay: '0.9s' }}>
+        {/* 8. Newsletter - Capture leads */}
+        <div className="animate-fade-up" style={{ animationDelay: '0.8s' }}>
           <NewsletterSection />
         </div>
         
-        {/* 10. BBB Accreditation - Trust and credibility */}
-        <div className="animate-fade-up" style={{ animationDelay: '1.0s' }}>
+        {/* 9. BBB Accreditation - Trust and credibility */}
+        <div className="animate-fade-up" style={{ animationDelay: '0.9s' }}>
           <BBBAccreditation />
         </div>
       </div>

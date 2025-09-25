@@ -96,7 +96,7 @@ const GiftCards = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-warm-beige via-orange-50 to-orange-100">
+      <section className="relative overflow-hidden bg-gradient-to-br from-background via-primary/5 to-brand-teal/10">
         <div className="container mx-auto px-4 py-24 text-center">
           <h1 className="mb-6 text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
             Gift the Power of Wellness
@@ -105,7 +105,7 @@ const GiftCards = () => {
             Share the gift of health and vitality with Stay Dripped IV & Wellness Co. gift cards. 
             Perfect for birthdays, holidays, or any special occasion.
           </p>
-          <Button size="lg" className="bg-accent hover:bg-accent/90 px-8 py-4 text-lg font-semibold" 
+          <Button size="lg" variant="default" 
             onClick={() => document.getElementById('gift-cards')?.scrollIntoView({ behavior: 'smooth' })}>
             🎁 Shop Gift Cards
           </Button>
@@ -129,24 +129,25 @@ const GiftCards = () => {
 
           <div className="grid gap-8 md:grid-cols-3">
             {giftCardOptions.map((option, index) => (
-              <Card key={index} className="group relative overflow-hidden border-0 bg-gradient-to-br from-accent via-accent to-accent/90 text-white transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+              <Card key={index} className="group relative overflow-hidden bg-gradient-to-br from-primary via-brand-teal to-brand-sky text-white transition-all duration-300 hover:-translate-y-2 hover:shadow-premium">
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 
                 <CardContent className="relative z-10 p-8 text-center">
-                  <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-white/20 text-4xl">
+                  <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-white/20 text-4xl backdrop-blur-sm">
                     {option.icon}
                   </div>
-                  <h3 className="mb-4 text-2xl font-bold">
+                  <h3 className="mb-4 text-2xl font-bold text-white">
                     {option.title}
                   </h3>
-                  <div className="mb-4 text-5xl font-bold">
+                  <div className="mb-4 text-5xl font-bold text-white">
                     {option.amount}
                   </div>
-                  <p className="mb-8 opacity-90">
+                  <p className="mb-8 text-white/90">
                     {option.description}
                   </p>
                   <Button 
-                    className="w-full bg-white text-accent hover:bg-gray-100 hover:text-accent" 
+                    variant="glass"
+                    className="w-full bg-white/20 text-white border-white/30 hover:bg-white/30" 
                     asChild
                   >
                     <Link to="/first-time-patients">Purchase Gift Card</Link>
@@ -279,7 +280,8 @@ const GiftCards = () => {
                   <Button 
                     type="submit" 
                     size="lg" 
-                    className="w-full bg-accent hover:bg-accent/90 py-4 text-lg font-semibold"
+                    variant="default"
+                    className="w-full py-4 text-lg font-semibold"
                   >
                     🎁 Create Custom Gift Card
                   </Button>
@@ -308,7 +310,7 @@ const GiftCards = () => {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, index) => (
               <div key={index} className="text-center">
-                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-accent text-2xl font-bold text-white">
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-2xl font-bold text-white shadow-medium">
                   {step.number}
                 </div>
                 <h3 className="mb-4 text-xl font-semibold text-foreground">

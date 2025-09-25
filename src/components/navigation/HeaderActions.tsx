@@ -14,7 +14,7 @@ const HeaderActions = () => {
       <Button 
         variant="ghost" 
         size="sm"
-        className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium" 
+        className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium" 
         asChild
       >
         <Link to="/newsletter">Newsletter</Link>
@@ -24,7 +24,9 @@ const HeaderActions = () => {
       <AuthDropdown />
       
       <Button 
-        className="bg-gradient-to-r from-primary via-primary-dark to-accent text-white font-bold px-6 py-2.5 rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg" 
+        variant="default"
+        size="lg"
+        className="font-bold" 
         asChild
       >
         <Link to="/first-time-patients">Book Now</Link>

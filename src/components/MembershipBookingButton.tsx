@@ -7,11 +7,12 @@ interface MembershipBookingButtonProps {
   membershipName: string;
   membershipType: 'basic' | 'premium' | 'elite' | 'starter';
   className?: string;
+  variant?: "default" | "outline" | "secondary" | "ghost" | "link" | "destructive" | "premium" | "glass";
 }
 
-const MembershipBookingButton = ({ membershipName, membershipType, className }: MembershipBookingButtonProps) => {
+const MembershipBookingButton = ({ membershipName, membershipType, className, variant = "default" }: MembershipBookingButtonProps) => {
   return (
-    <Button asChild className={cn("w-full", className)}>
+    <Button variant={variant} asChild className={cn("w-full", className)}>
       <Link to="/membership">Join Now</Link>
     </Button>
   );

@@ -7,7 +7,7 @@ import { CartProvider } from "@/contexts/CartContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import ScrollToTop from "@/components/ScrollToTop";
-import EnhancedIndex from "./pages/EnhancedIndex";
+import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import EnhancedHeader from "./components/EnhancedHeader";
 import EnhancedFooter from "./components/EnhancedFooter";
@@ -49,7 +49,7 @@ const App = () => (
             <EnhancedHeader />
             <main className="flex-1">
               <Routes>
-                <Route path="/" element={<EnhancedIndex />} />
+                <Route path="/" element={<Index />} />
                 
                 
                 <Route path="/events" element={<Events />} />
