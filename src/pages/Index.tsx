@@ -1,13 +1,8 @@
 import { Helmet } from "react-helmet";
-import PremiumHero from "@/components/PremiumHero";
-import InteractiveServicesGrid from "@/components/InteractiveServicesGrid";
-import EnhancedProcessFlow from "@/components/EnhancedProcessFlow";
-import Premium3DTrustSection from "@/components/Premium3DTrustSection";
-import PremiumFirstTimePatients from "@/components/PremiumFirstTimePatients";
-import EnhancedStatsSection from "@/components/EnhancedStatsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import CleanHero from "@/components/CleanHero";
+import CleanServicesGrid from "@/components/CleanServicesGrid";
+import CleanCTA from "@/components/CleanCTA";
 import FAQSection from "@/components/FAQSection";
-import EnhancedContactSection from "@/components/EnhancedContactSection";
 import SEOHead from "@/components/SEOHead";
 import SchemaMarkup from "@/components/SchemaMarkup";
 
@@ -133,16 +128,11 @@ const Index = () => {
       </Helmet>
       
       <div className="animate-fade-up">
-        {/* Premium Sections */}
-        <PremiumHero />
-        <InteractiveServicesGrid />
-        <EnhancedProcessFlow />
-        <Premium3DTrustSection />
-        <PremiumFirstTimePatients />
-        <EnhancedStatsSection />
-        <TestimonialsSection />
+        {/* Clean, Focused Sections */}
+        <CleanHero />
+        <CleanServicesGrid />
         <FAQSection />
-        <EnhancedContactSection />
+        <CleanCTA />
       </div>
     </>
   );
