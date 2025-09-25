@@ -20,65 +20,65 @@ const InteractiveServicesGrid = () => {
 
   const services = [
     {
-      id: "hydration",
+      id: "rehydrate",
       icon: Droplets,
-      title: "IV Hydration Therapy",
-      subtitle: "Rapid Rehydration",
+      title: "Rehydrate IV",
+      subtitle: "Plain Saline Solution",
       price: "Starting at $149",
       duration: "30-45 min",
-      description: "Fast-acting hydration therapy with essential electrolytes and vitamins for immediate energy and wellness.",
+      description: "Fast-acting hydration therapy with essential electrolytes for immediate energy and wellness recovery.",
       benefits: [
         "Immediate hydration boost",
         "Enhanced energy levels", 
         "Improved mental clarity",
         "Faster recovery from dehydration"
       ],
-      image: "/lovable-uploads/hydration-service.jpg",
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-blue-50",
+      image: "/src/assets/iv-bags/rehydrate-bag-new.png",
+      color: "from-cyan-400 to-blue-500",
+      bgColor: "bg-gradient-to-br from-cyan-50 to-blue-50",
       popular: true
     },
     {
-      id: "energy",
+      id: "rehydrate-plus",
       icon: Zap,
-      title: "Energy Boost IV",
-      subtitle: "B-Complex + B12",
-      price: "Starting at $179",
-      duration: "45-60 min",
-      description: "High-dose B vitamins and nutrients designed to boost energy, improve focus, and enhance performance.",
-      benefits: [
-        "Sustained energy increase",
-        "Better focus and concentration",
-        "Metabolic support",
-        "Mood enhancement"
-      ],
-      image: "/lovable-uploads/energy-service.jpg", 
-      color: "from-orange-500 to-yellow-500",
-      bgColor: "bg-orange-50",
-      popular: false
-    },
-    {
-      id: "immune",
-      icon: Shield,
-      title: "Immune Support IV",
-      subtitle: "High-Dose Vitamin C",
+      title: "Rehydrate Plus IV",
+      subtitle: "Lactated Ringers + B-Complex",
       price: "Starting at $199",
       duration: "45-60 min",
-      description: "Powerful immune system support with high-dose vitamin C, zinc, and antioxidants.",
+      description: "Enhanced hydration with lactated ringers and vitamin B-complex for superior recovery and energy.",
       benefits: [
-        "Strengthened immune system",
-        "Antioxidant protection",
-        "Faster illness recovery",
-        "Preventive wellness support"
+        "Superior hydration formula",
+        "B-vitamin energy boost",
+        "Enhanced electrolyte balance",
+        "Accelerated recovery"
       ],
-      image: "/lovable-uploads/immune-service.jpg",
-      color: "from-green-500 to-emerald-500", 
-      bgColor: "bg-green-50",
+      image: "/src/assets/iv-bags/rehydrate-plus-bag-new.png", 
+      color: "from-teal-400 to-cyan-500",
+      bgColor: "bg-gradient-to-br from-teal-50 to-cyan-50",
       popular: false
     },
     {
-      id: "nad",
+      id: "dbook-performance",
       icon: Brain,
+      title: "D-Book Performance IV",
+      subtitle: "Elite Athletic Formula",
+      price: "Starting at $299",
+      duration: "60-90 min",
+      description: "Premium performance blend with B-vitamins, glutathione, amino acids, and magnesium for peak performance.",
+      benefits: [
+        "Enhanced athletic performance",
+        "Faster muscle recovery",
+        "Improved mental focus",
+        "Antioxidant protection"
+      ],
+      image: "/src/assets/iv-bags/d-book-performance-bag.png",
+      color: "from-purple-500 to-indigo-600", 
+      bgColor: "bg-gradient-to-br from-purple-50 to-indigo-50",
+      popular: true
+    },
+    {
+      id: "nad-therapy",
+      icon: Shield,
       title: "NAD+ Anti-Aging",
       subtitle: "Cellular Regeneration",
       price: "Starting at $475",
@@ -90,10 +90,10 @@ const InteractiveServicesGrid = () => {
         "Anti-aging benefits",
         "Increased energy at cellular level"
       ],
-      image: "/lovable-uploads/nad-service.jpg",
-      color: "from-purple-500 to-indigo-500",
-      bgColor: "bg-purple-50", 
-      popular: true
+      image: "/src/assets/iv-bags/elite-nad-therapy-bag-final.png",
+      color: "from-emerald-500 to-teal-600",
+      bgColor: "bg-gradient-to-br from-emerald-50 to-teal-50", 
+      popular: false
     }
   ];
 
@@ -180,20 +180,37 @@ const InteractiveServicesGrid = () => {
             <div className={`relative rounded-3xl p-8 ${currentService.bgColor} border border-border/20 shadow-large transition-all duration-500`}>
               
               {/* Service Image/Visual */}
-              <div className="relative aspect-[4/3] bg-gradient-to-br from-white/50 to-transparent rounded-2xl mb-6 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className={`w-24 h-24 rounded-3xl bg-gradient-to-br ${currentService.color} flex items-center justify-center shadow-large`}>
-                    <currentService.icon className="w-12 h-12 text-white" />
+              <div className="relative aspect-[4/3] rounded-2xl mb-6 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                <div className="absolute inset-0 flex items-center justify-center p-8">
+                  <img 
+                    src={currentService.image} 
+                    alt={currentService.title}
+                    className="w-full h-full object-contain iv-bag-visual floating-3d"
+                    style={{ maxHeight: '280px' }}
+                  />
+                </div>
+                
+                {/* Enhanced floating badges with 3D icons */}
+                <div className="absolute top-4 right-4 premium-glass rounded-xl px-4 py-2 text-xs font-medium text-foreground">
+                  <div className="flex items-center gap-2">
+                    <img src="/src/assets/icons/3d-calendar.png" alt="" className="w-4 h-4" />
+                    {currentService.duration}
                   </div>
                 </div>
                 
-                {/* Floating badges */}
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-medium text-foreground">
-                  {currentService.duration}
+                <div className="absolute bottom-4 left-4 premium-glass rounded-xl px-4 py-2 text-xs font-medium text-primary">
+                  <div className="flex items-center gap-2">
+                    <img src="/src/assets/icons/3d-shield.png" alt="" className="w-4 h-4" />
+                    Licensed Medical Team
+                  </div>
                 </div>
                 
-                <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-medium text-primary">
-                  Licensed Medical Team
+                <div className="absolute top-4 left-4 premium-glass rounded-xl px-4 py-2 text-xs font-medium text-emerald-600">
+                  <div className="flex items-center gap-2">
+                    <img src="/src/assets/icons/3d-checkmark.png" alt="" className="w-4 h-4" />
+                    FDA Approved
+                  </div>
                 </div>
               </div>
 
