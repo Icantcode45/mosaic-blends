@@ -38,6 +38,12 @@ export default {
           hover: "hsl(var(--primary-hover))",
           light: "hsl(var(--primary-light))",
           dark: "hsl(var(--primary-dark))",
+          50: "hsl(var(--primary-50))",
+          100: "hsl(var(--primary-100))",
+          500: "hsl(var(--primary-500))",
+          600: "hsl(var(--primary-600))",
+          700: "hsl(var(--primary-700))",
+          900: "hsl(var(--primary-900))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -104,6 +110,9 @@ export default {
         medium: "var(--shadow-medium)",
         large: "var(--shadow-large)",
         extra: "var(--shadow-extra)",
+        premium: "var(--shadow-premium)",
+        "glow-primary": "var(--shadow-glow-primary)",
+        "glow-soft": "var(--shadow-glow-soft)",
       },
       backgroundImage: {
         "gradient-primary": "var(--gradient-primary)",
