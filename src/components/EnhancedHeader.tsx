@@ -16,9 +16,7 @@ const EnhancedHeader = () => {
   const navItems = [
     { name: 'Events', href: '/events' },
     { name: 'Compliance', href: '/compliance' },
-    { name: 'Telehealth', href: '/telehealth' },
     { name: 'Test Kits & Panels', href: '/test-kits' },
-    { name: 'Products', href: '/products' },
     { name: 'Membership', href: '/membership' },
     { name: 'First-Time Patients', href: '/first-time-patients' },
     { name: 'Gift Cards', href: '/gift-cards' },
@@ -34,15 +32,8 @@ const EnhancedHeader = () => {
       ]
     },
     {
-      category: "Advanced Treatments", 
-      items: [
-        { name: "Peptide Therapy", href: "/nad-peptides", description: "Cellular support and recovery" }
-      ]
-    },
-    {
       category: "Virtual & Remote Care",
       items: [
-        { name: "Telehealth Consultations", href: "/telehealth", description: "Virtual medical consultations" },
         { name: "At-Home Test Kits", href: "/test-kits", description: "Comprehensive lab testing" }
       ]
     }
@@ -52,9 +43,6 @@ const EnhancedHeader = () => {
     {
       category: "Products & Health Testing",
       items: [
-        { name: "Professional Supplements", href: "/products", description: "Medical-grade formulations" },
-        { name: "Probiotics & Gut Health", href: "/products", description: "Digestive wellness support" },
-        { name: "Vitamins & Minerals", href: "/products", description: "Essential nutrients" },
         { name: "Test Kits & Lab Panels", href: "/test-kits", description: "At-home health testing" }
       ]
     }

@@ -11,9 +11,7 @@ import EnhancedIndex from "./pages/EnhancedIndex";
 import NotFound from "./pages/NotFound";
 import EnhancedHeader from "./components/EnhancedHeader";
 import EnhancedFooter from "./components/EnhancedFooter";
-import Telehealth from "./pages/Telehealth";
 import TestKits from "./pages/TestKits";
-import Products from "./pages/Products";
 import Compliance from "./pages/Compliance";
 import GoodFaithEstimate from "./pages/GoodFaithEstimate";
 import FirstTimePatients from "./pages/FirstTimePatients";
@@ -21,7 +19,7 @@ import Events from "./pages/Events";
 import GiftCards from "./pages/GiftCards";
 import Privacy from "./pages/Privacy";
 import VitaminInjections from "./pages/VitaminInjections";
-import NadPeptides from "./pages/NadPeptides";
+
 import IVTherapy from "./pages/IVTherapy";
 import EventInquiry from "./pages/EventInquiry";
 import Membership from "./pages/Membership";
@@ -51,9 +49,7 @@ const App = () => (
             <main className="flex-1">
               <Routes>
                 <Route path="/" element={<EnhancedIndex />} />
-                <Route path="/telehealth" element={<Telehealth />} />
                 <Route path="/test-kits" element={<TestKits />} />
-                <Route path="/products" element={<Products />} />
                 
                 <Route path="/compliance" element={<Compliance />} />
                 <Route path="/good-faith-estimate" element={<GoodFaithEstimate />} />
@@ -62,7 +58,7 @@ const App = () => (
                 <Route path="/event-inquiry" element={<EventInquiry />} />
                 <Route path="/gift-cards" element={<GiftCards />} />
           <Route path="/vitamin-injections" element={<VitaminInjections />} />
-          <Route path="/nad-peptides" element={<NadPeptides />} />
+          
           <Route path="/iv-therapy" element={<IVTherapy />} />
           <Route path="/membership" element={<Membership />} />
           <Route path="/about" element={<AboutUs />} />
