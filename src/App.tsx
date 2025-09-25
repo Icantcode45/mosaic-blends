@@ -15,6 +15,12 @@ import EnhancedFooter from "./components/EnhancedFooter";
 import Compliance from "./pages/Compliance";
 import GoodFaithEstimate from "./pages/GoodFaithEstimate";
 import FirstTimePatients from "./pages/FirstTimePatients";
+import Events from "./pages/Events";
+import EventInquiry from "./pages/EventInquiry";
+import GiftCards from "./pages/GiftCards";
+import Careers from "./pages/Careers";
+import ServiceAreas from "./pages/ServiceAreas";
+import Sponsorship from "./pages/Sponsorship";
 import Privacy from "./pages/Privacy";
 import VitaminInjections from "./pages/VitaminInjections";
 import IVTherapy from "./pages/IVTherapy";
@@ -46,6 +52,12 @@ const App = () => (
                 <Route path="/" element={<EnhancedIndex />} />
                 
                 
+                <Route path="/events" element={<Events />} />
+                <Route path="/event-inquiry" element={<EventInquiry />} />
+                <Route path="/gift-cards" element={<GiftCards />} />
+                <Route path="/careers" element={<Careers />} />
+                <Route path="/service-areas" element={<ServiceAreas />} />
+                <Route path="/sponsorship" element={<Sponsorship />} />
                 <Route path="/compliance" element={<Compliance />} />
                 <Route path="/good-faith-estimate" element={<GoodFaithEstimate />} />
                 <Route path="/first-time-patients" element={<FirstTimePatients />} />

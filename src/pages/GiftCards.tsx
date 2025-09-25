@@ -107,8 +107,8 @@ const GiftCards = () => {
           </p>
           <Button size="lg" className="bg-accent hover:bg-accent/90 px-8 py-4 text-lg font-semibold" 
             onClick={() => document.getElementById('gift-cards')?.scrollIntoView({ behavior: 'smooth' })}>
-              🎁 Shop Gift Cards
-            </Button>
+            🎁 Shop Gift Cards
+          </Button>
         </div>
       </section>
 

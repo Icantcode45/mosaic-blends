@@ -14,9 +14,12 @@ const EnhancedHeader = () => {
   const [searchOpen, setSearchOpen] = useState(false);
 
   const navItems = [
-    { name: 'Compliance', href: '/compliance' },
+    { name: 'Events', href: '/events' },
+    { name: 'Gift Cards', href: '/gift-cards' },
     { name: 'Membership', href: '/membership' },
-    { name: 'First-Time Patients', href: '/first-time-patients' }
+    { name: 'First-Time Patients', href: '/first-time-patients' },
+    { name: 'Careers', href: '/careers' },
+    { name: 'Brand Ambassador', href: '/sponsorship' }
   ];
 
   const servicesMegaItems = [

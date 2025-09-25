@@ -60,7 +60,7 @@ const EnhancedFooter = () => {
   const quickActions = [
     { name: "Book IV Therapy", href: "/first-time-patients", urgent: true },
     { name: "Emergency Line", href: "tel:+1-602-688-9825", urgent: true },
-    { name: "Member Login", href: "/client-portal" }
+    { name: "Client Portal", href: "/client-portal" }
   ];
 
   return (
