@@ -49,7 +49,7 @@ const IVTherapy = () => {
     basic: [
       {
         id: 'hangover',
-        name: 'The Day After The Dale Hangover Relief IV Drip',
+        name: 'Day After Hangover Bag',
         category: 'Basic Hydration',
         price: '$195',
         badge: 'Hangover Relief',
@@ -94,55 +94,9 @@ const IVTherapy = () => {
           'Glutathione',
           'Magnesium Chloride'
         ]
-      },
-      {
-        id: 'mega-myers',
-        name: 'Mega Myers\' Cocktail IV',
-        category: 'Basic Hydration',
-        price: '$235',
-        badge: 'Mega Formula',
-        description: 'Enhanced Myers Cocktail with higher doses for maximum wellness benefits.',
-        features: [
-          'Normal Saline 1000ml',
-          'High-dose B-Complex',
-          'Vitamin B12',
-          'High-dose Vitamin C (1000mg)',
-          'Zinc Sulfate',
-          'Glutathione',
-          'Magnesium Chloride',
-          'Enhanced formula'
-        ]
       }
     ],
     standard: [
-      {
-        id: 'anti-inflammatory',
-        name: 'Anti-Inflammatory IV',
-        category: 'Standard Wellness',
-        price: '$235',
-        description: 'Powerful anti-inflammatory formula to reduce inflammation and promote healing.',
-        features: [
-          'Normal Saline 1000ml',
-          'Glutathione',
-          'Vitamin C',
-          'Magnesium Chloride',
-          'Anti-inflammatory support'
-        ]
-      },
-      {
-        id: 'mental-clarity',
-        name: 'Mental Clarity IV',
-        category: 'Standard Wellness',
-        price: '$225',
-        description: 'Cognitive enhancement formula for improved focus, memory, and mental performance.',
-        features: [
-          'B-Complex for cognition',
-          'Magnesium support',
-          'Amino acid blend',
-          'Enhanced focus',
-          'Memory support'
-        ]
-      },
       {
         id: 'd-book',
         name: 'The D-Book Athletic Performance Booster IV',
@@ -210,21 +164,6 @@ const IVTherapy = () => {
     ],
     specialty: [
       {
-        id: 'weight-management',
-        name: 'Weight Management Support IV',
-        category: 'Premium Therapies',
-        price: '$245',
-        badge: 'Metabolism',
-        description: 'Metabolic support formula designed to enhance weight management and energy.',
-        features: [
-          'L-Carnitine blend',
-          'B-Complex Vitamins',
-          'Amino acid complex',
-          'Metabolism enhancement',
-          'Energy optimization'
-        ]
-      },
-      {
         id: 'arizona-detox',
         name: 'The Arizona Ultimate Hydration & Recovery IV',
         category: 'Premium Therapies',
@@ -256,40 +195,9 @@ const IVTherapy = () => {
           'Zinc Sulfate',
           'Glutathione'
         ]
-      },
-      {
-        id: 'stress-relief',
-        name: 'Stress Relief IV',
-        category: 'Premium Therapies',
-        price: '$215',
-        description: 'Calming formula to reduce stress and promote relaxation and mental clarity.',
-        features: [
-          'Magnesium Chloride',
-          'B-Complex vitamins',
-          'Taurine',
-          'Stress reduction',
-          'Mental clarity enhancement'
-        ]
-      },
+      }
     ],
     premium: [
-      {
-        id: 'fountain-youth',
-        name: 'The Fountain Of Youth IV',
-        category: 'Premium Therapies',
-        price: '$400',
-        badge: 'Beauty + NAD+',
-        description: 'Enhanced beauty and anti-aging formula with premium nutrients for youthful vitality.',
-        features: [
-          'Normal Saline 1000ml',
-          'Vitamin B-Complex',
-          'Vitamin C (500mg)',
-          'Glutathione',
-          'Zinc Sulfate',
-          'Biotin',
-          'Advanced anti-aging complex'
-        ]
-      }
     ],
     nad: [
       {
