@@ -1,0 +1,261 @@
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Star, Shield, Clock, CheckCircle, Play, ArrowRight, Sparkles } from "lucide-react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+
+const EnhancedHero = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  useEffect(() => {
+    setIsVisible(true);
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const testimonials = [
+    { name: "Sarah M.", text: "Life-changing NAD+ therapy experience!", rating: 5 },
+    { name: "Mike R.", text: "Best mobile IV service in Scottsdale", rating: 5 },
+    { name: "Jessica L.", text: "Professional team, amazing results", rating: 5 }
+  ];
+
+  const stats = [
+    { value: "15K+", label: "Happy Clients", icon: "👥" },
+    { value: "98%", label: "Satisfaction", icon: "⭐" },
+    { value: "24/7", label: "Availability", icon: "🕒" },
+    { value: "Same Day", label: "Service", icon: "🚀" }
+  ];
+
+  const trustBadges = [
+    { icon: Shield, text: "FDA Regulated", color: "text-emerald-500" },
+    { icon: CheckCircle, text: "Licensed Team", color: "text-blue-500" },
+    { icon: Star, text: "5 Star Rated", color: "text-yellow-500" },
+    { icon: Clock, text: "Same Day", color: "text-purple-500" }
+  ];
+
+  return (
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-background via-muted/10 to-background">
+      
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-pulse-soft" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-brand-teal/5 rounded-full blur-3xl animate-pulse-soft" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-primary/3 to-brand-teal/3 rounded-full blur-3xl animate-float" />
+      </div>
+
+      {/* Floating Particles */}
+      <div className="absolute inset-0">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-primary/20 rounded-full animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${5 + Math.random() * 5}s`
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Trust Bar */}
+      <div className="relative z-10 bg-background/80 backdrop-blur-xl border-b border-border/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center py-3 space-x-8 overflow-hidden">
+            {trustBadges.map((badge, index) => (
+              <div 
+                key={index} 
+                className={`flex items-center space-x-2 px-3 py-1 rounded-full bg-background/50 backdrop-blur-sm border border-border/30 transition-all duration-300 hover:scale-105 hover:bg-background/80 ${
+                  isVisible ? 'animate-fade-in' : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <badge.icon className={`w-4 h-4 ${badge.color}`} />
+                <span className="text-sm font-medium text-foreground whitespace-nowrap">
+                  {badge.text}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Main Hero Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[85vh]">
+          
+          {/* Left Content */}
+          <div className={`space-y-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+            
+            {/* Badge with Animation */}
+            <div className="relative">
+              <Badge 
+                variant="outline" 
+                className="bg-gradient-to-r from-primary/10 to-brand-teal/10 text-primary border-primary/20 backdrop-blur-sm"
+              >
+                <Sparkles className="w-4 h-4 mr-2 animate-pulse" />
+                #1 Premium IV Therapy in Arizona
+              </Badge>
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-brand-teal/20 rounded-lg blur opacity-30 animate-pulse" />
+            </div>
+            
+            {/* Main Headline */}
+            <div className="space-y-6">
+              <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+                <span className="block text-foreground">Premium</span>
+                <span className="block bg-gradient-to-r from-primary via-brand-teal to-primary bg-clip-text text-transparent animate-shimmer bg-300% bg-size-200%">
+                  IV Therapy
+                </span>
+                <span className="block text-foreground">Delivered</span>
+              </h1>
+              
+              <p className="text-xl lg:text-2xl text-muted-foreground max-w-xl leading-relaxed">
+                Experience the future of wellness with our premium mobile IV therapy, 
+                NAD+ treatments, and vitamin injections delivered anywhere in Scottsdale.
+              </p>
+            </div>
+
+            {/* Social Proof with Animation */}
+            <div className="flex items-center space-x-6">
+              <div className="flex -space-x-3">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <div 
+                    key={i} 
+                    className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-brand-teal/20 border-3 border-background flex items-center justify-center text-lg font-semibold text-primary animate-bounce-soft"
+                    style={{ animationDelay: `${i * 200}ms` }}
+                  >
+                    {String.fromCharCode(64 + i)}
+                  </div>
+                ))}
+              </div>
+              <div>
+                <div className="flex items-center space-x-1 mb-1">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400 animate-pulse" style={{ animationDelay: `${i * 100}ms` }} />
+                  ))}
+                </div>
+                <div className="text-sm font-medium text-foreground">
+                  {testimonials[currentTestimonial].text}
+                  <span className="block text-xs text-muted-foreground">
+                    - {testimonials[currentTestimonial].name}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Enhanced CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                size="lg" 
+                className="relative group bg-gradient-to-r from-primary to-primary-hover text-white px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-glow-primary transition-all duration-300 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+                <span className="relative flex items-center">
+                  Book Treatment Now
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Button>
+              
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    className="relative group border-2 border-border/50 hover:border-primary/30 px-8 py-4 text-lg font-semibold rounded-2xl backdrop-blur-sm bg-background/50 hover:bg-background/80 transition-all duration-300"
+                  >
+                    <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+                    Watch Process
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl">
+                  <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
+                    <Play className="w-16 h-16 text-primary" />
+                  </div>
+                </DialogContent>
+              </Dialog>
+            </div>
+
+            {/* Enhanced Stats */}
+            <div className="grid grid-cols-4 gap-4 pt-8">
+              {stats.map((stat, index) => (
+                <div 
+                  key={index}
+                  className="text-center p-4 rounded-2xl bg-background/50 backdrop-blur-sm border border-border/30 hover:border-primary/20 hover:bg-background/80 transition-all duration-300 group"
+                >
+                  <div className="text-2xl mb-1">{stat.icon}</div>
+                  <div className="text-2xl font-bold text-primary group-hover:scale-110 transition-transform">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-muted-foreground font-medium">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Visual */}
+          <div className={`relative ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '300ms' }}>
+            <div className="relative aspect-square">
+              
+              {/* Main Visual Container */}
+              <div className="absolute inset-4 rounded-[3rem] bg-gradient-to-br from-background/80 to-muted/40 backdrop-blur-xl border border-border/30 shadow-2xl overflow-hidden">
+                
+                {/* Animated Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-brand-teal/5" />
+                
+                {/* Main IV Bag */}
+                <div className="absolute inset-0 flex items-center justify-center p-8">
+                  <img 
+                    src="/src/assets/iv-bags/elite-nad-therapy-bag-final.png" 
+                    alt="Premium IV Therapy" 
+                    className="w-3/4 h-3/4 object-contain animate-float filter drop-shadow-2xl"
+                  />
+                </div>
+                
+                {/* Floating UI Elements */}
+                <div className="absolute top-6 right-6 glass-effect rounded-2xl px-4 py-3 animate-bounce-soft">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+                    <span className="text-sm font-semibold text-foreground">Live Monitoring</span>
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-6 left-6 glass-effect rounded-2xl px-4 py-3 animate-bounce-soft" style={{ animationDelay: '1s' }}>
+                  <div className="flex items-center gap-2">
+                    <Shield className="w-4 h-4 text-primary" />
+                    <span className="text-sm font-semibold text-foreground">FDA Approved</span>
+                  </div>
+                </div>
+                
+                <div className="absolute top-6 left-6 glass-effect rounded-2xl px-4 py-3 animate-bounce-soft" style={{ animationDelay: '2s' }}>
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-4 h-4 text-brand-teal" />
+                    <span className="text-sm font-semibold text-foreground">30-45 min</span>
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-6 right-6 glass-effect rounded-2xl px-4 py-3 animate-bounce-soft" style={{ animationDelay: '3s' }}>
+                  <div className="flex items-center gap-2">
+                    <Star className="w-4 h-4 text-yellow-500" />
+                    <span className="text-sm font-semibold text-foreground">Premium</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Ambient Lighting Effects */}
+              <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-r from-primary/10 via-transparent to-brand-teal/10 blur-2xl animate-pulse-soft" />
+              <div className="absolute -inset-4 rounded-[4rem] bg-gradient-to-r from-primary/5 via-transparent to-brand-teal/5 blur-3xl animate-pulse-soft" style={{ animationDelay: '1s' }} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default EnhancedHero;

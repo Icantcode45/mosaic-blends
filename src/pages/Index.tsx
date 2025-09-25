@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
-import CleanHero from "@/components/CleanHero";
-import CleanServicesGrid from "@/components/CleanServicesGrid";
-import CleanCTA from "@/components/CleanCTA";
+import EnhancedHero from "@/components/EnhancedHero";
+import ModernServicesGrid from "@/components/ModernServicesGrid";
+import PremiumCTA from "@/components/PremiumCTA";
 import FAQSection from "@/components/FAQSection";
 import SEOHead from "@/components/SEOHead";
 import SchemaMarkup from "@/components/SchemaMarkup";
@@ -128,11 +128,11 @@ const Index = () => {
       </Helmet>
       
       <div className="animate-fade-up">
-        {/* Clean, Focused Sections */}
-        <CleanHero />
-        <CleanServicesGrid />
+        {/* Enhanced Premium Sections */}
+        <EnhancedHero />
+        <ModernServicesGrid />
         <FAQSection />
-        <CleanCTA />
+        <PremiumCTA />
       </div>
     </>
   );
