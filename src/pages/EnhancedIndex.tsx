@@ -3,7 +3,7 @@ import ServicesSection from "@/components/ServicesSection";
 import LifestyleShowcase from "@/components/LifestyleShowcase";
 import EnhancedStatsSection from "@/components/EnhancedStatsSection";
 import GoogleReviewsSection from "@/components/GoogleReviewsSection";
-import TelehealthSection from "@/components/TelehealthSection";
+
 import EnhancedMembershipSection from "@/components/EnhancedMembershipSection";
 import EnhancedPartnersSection from "@/components/EnhancedPartnersSection";
 import NewsletterSection from "@/components/NewsletterSection";
@@ -24,10 +24,7 @@ const EnhancedIndex = () => {
       {/* 4. Results & Stats - Prove effectiveness with data */}
       <EnhancedStatsSection />
       
-      {/* 5. Telehealth Services - Additional service offering */}
-      <TelehealthSection />
-      
-      {/* 6. Membership Plans - Convert visitors with pricing */}
+      {/* 5. Membership Plans - Convert visitors with pricing */}
       <EnhancedMembershipSection />
       
       {/* 7. Partners & Certifications - Additional credibility */}

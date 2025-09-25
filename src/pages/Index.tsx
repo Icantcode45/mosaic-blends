@@ -5,7 +5,6 @@ import AdvancedServicesShowcase from "@/components/AdvancedServicesShowcase";
 import InnovativeProcessSection from "@/components/InnovativeProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import EnhancedStatsSection from "@/components/EnhancedStatsSection";
-import TelehealthSection from "@/components/TelehealthSection";
 import EnhancedMembershipSection from "@/components/EnhancedMembershipSection";
 import EnhancedPartnersSection from "@/components/EnhancedPartnersSection";
 import NewsletterSection from "@/components/NewsletterSection";
@@ -17,8 +16,8 @@ const Index = () => {
     <>
       <Helmet>
         <title>IV Therapy Scottsdale | Mobile IV Drips | NAD+ Peptides | Stay Dripped</title>
-        <meta name="description" content="Premium mobile IV therapy in Scottsdale, AZ. NAD+ therapy, vitamin injections, peptide treatments delivered to your location. Licensed medical professionals, same-day service." />
-        <meta name="keywords" content="IV therapy Scottsdale, mobile IV drips Arizona, NAD+ therapy Phoenix, vitamin injections Scottsdale, peptide therapy Arizona, hangover IV Phoenix, Myers cocktail Scottsdale, mobile wellness Arizona, hydration therapy Phoenix, immune boost IV Scottsdale" />
+        <meta name="description" content="Premium mobile IV therapy in Scottsdale, AZ. NAD+ therapy, vitamin injections delivered to your location. Licensed medical professionals, same-day service." />
+        <meta name="keywords" content="IV therapy Scottsdale, mobile IV drips Arizona, NAD+ therapy Phoenix, vitamin injections Scottsdale, hangover IV Phoenix, Myers cocktail Scottsdale, mobile wellness Arizona, hydration therapy Phoenix, immune boost IV Scottsdale" />
         
         {/* Local SEO */}
         <meta name="geo.region" content="US-AZ" />
@@ -28,7 +27,7 @@ const Index = () => {
         
         {/* Enhanced Open Graph */}
         <meta property="og:title" content="IV Therapy Scottsdale | Mobile IV Drips | NAD+ Peptides | Stay Dripped" />
-        <meta property="og:description" content="Premium mobile IV therapy in Scottsdale, AZ. NAD+ therapy, vitamin injections, peptide treatments delivered to your location. Licensed medical professionals, same-day service." />
+        <meta property="og:description" content="Premium mobile IV therapy in Scottsdale, AZ. NAD+ therapy, vitamin injections delivered to your location. Licensed medical professionals, same-day service." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://staydrippediv.com" />
         <meta property="og:locale" content="en_US" />
@@ -71,7 +70,6 @@ const Index = () => {
               "IV Therapy",
               "NAD+ Therapy", 
               "Vitamin Injections",
-              "Peptide Therapy",
               "Wellness Medicine"
             ],
             "serviceType": "Mobile Medical Services",
@@ -168,28 +166,23 @@ const Index = () => {
           <EnhancedStatsSection />
         </div>
         
-        {/* 7. Telehealth Services - Additional service offering */}
+        {/* 7. Membership Plans - Convert visitors with pricing */}
         <div className="animate-fade-up" style={{ animationDelay: '0.7s' }}>
-          <TelehealthSection />
-        </div>
-        
-        {/* 8. Membership Plans - Convert visitors with pricing */}
-        <div className="animate-fade-up" style={{ animationDelay: '0.8s' }}>
           <EnhancedMembershipSection />
         </div>
         
-        {/* 9. Partners & Certifications - Additional credibility */}
-        <div className="animate-fade-up" style={{ animationDelay: '0.9s' }}>
+        {/* 8. Partners & Certifications - Additional credibility */}
+        <div className="animate-fade-up" style={{ animationDelay: '0.8s' }}>
           <EnhancedPartnersSection />
         </div>
         
-        {/* 10. Newsletter - Capture leads */}
-        <div className="animate-fade-up" style={{ animationDelay: '1.0s' }}>
+        {/* 9. Newsletter - Capture leads */}
+        <div className="animate-fade-up" style={{ animationDelay: '0.9s' }}>
           <NewsletterSection />
         </div>
         
-        {/* 11. BBB Accreditation - Trust and credibility */}
-        <div className="animate-fade-up" style={{ animationDelay: '1.1s' }}>
+        {/* 10. BBB Accreditation - Trust and credibility */}
+        <div className="animate-fade-up" style={{ animationDelay: '1.0s' }}>
           <BBBAccreditation />
         </div>
       </div>

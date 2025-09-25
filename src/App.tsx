@@ -15,19 +15,14 @@ import EnhancedFooter from "./components/EnhancedFooter";
 import Compliance from "./pages/Compliance";
 import GoodFaithEstimate from "./pages/GoodFaithEstimate";
 import FirstTimePatients from "./pages/FirstTimePatients";
-import Events from "./pages/Events";
-import GiftCards from "./pages/GiftCards";
 import Privacy from "./pages/Privacy";
 import VitaminInjections from "./pages/VitaminInjections";
-
 import IVTherapy from "./pages/IVTherapy";
-import EventInquiry from "./pages/EventInquiry";
 import Membership from "./pages/Membership";
 import EnhancedMembership from "./pages/EnhancedMembership";
 import AboutUs from "./pages/AboutUs";
 import MedicalCompliance from "./pages/MedicalCompliance";
 import TermsOfService from "./pages/TermsOfService";
-import Sponsorship from "@/pages/Sponsorship";
 import Newsletter from "@/pages/Newsletter";
 import Contact from "@/pages/Contact";
 import ClientPortal from "@/pages/ClientPortal";
@@ -54,18 +49,13 @@ const App = () => (
                 <Route path="/compliance" element={<Compliance />} />
                 <Route path="/good-faith-estimate" element={<GoodFaithEstimate />} />
                 <Route path="/first-time-patients" element={<FirstTimePatients />} />
-                <Route path="/events" element={<Events />} />
-                <Route path="/event-inquiry" element={<EventInquiry />} />
-                <Route path="/gift-cards" element={<GiftCards />} />
-          <Route path="/vitamin-injections" element={<VitaminInjections />} />
-          
-          <Route path="/iv-therapy" element={<IVTherapy />} />
-          <Route path="/membership" element={<Membership />} />
-          <Route path="/about" element={<AboutUs />} />
+                <Route path="/vitamin-injections" element={<VitaminInjections />} />
+                <Route path="/iv-therapy" element={<IVTherapy />} />
+                <Route path="/membership" element={<Membership />} />
+                <Route path="/about" element={<AboutUs />} />
                 <Route path="/medical-compliance" element={<MedicalCompliance />} />
                 <Route path="/terms" element={<TermsOfService />} />
                 <Route path="/privacy" element={<Privacy />} />
-                <Route path="/sponsorship" element={<Sponsorship />} />
                 <Route path="/newsletter" element={<Newsletter />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/client-portal" element={<ClientPortal />} />

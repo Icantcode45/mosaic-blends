@@ -8,51 +8,29 @@ const EnhancedFooter = () => {
       title: "Services",
       links: [
         { name: "IV Therapy", href: "/iv-therapy" },
-        { name: "Energy & Wellness", href: "/#energy" },
-        { name: "Immune Support", href: "/#immune" },
-        { name: "Recovery Therapy", href: "/#recovery" },
-        { name: "Beauty Treatments", href: "/#beauty" },
-        { name: "NAD+ Therapy", href: "/nad-peptides" },
         { name: "Vitamin Injections", href: "/vitamin-injections" },
-        { name: "Weight Management", href: "/#weight" }
-      ]
-    },
-    {
-      title: "Advanced Care",
-      links: [
-        { name: "Peptide Treatments", href: "/nad-peptides" },
-        { name: "Hormone Therapy", href: "/#hormones" },
-        { name: "Telehealth Virtual Care", href: "/telehealth" },
-        { name: "Test Kits & Panels", href: "/test-kits" },
-        { name: "Products", href: "/products" },
-        { name: "Nutrition Counseling", href: "/#nutrition" },
-        { name: "Wellness Coaching", href: "/#coaching" }
+        { name: "NAD+ Therapy", href: "/iv-therapy#nad" },
+        { name: "Hydration Therapy", href: "/iv-therapy#hydration" },
+        { name: "Immune Support", href: "/iv-therapy#immune" },
+        { name: "Recovery Therapy", href: "/iv-therapy#recovery" }
       ]
     },
     {
       title: "Company",
       links: [
         { name: "About Us", href: "/about" },
-        { name: "Our Team", href: "/#team" },
-        { name: "Service Areas", href: "/#areas" },
-        { name: "Careers", href: "/#careers" },
-        { name: "Press & Media", href: "/#press" },
-        { name: "Partner With Us", href: "/#partners" },
-        { name: "Investor Relations", href: "/#investors" },
-        { name: "Corporate Wellness", href: "/#corporate" }
+        { name: "Membership Plans", href: "/membership" },
+        { name: "First-Time Patients", href: "/first-time-patients" },
+        { name: "Contact Us", href: "/contact" }
       ]
     },
     {
       title: "Support & Resources",
       links: [
         { name: "Book Treatment", href: "/first-time-patients" },
-        { name: "Patient Portal", href: "/#portal" },
-        { name: "Insurance Info", href: "/#insurance" },
-        { name: "Payment Options", href: "/#payment" },
-        { name: "First-Time Patients", href: "/first-time-patients" },
+        { name: "Patient Portal", href: "/client-portal" },
         { name: "FAQ", href: "/#faq" },
-        { name: "Health Resources", href: "/#resources" },
-        { name: "Contact Support", href: "/#support" }
+        { name: "Newsletter", href: "/newsletter" }
       ]
     },
     {
@@ -82,8 +60,7 @@ const EnhancedFooter = () => {
   const quickActions = [
     { name: "Book IV Therapy", href: "/first-time-patients", urgent: true },
     { name: "Emergency Line", href: "tel:+1-602-688-9825", urgent: true },
-    { name: "Telehealth Portal", href: "/telehealth" },
-    { name: "Member Login", href: "/#login" }
+    { name: "Member Login", href: "/client-portal" }
   ];
 
   return (
@@ -239,7 +216,7 @@ const EnhancedFooter = () => {
         <div className="container mx-auto px-6">
           <div className="bg-muted/20 p-4 rounded-lg">
             <p className="text-xs text-muted-foreground leading-relaxed text-center">
-              <strong>Medical Disclaimer:</strong> Stay Dripped® IV & Wellness Co. provides physician-supervised IV therapy, vitamin injections, and wellness programs. All peptide services require telehealth evaluation and prescription approval. Research peptides are not FDA-approved for human use. This website does not provide medical advice.
+              <strong>Medical Disclaimer:</strong> Stay Dripped® IV & Wellness Co. provides physician-supervised IV therapy, vitamin injections, and NAD+ therapy. All treatments require medical evaluation and prescription approval. This website does not provide medical advice.
             </p>
           </div>
         </div>
