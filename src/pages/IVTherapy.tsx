@@ -98,21 +98,6 @@ const IVTherapy = () => {
     ],
     standard: [
       {
-        id: 'd-book',
-        name: 'The D-Book Athletic Performance Booster IV',
-        category: 'Standard Wellness',
-        price: '$225',
-        description: 'Elite athletic performance formula for professional-level optimization.',
-        features: [
-          'Normal Saline 1000ml',
-          'Vitamin B6',
-          'Vitamin B12',
-          'Vitamin C',
-          'Glutathione',
-          'Magnesium Chloride'
-        ]
-      },
-      {
         id: 'diamondback',
         name: 'The Immune Booster IV Bag',
         category: 'Standard Wellness',
@@ -235,7 +220,7 @@ const IVTherapy = () => {
       },
       {
         id: 'elite-nad-therapy',
-        name: 'The Elite NAD+ Therapy Bag',
+        name: 'The Fountain of Youth NAD+ Bag',
         category: 'NAD+ Therapy',
         price: '$475',
         badge: 'Elite NAD+',

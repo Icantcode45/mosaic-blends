@@ -144,12 +144,18 @@ const EnhancedPartnersSection = () => {
               Join Arizona's leading mobile IV therapy network and expand your business offerings
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/25">
+              <a 
+                href="/sponsorship" 
+                className="px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 text-center inline-block"
+              >
                 Partnership Inquiry
-              </button>
-              <button className="px-8 py-4 border border-primary text-primary rounded-xl font-semibold hover:bg-primary/5 transition-all duration-300">
+              </a>
+              <a 
+                href="/sponsorship" 
+                className="px-8 py-4 border border-primary text-primary rounded-xl font-semibold hover:bg-primary/5 transition-all duration-300 text-center inline-block"
+              >
                 View Partnership Benefits
-              </button>
+              </a>
             </div>
           </div>
 

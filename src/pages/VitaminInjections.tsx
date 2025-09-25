@@ -133,7 +133,7 @@ const VitaminInjections = () => {
       description: "Essential amino acids for muscle recovery and athletic performance.",
       price: 33,
       originalPrice: 35,
-      image_url: "/src/assets/vials/l-glutamine-injection.jpeg",
+      image_url: "/src/assets/vials/mineral-blend-injection.jpeg",
       category: "Vitamin Injections",
       stock_quantity: 100,
       features: [
