@@ -182,15 +182,19 @@ const ModernServicesGrid = () => {
                   }`}
                   onClick={() => setActiveIndex(index)}
                 >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-lg`}>
-                      <service.icon className="w-7 h-7 text-white" />
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-foreground">{service.price}</div>
-                      <div className="text-sm text-muted-foreground line-through">{service.originalPrice}</div>
-                    </div>
-                  </div>
+              <div className="flex items-start justify-between mb-4">
+                <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-background to-muted/30 border border-border/50 flex items-center justify-center shadow-lg">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-10 h-10 object-contain"
+                  />
+                </div>
+                <div className="text-right">
+                  <div className="text-2xl font-bold text-foreground">{service.price}</div>
+                  <div className="text-sm text-muted-foreground line-through">{service.originalPrice}</div>
+                </div>
+              </div>
                   
                   <h4 className="text-xl font-bold text-foreground mb-2">{service.title}</h4>
                   <p className="text-sm text-muted-foreground mb-4">{service.subtitle}</p>
@@ -248,8 +252,12 @@ const ModernServicesGrid = () => {
               <div className="relative p-6">
                 {/* Service Header */}
                 <div className="flex items-start gap-4 mb-6">
-                  <div className={`w-16 h-16 rounded-3xl bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300`}>
-                    <service.icon className="w-8 h-8 text-white" />
+                  <div className="relative w-16 h-16 rounded-3xl bg-gradient-to-br from-background to-muted/30 border border-border/50 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-12 h-12 object-contain"
+                    />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">

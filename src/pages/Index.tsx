@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import EnhancedHero from "@/components/EnhancedHero";
 import ModernServicesGrid from "@/components/ModernServicesGrid";
 import PremiumCTA from "@/components/PremiumCTA";
+import ContactWithMap from "@/components/ContactWithMap";
 import FAQSection from "@/components/FAQSection";
 import SEOHead from "@/components/SEOHead";
 import SchemaMarkup from "@/components/SchemaMarkup";
@@ -131,8 +132,9 @@ const Index = () => {
         {/* Enhanced Premium Sections */}
         <EnhancedHero />
         <ModernServicesGrid />
-        <FAQSection />
         <PremiumCTA />
+        <ContactWithMap />
+        <FAQSection />
       </div>
     </>
   );
