@@ -11,7 +11,7 @@ import EnhancedIndex from "./pages/EnhancedIndex";
 import NotFound from "./pages/NotFound";
 import EnhancedHeader from "./components/EnhancedHeader";
 import EnhancedFooter from "./components/EnhancedFooter";
-import TestKits from "./pages/TestKits";
+
 import Compliance from "./pages/Compliance";
 import GoodFaithEstimate from "./pages/GoodFaithEstimate";
 import FirstTimePatients from "./pages/FirstTimePatients";
@@ -49,7 +49,7 @@ const App = () => (
             <main className="flex-1">
               <Routes>
                 <Route path="/" element={<EnhancedIndex />} />
-                <Route path="/test-kits" element={<TestKits />} />
+                
                 
                 <Route path="/compliance" element={<Compliance />} />
                 <Route path="/good-faith-estimate" element={<GoodFaithEstimate />} />

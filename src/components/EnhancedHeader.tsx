@@ -16,7 +16,7 @@ const EnhancedHeader = () => {
   const navItems = [
     { name: 'Events', href: '/events' },
     { name: 'Compliance', href: '/compliance' },
-    { name: 'Test Kits & Panels', href: '/test-kits' },
+    
     { name: 'Membership', href: '/membership' },
     { name: 'First-Time Patients', href: '/first-time-patients' },
     { name: 'Gift Cards', href: '/gift-cards' },
@@ -31,21 +31,9 @@ const EnhancedHeader = () => {
         { name: "Vitamin Injections", href: "/vitamin-injections", description: "Quick nutrient boost" }
       ]
     },
-    {
-      category: "Virtual & Remote Care",
-      items: [
-        { name: "At-Home Test Kits", href: "/test-kits", description: "Comprehensive lab testing" }
-      ]
-    }
   ];
 
   const productsMegaItems = [
-    {
-      category: "Products & Health Testing",
-      items: [
-        { name: "Test Kits & Lab Panels", href: "/test-kits", description: "At-home health testing" }
-      ]
-    }
   ];
 
   useEffect(() => {
