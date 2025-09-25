@@ -302,17 +302,18 @@
 
 /* Sidebar Variables */
 
-    /* Stay Dripped Brand Colors */
-    --brand-peach: 20 80% 70%;
-    --brand-sage: 156 28% 70%;
-    --brand-sky: 213 94% 68%;
-    --brand-lavender: 250 40% 75%;
-    --brand-orange: 25 95% 65%;
-    --brand-blue: 213 94% 48%;
-    --brand-teal: 180 77% 48%;
-    --brand-purple: 260 60% 70%;
+    /* Premium Medical Brand Colors */
+    --brand-peach: 20 60% 85%;
+    --brand-sage: 156 24% 80%;
+    --brand-sky: 213 89% 75%;
+    --brand-lavender: 250 35% 85%;
+    --brand-orange: 25 75% 75%;
+    --brand-blue: 213 89% 48%;
+    --brand-teal: 180 65% 55%;
+    --brand-purple: 260 45% 75%;
     --brand-success: 142 76% 48%;
-    --brand-warning: 38 92% 55%;
+    --brand-warning: 38 85% 60%;
+    --brand-glass: "var(--gradient-glass)";
   
   h1 { 
     @apply text-3xl md:text-4xl lg:text-5xl; 

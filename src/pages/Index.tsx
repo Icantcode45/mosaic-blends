@@ -1,7 +1,8 @@
 import { Helmet } from "react-helmet";
-import UltraModernHero from "@/components/UltraModernHero";
+import PremiumHero from "@/components/PremiumHero";
 import PremiumTrustSection from "@/components/PremiumTrustSection";
-import AdvancedServicesShowcase from "@/components/AdvancedServicesShowcase";
+import InteractiveServicesGrid from "@/components/InteractiveServicesGrid";
+import EnhancedProcessFlow from "@/components/EnhancedProcessFlow";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import EnhancedStatsSection from "@/components/EnhancedStatsSection";
 import EnhancedMembershipSection from "@/components/EnhancedMembershipSection";
@@ -135,9 +136,9 @@ const Index = () => {
         {/* Trust Bar at the top */}
         <TrustBar />
         
-        {/* 1. Ultra-Modern Hero Section */}
+        {/* 1. Premium Hero Section */}
         <div className="animate-fade-up" style={{ animationDelay: '0.1s' }}>
-          <UltraModernHero />
+          <PremiumHero />
         </div>
         
         {/* 2. Premium Trust Section */}
@@ -145,38 +146,43 @@ const Index = () => {
           <PremiumTrustSection />
         </div>
         
-        {/* 3. Advanced Services Showcase */}
+        {/* 3. Interactive Services Grid */}
         <div className="animate-fade-up" style={{ animationDelay: '0.3s' }}>
-          <AdvancedServicesShowcase />
+          <InteractiveServicesGrid />
         </div>
         
-        {/* 4. Client Testimonials */}
+        {/* 4. Enhanced Process Flow */}
         <div className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
+          <EnhancedProcessFlow />
+        </div>
+        
+        {/* 5. Client Testimonials */}
+        <div className="animate-fade-up" style={{ animationDelay: '0.5s' }}>
           <TestimonialsSection />
         </div>
         
-        {/* 5. Results & Stats - Prove effectiveness with data */}
-        <div className="animate-fade-up" style={{ animationDelay: '0.5s' }}>
+        {/* 6. Results & Stats */}
+        <div className="animate-fade-up" style={{ animationDelay: '0.6s' }}>
           <EnhancedStatsSection />
         </div>
         
-        {/* 6. Membership Plans - Convert visitors with pricing */}
-        <div className="animate-fade-up" style={{ animationDelay: '0.6s' }}>
+        {/* 7. Membership Plans */}
+        <div className="animate-fade-up" style={{ animationDelay: '0.7s' }}>
           <EnhancedMembershipSection />
         </div>
         
-        {/* 7. Partners & Certifications - Additional credibility */}
-        <div className="animate-fade-up" style={{ animationDelay: '0.7s' }}>
+        {/* 8. Partners & Certifications */}
+        <div className="animate-fade-up" style={{ animationDelay: '0.8s' }}>
           <EnhancedPartnersSection />
         </div>
         
-        {/* 8. Newsletter - Capture leads */}
-        <div className="animate-fade-up" style={{ animationDelay: '0.8s' }}>
+        {/* 9. Newsletter */}
+        <div className="animate-fade-up" style={{ animationDelay: '0.9s' }}>
           <NewsletterSection />
         </div>
         
-        {/* 9. BBB Accreditation - Trust and credibility */}
-        <div className="animate-fade-up" style={{ animationDelay: '0.9s' }}>
+        {/* 10. BBB Accreditation */}
+        <div className="animate-fade-up" style={{ animationDelay: '1.0s' }}>
           <BBBAccreditation />
         </div>
       </div>
