@@ -12,7 +12,7 @@ import {
   Send,
   CheckCircle
 } from "lucide-react";
-import LocationMap from "./LocationMap";
+import GoogleMapPhoenix from "./GoogleMapPhoenix";
 
 const ContactWithMap = () => {
   const [formData, setFormData] = useState({
@@ -215,7 +215,7 @@ const ContactWithMap = () => {
           {/* Map Section */}
           <div>
             <h3 className="text-2xl font-bold text-foreground mb-6">Our Service Areas</h3>
-            <LocationMap />
+            <GoogleMapPhoenix />
           </div>
         </div>
       </div>

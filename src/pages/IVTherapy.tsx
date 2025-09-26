@@ -48,6 +48,34 @@ const IVTherapy = () => {
   const ivTherapyServices = {
     basic: [
       {
+        id: 'rehydrate',
+        name: 'Rehydrate IV',
+        category: 'Basic Hydration',
+        price: '$165',
+        badge: 'Hydration',
+        description: 'Essential hydration therapy to rapidly restore fluids and electrolytes.',
+        features: [
+          'Normal Saline 1000ml',
+          'Electrolyte replenishment',
+          'Hydration-focused support',
+          '30-45 minute treatment'
+        ]
+      },
+      {
+        id: 'rehydrate-plus',
+        name: 'Rehydrate Plus IV',
+        category: 'Basic Hydration',
+        price: '$195',
+        badge: 'Hydration + B-Complex',
+        description: 'Upgraded hydration with B-complex vitamins for energy and recovery.',
+        features: [
+          'Normal Saline 1000ml',
+          'Vitamin B-Complex',
+          'Electrolyte replenishment',
+          'Energy and recovery support'
+        ]
+      },
+      {
         id: 'hangover',
         name: 'Day After Hangover Bag',
         category: 'Basic Hydration',

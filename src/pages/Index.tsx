@@ -132,7 +132,7 @@ const Index = () => {
         {/* Enhanced Premium Sections */}
         <EnhancedHero />
         <ModernServicesGrid />
-        <PremiumCTA />
+        <PremiumCTA showServiceAreas={false} />
         <ContactWithMap />
         <FAQSection />
       </div>

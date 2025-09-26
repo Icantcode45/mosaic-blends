@@ -15,7 +15,7 @@ import {
   Zap
 } from "lucide-react";
 
-const PremiumCTA = () => {
+const PremiumCTA = ({ showServiceAreas = true }: { showServiceAreas?: boolean }) => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -208,34 +208,35 @@ const PremiumCTA = () => {
               </div>
             </div>
 
-            {/* Service Areas */}
-            <Card className="bg-background/50 backdrop-blur-sm border border-border/30 p-6 rounded-2xl">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="p-2 rounded-xl bg-primary/10">
-                  <MapPin className="w-6 h-6 text-primary" />
+            {showServiceAreas && (
+              <Card className="bg-background/50 backdrop-blur-sm border border-border/30 p-6 rounded-2xl">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <div className="p-2 rounded-xl bg-primary/10">
+                    <MapPin className="w-6 h-6 text-primary" />
+                  </div>
+                  <span className="text-xl font-semibold text-foreground">Service Areas</span>
                 </div>
-                <span className="text-xl font-semibold text-foreground">Service Areas</span>
-              </div>
-              
-              <div className="flex flex-wrap justify-center gap-2">
-                {serviceAreas.map((area, index) => (
-                  <Badge 
-                    key={area}
-                    variant="outline" 
-                    className={`bg-background/50 border-border/30 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 ${
-                      isVisible ? 'animate-fade-in' : 'opacity-0'
-                    }`}
-                    style={{ animationDelay: `${index * 50}ms` }}
-                  >
-                    {area}
-                  </Badge>
-                ))}
-              </div>
-              
-              <p className="text-sm text-muted-foreground mt-4">
-                Mobile service available throughout the greater Phoenix metropolitan area
-              </p>
-            </Card>
+                
+                <div className="flex flex-wrap justify-center gap-2">
+                  {serviceAreas.map((area, index) => (
+                    <Badge 
+                      key={area}
+                      variant="outline" 
+                      className={`bg-background/50 border-border/30 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 ${
+                        isVisible ? 'animate-fade-in' : 'opacity-0'
+                      }`}
+                      style={{ animationDelay: `${index * 50}ms` }}
+                    >
+                      {area}
+                    </Badge>
+                  ))}
+                </div>
+                
+                <p className="text-sm text-muted-foreground mt-4">
+                  Mobile service available throughout the greater Phoenix metropolitan area
+                </p>
+              </Card>
+            )}
 
             {/* Trust Indicators */}
             <div className="flex justify-center items-center space-x-8 mt-8 text-sm text-muted-foreground">
