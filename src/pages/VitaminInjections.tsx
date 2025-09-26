@@ -111,23 +111,6 @@ const VitaminInjections = () => {
       ]
     },
     {
-      id: "myers-cocktail-injection",
-      name: "Myers' Cocktail Injection",
-      description: "Comprehensive vitamin and mineral blend for complete wellness support.",
-      price: 170,
-      originalPrice: 180,
-      image_url: null,
-      category: "Vitamin Injections",
-      stock_quantity: 100,
-      features: [
-        "Vitamin C, B-Complex, B12",
-        "Magnesium & Calcium",
-        "Comprehensive wellness support",
-        "Enhanced energy & immunity",
-        "15-minute treatment"
-      ]
-    },
-    {
       id: "tri-amino-injection",
       name: "Tri-Amino Blend Injection",
       description: "Essential amino acids for muscle recovery and athletic performance.",

@@ -19,7 +19,7 @@ import {
   Award
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import QualiphyWidget from "@/components/QualiphyWidget";
+import DiscountEmailWidget from "@/components/DiscountEmailWidget";
 import React from "react";
 
 const PremiumFirstTimePatients = () => {
@@ -165,19 +165,12 @@ const PremiumFirstTimePatients = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
               <Button size="xl" className="bg-primary hover:bg-primary-hover text-white font-medium group" asChild>
-                <Link to="/first-time-patients">
+                <Link to="/iv-therapy">
                   <Calendar className="mr-2 w-5 h-5" />
                   Book Your First Appointment
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-              
-              <Button variant="outline" size="xl" className="font-medium border-primary/30 hover:border-primary/50">
-                <Download className="mr-2 w-5 h-5" />
-                New Patient Forms
-              </Button>
-              
-              <QualiphyWidget />
             </div>
           </div>
         </div>
@@ -321,9 +314,7 @@ const PremiumFirstTimePatients = () => {
                       <span className="text-sm">Professional treatment & monitoring</span>
                     </div>
                   </div>
-                  <Button variant="secondary" className="w-full bg-white text-primary hover:bg-white/90 font-medium">
-                    Claim Your Discount
-                  </Button>
+                  <DiscountEmailWidget />
                 </CardContent>
               </Card>
             </div>

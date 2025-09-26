@@ -120,92 +120,38 @@ const ContactWithMap = () => {
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           
-          {/* Contact Form */}
+          {/* Contact Information Only */}
           <div>
             <Card className="border border-border/30 bg-background/50 backdrop-blur-sm">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-6">Send us a message</h3>
-                
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                        Full Name *
-                      </label>
-                      <Input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Enter your name"
-                        required
-                        className="rounded-2xl border-border focus:border-primary"
-                      />
+                <h3 className="text-2xl font-bold text-foreground mb-6">Get in Touch</h3>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <Phone className="w-6 h-6 text-primary" />
                     </div>
-                    
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                        Phone Number
-                      </label>
-                      <Input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        placeholder="(555) 123-4567"
-                        className="rounded-2xl border-border focus:border-primary"
-                      />
+                      <h4 className="font-semibold text-foreground">Call Us</h4>
+                      <p className="text-muted-foreground">(602) 688-9825</p>
                     </div>
                   </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      Email Address *
-                    </label>
-                    <Input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="Enter your email"
-                      required
-                      className="rounded-2xl border-border focus:border-primary"
-                    />
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center">
+                      <Mail className="w-6 h-6 text-secondary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">Email Us</h4>
+                      <p className="text-muted-foreground">info@staydripped.com</p>
+                    </div>
                   </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                      Message *
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Tell us about your wellness goals or ask any questions..."
-                      rows={5}
-                      required
-                      className="rounded-2xl border-border focus:border-primary resize-none"
-                    />
-                  </div>
-                  
-                  <Button 
-                    type="submit" 
-                    size="lg" 
-                    className="w-full bg-primary hover:bg-primary-hover text-white"
-                  >
-                    <Send className="w-4 h-4 mr-2" />
-                    Send Message
-                  </Button>
-                </form>
-                
-                <div className="mt-8 p-4 bg-muted/30 rounded-2xl">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 text-emerald-500" />
-                    <span>We typically respond within 2-4 hours during business hours</span>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                      <Clock className="w-6 h-6 text-emerald-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">Business Hours</h4>
+                      <p className="text-muted-foreground">7 Days a Week, 8am - 8pm</p>
+                    </div>
                   </div>
                 </div>
               </CardContent>

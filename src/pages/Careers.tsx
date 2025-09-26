@@ -215,10 +215,6 @@ const Careers = () => {
                         {job.experience}
                       </div>
                       <div className="flex items-center gap-2 text-muted-foreground">
-                        <DollarSign className="w-4 h-4" />
-                        {job.salary}
-                      </div>
-                      <div className="flex items-center gap-2 text-muted-foreground">
                         <Users className="w-4 h-4" />
                         {job.type}
                       </div>
@@ -236,8 +232,8 @@ const Careers = () => {
                       </ul>
                     </div>
                     
-                    <Button className="w-full" asChild>
-                      <Link to="/contact">Apply Now</Link>
+                    <Button className="w-full" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeXyZz9K7o8hYj8dQ_VQN3sJ2_hN5K6m5tK3t2r1p0q9N7x8A/viewform', '_blank')}>
+                      Submit Application
                     </Button>
                   </CardContent>
                 </Card>
