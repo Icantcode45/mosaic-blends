@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Star, Shield, Clock, CheckCircle, Play, ArrowRight, Sparkles } from "lucide-react";
+import { Star, Shield, Clock, CheckCircle, Play, ArrowRight, Sparkles, Users, Zap } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import usersIcon from "@/assets/icons/3d-users.png";
+import starIcon from "@/assets/icons/3d-star.png";
+import clockIcon from "@/assets/icons/3d-clock.png";
+import rocketIcon from "@/assets/icons/3d-rocket.png";
 
 const EnhancedHero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,10 +27,10 @@ const EnhancedHero = () => {
   ];
 
   const stats = [
-    { value: "15K+", label: "Happy Clients", icon: "👥" },
-    { value: "98%", label: "Satisfaction", icon: "⭐" },
-    { value: "24/7", label: "Availability", icon: "🕒" },
-    { value: "Same Day", label: "Service", icon: "🚀" }
+    { value: "15K+", label: "Happy Clients", icon: usersIcon, color: "from-blue-500 to-teal-500" },
+    { value: "98%", label: "Satisfaction", icon: starIcon, color: "from-yellow-400 to-orange-500" },
+    { value: "24/7", label: "Availability", icon: clockIcon, color: "from-purple-500 to-pink-500" },
+    { value: "Same Day", label: "Service", icon: rocketIcon, color: "from-emerald-500 to-blue-500" }
   ];
 
   const trustBadges = [
@@ -178,10 +182,11 @@ const EnhancedHero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="relative group bg-gradient-to-r from-primary to-primary-hover text-white px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-glow-primary transition-all duration-300 overflow-hidden"
+                className="relative group bg-gradient-to-r from-primary to-primary-hover text-white px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-glow-primary transition-all duration-300 overflow-hidden animate-glow-pulse"
               >
                 <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
                 <span className="relative flex items-center">
+                  <Sparkles className="mr-2 w-5 h-5" />
                   Book Treatment Now
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
@@ -211,10 +216,19 @@ const EnhancedHero = () => {
               {stats.map((stat, index) => (
                 <div 
                   key={index}
-                  className="text-center p-4 rounded-2xl bg-background/50 backdrop-blur-sm border border-border/30 hover:border-primary/20 hover:bg-background/80 transition-all duration-300 group"
+                  className="text-center p-4 rounded-2xl bg-background/50 backdrop-blur-sm border border-border/30 hover:border-primary/20 hover:bg-background/80 transition-all duration-300 group hover:shadow-lg hover:-translate-y-1"
                 >
-                  <div className="text-2xl mb-1">{stat.icon}</div>
-                  <div className="text-2xl font-bold text-primary group-hover:scale-110 transition-transform">
+                  <div className="relative mb-3">
+                    <div className={`absolute inset-0 bg-gradient-to-r ${stat.color} rounded-full blur-md opacity-30 group-hover:opacity-50 transition-opacity`} />
+                    <div className="relative w-12 h-12 mx-auto p-2 rounded-full bg-background/80 backdrop-blur-sm border border-border/30 group-hover:border-primary/20 transition-all">
+                      <img 
+                        src={stat.icon} 
+                        alt=""
+                        className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                  </div>
+                  <div className="text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-foreground font-medium">

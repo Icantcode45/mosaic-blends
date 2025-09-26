@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import ivBagImmuneBoostImg from "@/assets/iv-bag-immune-boost.png";
+import dropletIcon from "@/assets/icons/3d-droplet.png";
+import lightningIcon from "@/assets/icons/3d-lightning.png";
+import starIcon from "@/assets/icons/3d-star.png";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, Shield, Award, Clock, Users, CheckCircle } from "lucide-react";
@@ -13,9 +16,9 @@ const trustIndicators = [
 ];
 
 const floatingElements = [
-  { icon: "💧", delay: 0, duration: 6 },
-  { icon: "⚡", delay: 2, duration: 8 },
-  { icon: "🌟", delay: 4, duration: 7 },
+  { icon: dropletIcon, delay: 0, duration: 6 },
+  { icon: lightningIcon, delay: 2, duration: 8 },
+  { icon: starIcon, delay: 4, duration: 7 },
 ];
 
 export default function UltraModernHero() {
@@ -53,7 +56,7 @@ export default function UltraModernHero() {
         {floatingElements.map((element, index) => (
           <div
             key={index}
-            className="absolute text-4xl opacity-20 animate-float"
+            className="absolute w-12 h-12 opacity-30 animate-float"
             style={{
               left: `${20 + index * 30}%`,
               top: `${30 + index * 20}%`,
@@ -61,7 +64,11 @@ export default function UltraModernHero() {
               animationDuration: `${element.duration}s`,
             }}
           >
-            {element.icon}
+            <img 
+              src={element.icon} 
+              alt=""
+              className="w-full h-full object-contain filter drop-shadow-lg"
+            />
           </div>
         ))}
       </div>

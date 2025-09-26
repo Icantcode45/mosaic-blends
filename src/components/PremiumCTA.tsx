@@ -33,21 +33,21 @@ const PremiumCTA = ({ showServiceAreas = true }: { showServiceAreas?: boolean })
       role: "Executive",
       text: "The NAD+ therapy completely transformed my energy levels. Professional service!",
       rating: 5,
-      image: "👩‍💼"
+      image: "/src/assets/icons/3d-executive.png"
     },
     {
       name: "Mike R.", 
       role: "Athlete",
       text: "Best mobile IV service in Arizona. Fast, professional, and effective.",
       rating: 5,
-      image: "🏃‍♂️"
+      image: "/src/assets/icons/3d-athlete.png"
     },
     {
       name: "Jessica L.",
       role: "Entrepreneur", 
       text: "Incredible results from the Myers Cocktail. I feel amazing!",
       rating: 5,
-      image: "👩‍💻"
+      image: "/src/assets/icons/3d-entrepreneur.png"
     }
   ];
 
@@ -141,7 +141,7 @@ const PremiumCTA = ({ showServiceAreas = true }: { showServiceAreas?: boolean })
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
               <Button 
                 size="lg"
-                className="relative group bg-gradient-to-r from-primary to-primary-hover text-white px-12 py-6 text-xl font-semibold rounded-2xl shadow-lg hover:shadow-glow-primary transition-all duration-300 overflow-hidden"
+                className="relative group bg-gradient-to-r from-primary to-primary-hover text-white px-12 py-6 text-xl font-semibold rounded-2xl shadow-lg hover:shadow-glow-primary transition-all duration-300 overflow-hidden animate-glow-pulse"
               >
                 <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
                 <span className="relative flex items-center">
@@ -154,7 +154,7 @@ const PremiumCTA = ({ showServiceAreas = true }: { showServiceAreas?: boolean })
               <Button 
                 variant="outline" 
                 size="lg"
-                className="relative group border-2 border-border/50 hover:border-primary/30 px-12 py-6 text-xl font-semibold rounded-2xl backdrop-blur-sm bg-background/50 hover:bg-background/80 transition-all duration-300"
+                className="relative group border-2 border-border/50 hover:border-primary/30 px-12 py-6 text-xl font-semibold rounded-2xl backdrop-blur-sm bg-background/50 hover:bg-background/80 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                 asChild
               >
                 <a href="tel:+1-602-688-9825">
@@ -177,7 +177,13 @@ const PremiumCTA = ({ showServiceAreas = true }: { showServiceAreas?: boolean })
                     }`}
                   >
                     <div className="text-center">
-                      <div className="text-4xl mb-2">{testimonial.image}</div>
+                      <div className="w-16 h-16 mx-auto mb-3 rounded-full overflow-hidden border-2 border-primary/20 shadow-lg">
+                        <img 
+                          src={testimonial.image} 
+                          alt={`${testimonial.name} - ${testimonial.role}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                       <div className="flex justify-center mb-2">
                         {[...Array(testimonial.rating)].map((_, i) => (
                           <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
