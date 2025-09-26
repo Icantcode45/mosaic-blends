@@ -225,12 +225,6 @@ const EnhancedHero = () => {
                   </div>
                 </div>
                 
-                <div className="absolute bottom-6 left-6 glass-effect rounded-2xl px-4 py-3 animate-bounce-soft" style={{ animationDelay: '1s' }}>
-                  <div className="flex items-center gap-2">
-                    <Shield className="w-4 h-4 text-primary" />
-                    <span className="text-sm font-semibold text-foreground">FDA Approved</span>
-                  </div>
-                </div>
                 
                 <div className="absolute top-6 left-6 glass-effect rounded-2xl px-4 py-3 animate-bounce-soft" style={{ animationDelay: '2s' }}>
                   <div className="flex items-center gap-2">
