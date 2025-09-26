@@ -12,7 +12,7 @@ import {
   CheckCircle,
   ArrowRight
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import ServiceBookingButton from "./ServiceBookingButton";
 
 // Import all IV bag images
 import rehydrateBagNew from "@/assets/iv-bags/rehydrate-bag-new.png";
@@ -247,15 +247,11 @@ const InteractiveServicesGrid = () => {
                     <div className="text-sm text-muted-foreground">Per treatment</div>
                   </div>
                   
-                  <Button 
-                    className="bg-primary hover:bg-primary-hover text-white group"
-                    asChild
-                  >
-                    <Link to="/first-time-patients">
-                      Book Treatment
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </Button>
+                  <ServiceBookingButton 
+                    serviceId={currentService.id}
+                    serviceName={currentService.title}
+                    serviceCategory="IV Therapy"
+                  />
                 </div>
               </div>
             </div>

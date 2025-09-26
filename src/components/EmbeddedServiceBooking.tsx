@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import IntakeQWidget from './IntakeQWidget';
 
 interface EmbeddedServiceBookingProps {
@@ -9,7 +10,7 @@ interface EmbeddedServiceBookingProps {
 }
 
 const EmbeddedServiceBooking = ({ serviceId, serviceName, serviceCategory }: EmbeddedServiceBookingProps) => {
-  const [showBooking, setShowBooking] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   // Map service categories to IntakeQ category IDs
   const categoryMapping: Record<string, string> = {
@@ -43,20 +44,17 @@ const EmbeddedServiceBooking = ({ serviceId, serviceName, serviceCategory }: Emb
   const intakeqServiceId = specificServiceMapping[serviceId];
   const intakeqCategoryId = serviceCategory ? categoryMapping[serviceCategory] : null;
 
-  if (showBooking) {
-    return (
-      <div className="mt-4 border-t pt-4">
-        <div className="flex items-center justify-between mb-4">
-          <h4 className="font-semibold text-foreground">Book {serviceName}</h4>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setShowBooking(false)}
-            className="text-muted-foreground hover:text-foreground"
-          >
-            ✕
-          </Button>
-        </div>
+  return (
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogTrigger asChild>
+        <Button className="w-full">
+          Book Now
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle>Book {serviceName}</DialogTitle>
+        </DialogHeader>
         
         {intakeqServiceId ? (
           <IntakeQWidget serviceId={intakeqServiceId} />
@@ -75,17 +73,8 @@ const EmbeddedServiceBooking = ({ serviceId, serviceName, serviceCategory }: Emb
             </Button>
           </div>
         )}
-      </div>
-    );
-  }
-
-  return (
-    <Button 
-      onClick={() => setShowBooking(true)}
-      className="w-full"
-    >
-      Book Now
-    </Button>
+      </DialogContent>
+    </Dialog>
   );
 };
 
