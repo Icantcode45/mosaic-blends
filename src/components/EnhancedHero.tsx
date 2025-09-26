@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Star, Shield, Clock, CheckCircle, Play, ArrowRight, Sparkles, Users, Zap } from "lucide-react";
+import { Star, Shield, Clock, CheckCircle, Play, ArrowRight, Sparkles, Users, Zap, Phone } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import usersIcon from "@/assets/icons/3d-thumbs-up.png";
 import starIcon from "@/assets/icons/3d-star.png";
@@ -151,32 +151,19 @@ const EnhancedHero = () => {
               </p>
             </div>
 
-            {/* Social Proof with Animation */}
-            <div className="flex items-center space-x-6">
-              <div className="flex -space-x-3">
+            {/* Testimonial Card */}
+            <div className="bg-background/80 backdrop-blur-sm rounded-2xl p-6 border border-border/30 shadow-lg">
+              <div className="flex items-center space-x-1 mb-3">
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <div 
-                    key={i} 
-                    className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-brand-teal/20 border-3 border-background flex items-center justify-center text-lg font-semibold text-primary animate-bounce-soft"
-                    style={{ animationDelay: `${i * 200}ms` }}
-                  >
-                    {String.fromCharCode(64 + i)}
-                  </div>
+                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <div>
-                <div className="flex items-center space-x-1 mb-1">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400 animate-pulse" style={{ animationDelay: `${i * 100}ms` }} />
-                  ))}
-                </div>
-                <div className="text-sm font-medium text-foreground">
-                  {testimonials[currentTestimonial].text}
-                  <span className="block text-xs text-muted-foreground">
-                    - {testimonials[currentTestimonial].name}
-                  </span>
-                </div>
-              </div>
+              <blockquote className="text-lg font-medium text-foreground mb-2">
+                "{testimonials[currentTestimonial].text}"
+              </blockquote>
+              <cite className="text-sm text-muted-foreground">
+                - {testimonials[currentTestimonial].name}
+              </cite>
             </div>
 
             {/* Enhanced CTAs */}
@@ -193,23 +180,17 @@ const EnhancedHero = () => {
                 </span>
               </Button>
               
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button 
-                    variant="outline" 
-                    size="lg"
-                    className="relative group border-2 border-border/50 hover:border-primary/30 px-8 py-4 text-lg font-semibold rounded-2xl backdrop-blur-sm bg-background/50 hover:bg-background/80 transition-all duration-300"
-                  >
-                    <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-                    Watch Process
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="max-w-4xl">
-                  <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                    <Play className="w-16 h-16 text-primary" />
-                  </div>
-                </DialogContent>
-              </Dialog>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="relative group border-2 border-border/50 hover:border-primary/30 px-8 py-4 text-lg font-semibold rounded-2xl backdrop-blur-sm bg-background/50 hover:bg-background/80 transition-all duration-300"
+                asChild
+              >
+                <a href="tel:+1-602-688-9825">
+                  <Phone className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+                  Call (602) 688-9825
+                </a>
+              </Button>
             </div>
 
             {/* Enhanced Stats */}
