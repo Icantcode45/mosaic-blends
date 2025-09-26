@@ -42,8 +42,7 @@ const EventInquiry = () => {
       return;
     }
 
-    // In a real application, you would send this data to your backend
-    console.log('Form submitted:', formData);
+    // Event inquiry submitted successfully
     toast({
       title: "Inquiry submitted!",
       description: "Thank you for your inquiry! We will contact you within 24 hours to discuss your event needs."

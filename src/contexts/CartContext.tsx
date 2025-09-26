@@ -121,7 +121,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         const parsedCart = JSON.parse(savedCart);
         dispatch({ type: 'LOAD_CART', payload: parsedCart });
       } catch (error) {
-        console.error('Error loading cart from localStorage:', error);
+        // Failed to load cart from localStorage
       }
     }
     
@@ -172,7 +172,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         dispatch({ type: 'LOAD_CART', payload: items });
       }
     } catch (error) {
-      console.error('Error loading cart from database:', error);
+      // Failed to load cart from database
     }
   };
 

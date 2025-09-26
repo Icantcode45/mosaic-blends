@@ -31,7 +31,7 @@ const Contact = () => {
       return;
     }
 
-    console.log('Contact form submitted:', formData);
+    // Form submitted successfully
     toast({
       title: "Message Sent!",
       description: "Thank you for contacting us. We'll get back to you within 24 hours.",

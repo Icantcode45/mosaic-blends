@@ -200,21 +200,21 @@ const InteractiveServicesGrid = () => {
                 {/* Enhanced floating badges with 3D icons */}
                 <div className="absolute top-4 right-4 premium-glass rounded-xl px-4 py-2 text-xs font-medium text-foreground">
                   <div className="flex items-center gap-2">
-                    <img src="/src/assets/icons/3d-calendar.png" alt="" className="w-4 h-4" />
+                    <img src="/src/assets/icons/3d-calendar.png" alt="Calendar icon" className="w-4 h-4" loading="lazy" />
                     {currentService.duration}
                   </div>
                 </div>
                 
                 <div className="absolute bottom-4 left-4 premium-glass rounded-xl px-4 py-2 text-xs font-medium text-primary">
                   <div className="flex items-center gap-2">
-                    <img src="/src/assets/icons/3d-shield.png" alt="" className="w-4 h-4" />
+                    <img src="/src/assets/icons/3d-shield.png" alt="Shield security icon" className="w-4 h-4" loading="lazy" />
                     Licensed Medical Team
                   </div>
                 </div>
                 
                 <div className="absolute top-4 left-4 premium-glass rounded-xl px-4 py-2 text-xs font-medium text-emerald-600">
                   <div className="flex items-center gap-2">
-                    <img src="/src/assets/icons/3d-checkmark.png" alt="" className="w-4 h-4" />
+                    <img src="/src/assets/icons/3d-checkmark.png" alt="Checkmark success icon" className="w-4 h-4" loading="lazy" />
                     FDA Approved
                   </div>
                 </div>

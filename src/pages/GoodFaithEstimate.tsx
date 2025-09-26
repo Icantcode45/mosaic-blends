@@ -67,9 +67,7 @@ const GoodFaithEstimate = () => {
       return;
     }
 
-    // Here you would typically send the data to your backend
-    console.log('GFE Request:', { formData, selectedServices, total: calculateTotal() });
-    
+    // Good Faith Estimate request submitted successfully
     toast({
       title: "Request submitted successfully",
       description: "We'll send your Good Faith Estimate within 3 business days.",

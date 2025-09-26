@@ -204,8 +204,9 @@ const EnhancedHero = () => {
                     <div className="relative w-12 h-12 mx-auto p-2 rounded-full bg-background/80 backdrop-blur-sm border border-border/30 group-hover:border-primary/20 transition-all">
                       <img 
                         src={stat.icon} 
-                        alt=""
+                        alt={`${stat.label} statistic icon`}
                         className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                        loading="lazy"
                       />
                     </div>
                   </div>

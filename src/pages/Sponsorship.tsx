@@ -40,7 +40,7 @@ const Sponsorship = () => {
       return;
     }
 
-    console.log('Partnership inquiry submitted:', formData);
+    // Partnership inquiry submitted successfully
     toast({
       title: "Partnership Inquiry Submitted!",
       description: "Our team will review your application and contact you within 2-3 business days.",

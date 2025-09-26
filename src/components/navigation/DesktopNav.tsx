@@ -20,14 +20,23 @@ const DesktopNav = ({ servicesMegaItems, productsMegaItems, navItems }: DesktopN
         onMouseEnter={() => setServicesOpen(true)}
         onMouseLeave={() => setServicesOpen(false)}
       >
-        <button className="nav-link inline-flex items-center space-x-1 group" aria-haspopup="menu">
+        <button 
+          className="nav-link inline-flex items-center space-x-1 group" 
+          aria-haspopup="menu"
+          aria-expanded={servicesOpen}
+          aria-label="Services menu"
+        >
           <span>Services</span>
           <ChevronDown className={`w-4 h-4 transition-transform group-hover:text-primary ${servicesOpen ? 'rotate-180' : ''}`} />
         </button>
         
         {/* Services Mega Menu */}
         {servicesOpen && (
-          <div className="absolute left-1/2 -translate-x-1/2 mt-4 w-[900px] bg-white backdrop-blur-xl rounded-3xl shadow-2xl border border-border p-8 grid grid-cols-4 gap-8 z-[100] animate-fade-in">
+          <div 
+            className="absolute left-1/2 -translate-x-1/2 mt-4 w-[900px] bg-white backdrop-blur-xl rounded-3xl shadow-2xl border border-border p-8 grid grid-cols-4 gap-8 z-[100] animate-fade-in"
+            role="menu"
+            aria-label="Services navigation menu"
+          >
             {servicesMegaItems.map((category) => (
               <div key={category.category} className="space-y-4">
                 <div className="flex items-center gap-3 mb-4">
@@ -73,12 +82,20 @@ const DesktopNav = ({ servicesMegaItems, productsMegaItems, navItems }: DesktopN
       {/* More Dropdown for remaining items */}
       {navItems.length > 4 && (
         <div className="relative group">
-          <button className="nav-link inline-flex items-center space-x-1">
+          <button 
+            className="nav-link inline-flex items-center space-x-1"
+            aria-haspopup="menu"
+            aria-label="More navigation options"
+          >
             <span>More</span>
             <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
           </button>
           
-          <div className="absolute right-0 mt-4 w-64 bg-white backdrop-blur-xl rounded-2xl shadow-xl border border-border p-4 z-[100] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+          <div 
+            className="absolute right-0 mt-4 w-64 bg-white backdrop-blur-xl rounded-2xl shadow-xl border border-border p-4 z-[100] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+            role="menu"
+            aria-label="Additional navigation links"
+          >
             {navItems.slice(4).map((item: any) => (
               <Link
                 key={item.name}

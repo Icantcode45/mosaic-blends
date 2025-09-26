@@ -62,7 +62,7 @@ const Premium3DTrustSection = () => {
         {/* Section Header */}
         <div className="text-center mb-20">
           <Badge variant="outline" className="mb-6 premium-glass text-primary border-primary/30">
-            <img src="/src/assets/icons/3d-shield.png" alt="" className="w-4 h-4 mr-2" />
+            <img src="/src/assets/icons/3d-shield.png" alt="Security shield icon" className="w-4 h-4 mr-2" loading="lazy" />
             Trusted Excellence
           </Badge>
           <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
@@ -157,7 +157,7 @@ const Premium3DTrustSection = () => {
                 asChild
               >
                 <Link to="/first-time-patients">
-                  <img src="/src/assets/icons/3d-phone.png" alt="" className="w-5 h-5 mr-2" />
+                  <img src="/src/assets/icons/3d-phone.png" alt="Phone icon" className="w-5 h-5 mr-2" loading="lazy" />
                   Book Your Treatment
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
