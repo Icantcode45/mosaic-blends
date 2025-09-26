@@ -5,7 +5,7 @@ const GoogleMapPhoenix: React.FC = () => {
     <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-lg border border-border/30">
       <iframe
         title="Phoenix Metro Area Map"
-        src="https://maps.google.com/maps?q=Phoenix%2C%20AZ&t=m&z=10&output=embed&iwloc=near"
+        src="https://maps.google.com/maps?q=Phoenix+Scottsdale+Tempe+Mesa+Chandler+Gilbert+Queen+Creek,+AZ&t=m&z=9&output=embed&iwloc=near"
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         className="w-full h-full"
