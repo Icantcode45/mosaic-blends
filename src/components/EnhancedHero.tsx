@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, Shield, Clock, CheckCircle, Play, ArrowRight, Sparkles, Users, Zap } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import usersIcon from "@/assets/icons/3d-users.png";
+import usersIcon from "@/assets/icons/3d-thumbs-up.png";
 import starIcon from "@/assets/icons/3d-star.png";
-import clockIcon from "@/assets/icons/3d-clock.png";
-import rocketIcon from "@/assets/icons/3d-rocket.png";
+import clockIcon from "@/assets/icons/3d-calendar.png";
+import rocketIcon from "@/assets/icons/3d-medal.png";
 
 const EnhancedHero = () => {
   const [isVisible, setIsVisible] = useState(false);
