@@ -19,6 +19,7 @@ import ServiceBookingButton from "./ServiceBookingButton";
 const ModernServicesGrid = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [showAllServices, setShowAllServices] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const services = [
@@ -177,6 +178,11 @@ const ModernServicesGrid = () => {
     }
   ];
 
+  // Get initial services (first 6) and remaining services
+  const initialServices = services.slice(0, 6);
+  const remainingServices = services.slice(6);
+  const displayedServices = showAllServices ? services : initialServices;
+
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % 3);
@@ -187,10 +193,9 @@ const ModernServicesGrid = () => {
   return (
     <section className="py-24 bg-gradient-to-br from-muted/30 via-background to-muted/20 relative overflow-hidden">
       
-      {/* Background Effects */}
+      {/* Background Effects - Simplified */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-soft" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-teal/5 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-primary/5 to-brand-teal/5 rounded-full blur-3xl animate-pulse-soft" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -274,7 +279,7 @@ const ModernServicesGrid = () => {
 
         {/* All Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {displayedServices.map((service, index) => (
             <Card 
               key={service.id}
               className="group relative overflow-hidden border-border/30 hover:border-primary/20 hover:shadow-glow-primary transition-all duration-500 bg-background/50 backdrop-blur-sm"
@@ -301,9 +306,9 @@ const ModernServicesGrid = () => {
               </div>
 
               <div className="relative p-6">
-                {/* Service Header */}
+                {/* Service Header - Simplified */}
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="relative w-16 h-16 rounded-3xl bg-gradient-to-br from-background to-muted/30 border border-border/50 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-background to-muted/30 border border-border/50 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <img 
                       src={service.image} 
                       alt={service.title}
@@ -352,14 +357,12 @@ const ModernServicesGrid = () => {
                   ))}
                 </div>
 
-                {/* Enhanced Book Button */}
-                <div className="relative overflow-hidden rounded-2xl">
-                  <ServiceBookingButton 
-                    serviceId={service.id}
-                    serviceName={service.title}
-                    serviceCategory={service.category}
-                  />
-                </div>
+                {/* Book Button */}
+                <ServiceBookingButton 
+                  serviceId={service.id}
+                  serviceName={service.title}
+                  serviceCategory={service.category}
+                />
               </div>
 
               {/* Hover Effect Overlay */}
@@ -369,6 +372,22 @@ const ModernServicesGrid = () => {
             </Card>
           ))}
         </div>
+
+        {/* Load More Button */}
+        {!showAllServices && remainingServices.length > 0 && (
+          <div className="text-center mt-12">
+            <Button
+              onClick={() => setShowAllServices(true)}
+              variant="outline"
+              size="lg"
+              className="bg-background/50 backdrop-blur-sm border-primary/20 hover:bg-primary/5 hover:border-primary/40 transition-all duration-300"
+            >
+              <Sparkles className="w-4 h-4 mr-2" />
+              View All Services ({remainingServices.length} more)
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+        )}
 
         {/* Bottom Stats */}
         <div className="mt-20 text-center">
