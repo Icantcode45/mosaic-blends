@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Star, Shield, Clock, CheckCircle, Play, ArrowRight, Sparkles, Users, Zap, Phone } from "lucide-react";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Star, Shield, Clock, CheckCircle, ArrowRight, Sparkles, Users, Zap, Phone } from "lucide-react";
 import usersIcon from "@/assets/icons/3d-thumbs-up.png";
 import starIcon from "@/assets/icons/3d-star.png";
 import clockIcon from "@/assets/icons/3d-calendar.png";
