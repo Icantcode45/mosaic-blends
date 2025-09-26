@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, Shield, Clock, CheckCircle } from "lucide-react";
+import myersCocktailBag from "@/assets/iv-bags/myers-cocktail-bag.png";
 
 const CleanHero = () => {
   const trustMetrics = [
@@ -114,7 +115,7 @@ const CleanHero = () => {
               {/* Main IV Bag Visual */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <img 
-                  src="/src/assets/iv-bags/myers-cocktail-bag.png" 
+                  src={myersCocktailBag} 
                   alt="IV Therapy" 
                   className="w-3/4 h-3/4 object-contain floating-3d"
                 />

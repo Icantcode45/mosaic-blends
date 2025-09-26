@@ -17,6 +17,17 @@ import {
 import ServiceBookingButton from "./ServiceBookingButton";
 import { useCountUp } from "@/hooks/useCountUp";
 
+// Import all IV bag images
+import rehydrateBag from "@/assets/iv-bags/rehydrate-bag-final.png";
+import rehydratePlusBag from "@/assets/iv-bags/rehydrate-plus-bag-final.png";
+import jrMyersBag from "@/assets/iv-bags/jr-myers-cocktail-bag-new.png";
+import eliteNadBag from "@/assets/iv-bags/elite-nad-therapy-bag-updated.png";
+import scottsdaleBeautyBag from "@/assets/iv-bags/scottsdale-beauty-bag-new.png";
+import hangoverBag from "@/assets/iv-bags/hangover-bag-new.png";
+import goldHydrationBag from "@/assets/iv-bags/gold-hydration-recovery-bag-updated.png";
+import dBookBag from "@/assets/iv-bags/d-book-performance-bag-new.png";
+import diamondNadBag from "@/assets/iv-bags/diamond-nad-therapy-bag-new.png";
+
 const ModernServicesGrid = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -34,7 +45,7 @@ const ModernServicesGrid = () => {
       duration: "30 min",
       description: "Fast-acting hydration therapy with essential electrolytes for immediate energy and wellness recovery.",
       features: ["Immediate hydration boost", "Enhanced energy levels", "Mental clarity improvement"],
-      image: "/src/assets/iv-bags/rehydrate-bag-final.png",
+      image: rehydrateBag,
       gradient: "from-cyan-400 via-blue-500 to-indigo-600",
       category: "Basic Hydration",
       popular: false,
@@ -51,7 +62,7 @@ const ModernServicesGrid = () => {
       duration: "45 min",
       description: "Superior hydration with lactated ringers and B-vitamin complex for enhanced recovery and sustained energy.",
       features: ["Superior hydration formula", "B-vitamin energy boost", "Accelerated recovery"],
-      image: "/src/assets/iv-bags/rehydrate-plus-bag-final.png",
+      image: rehydratePlusBag,
       gradient: "from-teal-400 via-cyan-500 to-blue-600",
       category: "Enhanced Hydration",
       popular: true,
@@ -68,7 +79,7 @@ const ModernServicesGrid = () => {
       duration: "60 min",
       description: "Comprehensive vitamin and mineral blend featuring B-complex, Vitamin C, and magnesium for total wellness.",
       features: ["Complete nutrition support", "Immune system boost", "Sustained energy increase"],
-      image: "/src/assets/iv-bags/jr-myers-cocktail-bag-new.png",
+      image: jrMyersBag,
       gradient: "from-purple-500 via-indigo-600 to-blue-700",
       category: "Standard Wellness",
       popular: true,
@@ -85,7 +96,7 @@ const ModernServicesGrid = () => {
       duration: "2-4 hrs",
       description: "Advanced NAD+ therapy for cellular regeneration, longevity, and cognitive enhancement with premium ingredients.",
       features: ["Cellular repair & regeneration", "Anti-aging benefits", "Enhanced cognitive function"],
-      image: "/src/assets/iv-bags/elite-nad-therapy-bag-updated.png",
+      image: eliteNadBag,
       gradient: "from-emerald-500 via-teal-600 to-cyan-700",
       category: "NAD+ Therapy",
       popular: false,
@@ -102,7 +113,7 @@ const ModernServicesGrid = () => {
       duration: "60 min",
       description: "Specialized blend with glutathione, biotin, and vitamin C for radiant skin and beauty enhancement.",
       features: ["Glowing, radiant skin", "Hair & nail health", "Beauty from within"],
-      image: "/src/assets/iv-bags/scottsdale-beauty-bag-new.png",
+      image: scottsdaleBeautyBag,
       gradient: "from-pink-400 via-rose-500 to-purple-600",
       category: "Premium Therapies",
       popular: false,
@@ -119,7 +130,7 @@ const ModernServicesGrid = () => {
       duration: "45 min",
       description: "Fast hangover relief with hydration, anti-nausea medication, and energy-boosting vitamins.",
       features: ["Rapid symptom relief", "Nausea reduction", "Energy restoration"],
-      image: "/src/assets/iv-bags/hangover-bag-new.png",
+      image: hangoverBag,
       gradient: "from-orange-400 via-amber-500 to-yellow-600",
       category: "Enhanced Hydration",
       popular: true,
@@ -136,7 +147,7 @@ const ModernServicesGrid = () => {
       duration: "60 min",
       description: "Premium hydration therapy with B-complex vitamins, anti-nausea, glutathione, and magnesium for complete recovery.",
       features: ["Premium hydration blend", "Complete recovery support", "Enhanced nutrient absorption"],
-      image: "/src/assets/iv-bags/gold-hydration-recovery-bag-updated.png",
+      image: goldHydrationBag,
       gradient: "from-yellow-400 via-orange-500 to-red-600",
       category: "Premium Therapies",
       popular: false,
@@ -153,7 +164,7 @@ const ModernServicesGrid = () => {
       duration: "75 min", 
       description: "High-performance blend with B6, B12, Vitamin C, glutathione, amino blend, and magnesium for peak athletic performance.",
       features: ["Enhanced athletic performance", "Rapid muscle recovery", "Increased endurance"],
-      image: "/src/assets/iv-bags/d-book-performance-bag-new.png",
+      image: dBookBag,
       gradient: "from-purple-500 via-violet-600 to-purple-700",
       category: "Performance Therapies",
       popular: false,
@@ -170,7 +181,7 @@ const ModernServicesGrid = () => {
       duration: "3-4 hrs",
       description: "Our most advanced NAD+ therapy with premium ingredients for maximum cellular regeneration and longevity benefits.",
       features: ["Maximum cellular repair", "Premium anti-aging benefits", "Ultimate cognitive enhancement"],
-      image: "/src/assets/iv-bags/diamond-nad-therapy-bag-new.png",
+      image: diamondNadBag,
       gradient: "from-cyan-400 via-blue-500 to-indigo-600",
       category: "NAD+ Therapy",
       popular: true,

@@ -7,6 +7,7 @@ import usersIcon from "@/assets/icons/3d-thumbs-up.png";
 import starIcon from "@/assets/icons/3d-star.png";
 import clockIcon from "@/assets/icons/3d-calendar.png";
 import rocketIcon from "@/assets/icons/3d-medal.png";
+import eliteNadTherapyBag from "@/assets/iv-bags/elite-nad-therapy-bag-final.png";
 
 const EnhancedHero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -252,7 +253,7 @@ const EnhancedHero = () => {
                 {/* Main IV Bag */}
                 <div className="absolute inset-0 flex items-center justify-center p-8">
                   <img 
-                    src="/src/assets/iv-bags/elite-nad-therapy-bag-final.png" 
+                    src={eliteNadTherapyBag} 
                     alt="Premium IV Therapy" 
                     className="w-3/4 h-3/4 object-contain animate-float filter drop-shadow-2xl"
                   />

@@ -14,6 +14,12 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
+// Import all IV bag images
+import rehydrateBagNew from "@/assets/iv-bags/rehydrate-bag-new.png";
+import rehydratePlusBagNew from "@/assets/iv-bags/rehydrate-plus-bag-new.png";
+import dBookPerformanceBag from "@/assets/iv-bags/d-book-performance-bag.png";
+import eliteNadTherapyBag from "@/assets/iv-bags/elite-nad-therapy-bag-final.png";
+
 const InteractiveServicesGrid = () => {
   const [activeService, setActiveService] = useState(0);
   const [hoveredService, setHoveredService] = useState<number | null>(null);
@@ -33,7 +39,7 @@ const InteractiveServicesGrid = () => {
         "Improved mental clarity",
         "Faster recovery from dehydration"
       ],
-      image: "/src/assets/iv-bags/rehydrate-bag-new.png",
+      image: rehydrateBagNew,
       color: "from-cyan-400 to-blue-500",
       bgColor: "bg-gradient-to-br from-cyan-50 to-blue-50",
       popular: true
@@ -52,7 +58,7 @@ const InteractiveServicesGrid = () => {
         "Enhanced electrolyte balance",
         "Accelerated recovery"
       ],
-      image: "/src/assets/iv-bags/rehydrate-plus-bag-new.png", 
+      image: rehydratePlusBagNew, 
       color: "from-teal-400 to-cyan-500",
       bgColor: "bg-gradient-to-br from-teal-50 to-cyan-50",
       popular: false
@@ -71,7 +77,7 @@ const InteractiveServicesGrid = () => {
         "Improved mental focus",
         "Antioxidant protection"
       ],
-      image: "/src/assets/iv-bags/d-book-performance-bag.png",
+      image: dBookPerformanceBag,
       color: "from-purple-500 to-indigo-600", 
       bgColor: "bg-gradient-to-br from-purple-50 to-indigo-50",
       popular: true
@@ -90,7 +96,7 @@ const InteractiveServicesGrid = () => {
         "Anti-aging benefits",
         "Increased energy at cellular level"
       ],
-      image: "/src/assets/iv-bags/elite-nad-therapy-bag-final.png",
+      image: eliteNadTherapyBag,
       color: "from-emerald-500 to-teal-600",
       bgColor: "bg-gradient-to-br from-emerald-50 to-teal-50", 
       popular: false

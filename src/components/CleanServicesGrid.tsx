@@ -12,6 +12,14 @@ import {
 } from "lucide-react";
 import ServiceBookingButton from "./ServiceBookingButton";
 
+// Import all IV bag images
+import rehydrateBagNew from "@/assets/iv-bags/rehydrate-bag-new.png";
+import rehydratePlusBagNew from "@/assets/iv-bags/rehydrate-plus-bag-new.png";
+import myersCocktailBag from "@/assets/iv-bags/myers-cocktail-bag.png";
+import eliteNadTherapyBag from "@/assets/iv-bags/elite-nad-therapy-bag-final.png";
+import scottsdaleBeautyBagImg from "@/assets/iv-bags/scottsdale-beauty-bag.png";
+import hangoverBagNew from "@/assets/iv-bags/hangover-bag.png";
+
 const CleanServicesGrid = () => {
   const services = [
     {
@@ -23,7 +31,7 @@ const CleanServicesGrid = () => {
       duration: "30 min",
       description: "Fast-acting hydration therapy with essential electrolytes.",
       features: ["Immediate hydration", "Enhanced energy", "Mental clarity"],
-      image: "/src/assets/iv-bags/rehydrate-bag-new.png",
+      image: rehydrateBagNew,
       gradient: "from-cyan-400 to-blue-500",
       popular: false,
       category: "Basic Hydration"
@@ -37,7 +45,7 @@ const CleanServicesGrid = () => {
       duration: "45 min",
       description: "Superior hydration with lactated ringers and B-vitamins.",
       features: ["Superior hydration", "B-vitamin boost", "Faster recovery"],
-      image: "/src/assets/iv-bags/rehydrate-plus-bag-new.png",
+      image: rehydratePlusBagNew,
       gradient: "from-teal-400 to-cyan-500", 
       popular: true,
       category: "Enhanced Hydration"
@@ -51,7 +59,7 @@ const CleanServicesGrid = () => {
       duration: "60 min",
       description: "Comprehensive vitamin and mineral blend for total wellness.",
       features: ["Complete nutrition", "Immune support", "Energy boost"],
-      image: "/src/assets/iv-bags/myers-cocktail-bag.png",
+      image: myersCocktailBag,
       gradient: "from-purple-500 to-indigo-600",
       popular: true,
       category: "Standard Wellness"
@@ -65,7 +73,7 @@ const CleanServicesGrid = () => {
       duration: "2-4 hrs",
       description: "Advanced NAD+ therapy for cellular regeneration and longevity.",
       features: ["Cellular repair", "Anti-aging", "Cognitive enhancement"],
-      image: "/src/assets/iv-bags/elite-nad-therapy-bag-final.png",
+      image: eliteNadTherapyBag,
       gradient: "from-emerald-500 to-teal-600",
       popular: false,
       category: "NAD+ Therapy"
@@ -79,7 +87,7 @@ const CleanServicesGrid = () => {
       duration: "60 min",
       description: "Specialized blend for radiant skin and beauty enhancement.",
       features: ["Glowing skin", "Hair & nail health", "Beauty boost"],
-      image: "/src/assets/iv-bags/scottsdale-beauty-bag.png",
+      image: scottsdaleBeautyBagImg,
       gradient: "from-pink-400 to-rose-500",
       popular: false,
       category: "Premium Therapies"
@@ -93,7 +101,7 @@ const CleanServicesGrid = () => {
       duration: "45 min",
       description: "Fast hangover relief with hydration and anti-nausea medication.",
       features: ["Rapid relief", "Nausea reduction", "Energy restoration"],
-      image: "/src/assets/iv-bags/hangover-bag.png",
+      image: hangoverBagNew,
       gradient: "from-orange-400 to-amber-500",
       popular: true,
       category: "Enhanced Hydration"
