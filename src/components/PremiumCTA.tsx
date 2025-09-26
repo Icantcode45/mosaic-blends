@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import ElfsightReviewsWidget from "@/components/ElfsightReviewsWidget";
 import { 
   Star, 
   Phone, 
@@ -16,15 +17,10 @@ import {
 } from "lucide-react";
 
 const PremiumCTA = ({ showServiceAreas = true }: { showServiceAreas?: boolean }) => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
-    const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 4000);
-    return () => clearInterval(interval);
   }, []);
 
   const testimonials = [
@@ -164,54 +160,9 @@ const PremiumCTA = ({ showServiceAreas = true }: { showServiceAreas?: boolean })
               </Button>
             </div>
 
-            {/* Testimonial Carousel */}
+            {/* Google Reviews Widget */}
             <div className="mb-12">
-              <div className="relative h-32 overflow-hidden">
-                {testimonials.map((testimonial, index) => (
-                  <div
-                    key={index}
-                    className={`absolute inset-0 transition-all duration-500 ${
-                      currentTestimonial === index 
-                        ? 'opacity-100 transform translate-y-0' 
-                        : 'opacity-0 transform translate-y-4'
-                    }`}
-                  >
-                    <div className="text-center">
-                      <div className="w-16 h-16 mx-auto mb-3 rounded-full overflow-hidden border-2 border-primary/20 shadow-lg">
-                        <img 
-                          src={testimonial.image} 
-                          alt={`${testimonial.name} - ${testimonial.role}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="flex justify-center mb-2">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                        ))}
-                      </div>
-                      <blockquote className="text-lg font-medium text-foreground mb-2">
-                        "{testimonial.text}"
-                      </blockquote>
-                      <cite className="text-sm text-muted-foreground">
-                        - {testimonial.name}, {testimonial.role}
-                      </cite>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Testimonial Indicators */}
-              <div className="flex justify-center space-x-2">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      currentTestimonial === index ? 'bg-primary w-8' : 'bg-muted-foreground/30'
-                    }`}
-                    onClick={() => setCurrentTestimonial(index)}
-                  />
-                ))}
-              </div>
+              <ElfsightReviewsWidget />
             </div>
 
             {showServiceAreas && (
