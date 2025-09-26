@@ -15,6 +15,7 @@ import {
   TrendingUp
 } from "lucide-react";
 import ServiceBookingButton from "./ServiceBookingButton";
+import { useCountUp } from "@/hooks/useCountUp";
 
 const ModernServicesGrid = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -389,28 +390,40 @@ const ModernServicesGrid = () => {
           </div>
         )}
 
-        {/* Bottom Stats */}
+        {/* Bottom Stats with Enhanced Animations */}
         <div className="mt-20 text-center">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             {[
-              { label: "Treatments Delivered", value: "15,000+", icon: "💉" },
-              { label: "Client Satisfaction", value: "98%", icon: "⭐" },
-              { label: "Licensed Professionals", value: "24/7", icon: "👨‍⚕️" },
-              { label: "Same Day Service", value: "Available", icon: "🚀" }
-            ].map((stat, index) => (
-              <div 
-                key={index}
-                className="p-6 rounded-2xl bg-background/50 backdrop-blur-sm border border-border/30 hover:border-primary/20 hover:bg-background/80 transition-all duration-300 group"
-              >
-                <div className="text-3xl mb-2">{stat.icon}</div>
-                <div className="text-2xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform">
-                  {stat.value}
+              { label: "Treatments Delivered", value: "15,000+", icon: "💉", animatedValue: 15000 },
+              { label: "Client Satisfaction", value: "98%", icon: "⭐", animatedValue: 98 },
+              { label: "Licensed Professionals", value: "24/7", icon: "👨‍⚕️", animatedValue: null },
+              { label: "Same Day Service", value: "Available", icon: "🚀", animatedValue: null }
+            ].map((stat, index) => {
+              const { count, ref } = stat.animatedValue 
+                ? useCountUp({ end: stat.animatedValue, duration: 3000, delay: index * 200 })
+                : { count: null, ref: null };
+
+              return (
+                <div 
+                  key={index}
+                  ref={ref}
+                  className="p-6 rounded-2xl bg-background/50 backdrop-blur-sm border border-border/30 hover:border-primary/20 hover:bg-background/80 transition-all duration-300 group animate-fade-in"
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  <div className="text-3xl mb-2 animate-bounce-soft" style={{ animationDelay: `${index * 100}ms` }}>
+                    {stat.icon}
+                  </div>
+                  <div className="text-2xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform animate-shimmer">
+                    {stat.animatedValue ? (
+                      stat.label.includes("Satisfaction") ? `${count}%` : `${count?.toLocaleString()}+`
+                    ) : stat.value}
+                  </div>
+                  <div className="text-sm text-muted-foreground font-medium animate-fade-in" style={{ animationDelay: `${index * 200}ms` }}>
+                    {stat.label}
+                  </div>
                 </div>
-                <div className="text-sm text-muted-foreground font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

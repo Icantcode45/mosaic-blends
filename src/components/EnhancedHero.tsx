@@ -106,14 +106,41 @@ const EnhancedHero = () => {
             {/* Main Headline */}
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                <span className="block text-foreground">Premium</span>
-                <span className="block bg-gradient-to-r from-primary via-brand-teal to-primary bg-clip-text text-transparent animate-shimmer bg-300% bg-size-200%">
-                  IV Therapy
+                <span className="block text-foreground">
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.1s' }}>P</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.15s' }}>r</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.2s' }}>e</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.25s' }}>m</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.3s' }}>i</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.35s' }}>u</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.4s' }}>m</span>
                 </span>
-                <span className="block text-foreground">Delivered</span>
+                <span className="block bg-gradient-to-r from-primary via-brand-teal to-primary bg-clip-text text-transparent animate-shimmer bg-300% bg-size-200%">
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.5s' }}>I</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.55s' }}>V</span>
+                  <span className="inline-block animate-fade-in mx-2" style={{ animationDelay: '0.6s' }}> </span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.65s' }}>T</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.7s' }}>h</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.75s' }}>e</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.8s' }}>r</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.85s' }}>a</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.9s' }}>p</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.95s' }}>y</span>
+                </span>
+                <span className="block text-foreground">
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '1s' }}>D</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '1.05s' }}>e</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '1.1s' }}>l</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '1.15s' }}>i</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '1.2s' }}>v</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '1.25s' }}>e</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '1.3s' }}>r</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '1.35s' }}>e</span>
+                  <span className="inline-block animate-fade-in" style={{ animationDelay: '1.4s' }}>d</span>
+                </span>
               </h1>
               
-              <p className="text-xl lg:text-2xl text-muted-foreground max-w-xl leading-relaxed">
+              <p className="text-xl lg:text-2xl text-muted-foreground max-w-xl leading-relaxed animate-fade-in-up" style={{ animationDelay: '1.5s' }}>
                 Experience the future of wellness with our premium mobile IV therapy, 
                 NAD+ treatments, and vitamin injections delivered anywhere in Scottsdale.
               </p>
