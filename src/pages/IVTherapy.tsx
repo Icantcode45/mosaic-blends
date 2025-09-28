@@ -763,15 +763,51 @@ const IVTherapy = () => {
         </div>
       </section>
 
-      {/* Good Faith Exam for First-Time Patients */}
-      <section className="py-16 bg-primary/5">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-6">First-Time Patient? Start Here</h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Before receiving IV therapy treatment, all first-time patients must complete a good faith examination 
-            to ensure safe and appropriate care tailored to your needs.
-          </p>
-          <QualiphyWidget />
+      {/* Good Faith Exam for First-Time Patients - Enhanced */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 via-primary/10 to-secondary/5 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        <div className="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-24 h-24 bg-secondary/10 rounded-full blur-2xl"></div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
+            {/* Eye-catching badge */}
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg">
+              <span className="animate-pulse">⚡</span>
+              First-Time Patients
+              <span className="animate-pulse">⚡</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Start Your Treatment Journey
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+              Before receiving IV therapy treatment, all first-time patients must complete a good faith examination 
+              to ensure safe and appropriate care tailored to your needs.
+            </p>
+            
+            {/* Prominent widget placement */}
+            <div className="bg-white/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 max-w-md mx-auto shadow-2xl">
+              <QualiphyWidget />
+            </div>
+            
+            {/* Trust indicators */}
+            <div className="flex flex-wrap justify-center items-center gap-6 mt-8 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <span className="text-green-500">✓</span>
+                Arizona Licensed
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-green-500">✓</span>
+                HIPAA Compliant
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-green-500">✓</span>
+                Quick & Easy
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>

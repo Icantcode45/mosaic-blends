@@ -29,24 +29,38 @@ export default function QualiphyWidget() {
   };
 
   const buttonStyle = {
-    width: "150px",
-    height: "40px",
+    width: "200px",
+    height: "50px",
     cursor: "pointer",
-    backgroundColor: isHovered ? "hsl(var(--primary))" : "hsl(var(--primary) / 0.1)",
-    color: isHovered ? "white" : "hsl(var(--primary))",
-    border: "2px solid hsl(var(--primary))",
-    borderRadius: "8px",
-    fontWeight: "600",
+    backgroundColor: isHovered ? "hsl(var(--primary))" : "hsl(var(--primary) / 0.9)",
+    color: "white",
+    border: "none",
+    borderRadius: "12px",
+    fontWeight: "700",
     display: "flex",
     justifyContent: "center" as const,
     alignItems: "center" as const,
-    transition: "all 0.2s ease",
-    fontSize: "14px",
-    boxShadow: isHovered ? "0 4px 12px hsl(var(--primary) / 0.3)" : "none",
+    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+    fontSize: "16px",
+    boxShadow: isHovered 
+      ? "0 8px 25px hsl(var(--primary) / 0.4), 0 0 0 3px hsl(var(--primary) / 0.1)" 
+      : "0 4px 15px hsl(var(--primary) / 0.3)",
+    transform: isHovered ? "translateY(-2px) scale(1.02)" : "translateY(0) scale(1)",
   };
 
   return (
-    <div>
+    <div className="flex flex-col items-center gap-4">
+      {/* Attention-grabbing header */}
+      <div className="bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 rounded-lg p-4 max-w-md mx-auto">
+        <h3 className="text-lg font-bold text-foreground mb-2 flex items-center justify-center gap-2">
+          <span className="text-primary">📋</span>
+          Required Before Treatment
+        </h3>
+        <p className="text-sm text-muted-foreground text-center">
+          Schedule your mandatory good faith examination
+        </p>
+      </div>
+      
       <div id="main-qualiphy-widget">
         <div
           id="loadFormButton"
@@ -55,11 +69,16 @@ export default function QualiphyWidget() {
           onMouseLeave={() => setIsHovered(false)}
           onClick={handleClick}
         >
-          Exam Invite
+          📅 Schedule Exam
         </div>
       </div>
       <p style={{ display: "none" }} id="not-available">
         Not available!
+      </p>
+      
+      {/* Additional context */}
+      <p className="text-xs text-muted-foreground text-center max-w-xs">
+        Quick 5-10 minute virtual consultation required by Arizona law
       </p>
     </div>
   );
