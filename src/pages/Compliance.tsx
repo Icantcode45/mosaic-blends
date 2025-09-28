@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import QualiphyWidget from "@/components/QualiphyWidget";
 
 const Compliance = () => {
   useEffect(() => {
@@ -287,6 +288,18 @@ const Compliance = () => {
               </div>
             </div>
 
+            {/* Good Faith Exam Section */}
+            <section className="bg-primary/5 rounded-2xl p-8 mb-8">
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-foreground mb-4">Good Faith Examination Required</h3>
+                <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                  As part of our compliance standards, all first-time patients must complete a good faith examination 
+                  before receiving IV therapy or vitamin injection treatments. This ensures safe and appropriate care.
+                </p>
+                <QualiphyWidget />
+              </div>
+            </section>
+            
             {/* Quick Links */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               <Link to="/good-faith-estimate" className="bg-white border border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-200 group">

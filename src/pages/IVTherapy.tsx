@@ -6,6 +6,7 @@ import { ChevronDown } from "lucide-react";
 import IntakeQWidget from "@/components/IntakeQWidget";
 import EmbeddedServiceBooking from "@/components/EmbeddedServiceBooking";
 import NADIVBagCard from "@/components/NADIVBagCard";
+import QualiphyWidget from "@/components/QualiphyWidget";
 
 // Image assets (use imports so they work in production builds)
 import heroBg from "@/assets/iv-therapy-hero-custom.jpg";
@@ -759,6 +760,18 @@ const IVTherapy = () => {
               </Button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Good Faith Exam for First-Time Patients */}
+      <section className="py-16 bg-primary/5">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-foreground mb-6">First-Time Patient? Start Here</h2>
+          <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
+            Before receiving IV therapy treatment, all first-time patients must complete a good faith examination 
+            to ensure safe and appropriate care tailored to your needs.
+          </p>
+          <QualiphyWidget />
         </div>
       </section>
     </>

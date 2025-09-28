@@ -6,6 +6,7 @@ import { useCart } from "@/contexts/CartContext";
 import { toast } from "sonner";
 import IntakeQWidget from "@/components/IntakeQWidget";
 import ServiceBookingButton from "@/components/ServiceBookingButton";
+import QualiphyWidget from "@/components/QualiphyWidget";
 
 // Service images (resolved via Vite imports for production)
 import b12Img from "@/assets/vials/b12-injection.jpeg";
@@ -560,6 +561,18 @@ const VitaminInjections = () => {
                 </Card>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Good Faith Exam Section */}
+        <section className="py-16 bg-primary/5">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold text-foreground mb-6">Required Before Treatment</h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
+              All first-time patients must complete a good faith examination before receiving vitamin injections. 
+              This ensures we provide the safest and most effective treatment for your individual needs.
+            </p>
+            <QualiphyWidget />
           </div>
         </section>
       </div>

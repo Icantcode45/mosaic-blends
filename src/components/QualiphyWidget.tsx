@@ -32,15 +32,17 @@ export default function QualiphyWidget() {
     width: "150px",
     height: "40px",
     cursor: "pointer",
-    backgroundColor: isHovered ? "#8058fa" : "#cfc9ff",
-    color: isHovered ? "white" : "#0a005b",
-    border: "none",
-    borderRadius: "5px",
+    backgroundColor: isHovered ? "hsl(var(--primary))" : "hsl(var(--primary) / 0.1)",
+    color: isHovered ? "white" : "hsl(var(--primary))",
+    border: "2px solid hsl(var(--primary))",
+    borderRadius: "8px",
     fontWeight: "600",
     display: "flex",
     justifyContent: "center" as const,
     alignItems: "center" as const,
     transition: "all 0.2s ease",
+    fontSize: "14px",
+    boxShadow: isHovered ? "0 4px 12px hsl(var(--primary) / 0.3)" : "none",
   };
 
   return (

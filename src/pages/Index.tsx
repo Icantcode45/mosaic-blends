@@ -6,6 +6,7 @@ import ContactWithMap from "@/components/ContactWithMap";
 import FAQSection from "@/components/FAQSection";
 import SEOHead from "@/components/SEOHead";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import QualiphyWidget from "@/components/QualiphyWidget";
 
 const Index = () => {
   return (
@@ -132,6 +133,19 @@ const Index = () => {
         {/* Enhanced Premium Sections */}
         <EnhancedHero />
         <ModernServicesGrid />
+        
+        {/* Good Faith Exam Required for First-Time Patients */}
+        <section className="py-16 bg-primary/5">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold text-foreground mb-6">Good Faith Exam Required</h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
+              As a first-time patient, a good faith examination is required before treatment. 
+              Schedule your exam to get started with our premium IV therapy services.
+            </p>
+            <QualiphyWidget />
+          </div>
+        </section>
+
         <PremiumCTA showServiceAreas={false} />
         <ContactWithMap />
         <FAQSection />
