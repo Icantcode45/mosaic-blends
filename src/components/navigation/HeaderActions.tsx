@@ -9,7 +9,7 @@ const HeaderActions = () => {
   const { user, loading } = useAuth();
 
   return (
-    <div className="hidden lg:flex items-center space-x-4">
+    <div className="hidden lg:flex items-center space-x-4 ml-auto">
       <CartDrawer />
       
       <Button 
