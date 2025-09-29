@@ -8,6 +8,8 @@ interface IntakeQWidgetProps {
 
 const IntakeQWidget = ({ serviceId, categoryId, clientArea = false }: IntakeQWidgetProps) => {
   useEffect(() => {
+    console.log('IntakeQWidget loading with:', { serviceId, categoryId, clientArea });
+    
     // Set up IntakeQ configuration
     (window as any).intakeq = "68b14c4e0b7b143488664c75";
     
@@ -24,6 +26,12 @@ const IntakeQWidget = ({ serviceId, categoryId, clientArea = false }: IntakeQWid
     script.type = "text/javascript";
     script.async = true;
     script.src = "https://intakeq.com/js/widget.min.js?1";
+    script.onload = () => {
+      console.log('IntakeQ script loaded successfully');
+    };
+    script.onerror = () => {
+      console.error('IntakeQ script failed to load');
+    };
     document.head.appendChild(script);
 
     // Cleanup function to remove script on unmount

@@ -23,8 +23,12 @@ export default function QualiphyWidget() {
   }, []);
 
   const handleClick = () => {
+    console.log('Qualiphy widget clicked');
     if (window.showDisclosureModal) {
+      console.log('Calling showDisclosureModal');
       window.showDisclosureModal();
+    } else {
+      console.error('showDisclosureModal not available');
     }
   };
 

@@ -12,6 +12,11 @@ interface ServiceBookingButtonProps {
 const ServiceBookingButton = ({ serviceId, serviceName, serviceCategory }: ServiceBookingButtonProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleBookingClick = () => {
+    console.log('Booking button clicked for:', serviceName);
+    setIsOpen(true);
+  };
+
   // Map service categories to IntakeQ category IDs
   const categoryMapping: Record<string, string> = {
     'Basic Hydration': '76b7e0a3-c252-479f-982a-a841edbfdda5',
@@ -47,7 +52,9 @@ const ServiceBookingButton = ({ serviceId, serviceName, serviceCategory }: Servi
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button>Book Now</Button>
+        <Button onClick={handleBookingClick} className="w-full bg-primary hover:bg-primary/90 text-white font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+          <span>Book Now</span>
+        </Button>
       </DialogTrigger>
       <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>

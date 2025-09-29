@@ -36,6 +36,7 @@ const MembershipBookingButton = ({ membershipName, membershipType, className, va
   const Icon = getMembershipIcon();
 
   const handleMembershipSignup = async () => {
+    console.log('Membership signup clicked for:', membershipName);
     setIsLoading(true);
     
     try {
