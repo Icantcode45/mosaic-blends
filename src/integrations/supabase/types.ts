@@ -198,7 +198,17 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_order_by_token: {
+        Args: { order_access_token: string }
+        Returns: {
+          created_at: string
+          email: string
+          id: string
+          status: string
+          total_amount: number
+          updated_at: string
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never

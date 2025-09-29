@@ -67,18 +67,23 @@ export default function PayPalCheckout() {
         try {
           const details = await actions.order.capture();
           
-          // Create order in database (now requires authentication)
+          // Create order in database (supports both authenticated and guest users)
           const orderId = crypto.randomUUID();
-          const { error: orderError } = await supabase
+          const accessToken = crypto.randomUUID(); // Generate access token for order tracking
+          
+          const { data: orderData, error: orderError } = await supabase
             .from('orders')
             .insert({
               id: orderId,
-              user_id: user?.id,
+              user_id: user?.id || null, // null for guest checkout
               email: user?.email || details.payer?.email_address || 'guest@example.com',
               total_amount: getTotalPrice(),
               status: 'paid',
               paypal_payment_id: details.id,
-            });
+              access_token: accessToken,
+            })
+            .select()
+            .single();
 
           if (orderError) throw orderError;
 
@@ -96,10 +101,29 @@ export default function PayPalCheckout() {
 
           if (itemsError) throw itemsError;
 
+          // Show success message with order tracking info
+          const orderRef = orderId.slice(0, 8);
+          const trackingMessage = user 
+            ? `Your order has been confirmed. Order #${orderRef}` 
+            : `Order #${orderRef} confirmed! Save this access code to track your order: ${accessToken.slice(0, 13)}...`;
+
           toast({
             title: "Payment successful!",
-            description: `Your order has been confirmed. Order ID: ${orderId.slice(0, 8)}`,
+            description: trackingMessage,
+            duration: user ? 5000 : 10000, // Longer duration for guest orders
           });
+
+          // Store access token in localStorage for guest users
+          if (!user) {
+            const guestOrders = JSON.parse(localStorage.getItem('guest_orders') || '[]');
+            guestOrders.push({
+              orderId,
+              accessToken,
+              orderRef,
+              date: new Date().toISOString()
+            });
+            localStorage.setItem('guest_orders', JSON.stringify(guestOrders));
+          }
 
           clearCart();
         } catch (error) {
@@ -147,25 +171,7 @@ export default function PayPalCheckout() {
     );
   }
 
-  // Require authentication for checkout
-  if (!user || !session) {
-    return (
-      <div className="w-full p-4 border border-warning/20 rounded-lg bg-warning/5">
-        <div className="flex items-center gap-2 mb-2">
-          <ShieldAlert className="h-5 w-5 text-warning" />
-          <h3 className="font-semibold text-warning">Authentication Required</h3>
-        </div>
-        <p className="text-sm text-muted-foreground mb-3">
-          Please sign in to complete your purchase securely.
-        </p>
-        <Link to="/auth">
-          <Button variant="outline" className="w-full">
-            Sign In to Continue
-          </Button>
-        </Link>
-      </div>
-    );
-  }
+  // Guest checkout is now supported with access tokens
 
   if (state.items.length === 0) {
     return null;
