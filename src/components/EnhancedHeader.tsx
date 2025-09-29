@@ -118,9 +118,9 @@ const EnhancedHeader = () => {
               aria-label="Toggle navigation menu"
             >
               {!mobileMenuOpen ? (
-                <Menu className="w-6 h-6 text-foreground" />
+                <Menu className="w-6 h-6 text-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] hover:drop-shadow-[0_4px_8px_rgba(0,0,0,0.4)] transition-all" style={{ filter: 'drop-shadow(0 1px 0 rgba(255,255,255,0.5))' }} />
               ) : (
-                <X className="w-6 h-6 text-foreground" />
+                <X className="w-6 h-6 text-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] hover:drop-shadow-[0_4px_8px_rgba(0,0,0,0.4)] transition-all" style={{ filter: 'drop-shadow(0 1px 0 rgba(255,255,255,0.5))' }} />
               )}
             </button>
           </div>
