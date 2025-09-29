@@ -95,7 +95,7 @@ const EnhancedHeader = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="h-16 lg:h-20 flex items-center justify-between">
             {/* Brand */}
-            <Link to="/" className="flex items-center space-x-3 z-50">
+            <Link to="/" className="flex items-center space-x-3">
               <BrandLogo className="h-8 lg:h-10" />
             </Link>
 
