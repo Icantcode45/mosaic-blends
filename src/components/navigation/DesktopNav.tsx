@@ -13,7 +13,7 @@ const DesktopNav = ({ servicesMegaItems, productsMegaItems, navItems }: DesktopN
   
 
   return (
-    <nav className="hidden lg:flex items-center space-x-6 ml-8">
+    <nav className="hidden lg:flex items-center space-x-8 flex-1 justify-center">
       {/* Services Dropdown */}
       <div 
         className="relative"
