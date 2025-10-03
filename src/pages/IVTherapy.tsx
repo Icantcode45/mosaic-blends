@@ -25,6 +25,7 @@ import diamondNadBag from "@/assets/iv-bags/diamond-nad-therapy-new.png";
 import eliteNadBag from "@/assets/iv-bags/elite-nad-therapy-updated.png";
 
 import goldHydrationRecoveryBag from "@/assets/iv-bags/gold-hydration-recovery-new.png";
+import platinumHydrationRecoveryBag from "@/assets/iv-bags/platinum-hydration-recovery-new.png";
 import eliteNadTherapyBag from "@/assets/iv-bags/fountain-of-youth-antiage.png";
 import nadInjection from "@/assets/iv-bags/nad-therapy-basic.png";
 
@@ -173,6 +174,24 @@ const IVTherapy = () => {
           'Anti Nausea',
           'Glutathione',
           'Magnesium'
+        ]
+      },
+      {
+        id: 'platinum-hydration-recovery',
+        name: 'The Platinum Hydration & Recovery IV',
+        category: 'Standard Wellness',
+        price: '$375',
+        badge: 'Elite Recovery',
+        description: 'Elite hydration and recovery formula with premium vitamins and enhanced nutrients.',
+        features: [
+          'Lactated Ringers 1000ml',
+          'B-Complex Vitamins',
+          'Vitamin B12',
+          'High-dose Vitamin C',
+          'Anti Nausea',
+          'Glutathione',
+          'Magnesium',
+          'Amino Acid Blend'
         ]
       }
     ],
@@ -653,6 +672,15 @@ const IVTherapy = () => {
                         title: 'THE GOLD',
                         subtitle: 'HYDRATION & RECOVERY',
                         bagImage: goldHydrationRecoveryBag
+                      };
+                    case 'platinum-hydration-recovery':
+                      return {
+                        bgGradient: 'from-white to-white',
+                        titleColor: 'text-slate-900',
+                        badgeColor: 'bg-slate-500',
+                        title: 'THE PLATINUM',
+                        subtitle: 'HYDRATION & RECOVERY',
+                        bagImage: platinumHydrationRecoveryBag
                       };
                    default:
                      return {
