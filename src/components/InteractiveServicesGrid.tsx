@@ -16,9 +16,9 @@ import ServiceBookingButton from "./ServiceBookingButton";
 
 // Import all IV bag images
 import rehydrateBagNew from "@/assets/iv-bags/rehydrate-bag-new.png";
-import rehydratePlusBagNew from "@/assets/iv-bags/rehydrate-plus-bag-new.png";
+import rehydratePlusBagNew from "@/assets/iv-bags/platinum-hydration-recovery-new.png";
 import dBookPerformanceBag from "@/assets/iv-bags/d-book-performance-bag.png";
-import eliteNadTherapyBag from "@/assets/iv-bags/elite-nad-therapy-bag-final.png";
+import eliteNadTherapyBag from "@/assets/iv-bags/fountain-of-youth-antiage.png";
 
 const InteractiveServicesGrid = () => {
   const [activeService, setActiveService] = useState(0);

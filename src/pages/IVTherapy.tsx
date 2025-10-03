@@ -11,22 +11,22 @@ import QualiphyWidget from "@/components/QualiphyWidget";
 // Image assets (use imports so they work in production builds)
 import heroBg from "@/assets/iv-therapy-hero-custom.jpg";
 import rehydrateBag from "@/assets/iv-bags/rehydrate-bag.png";
-import rehydratePlusBag from "@/assets/iv-bags/rehydrate-plus-bag.png";
-import jrMyersBag from "@/assets/iv-bags/jr-myers-bag.png";
-import myersCocktailBag from "@/assets/iv-bags/myers-cocktail-bag.png";
-import hangoverBag from "@/assets/iv-bags/hangover-bag.png";
+import rehydratePlusBag from "@/assets/iv-bags/platinum-hydration-recovery-new.png";
+import jrMyersBag from "@/assets/iv-bags/jr-myers-cocktail-new.png";
+import myersCocktailBag from "@/assets/iv-bags/myers-cocktail-new.png";
+import hangoverBag from "@/assets/iv-bags/hangover-bag-updated.png";
 import sunDevilBag from "@/assets/iv-bags/sun-devil-bag.png";
 import dBookBag from "@/assets/iv-bags/d-book-bag.png";
 import diamondbackBag from "@/assets/iv-bags/diamondback-bag.png";
-import scottsdaleBeautyBagPng from "@/assets/iv-bags/scottsdale-beauty-bag.png";
+import scottsdaleBeautyBagPng from "@/assets/iv-bags/beauty-bag-new.png";
 import scottsdaleBeautyBagJpeg from "@/assets/iv-bags/scottsdale-beauty-bag.jpeg";
 import arizonaDetoxBag from "@/assets/iv-bags/arizona-detox-bag.png";
-import diamondNadBag from "@/assets/iv-bags/diamond-nad-bag.png";
-import eliteNadBag from "@/assets/iv-bags/elite-nad-bag.png";
+import diamondNadBag from "@/assets/iv-bags/diamond-nad-therapy-new.png";
+import eliteNadBag from "@/assets/iv-bags/elite-nad-therapy-updated.png";
 
-import goldHydrationRecoveryBag from "@/assets/iv-bags/gold-hydration-recovery-bag-new.png";
-import eliteNadTherapyBag from "@/assets/iv-bags/elite-nad-therapy-bag-final.png";
-import nadInjection from "@/assets/vials/nad-injection.webp";
+import goldHydrationRecoveryBag from "@/assets/iv-bags/gold-hydration-recovery-new.png";
+import eliteNadTherapyBag from "@/assets/iv-bags/fountain-of-youth-antiage.png";
+import nadInjection from "@/assets/iv-bags/nad-therapy-basic.png";
 
 const IVTherapy = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
