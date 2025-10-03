@@ -10,10 +10,10 @@ import QualiphyWidget from "@/components/QualiphyWidget";
 
 // Image assets (use imports so they work in production builds)
 import heroBg from "@/assets/iv-therapy-hero-custom.jpg";
-import rehydrateBag from "@/assets/iv-bags/rehydrate-bag.png";
-import rehydratePlusBag from "@/assets/iv-bags/platinum-hydration-recovery-new.png";
-import jrMyersBag from "@/assets/iv-bags/jr-myers-cocktail-new.png";
-import myersCocktailBag from "@/assets/iv-bags/myers-cocktail-new.png";
+import rehydrateBag from "@/assets/iv-bags/rehydrate-bag-new.png";
+import rehydratePlusBag from "@/assets/iv-bags/rehydrate-plus-bag-new.png";
+import jrMyersBag from "@/assets/iv-bags/jr-myers-cocktail-bag-new.png";
+import myersCocktailBag from "@/assets/iv-bags/jr-myers-cocktail-bag-new.png";
 import hangoverBag from "@/assets/iv-bags/hangover-bag-updated.png";
 import sunDevilBag from "@/assets/iv-bags/sun-devil-bag.png";
 import dBookBag from "@/assets/iv-bags/d-book-bag.png";

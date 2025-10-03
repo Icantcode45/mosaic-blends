@@ -14,8 +14,8 @@ import ServiceBookingButton from "./ServiceBookingButton";
 
 // Import all IV bag images
 import rehydrateBagNew from "@/assets/iv-bags/rehydrate-bag-new.png";
-import rehydratePlusBagNew from "@/assets/iv-bags/platinum-hydration-recovery-new.png";
-import myersCocktailBag from "@/assets/iv-bags/myers-cocktail-new.png";
+import rehydratePlusBagNew from "@/assets/iv-bags/rehydrate-plus-bag-new.png";
+import myersCocktailBag from "@/assets/iv-bags/jr-myers-cocktail-bag-new.png";
 import eliteNadTherapyBag from "@/assets/iv-bags/fountain-of-youth-antiage.png";
 import scottsdaleBeautyBagImg from "@/assets/iv-bags/beauty-bag-new.png";
 import hangoverBagNew from "@/assets/iv-bags/hangover-bag-updated.png";
