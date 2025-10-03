@@ -14,11 +14,11 @@ const PeptideBookingButton = ({ peptideName, peptideCategory }: PeptideBookingBu
   // Map peptide categories to IntakeQ category IDs
   const categoryMapping: Record<string, string> = {
     'Cellular Wellness': 'dc59af69-156c-4431-a8a1-f9af17b4e286', // NAD+ Anti-Aging
-    'Research & Recovery': '82e625db-d294-4053-9714-3c333dd5ee15', // Injury & Recovery
-    'Hormone Research': '7b2876e1-0768-4326-8b0b-946a42285fcc', // Hormone Therapy
-    'Metabolic Research': '6f219e0d-4991-41a2-84a9-e23d5caa3492', // Weight Management
-    'Research Compounds': 'cca9a189-27b8-49d4-9078-640e767055e9', // Cognitive Health
-    'Wellness Research': '7b2876e1-0768-4326-8b0b-946a42285fcc' // Hormone Therapy
+    'Research & Recovery': '314c20c9-4f5c-47f5-b58d-9e7f557598b4', // Specialty IV Therapy
+    'Hormone Research': '0fd23879-ea54-45f3-9b7e-204d87b3fd2c', // Premium IV Therapy
+    'Metabolic Research': '0fd23879-ea54-45f3-9b7e-204d87b3fd2c', // Premium IV Therapy
+    'Research Compounds': '314c20c9-4f5c-47f5-b58d-9e7f557598b4', // Specialty IV Therapy
+    'Wellness Research': 'dc59af69-156c-4431-a8a1-f9af17b4e286' // NAD+ Anti-Aging
   };
 
   const intakeqCategoryId = categoryMapping[peptideCategory];

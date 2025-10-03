@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Link } from "react-router-dom";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
-import { useToast } from '@/hooks/use-toast';
+import IntakeQWidget from './IntakeQWidget';
 import { 
   Heart, 
   Sparkles, 
@@ -20,8 +20,7 @@ interface MembershipBookingButtonProps {
 }
 
 const MembershipBookingButton = ({ membershipName, membershipType, className, variant = "default" }: MembershipBookingButtonProps) => {
-  const { toast } = useToast();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const getMembershipIcon = () => {
     switch (membershipType) {
@@ -35,50 +34,44 @@ const MembershipBookingButton = ({ membershipName, membershipType, className, va
 
   const Icon = getMembershipIcon();
 
-  const handleMembershipSignup = async () => {
-    console.log('Membership signup clicked for:', membershipName);
-    setIsLoading(true);
-    
-    try {
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      toast({
-        title: "Membership Interest Recorded! 🎉",
-        description: `Thank you for your interest in our ${membershipName} plan. Our team will contact you within 24 hours to complete your enrollment.`,
-        duration: 5000,
-      });
-      
-      // Here you would typically make an API call to your backend
-      // to record the membership interest and send notification emails
-      
-    } catch (error) {
-      toast({
-        title: "Oops! Something went wrong",
-        description: "Please call us at (602) 688-9825 to sign up for membership.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
+  // Map membership tiers to IntakeQ IDs
+  const membershipMapping: Record<string, { type: 'category' | 'package', id: string }> = {
+    'starter': { type: 'category', id: 'a594f9e5-0db6-4ca0-bbfb-47c944af7007' }, // Membership category
+    'basic': { type: 'category', id: 'a594f9e5-0db6-4ca0-bbfb-47c944af7007' }, // Membership category
+    'premium': { type: 'package', id: '93a5ba6f-3dce-487f-84b0-87d1f5f5c1cb' }, // Tier II Package
+    'elite': { type: 'category', id: 'a594f9e5-0db6-4ca0-bbfb-47c944af7007' } // Membership category
   };
 
+  const membershipConfig = membershipMapping[membershipType] || membershipMapping['basic'];
+
   return (
-    <Button 
-      variant={variant} 
-      onClick={handleMembershipSignup}
-      disabled={isLoading}
-      className={cn(
-        "w-full transition-all duration-300 group",
-        variant === "default" && "bg-primary hover:bg-primary/90 text-white shadow-glow-primary hover:shadow-glow-primary-lg",
-        variant === "outline" && "border-primary/30 hover:border-primary hover:bg-primary/5",
-        className
-      )}
-    >
-      <Icon className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-      {isLoading ? "Processing..." : "Join Now"}
-      {!isLoading && <Sparkles className="w-4 h-4 ml-2 group-hover:animate-spin" />}
-    </Button>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogTrigger asChild>
+        <Button 
+          variant={variant} 
+          className={cn(
+            "w-full transition-all duration-300 group",
+            variant === "default" && "bg-primary hover:bg-primary/90 text-white shadow-glow-primary hover:shadow-glow-primary-lg",
+            variant === "outline" && "border-primary/30 hover:border-primary hover:bg-primary/5",
+            className
+          )}
+        >
+          <Icon className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+          Join Now
+          <Sparkles className="w-4 h-4 ml-2 group-hover:animate-spin" />
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle>Join {membershipName}</DialogTitle>
+        </DialogHeader>
+        {membershipConfig.type === 'package' ? (
+          <IntakeQWidget packageId={membershipConfig.id} />
+        ) : (
+          <IntakeQWidget categoryId={membershipConfig.id} />
+        )}
+      </DialogContent>
+    </Dialog>
   );
 };
 

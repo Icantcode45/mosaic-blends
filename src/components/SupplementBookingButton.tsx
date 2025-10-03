@@ -11,8 +11,8 @@ interface SupplementBookingButtonProps {
 const SupplementBookingButton = ({ supplementName, consultationType = 'telehealth' }: SupplementBookingButtonProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // For supplements, we'll use the general consultation/telehealth category
-  const telehealthCategoryId = "7b2876e1-0768-4326-8b0b-946a42285fcc"; // Hormone Therapy (general wellness consultation)
+  // For supplements, use the Vitamin Injections category
+  const telehealthCategoryId = "b9ea469d-409b-4a81-96ca-e6cc44197891"; // Vitamin Injections
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>

@@ -3,18 +3,27 @@ import { useEffect } from 'react';
 interface IntakeQWidgetProps {
   serviceId?: string;
   categoryId?: string;
+  packageId?: string;
+  locationId?: number;
+  groupId?: string;
   clientArea?: boolean;
 }
 
-const IntakeQWidget = ({ serviceId, categoryId, clientArea = false }: IntakeQWidgetProps) => {
+const IntakeQWidget = ({ serviceId, categoryId, packageId, locationId, groupId, clientArea = false }: IntakeQWidgetProps) => {
   useEffect(() => {
-    console.log('IntakeQWidget loading with:', { serviceId, categoryId, clientArea });
+    console.log('IntakeQWidget loading with:', { serviceId, categoryId, packageId, locationId, groupId, clientArea });
     
     // Set up IntakeQ configuration
     (window as any).intakeq = "68b14c4e0b7b143488664c75";
     
     if (clientArea) {
       (window as any).intakeqClientArea = true;
+    } else if (groupId) {
+      (window as any).intakeqGroupId = groupId;
+    } else if (locationId) {
+      (window as any).intakeqLocationId = locationId;
+    } else if (packageId) {
+      (window as any).intakeqPackageId = packageId;
     } else if (serviceId) {
       (window as any).intakeqServiceId = serviceId;
     } else if (categoryId) {
@@ -43,9 +52,12 @@ const IntakeQWidget = ({ serviceId, categoryId, clientArea = false }: IntakeQWid
       // Clean up IntakeQ configuration
       delete (window as any).intakeqServiceId;
       delete (window as any).intakeqCategoryId;
+      delete (window as any).intakeqPackageId;
+      delete (window as any).intakeqLocationId;
+      delete (window as any).intakeqGroupId;
       delete (window as any).intakeqClientArea;
     };
-  }, [serviceId, categoryId, clientArea]);
+  }, [serviceId, categoryId, packageId, locationId, groupId, clientArea]);
 
   return (
     <div className="w-full">

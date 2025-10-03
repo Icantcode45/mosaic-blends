@@ -19,12 +19,14 @@ const ServiceBookingButton = ({ serviceId, serviceName, serviceCategory }: Servi
 
   // Map service categories to IntakeQ category IDs
   const categoryMapping: Record<string, string> = {
-    'Basic Hydration': '76b7e0a3-c252-479f-982a-a841edbfdda5',
-    'Enhanced Hydration': '76b7e0a3-c252-479f-982a-a841edbfdda5', 
-    'Standard Wellness': '19872648-7926-447a-97cd-24e1e44f8579',
-    'Premium Therapies': '0fd23879-ea54-45f3-9b7e-204d87b3fd2c',
-    'NAD+ Therapy': 'dc59af69-156c-4431-a8a1-f9af17b4e286',
-    'Vitamin Injections': 'b9ea469d-409b-4a81-96ca-e6cc44197891'
+    'Basic Hydration': '76b7e0a3-c252-479f-982a-a841edbfdda5', // Basic IV Therapy
+    'Enhanced Hydration': '76b7e0a3-c252-479f-982a-a841edbfdda5', // Basic IV Therapy
+    'Standard Wellness': '19872648-7926-447a-97cd-24e1e44f8579', // Standard IV Therapy
+    'Specialty Therapies': '314c20c9-4f5c-47f5-b58d-9e7f557598b4', // Specialty IV Therapy
+    'Premium Therapies': '0fd23879-ea54-45f3-9b7e-204d87b3fd2c', // Premium IV Therapy
+    'NAD+ Therapy': 'dc59af69-156c-4431-a8a1-f9af17b4e286', // NAD+ Anti-Aging
+    'Vitamin Injections': 'b9ea469d-409b-4a81-96ca-e6cc44197891', // Vitamin Injections
+    'Membership': 'a594f9e5-0db6-4ca0-bbfb-47c944af7007' // Monthly Memberships
   };
 
   // Also map individual service IDs for specific services that have dedicated booking
