@@ -34,12 +34,13 @@ const MembershipBookingButton = ({ membershipName, membershipType, className, va
 
   const Icon = getMembershipIcon();
 
-  // Map membership tiers to IntakeQ IDs
+  // Map membership tiers to IntakeQ package IDs
   const membershipMapping: Record<string, { type: 'category' | 'package', id: string }> = {
-    'starter': { type: 'category', id: 'a594f9e5-0db6-4ca0-bbfb-47c944af7007' }, // Membership category
-    'basic': { type: 'category', id: 'a594f9e5-0db6-4ca0-bbfb-47c944af7007' }, // Membership category
-    'premium': { type: 'package', id: '93a5ba6f-3dce-487f-84b0-87d1f5f5c1cb' }, // Tier II Package
-    'elite': { type: 'category', id: 'a594f9e5-0db6-4ca0-bbfb-47c944af7007' } // Membership category
+    'starter': { type: 'package', id: 'fb7c4ca8-4714-4f07-b197-b00f22fb16e5' }, // Shot Pass Membership
+    'basic': { type: 'package', id: 'e910e810-d537-4577-a53c-736e802a0729' }, // Wellness Explorer Monthly Membership
+    'premium': { type: 'package', id: '133ef7b7-0889-41fc-bfc0-ae547b8a496b' }, // Wellness Elite Membership
+    'elite': { type: 'package', id: '133ef7b7-0889-41fc-bfc0-ae547b8a496b' }, // Wellness Elite Membership
+    'platinum': { type: 'package', id: '2ed8d7ea-1360-4aca-a268-254831ae6e2b' } // Wellness Platinum Membership
   };
 
   const membershipConfig = membershipMapping[membershipType] || membershipMapping['basic'];
