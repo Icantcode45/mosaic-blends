@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, Shield, Clock, CheckCircle, ArrowRight, Sparkles, Users, Zap, Phone } from "lucide-react";
@@ -170,13 +171,16 @@ const EnhancedHero = () => {
               <Button 
                 size="lg" 
                 className="relative group bg-gradient-to-r from-primary to-primary-hover text-white px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-glow-primary transition-all duration-300 overflow-hidden animate-glow-pulse"
+                asChild
               >
-                <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
-                <span className="relative flex items-center">
-                  <Sparkles className="mr-2 w-5 h-5" />
-                  Book Treatment Now
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </span>
+                <a href="/first-time-patients">
+                  <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+                  <span className="relative flex items-center">
+                    <Sparkles className="mr-2 w-5 h-5" />
+                    Book Treatment Now
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </a>
               </Button>
               
               <Button 
