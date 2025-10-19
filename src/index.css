@@ -182,8 +182,23 @@
     @apply border-border;
   }
   
-  html {
-    scroll-behavior: smooth;
+  /* Smooth page transitions */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  
+  /* Optimize rendering */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Prevent layout shift */
+  img[loading="lazy"] {
+    min-height: 1px;
   }
   
   body {
@@ -340,11 +355,34 @@
     @apply outline-none ring-2 ring-primary/20 ring-offset-2 ring-offset-background;
   }
   
-  /* Smooth transitions for all elements */
-  * {
+  /* Smooth transitions for all interactive elements */
+  a, button, [role="button"] {
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-    transition-duration: 200ms;
+    transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Hardware acceleration for better performance */
+  .hover-lift,
+  .service-card,
+  .cta-button,
+  .trust-badge,
+  .testimonial-card {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  
+  /* Optimize animations */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
@@ -690,10 +728,13 @@
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
   }
-  50% {
-    transform: translateY(-10px);
+  33% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(6px) rotate(-1deg);
   }
 }
 

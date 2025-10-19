@@ -167,20 +167,32 @@ export default {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" }
         },
+        "shimmer": {
+          "0%": { backgroundPosition: "200% center" },
+          "100%": { backgroundPosition: "-200% center" }
+        },
+        "glow-pulse": {
+          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--primary) / 0.3)" },
+          "50%": { boxShadow: "0 0 30px hsl(var(--primary) / 0.5)" }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.4s ease-out",
-        "fade-out": "fade-out 0.4s ease-out",
-        "scale-in": "scale-in 0.3s ease-out",
-        "scale-out": "scale-out 0.3s ease-out",
-        "slide-in-right": "slide-in-right 0.4s ease-out",
-        "slide-out-right": "slide-out-right 0.4s ease-out",
+        "fade-in": "fade-in 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+        "fade-out": "fade-out 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+        "fade-up": "fade-up 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+        "scale-in": "scale-in 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+        "scale-out": "scale-out 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+        "slide-in-right": "slide-in-right 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+        "slide-out-right": "slide-out-right 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+        "slide-in-left": "slide-in-left 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
         "float": "float 6s ease-in-out infinite",
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite alternate",
-        "shimmer": "shimmer 2s linear infinite",
-        "bounce-subtle": "bounce-subtle 2s ease-in-out infinite",
+        "bounce-soft": "bounce-soft 3s ease-in-out infinite",
+        "pulse-soft": "pulse-soft 4s ease-in-out infinite",
+        "shimmer": "shimmer 3s linear infinite",
+        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        "scroll": "scroll 30s linear infinite",
       },
       spacing: {
         "18": "4.5rem",
@@ -189,6 +201,10 @@ export default {
       maxWidth: {
         "8xl": "88rem",
         "9xl": "96rem",
+      },
+      backgroundSize: {
+        "200%": "200% 200%",
+        "300%": "300% 300%",
       },
     },
   },

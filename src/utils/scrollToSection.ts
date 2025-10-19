@@ -1,15 +1,22 @@
 /**
- * Smooth scroll to a section by ID
+ * Smooth scroll to a section by ID with offset for fixed headers
  * @param sectionId - The ID of the section to scroll to (without #)
  * @param behavior - Scroll behavior (default: 'smooth')
+ * @param offset - Offset in pixels for fixed headers (default: 80)
  */
-export const scrollToSection = (sectionId: string, behavior: ScrollBehavior = 'smooth') => {
+export const scrollToSection = (
+  sectionId: string, 
+  behavior: ScrollBehavior = 'smooth',
+  offset: number = 80
+) => {
   const element = document.getElementById(sectionId);
   if (element) {
-    element.scrollIntoView({ 
-      behavior,
-      block: 'start',
-      inline: 'nearest'
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior
     });
   }
 };
